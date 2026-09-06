@@ -1,0 +1,57 @@
+{
+  "_notice": "ПРИВАТНЫЙ ФАЙЛ. Не публикуется, исключается из build.mjs (см. §6.1 ТЗ) и не должен попадать в публичный git-репозиторий, если он публичный.",
+  "consentRecords": [
+    {
+      "workId": "w-mudrets-tselibata",
+      "depictedPersons": ["участник #1, псевдоним «М.»"],
+      "consentSignedAt": "2025-11-02",
+      "scope": "публикация в архиве, соцсети проекта, некоммерческое использование",
+      "curator": "Куратор А."
+    },
+    {
+      "workId": "w-vlastelin-dofamina",
+      "depictedPersons": ["участник #2, псевдоним «В.»"],
+      "consentSignedAt": "2025-11-02",
+      "scope": "публикация в архиве, некоммерческое использование",
+      "curator": "Куратор А."
+    },
+    {
+      "workId": "w-osemenitel",
+      "depictedPersons": ["участник #3, псевдоним «О.»"],
+      "consentSignedAt": "2025-11-09",
+      "scope": "публикация в архиве, некоммерческое использование",
+      "curator": "Куратор А."
+    }
+  ],
+  "editorialIncidents": [
+    {
+      "id": "incident-2026-03-comendant-face",
+      "date": "2026-03-14",
+      "summary": "На этапе rights-cleared → published куратор обнаружил, что в кадре работы-кандидата видно лицо реального сотрудника вуза (коменданта) без согласия. Публикация остановлена до применения размытия и получения отдельного согласия; инцидент внесён как прецедент закона «Самопожирающая власть» — редколлегия применила собственный чек-лист §7.3 к самой себе и признала процесс временно неисправным.",
+      "law": "self-devouring-power",
+      "outcome": "draft (возврат на доработку), позже опубликована в переработанном виде без узнаваемого лица коменданта"
+    }
+  ],
+  "revocationLog": [
+    {
+      "id": "revocation-demo-partial-2026-05",
+      "type": "partial",
+      "workId": "w-osemenitel",
+      "requestedAt": "2026-05-20",
+      "requestedBy": "участник #3, псевдоним «О.»",
+      "action": "published → archived; поле media удалено и заменено нейтральной заглушкой; id/slug/relations сохранены, граф Мёбиуса не разваливается",
+      "demo": true,
+      "note": "Демонстрационный сценарий, воспроизводится скриптом scripts/revocation-demo.mjs (--scenario partial)."
+    },
+    {
+      "id": "revocation-demo-full-2026-05",
+      "type": "full",
+      "workId": "w-vantuz-sudby",
+      "requestedAt": "2026-05-21",
+      "requestedBy": "правообладатель реквизита",
+      "action": "запись удалена из works.json целиком; входящие relations[].workId на неё переведены в orphaned-reference и не рендерятся",
+      "demo": true,
+      "note": "Демонстрационный сценарий, воспроизводится скриптом scripts/revocation-demo.mjs (--scenario full)."
+    }
+  ]
+}

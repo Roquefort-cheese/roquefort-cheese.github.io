@@ -1,0 +1,228 @@
+[
+  {
+    "id": "w-mudrets-tselibata",
+    "slug": "mudrets-tselibata",
+    "type": "theophany",
+    "title": "Мудрец Целибата",
+    "summary": "Бог удержанного импульса и антипафоса: аннулирует чужую величавость чистым уроном от неловкости — и остаётся уязвим перед искренним обращением.",
+    "process": "holding",
+    "narrativePhase": "apotheosis",
+    "publicationStatus": "published",
+    "humanAnchor": "студент в круглых очках, час назад отказавшийся отвечать на сообщение",
+    "deficit": "усталость от того, что каждое желание сначала нужно взвесить",
+    "bodyNode": "горло",
+    "object": {
+      "originalFunction": "чёрная широкополая шляпа против сквозняка из окна",
+      "wrongFunction": "инсигния мудреца, удерживающего собственное вожделение"
+    },
+    "witnesses": ["сосед по комнате", "камера в чужой руке"],
+    "blessing": "аннулирует чужую величавость уроном от неловкости",
+    "internalDefect": "энергия удержания рано или поздно обязательно прорывается сквозь сдерживание",
+    "judgment": "уязвим перед искренним обращением, на которое нельзя ответить красивой дистанцией",
+    "materialObjection": "треснувшая оправа очков и дешёвая цепочка на шее",
+    "visualDialect": "holding",
+    "media": [{ "src": "assets/img/mudrets-tselibata.svg", "kind": "image" }],
+    "altText": "Портрет юноши в широкополой шляпе на фоне фиолетовых молний и алхимического круга; титул «Мудрец Целибата» набран готическим шрифтом.",
+    "credits": "перформанс и съёмка — участники комнаты 418, обработка — куратор архива",
+    "rights": "cc-by-nc",
+    "contentNotice": null,
+    "relations": [
+      { "workId": "w-archont-nedoslannogo", "type": "cause-of" }
+    ]
+  },
+  {
+    "id": "w-vlastelin-dofamina",
+    "slug": "vlastelin-dofamina",
+    "type": "theophany",
+    "title": "Властелин Дофамина",
+    "summary": "Бог интерфейса, уверенного, что стал сознанием. Его осевая неподвижность производит видимость контроля, а нимб зависает на девяноста девяти процентах.",
+    "process": "fixation",
+    "narrativePhase": "apotheosis",
+    "publicationStatus": "published",
+    "humanAnchor": "сосед сверху, третий час подряд в позе лотоса перед телефоном",
+    "deficit": "внимание, разобранное на уведомления быстрее, чем успевает собраться обратно",
+    "bodyNode": "грудь",
+    "object": {
+      "originalFunction": "старая шляпа-федора и панцирная кровать в общаге",
+      "wrongFunction": "трон для медитации перед бесконечной лентой"
+    },
+    "witnesses": ["двое из соседней комнаты", "телефон, оставленный включённым"],
+    "blessing": "производит видимость контроля над собственным вниманием",
+    "internalDefect": "нимб похож на индикатор загрузки: просветление всё время на девяноста девяти процентах",
+    "judgment": "чем дольше он управляет вниманием, тем больше внимание управляет им",
+    "materialObjection": "обшарпанная кровать и мятая одежда, развешанная прямо в кадре",
+    "visualDialect": "fixation",
+    "media": [{ "src": "assets/img/vlastelin-dofamina.svg", "kind": "image" }],
+    "altText": "Юноша в позе лотоса на панцирной кровати в общежитии, над головой кольцо цифрового нимба, на груди светится зелёно-розовый интерфейс-разлом.",
+    "credits": "перформанс и съёмка — участники комнаты 418, обработка — куратор архива",
+    "rights": "cc-by-nc",
+    "contentNotice": null,
+    "relations": [
+      { "workId": "w-osemenitel", "type": "cause-of" }
+    ]
+  },
+  {
+    "id": "w-osemenitel",
+    "slug": "osemenitel",
+    "type": "theophany",
+    "title": "Осеменитель",
+    "summary": "Бог хаоса и космического перепроизводства: превращает заплёванный линолеум в галактики, но так и не научился спрашивать, нужна ли миру ещё одна.",
+    "process": "generation",
+    "narrativePhase": "overheat",
+    "publicationStatus": "published",
+    "humanAnchor": "тот, кто уже неделю не может остановиться придумывать новые чаты и планы",
+    "deficit": "избыток идей, которым некуда деться, кроме как в ещё одну вселенную",
+    "bodyNode": "руки",
+    "object": {
+      "originalFunction": "самодельная табличка с расписанием на шее",
+      "wrongFunction": "скрижаль творения, из которой рождаются галактики"
+    },
+    "witnesses": ["вся комната в сборе", "случайный гость с этажа"],
+    "blessing": "производит миры из бытового мусора одним движением рук",
+    "internalDefect": "не умеет спросить, нужна ли миру ещё одна галактика",
+    "judgment": "плодит миры, пока сами миры не попросят его замолчать",
+    "materialObjection": "текст на табличке-скрижали набран кустарным самодельным шрифтом",
+    "visualDialect": "generation",
+    "media": [{ "src": "assets/img/osemenitel.svg", "kind": "image" }],
+    "altText": "Фигура с раскрытыми ладонями на фоне двойной спирали и туманностей; на груди — расколотая надвое композиция из льда и лавы, на шее табличка с самодельным текстом.",
+    "credits": "перформанс и съёмка — участники комнаты 418, обработка — куратор архива",
+    "rights": "cc-by-nc",
+    "contentNotice": null,
+    "relations": [
+      { "workId": "w-vantuz-sudby", "type": "cause-of" }
+    ]
+  },
+  {
+    "id": "w-archont-nedoslannogo",
+    "slug": "archont-nedoslannogo",
+    "type": "theophany",
+    "title": "Архонт Недосланного",
+    "summary": "Временная теофания, доказывающая, что система умеет порождать новых богов: сила — в одном неотправленном сообщении.",
+    "process": "fixation",
+    "narrativePhase": "pressure",
+    "publicationStatus": "published",
+    "humanAnchor": "сосед по комнате, который уже час не отправляет одно сообщение",
+    "deficit": "невозможность нажать «отправить» и невозможность закрыть чат",
+    "bodyNode": "грудь",
+    "object": {
+      "originalFunction": "обычный удлинитель для розетки на двоих",
+      "wrongFunction": "чётки, перебираемые вместо ответа"
+    },
+    "witnesses": ["сосед на соседней койке"],
+    "blessing": "делает любую чужую исповедь незавершённой одним своим присутствием",
+    "internalDefect": "нимб составлен из непрочитанных уведомлений — это бэклог, а не благодать",
+    "judgment": "суд наступает, когда сосед не просит объяснений, ставит рядом кружку и говорит «я тут»",
+    "materialObjection": "дешёвый зависший пиксель в слове «печатает…»",
+    "visualDialect": "fixation",
+    "media": [{ "src": "assets/img/archont-nedoslannogo.svg", "kind": "image" }],
+    "altText": "Силуэт на нижней койке с удлинителем, обмотанным вокруг руки как чётки; под грудиной пиксельное «печатает…», нимб собран из значков непрочитанных уведомлений.",
+    "credits": "иллюстрация по мотивам перформанса — архив комнаты 418",
+    "rights": "cc-by-nc",
+    "contentNotice": null,
+    "relations": [
+      { "workId": "w-mudrets-tselibata", "type": "fermentation-of" }
+    ]
+  },
+  {
+    "id": "w-vantuz-sudby",
+    "slug": "vantuz-sudby",
+    "type": "theophany",
+    "title": "Вантуз Судьбы",
+    "summary": "Скипетр, который остаётся вантузом. Поднят, чтобы прочистить карму этажа; резинка не выдержала первой.",
+    "process": "holding",
+    "narrativePhase": "apotheosis",
+    "publicationStatus": "archived",
+    "humanAnchor": "тот, кто поднял вантуз, чтобы прочистить карму этажа",
+    "deficit": "уверенность, что порядок на этаже можно исправить одним жестом",
+    "bodyNode": "руки",
+    "object": {
+      "originalFunction": "вантуз на деревянной ручке для засора в раковине",
+      "wrongFunction": "скипетр, прочищающий карму этажа"
+    },
+    "witnesses": ["вся комната", "Серёга, ближе всех к двери"],
+    "blessing": "на секунду наводит порядок одним взмахом бытового предмета",
+    "internalDefect": "резиновая часть истончена десятками предыдущих бытовых применений",
+    "judgment": "суд смеха, который никто не решился произнести первым",
+    "materialObjection": "треснувшая резиновая часть вантуза",
+    "visualDialect": "holding",
+    "media": [{ "src": "assets/img/vantuz-sudby.svg", "kind": "image" }],
+    "altText": "Вантуз на деревянной ручке, увенчанный тонким фиолетовым контуром короны; резиновая часть треснута, рядом — нашивка студсовета как бытовая улика.",
+    "credits": "перформанс — участники комнаты 418, иллюстрация — архив",
+    "rights": "cc-by-nc",
+    "contentNotice": null,
+    "relations": [
+      { "workId": "w-izolenta-seryogi", "type": "cause-of" }
+    ]
+  },
+  {
+    "id": "w-izolenta-seryogi",
+    "slug": "izolenta-seryogi",
+    "type": "residue",
+    "title": "Изолента Серёги",
+    "summary": "Резинка отвалилась. Никто не засмеялся первым. Серёга молча нашёл изоленту — низовой остаток после апофеоза вантуза.",
+    "process": "zero-reaction",
+    "narrativePhase": "residue",
+    "publicationStatus": "published",
+    "bodyNode": "руки",
+    "object": {
+      "originalFunction": "рулон синей изоленты в тумбочке",
+      "wrongFunction": null
+    },
+    "materialObjection": "отклеенный обрывок изоленты на сером линолеумном полу",
+    "visualDialect": "zero-reaction",
+    "media": [{ "src": "assets/img/izolenta-seryogi.svg", "kind": "image" }],
+    "altText": "Рулон синей изоленты и отклеенный обрывок на сером линолеумном полу, без бликов и подписи.",
+    "credits": "иллюстрация — архив комнаты 418",
+    "rights": "cc-by-nc",
+    "contentNotice": null,
+    "relations": [
+      { "workId": "w-vantuz-sudby", "type": "residue-of" },
+      { "workId": "w-archont-nedoslannogo", "type": "fermentation-of" }
+    ]
+  },
+  {
+    "id": "w-travokur-bolshaya-shishka",
+    "slug": "travokur-i-bolshaya-shishka",
+    "type": "negative-icon",
+    "title": "Травокур и Большая Шишка",
+    "summary": "Отрицательная икона: показывает, что присутствие может не проходить через апофеоз. Чай и батончик — не магические артефакты.",
+    "process": "zero-reaction",
+    "narrativePhase": "linoleum",
+    "publicationStatus": "published",
+    "humanAnchor": "тот, кто просто пьёт чай, пока комната совершает очередной апофеоз",
+    "bodyNode": "—",
+    "object": {
+      "originalFunction": "кружка чая и протеиновый батончик на прикроватной тумбочке перед сном"
+    },
+    "blessing": null,
+    "visualDialect": "zero-reaction",
+    "media": [{ "src": "assets/img/travokur-i-bolshaya-shishka.svg", "kind": "image" }],
+    "altText": "Кружка с паром и протеиновый батончик на прикроватной тумбочке, приглушённые серо-бежевые тона, без свечения и нимба.",
+    "credits": "иллюстрация — архив комнаты 418",
+    "rights": "cc-by-nc",
+    "contentNotice": null,
+    "relations": [
+      { "workId": "w-izolenta-seryogi", "type": "fermentation-of" }
+    ]
+  },
+  {
+    "id": "w-obhod-komendanta",
+    "slug": "obhod-komendanta",
+    "type": "chronicle",
+    "title": "Обход коменданта",
+    "summary": "Хроника вечера, когда шаги в коридоре на две минуты сделали комнату стерильно нормативной — и апофеоз просто подождал за дверью.",
+    "process": "zero-reaction",
+    "narrativePhase": "wrong-assignment",
+    "publicationStatus": "published",
+    "witnesses": ["сосед по комнате", "камера, оставленная включённой"],
+    "visualDialect": "zero-reaction",
+    "media": [{ "src": "assets/img/obhod-komendanta.svg", "kind": "image" }],
+    "altText": "Дверь комнаты с полоской света внизу, тень от двух ног за дверью и связка ключей на уровне ручки.",
+    "credits": "иллюстрация — архив комнаты 418",
+    "rights": "cc-by-nc",
+    "contentNotice": null,
+    "relations": [
+      { "workId": "w-mudrets-tselibata", "type": "cause-of" }
+    ]
+  }
+]

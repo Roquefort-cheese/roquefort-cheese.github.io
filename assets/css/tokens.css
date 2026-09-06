@@ -1,0 +1,112 @@
+/* assets/css/tokens.css
+   Токены системы. Палитра взята напрямую из трёх исходных диалектов
+   и не является отвлечённым брендингом — это цвета конкретных иллюстраций:
+   фиолетовая тьма Мудреца, охра+бирюза Властелина, космос+золото Осеменителя,
+   и нейтральный линолеум/картон документальной сетки.
+*/
+:root{
+  /* -- документальный слой (45%) -- */
+  --doc-bg:        #d9d4c6;
+  --doc-bg-raised: #c9c4b6;
+  --doc-line:      #a39c85;
+  --doc-ink:       #2b2620;
+  --doc-ink-soft:  #5f5b4e;
+  --doc-paper:     #efe9db;
+
+  /* -- тёмный слой интерфейса / комнаты 418 -- */
+  --room-bg:       #16140f;
+  --room-bg-raised:#211f19;
+  --room-ink:      #efe9db;
+  --room-ink-soft: #b9b3a0;
+  --room-line:     #3a362c;
+
+  /* -- Удержание (holding) — Мудрец Целибата -- */
+  --dlg-holding-bg:     #1b1030;
+  --dlg-holding-mid:    #3a2a5c;
+  --dlg-holding-glow:   #a67bff;
+  --dlg-holding-bright: #c9a6ff;
+
+  /* -- Залипание (fixation) — Властелин Дофамина -- */
+  --dlg-fixation-bg:     #4d4330;
+  --dlg-fixation-mid:    #7a6a4a;
+  --dlg-fixation-neon:   #2ee6c8;
+  --dlg-fixation-neon-2: #ff5fae;
+
+  /* -- Порождение (generation) — Осеменитель -- */
+  --dlg-generation-bg:   #0b1230;
+  --dlg-generation-mid:  #1c3a6b;
+  --dlg-generation-gold: #c98a2e;
+  --dlg-generation-ice:  #4fb8d9;
+
+  /* -- Нулевая реакция (zero-reaction) — Травокур -- */
+  --dlg-zero-bg:    #d9d4c6;
+  --dlg-zero-mid:   #a89e86;
+  --dlg-zero-ink:   #8a8172;
+
+  /* -- служебные -- */
+  --comendant-bg:   #eef0ea;
+  --comendant-ink:  #1b1a16;
+  --danger:         #b23b2e;
+  --glitch-a:       #2ee6c8;
+  --glitch-b:       #ff3b6b;
+
+  /* -- типографика -- */
+  --font-display: "PT Serif", Georgia, "Times New Roman", serif;
+  --font-body:    "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --font-mono:    "IBM Plex Mono", "SF Mono", ui-monospace, monospace;
+
+  --step--1: clamp(0.82rem, 0.8rem + 0.1vw, 0.9rem);
+  --step-0:  clamp(1rem, 0.96rem + 0.2vw, 1.125rem);
+  --step-1:  clamp(1.2rem, 1.1rem + 0.4vw, 1.4rem);
+  --step-2:  clamp(1.6rem, 1.4rem + 0.9vw, 2.1rem);
+  --step-3:  clamp(2.1rem, 1.8rem + 1.6vw, 3.1rem);
+
+  --space-1: 0.4rem;
+  --space-2: 0.8rem;
+  --space-3: 1.4rem;
+  --space-4: 2.2rem;
+  --space-5: 3.6rem;
+  --space-6: 5.6rem;
+
+  --content-w: 42rem;
+  --content-w-wide: 68rem;
+  --radius: 3px;
+  --border: 1px solid var(--doc-line);
+
+  --dur-fast: 140ms;
+  --dur-mid: 420ms;
+  --dur-slow: 900ms;
+  --ease: cubic-bezier(.4,0,.2,1);
+}
+
+/* дефолт: диалект-переменные, переопределяются через [data-dialect] */
+:root, [data-dialect]{
+  --dlg-bg: var(--dlg-zero-bg);
+  --dlg-mid: var(--dlg-zero-mid);
+  --dlg-accent: var(--dlg-zero-ink);
+  --dlg-accent-2: var(--dlg-zero-ink);
+}
+[data-dialect="holding"]{
+  --dlg-bg: var(--dlg-holding-bg);
+  --dlg-mid: var(--dlg-holding-mid);
+  --dlg-accent: var(--dlg-holding-glow);
+  --dlg-accent-2: var(--dlg-holding-bright);
+}
+[data-dialect="fixation"]{
+  --dlg-bg: var(--dlg-fixation-bg);
+  --dlg-mid: var(--dlg-fixation-mid);
+  --dlg-accent: var(--dlg-fixation-neon);
+  --dlg-accent-2: var(--dlg-fixation-neon-2);
+}
+[data-dialect="generation"]{
+  --dlg-bg: var(--dlg-generation-bg);
+  --dlg-mid: var(--dlg-generation-mid);
+  --dlg-accent: var(--dlg-generation-gold);
+  --dlg-accent-2: var(--dlg-generation-ice);
+}
+[data-dialect="zero-reaction"]{
+  --dlg-bg: var(--dlg-zero-bg);
+  --dlg-mid: var(--dlg-zero-mid);
+  --dlg-accent: var(--dlg-zero-ink);
+  --dlg-accent-2: var(--dlg-zero-ink);
+}

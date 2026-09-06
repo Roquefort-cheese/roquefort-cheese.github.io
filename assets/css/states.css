@@ -1,0 +1,49 @@
+/* assets/css/states.css
+   Визуальные следствия трёх автоматов (см. state-machine.js).
+   Ничего здесь не должно запускать анимацию само по себе —
+   только в ответ на data-атрибут, выставленный JS.
+*/
+
+[data-interface-state="idle"] .phase-stage__figure{ opacity: 0.55; }
+[data-interface-state="pressure"] .phase-stage__figure{ opacity: 0.75; filter: grayscale(0.3); }
+[data-interface-state="transformation"] .phase-stage__figure{ opacity: 1; }
+[data-interface-state="overheat"] .phase-stage{ animation: overheat-shake 90ms linear 3; }
+[data-interface-state="reset"] .phase-stage__figure{ opacity: 0.6; transition: opacity var(--dur-slow) var(--ease); }
+
+@keyframes overheat-shake{
+  0%{ transform: translate(0,0); }
+  50%{ transform: translate(1px,-1px); }
+  100%{ transform: translate(-1px,1px); }
+}
+
+/* Комендант: временный стерильный режим — интерфейс "притворяется нормой" */
+[data-comendant="1"] .phase-stage{
+  filter: grayscale(1) contrast(0.9);
+}
+[data-comendant="1"] .btn--ritual{
+  border-color: var(--comendant-ink);
+  color: var(--comendant-ink);
+}
+
+/* reduced motion: полностью гасит глитч и параллакс, сайтвайд, не точечно */
+[data-reduced-motion="1"] .glitch-layer{ display: none !important; }
+[data-reduced-motion="1"] [data-interface-state="overheat"] .phase-stage{ animation: none !important; }
+[data-reduced-motion="1"] .phase-stage__figure svg,
+[data-reduced-motion="1"] .phase-stage__figure img{ transition: none !important; transform: none !important; }
+[data-reduced-motion="1"] .work-card{ transition: none !important; }
+[data-reduced-motion="1"] .work-card:hover{ transform: none !important; }
+[data-reduced-motion="1"] .comendant-banner{ transition: none !important; }
+[data-reduced-motion="1"] .title-reveal{ transition: none !important; }
+
+/* состояние загрузки библиотеки */
+[data-library-state="loading"] .grid-works::after{
+  content: "загрузка архива…";
+  font-family: var(--font-mono);
+  color: var(--room-ink-soft);
+}
+[data-library-state="empty"] .grid-works::after{
+  content: "ничего не найдено на этом слое линолеума — попробуйте снять часть фильтров";
+  font-family: var(--font-mono);
+  color: var(--room-ink-soft);
+  grid-column: 1/-1;
+}

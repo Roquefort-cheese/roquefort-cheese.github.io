@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" role="img" aria-labelledby="vd-title vd-desc">
+<title id="vd-title">Заглушка: старая шляпа-федора и панцирная кровать</title>
+<desc id="vd-desc">Документальный слой ещё не отснят. Здесь будет фотография предмета до неправильного назначения — плейсхолдер держит композицию и подпись кадра.</desc>
+<rect width="600" height="400" fill="#d9d4c6"/>
+<rect x="24" y="24" width="552" height="352" fill="none" stroke="#a39c85" stroke-width="2" stroke-dasharray="10 8"/>
+<g stroke="#5f5b4e" stroke-width="1.5" opacity="0.6">
+<line x1="24" y1="24" x2="576" y2="376"/>
+<line x1="576" y1="24" x2="24" y2="376"/>
+</g>
+<path d="M255 150 C 255 118, 345 118, 345 150 C 345 180, 320 195, 300 195 C 280 195, 255 180, 255 150 Z" fill="none" stroke="#2b2620" stroke-width="2"/>
+<path d="M266 150 C 266 132, 334 132, 334 150" fill="none" stroke="#2b2620" stroke-width="2"/>
+<rect x="250" y="230" width="100" height="14" fill="none" stroke="#2b2620" stroke-width="2"/>
+<text x="300" y="272" text-anchor="middle" font-family="Georgia, serif" font-size="15" fill="#2b2620">документальный слой (45%) — кадр не отснят</text>
+<text x="300" y="298" text-anchor="middle" font-family="Georgia, serif" font-size="13" fill="#5f5b4e">старая шляпа-федора и панцирная кровать в общаге</text>
+<text x="300" y="336" text-anchor="middle" font-family="'IBM Plex Mono', monospace" font-size="12" fill="#8a8172">placeholder · vlastelin-dofamina</text>
+</svg>

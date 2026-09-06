@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" role="img" aria-labelledby="os-title os-desc">
+<title id="os-title">Заглушка: самодельная табличка с расписанием на шее</title>
+<desc id="os-desc">Документальный слой ещё не отснят. Здесь будет фотография предмета до неправильного назначения — плейсхолдер держит композицию и подпись кадра.</desc>
+<rect width="600" height="400" fill="#d9d4c6"/>
+<rect x="24" y="24" width="552" height="352" fill="none" stroke="#a39c85" stroke-width="2" stroke-dasharray="10 8"/>
+<g stroke="#5f5b4e" stroke-width="1.5" opacity="0.6">
+<line x1="24" y1="24" x2="576" y2="376"/>
+<line x1="576" y1="24" x2="24" y2="376"/>
+</g>
+<rect x="256" y="140" width="88" height="64" fill="none" stroke="#2b2620" stroke-width="2"/>
+<line x1="264" y1="158" x2="336" y2="158" stroke="#2b2620" stroke-width="1.5"/>
+<line x1="264" y1="174" x2="336" y2="174" stroke="#2b2620" stroke-width="1.5"/>
+<line x1="264" y1="190" x2="310" y2="190" stroke="#2b2620" stroke-width="1.5"/>
+<path d="M270 140 L270 100 M330 140 L330 100" stroke="#2b2620" stroke-width="1.5"/>
+<text x="300" y="252" text-anchor="middle" font-family="Georgia, serif" font-size="15" fill="#2b2620">документальный слой (45%) — кадр не отснят</text>
+<text x="300" y="278" text-anchor="middle" font-family="Georgia, serif" font-size="13" fill="#5f5b4e">самодельная табличка с расписанием на шее</text>
+<text x="300" y="326" text-anchor="middle" font-family="'IBM Plex Mono', monospace" font-size="12" fill="#8a8172">placeholder · osemenitel</text>
+</svg>

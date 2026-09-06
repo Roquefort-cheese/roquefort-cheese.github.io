@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" role="img" aria-labelledby="mt-title mt-desc">
+<title id="mt-title">Заглушка: чёрная широкополая шляпа против сквозняка</title>
+<desc id="mt-desc">Документальный слой ещё не отснят. Здесь будет фотография предмета до неправильного назначения — плейсхолдер держит композицию и подпись кадра.</desc>
+<rect width="600" height="400" fill="#d9d4c6"/>
+<rect x="24" y="24" width="552" height="352" fill="none" stroke="#a39c85" stroke-width="2" stroke-dasharray="10 8"/>
+<g stroke="#5f5b4e" stroke-width="1.5" opacity="0.6">
+<line x1="24" y1="24" x2="576" y2="376"/>
+<line x1="576" y1="24" x2="24" y2="376"/>
+</g>
+<circle cx="300" cy="168" r="46" fill="none" stroke="#2b2620" stroke-width="2"/>
+<path d="M254 172 q46 -30 92 0" fill="none" stroke="#2b2620" stroke-width="2"/>
+<text x="300" y="252" text-anchor="middle" font-family="Georgia, serif" font-size="15" fill="#2b2620">документальный слой (45%) — кадр не отснят</text>
+<text x="300" y="278" text-anchor="middle" font-family="Georgia, serif" font-size="13" fill="#5f5b4e">чёрная широкополая шляпа против сквозняка из окна</text>
+<text x="300" y="330" text-anchor="middle" font-family="'IBM Plex Mono', monospace" font-size="12" fill="#8a8172">placeholder · mudrets-tselibata</text>
+</svg>

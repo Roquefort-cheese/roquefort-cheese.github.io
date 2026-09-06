@@ -1,0 +1,76 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "works.schema.json",
+  "title": "Protocol 418 — Work",
+  "type": "object",
+  "required": [
+    "id", "slug", "type", "title", "summary",
+    "process", "narrativePhase", "publicationStatus",
+    "visualDialect", "media", "altText", "credits", "rights"
+  ],
+  "properties": {
+    "id": { "type": "string" },
+    "slug": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+    "type": { "enum": ["theophany", "chronicle", "artifact", "negative-icon", "residue", "protocol"] },
+    "title": { "type": "string" },
+    "summary": { "type": "string", "maxLength": 280 },
+    "process": { "enum": ["holding", "fixation", "generation", "zero-reaction"] },
+    "narrativePhase": { "enum": ["pressure", "wrong-assignment", "performance", "title", "apotheosis", "overheat", "trial", "linoleum", "residue", "fermentation"] },
+    "publicationStatus": { "enum": ["draft", "review", "rights-cleared", "published", "archived"] },
+    "humanAnchor": { "type": "string" },
+    "deficit": { "type": "string" },
+    "bodyNode": { "type": "string" },
+    "object": {
+      "type": "object",
+      "properties": {
+        "originalFunction": { "type": "string" },
+        "wrongFunction": { "type": "string" }
+      }
+    },
+    "witnesses": { "type": "array", "items": { "type": "string" } },
+    "blessing": { "type": ["string", "null"] },
+    "internalDefect": { "type": "string" },
+    "judgment": { "type": "string" },
+    "materialObjection": { "type": "string" },
+    "visualDialect": { "enum": ["holding", "fixation", "generation", "zero-reaction"] },
+    "media": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["src", "kind"],
+        "properties": {
+          "src": { "type": "string" },
+          "kind": { "enum": ["image", "video", "audio"] }
+        }
+      }
+    },
+    "altText": { "type": "string", "minLength": 1 },
+    "credits": { "type": "string" },
+    "rights": { "enum": ["all-rights-reserved", "cc-by-nc", "cc-by-nc-sa", "internal-only"] },
+    "contentNotice": { "type": ["string", "null"] },
+    "relations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["workId", "type"],
+        "properties": {
+          "workId": { "type": "string" },
+          "type": { "enum": ["cause-of", "residue-of", "fermentation-of"] }
+        }
+      }
+    }
+  },
+  "allOf": [
+    { "if": { "properties": { "type": { "const": "theophany" } } },
+      "then": { "required": ["humanAnchor", "bodyNode", "object", "internalDefect", "judgment", "materialObjection"] } },
+    { "if": { "properties": { "type": { "const": "chronicle" } } },
+      "then": { "required": ["witnesses", "relations"] } },
+    { "if": { "properties": { "type": { "const": "residue" } } },
+      "then": { "required": ["materialObjection", "relations"] } },
+    { "if": { "properties": { "type": { "const": "negative-icon" } } },
+      "then": { "required": ["humanAnchor", "object"] } },
+    { "if": { "properties": { "type": { "const": "artifact" } } },
+      "then": { "required": ["credits", "rights"] } }
+  ]
+}

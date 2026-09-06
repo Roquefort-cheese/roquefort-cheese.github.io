@@ -1,0 +1,88 @@
+/* assets/css/layout.css */
+
+.site-header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--room-line);
+  background: var(--room-bg);
+  position: relative;
+  z-index: 20;
+}
+.site-header__mark{
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+  letter-spacing: 0.06em;
+  color: var(--room-ink-soft);
+  text-decoration: none;
+}
+.site-header__mark strong{ color: var(--room-ink); }
+.site-nav{ display: flex; gap: var(--space-4); list-style: none; margin: 0; padding: 0; }
+.site-nav a{
+  text-decoration: none;
+  font-size: var(--step--1);
+  color: var(--room-ink-soft);
+  border-bottom: 1px solid transparent;
+  padding-bottom: 2px;
+  transition: color var(--dur-fast) var(--ease), border-color var(--dur-fast) var(--ease);
+}
+.site-nav a:hover, .site-nav a[aria-current="page"]{
+  color: var(--room-ink);
+  border-color: var(--room-ink-soft);
+}
+
+.site-footer{
+  border-top: 1px solid var(--room-line);
+  padding: var(--space-4);
+  font-size: var(--step--1);
+  color: var(--room-ink-soft);
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+.site-footer a{ color: var(--room-ink-soft); }
+
+.page{
+  max-width: var(--content-w);
+  margin: 0 auto;
+  padding: var(--space-5) var(--space-4);
+}
+.page--wide{ max-width: var(--content-w-wide); }
+
+.page-lede{
+  color: var(--room-ink-soft);
+  max-width: 34rem;
+}
+
+.section{ margin-block: var(--space-6); }
+.section > h2{ margin-bottom: var(--space-3); }
+
+.stack{ display: flex; flex-direction: column; gap: var(--space-3); }
+.cluster{ display: flex; flex-wrap: wrap; gap: var(--space-2); align-items: center; }
+
+.grid-works{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15.5rem, 1fr));
+  gap: var(--space-3);
+}
+
+.grid-laws{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  gap: var(--space-3);
+}
+
+.work-detail__block{
+  padding-block: var(--space-4);
+  border-top: 1px solid var(--room-line);
+}
+.work-detail__block:first-of-type{ border-top: none; padding-top: 0; }
+
+@media (max-width: 40rem){
+  .site-header{ padding: var(--space-2) var(--space-3); flex-wrap: wrap; }
+  .page{ padding: var(--space-4) var(--space-3); }
+  .site-nav{ gap: var(--space-3); }
+}

@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Линолеумный архив — Протокол 418</title>
+<meta name="description" content="Библиотека работ Протокола 418: теофании, хроники, остатки и отрицательные иконы комнаты № 418.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=PT+Serif:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/tokens.css">
+<link rel="stylesheet" href="/assets/css/base.css">
+<link rel="stylesheet" href="/assets/css/layout.css">
+<link rel="stylesheet" href="/assets/css/components.css">
+<link rel="stylesheet" href="/assets/css/states.css">
+
+</head>
+<body class="">
+<a class="skip-link" href="#main">К содержанию</a>
+<header class="site-header">
+  <a class="site-header__mark" href="/">ПРОТОКОЛ <strong>418</strong></a>
+  <nav aria-label="Основная навигация">
+    <ul class="site-nav">
+      <li><a href="/" >Мембрана</a></li>
+      <li><a href="/works/" aria-current="page">Линолеумный архив</a></li>
+      <li><a href="/protocol/" >Бюро</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+
+<section class="page page--wide">
+  <p class="tag">/works — Линолеумный архив</p>
+  <h1>Слой пола после катастрофы</h1>
+  <p class="page-lede">Всё, что не поместилось в биографию обитателей комнаты, оседает здесь. Архивные записи делистятся из общей витрины, но их адреса остаются живыми.</p>
+
+  <div data-library-root>
+    <form class="filter-panel" aria-label="Фильтры архива">
+      <div class="filter-field">
+        <label for="f-process">Процесс</label>
+        <select id="f-process" data-filter-key="process"><option value="">любой</option><option value="holding">Удержание</option><option value="fixation">Залипание</option><option value="generation">Порождение</option><option value="zero-reaction">Нулевая реакция</option></select>
+      </div>
+      <div class="filter-field">
+        <label for="f-phase">Фаза</label>
+        <select id="f-phase" data-filter-key="phase"><option value="">любая</option><option value="apotheosis">апофеоз</option><option value="overheat">перегрев</option><option value="pressure">давление</option><option value="residue">остаток</option><option value="linoleum">линолеум</option><option value="wrong-assignment">неправильное назначение</option></select>
+      </div>
+      <div class="filter-field">
+        <label for="f-type">Тип</label>
+        <select id="f-type" data-filter-key="type"><option value="">любой</option><option value="theophany">теофания</option><option value="residue">остаток</option><option value="negative-icon">отрицательная икона</option><option value="chronicle">хроника</option></select>
+      </div>
+      <div class="filter-field">
+        <label for="f-body">Телесный узел</label>
+        <select id="f-body" data-filter-key="bodyNode"><option value="">любой</option><option value="горло">горло</option><option value="грудь">грудь</option><option value="руки">руки</option></select>
+      </div>
+      <div class="filter-field">
+        <label for="f-q">Предмет / поиск</label>
+        <input id="f-q" type="search" data-filter-key="q" placeholder="вантуз, удлинитель…">
+      </div>
+      <div class="filter-panel__actions">
+        <button type="button" class="btn btn--ghost btn--small" data-filters-reset>Сбросить</button>
+      </div>
+    </form>
+
+    <div class="cluster" style="justify-content:space-between; margin-bottom:1rem;">
+      <div class="sort-control">
+        <span>Сортировка:</span>
+        <div role="radiogroup" aria-label="Сортировка архива">
+          <button type="button" data-sort="chronicle" aria-pressed="true">по хронике</button>
+          <button type="button" data-sort="relations" aria-pressed="false">по связям</button>
+        </div>
+      </div>
+      <button type="button" class="btn btn--ghost" data-raise>Поднять с линолеума</button>
+    </div>
+
+    <p class="results-meta" aria-live="polite"></p>
+    <div class="grid-works" data-library-state="loading"></div>
+
+    <noscript>
+      <p class="status-note">JavaScript отключён — показан полный список без фильтров и сортировки.</p>
+      <ul><li><a href="/works/mudrets-tselibata/">Мудрец Целибата</a> — Бог удержанного импульса и антипафоса: аннулирует чужую величавость чистым уроном от неловкости — и остаётся уязвим перед искренним обращением.</li>
+<li><a href="/works/vlastelin-dofamina/">Властелин Дофамина</a> — Бог интерфейса, уверенного, что стал сознанием. Его осевая неподвижность производит видимость контроля, а нимб зависает на девяноста девяти процентах.</li>
+<li><a href="/works/osemenitel/">Осеменитель</a> — Бог хаоса и космического перепроизводства: превращает заплёванный линолеум в галактики, но так и не научился спрашивать, нужна ли миру ещё одна.</li>
+<li><a href="/works/archont-nedoslannogo/">Архонт Недосланного</a> — Временная теофания, доказывающая, что система умеет порождать новых богов: сила — в одном неотправленном сообщении.</li>
+<li><a href="/works/izolenta-seryogi/">Изолента Серёги</a> — Резинка отвалилась. Никто не засмеялся первым. Серёга молча нашёл изоленту — низовой остаток после апофеоза вантуза.</li>
+<li><a href="/works/travokur-i-bolshaya-shishka/">Травокур и Большая Шишка</a> — Отрицательная икона: показывает, что присутствие может не проходить через апофеоз. Чай и батончик — не магические артефакты.</li>
+<li><a href="/works/obhod-komendanta/">Обход коменданта</a> — Хроника вечера, когда шаги в коридоре на две минуты сделали комнату стерильно нормативной — и апофеоз просто подождал за дверью.</li></ul>
+    </noscript>
+
+    <script type="application/json" id="works-data">[{"id":"w-mudrets-tselibata","slug":"mudrets-tselibata","title":"Мудрец Целибата","summary":"Бог удержанного импульса и антипафоса: аннулирует чужую величавость чистым уроном от неловкости — и остаётся уязвим перед искренним обращением.","type":"theophany","process":"holding","narrativePhase":"apotheosis","bodyNode":"горло","visualDialect":"holding","publicationStatus":"published","thumb":"assets/img/mudrets-tselibata.svg","wrongFunction":"инсигния мудреца, удерживающего собственное вожделение","originalFunction":"чёрная широкополая шляпа против сквозняка из окна","chronologyIndex":0,"relationDegree":3},{"id":"w-vlastelin-dofamina","slug":"vlastelin-dofamina","title":"Властелин Дофамина","summary":"Бог интерфейса, уверенного, что стал сознанием. Его осевая неподвижность производит видимость контроля, а нимб зависает на девяноста девяти процентах.","type":"theophany","process":"fixation","narrativePhase":"apotheosis","bodyNode":"грудь","visualDialect":"fixation","publicationStatus":"published","thumb":"assets/img/vlastelin-dofamina.svg","wrongFunction":"трон для медитации перед бесконечной лентой","originalFunction":"старая шляпа-федора и панцирная кровать в общаге","chronologyIndex":1,"relationDegree":1},{"id":"w-osemenitel","slug":"osemenitel","title":"Осеменитель","summary":"Бог хаоса и космического перепроизводства: превращает заплёванный линолеум в галактики, но так и не научился спрашивать, нужна ли миру ещё одна.","type":"theophany","process":"generation","narrativePhase":"overheat","bodyNode":"руки","visualDialect":"generation","publicationStatus":"published","thumb":"assets/img/osemenitel.svg","wrongFunction":"скрижаль творения, из которой рождаются галактики","originalFunction":"самодельная табличка с расписанием на шее","chronologyIndex":2,"relationDegree":2},{"id":"w-archont-nedoslannogo","slug":"archont-nedoslannogo","title":"Архонт Недосланного","summary":"Временная теофания, доказывающая, что система умеет порождать новых богов: сила — в одном неотправленном сообщении.","type":"theophany","process":"fixation","narrativePhase":"pressure","bodyNode":"грудь","visualDialect":"fixation","publicationStatus":"published","thumb":"assets/img/archont-nedoslannogo.svg","wrongFunction":"чётки, перебираемые вместо ответа","originalFunction":"обычный удлинитель для розетки на двоих","chronologyIndex":3,"relationDegree":3},{"id":"w-izolenta-seryogi","slug":"izolenta-seryogi","title":"Изолента Серёги","summary":"Резинка отвалилась. Никто не засмеялся первым. Серёга молча нашёл изоленту — низовой остаток после апофеоза вантуза.","type":"residue","process":"zero-reaction","narrativePhase":"residue","bodyNode":"руки","visualDialect":"zero-reaction","publicationStatus":"published","thumb":"assets/img/izolenta-seryogi.svg","wrongFunction":null,"originalFunction":"рулон синей изоленты в тумбочке","chronologyIndex":5,"relationDegree":4},{"id":"w-travokur-bolshaya-shishka","slug":"travokur-i-bolshaya-shishka","title":"Травокур и Большая Шишка","summary":"Отрицательная икона: показывает, что присутствие может не проходить через апофеоз. Чай и батончик — не магические артефакты.","type":"negative-icon","process":"zero-reaction","narrativePhase":"linoleum","bodyNode":"—","visualDialect":"zero-reaction","publicationStatus":"published","thumb":"assets/img/travokur-i-bolshaya-shishka.svg","originalFunction":"кружка чая и протеиновый батончик на прикроватной тумбочке перед сном","chronologyIndex":6,"relationDegree":1},{"id":"w-obhod-komendanta","slug":"obhod-komendanta","title":"Обход коменданта","summary":"Хроника вечера, когда шаги в коридоре на две минуты сделали комнату стерильно нормативной — и апофеоз просто подождал за дверью.","type":"chronicle","process":"zero-reaction","narrativePhase":"wrong-assignment","visualDialect":"zero-reaction","publicationStatus":"published","thumb":"assets/img/obhod-komendanta.svg","chronologyIndex":7,"relationDegree":1}]</script>
+  </div>
+</section>
+</main>
+<footer class="site-footer">
+  <span>Протокол 418. Линолеумное небо — иррациональная мифопоэтическая система.</span>
+  <span>Согласие изображённых людей и данные о правах ведутся в приватном реестре и не публикуются.</span>
+</footer>
+<script type="module" src="/assets/js/media-viewer.js"></script>
+<script type="module" src="/assets/js/library.js"></script>
+</body>
+</html>
