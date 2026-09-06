@@ -124,9 +124,6 @@ function layout({ title, description, active, bodyClass = '', extraHead = '', co
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${esc(title)} — Протокол 418</title>
 <meta name="description" content="${esc(description)}">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/css/tokens.css">
 <link rel="stylesheet" href="/assets/css/base.css">
 <link rel="stylesheet" href="/assets/css/layout.css">
@@ -134,6 +131,7 @@ function layout({ title, description, active, bodyClass = '', extraHead = '', co
 <link rel="stylesheet" href="/assets/css/states.css">
 <link rel="stylesheet" href="/assets/css/chaos.css">
 <link rel="stylesheet" href="/assets/css/identity.css">
+<link rel="stylesheet" href="/assets/css/mechanics.css">
 ${extraHead}
 </head>
 <body class="${bodyClass}">
@@ -157,6 +155,7 @@ ${content}
 </footer>
 <script type="module" src="/assets/js/media-viewer.js"></script>
 <script type="module" src="/assets/js/chaos.js"></script>
+<script type="module" src="/assets/js/mechanics.js"></script>
 ${extraScripts}
 </body>
 </html>`;

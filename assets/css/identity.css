@@ -274,3 +274,56 @@ p{max-width:46rem;}
 @media (prefers-reduced-motion: reduce){
   .work-card,.work-card:hover,.membrane-hero figure,.law-card,.title-badge{transform:none!important;}
 }
+
+/* 418.5 identity correction: stable local typography + controlled visual density */
+:root{
+  --display:"Noto Sans Display", "Inter Display", "Noto Sans", Arial, sans-serif;
+  --body:"Inter", "Noto Sans", "Segoe UI", system-ui, sans-serif;
+  --mono:"DejaVu Sans Mono", "Noto Sans Mono", ui-monospace, monospace;
+  --paper:#e7e0d1;
+  --paper-2:#f4eee3;
+  --ink:#161512;
+  --ink-2:#2a2821;
+  --acid:#d9ff3f;
+  --wound:#7f1d24;
+  --violet:#5d3fa5;
+  --cyan:#0b6f66;
+}
+body{font-family:var(--body);color:var(--ink);}
+body,h1,h2,h3,h4,p,button,input,select{font-kerning:normal;font-synthesis:none;}
+h1,h2,h3,h4,.work-card__title,.material-objection,.title-badge,.assignment-row__value,.home-title{
+  font-family:var(--display)!important;
+  font-optical-sizing:auto;
+}
+.home-title,.work-header h1{letter-spacing:-.03em;text-wrap:balance;}
+.page-lede,.work-card__summary,.work-card__analysis,.field-notes__grid p{max-width:62ch;text-wrap:pretty;}
+.tag,.source-stamp,.work-card__signal,.site-header__mark,.site-nav a,.filter-field label,.sort-control,.editorial-layer__signal,.corpus-status,.law-card__number{letter-spacing:.055em;}
+.btn,.btn--ritual,.assignment-submit{letter-spacing:.025em;}
+
+/* safe ink pairs */
+.site-footer,.site-nav a,.page-lede,.work-card__summary,.field-notes__grid p{color:#514a3d!important;}
+.site-header,.site-chaos-stamp,.chaos-ticker,.editorial-layer--glitch,.trial-note{color:#f6f0e5;}
+.tag--temperature-pathos{color:#5d3fa5!important;border-color:#5d3fa5!important;}
+.tag--temperature-glitch{color:#0b6f66!important;border-color:#0b6f66!important;}
+.tag--temperature-absurd{color:#3a2e19!important;border-color:#3a2e19!important;}
+
+/* pointer offset is a mechanical response, not decoration */
+.phase-stage__figure{transform:translate(var(--pointer-x,0),var(--pointer-y,0));}
+.phase-stage[data-phase="performance"] .phase-stage__figure,
+.phase-stage[data-phase="title"] .phase-stage__figure,
+.phase-stage[data-phase="apotheosis"] .phase-stage__figure,
+.phase-stage[data-phase="overheat"] .phase-stage__figure{transform:translate(var(--pointer-x,0),var(--pointer-y,0)) scale(1.04);}
+
+[data-authority="1"] .phase-stage{filter:grayscale(1) contrast(1.18)!important;}
+[data-authority="1"] .phase-stage::before{border-color:var(--wound);}
+
+[data-ghost="1"]{animation:card-ghost .7s steps(2,end)!important;}
+@keyframes card-ghost{0%{filter:none}45%{filter:contrast(1.7) saturate(.2)}70%{transform:translateX(7px)}100%{filter:none}}
+
+.panic-418 .site-header{animation:header-panic .12s steps(2,end) 6}
+@keyframes header-panic{50%{transform:translateX(5px);filter:invert(.08)}}
+
+@media (prefers-reduced-motion: reduce){
+  [data-ghost="1"],.panic-418 .site-header{animation:none!important;}
+  .phase-stage__figure{transform:none!important;}
+}

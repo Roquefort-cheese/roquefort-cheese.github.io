@@ -53,9 +53,9 @@
   --glitch-b:       #ff3b6b;
 
   /* -- типографика -- */
-  --font-display: "PT Serif", Georgia, "Times New Roman", serif;
-  --font-body:    "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
-  --font-mono:    "IBM Plex Mono", "SF Mono", ui-monospace, monospace;
+  --font-display: "Noto Sans Display", "Inter Display", "Noto Sans", Arial, sans-serif;
+  --font-body:    "Inter", "Noto Sans", "Segoe UI", system-ui, sans-serif;
+  --font-mono:    "DejaVu Sans Mono", "Noto Sans Mono", ui-monospace, monospace;
 
   --step--1: clamp(0.82rem, 0.8rem + 0.1vw, 0.9rem);
   --step-0:  clamp(1rem, 0.96rem + 0.2vw, 1.125rem);
