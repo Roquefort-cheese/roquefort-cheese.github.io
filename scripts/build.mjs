@@ -126,13 +126,14 @@ function layout({ title, description, active, bodyClass = '', extraHead = '', co
 <meta name="description" content="${esc(description)}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=PT+Serif:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/css/tokens.css">
 <link rel="stylesheet" href="/assets/css/base.css">
 <link rel="stylesheet" href="/assets/css/layout.css">
 <link rel="stylesheet" href="/assets/css/components.css">
 <link rel="stylesheet" href="/assets/css/states.css">
 <link rel="stylesheet" href="/assets/css/chaos.css">
+<link rel="stylesheet" href="/assets/css/identity.css">
 ${extraHead}
 </head>
 <body class="${bodyClass}">
@@ -151,7 +152,7 @@ ${extraHead}
 ${content}
 </main>
 <footer class="site-footer">
-  <span>Протокол 418. Линолеумное небо — иррациональная мифопоэтическая система.</span>
+  <span>ПРОТОКОЛ 418 · LOWER HEAVEN · иррациональная мифопоэтическая система.</span>
   <span>Согласие изображённых людей и данные о правах ведутся в приватном реестре и не публикуются.</span>
 </footer>
 <script type="module" src="/assets/js/media-viewer.js"></script>
@@ -359,8 +360,8 @@ function renderWorksIndex(works) {
 
   const content = `
 <section class="page page--wide">
-  <p class="tag">/works — Линолеумный архив</p>
-  <h1>Слой пола после катастрофы</h1>
+  <p class="tag">/works — LINОLEUM ARCHIVE / LOWER HEAVEN</p>
+  <h1>Слой пола после катастрофы / 105 свидетельств</h1>
   <p class="page-lede">Всё, что не поместилось в биографию обитателей комнаты, оседает здесь. Архивные записи делистятся из общей витрины, но их адреса остаются живыми.</p>
   <p class="corpus-status"><strong>${listed.length}</strong> опубликованных материалов · <strong>${works.filter((work) => work.source?.kind === 'страница визуального корпуса').length}</strong> страниц исходного корпуса · <strong>${buildableWorks(works).length}</strong> узлов с учётом архива</p>
 
@@ -663,8 +664,8 @@ async function renderProtocol(laws, dialects, editorialCases, works, tone, lore)
 
   const content = `
 <section class="page page--wide">
-  <p class="tag">/protocol — Бюро неправильных назначений</p>
-  <h1>Законы, обязательные и для богов</h1>
+  <p class="tag">/protocol — BUREAU OF WRONG ASSIGNMENTS / 418</p>
+  <h1>Законы, обязательные даже для богов</h1>
   <p class="page-lede">Псевдоофициальный, но не игровой реестр: десять законов, грамматика полей и суд над самой системой.</p>
 
   <section class="section protocol-calibrator">
