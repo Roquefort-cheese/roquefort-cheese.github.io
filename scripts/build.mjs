@@ -311,7 +311,7 @@ function renderWorksIndex(works) {
   <p class="tag">/works — Линолеумный архив</p>
   <h1>Слой пола после катастрофы</h1>
   <p class="page-lede">Всё, что не поместилось в биографию обитателей комнаты, оседает здесь. Архивные записи делистятся из общей витрины, но их адреса остаются живыми.</p>
-  <p class="corpus-status"><strong>${listed.length}</strong> опубликованных материалов · <strong>${buildableWorks(works).length}</strong> узлов в графе с учётом архива · <strong>${listed.filter((work) => work.source?.kind === 'документальная фотография').length}</strong> документальных кадра</p>
+  <p class="corpus-status"><strong>${listed.length}</strong> опубликованных материалов · <strong>${works.filter((work) => work.source?.kind === 'страница визуального корпуса').length}</strong> страниц исходного корпуса · <strong>${buildableWorks(works).length}</strong> узлов с учётом архива</p>
 
   <div data-library-root>
     <form class="filter-panel" aria-label="Фильтры архива">
@@ -363,9 +363,9 @@ function renderWorksIndex(works) {
       id: w.id, slug: w.slug, title: w.title, summary: w.summary, type: w.type,
       process: w.process, narrativePhase: w.narrativePhase, bodyNode: w.bodyNode,
       visualDialect: w.visualDialect, publicationStatus: w.publicationStatus,
-      thumb: w.thumbnail?.src || w.media?.[0]?.src, mediaHeld: Boolean(w.thumbnail || w.contentNotice),
+      thumb: w.thumbnail?.src || w.media?.[0]?.src, mediaHeld: Boolean(w.contentNotice),
       wrongFunction: w.object?.wrongFunction, originalFunction: w.object?.originalFunction,
-      chronologyIndex: w._chronologyIndex, relationDegree: w._relationDegree,
+      chronologyIndex: w._chronologyIndex, relationDegree: w._relationDegree, pageNumber: w.pageNumber || null, pageText: w.pageText || '',
     })))}</script>
   </div>
 
@@ -402,7 +402,7 @@ function renderWorkDetail(work, byId) {
     <div class="work-detail__block work-header">
       <div class="work-header__media">${headerMedia}</div>
       <div>
-        <p class="work-header__eyebrow">${TYPE_LABEL[work.type] || work.type} · ${PROCESS_LABEL[work.process] || work.process}</p>
+        <p class="work-header__eyebrow">${TYPE_LABEL[work.type] || work.type} · ${PROCESS_LABEL[work.process] || work.process}${work.pageNumber ? ` · страница ${work.pageNumber} / 105` : ''}</p>
         <h1>${esc(work.title)}</h1>
         <p>${esc(work.summary)}</p>
         ${work.humanAnchor ? `<p>${esc(work.humanAnchor)}</p>` : ''}
@@ -415,7 +415,7 @@ function renderWorkDetail(work, byId) {
     <div class="work-detail__block work-header">
       <div class="work-header__media">${headerMedia}</div>
       <div>
-        <p class="work-header__eyebrow">${TYPE_LABEL[work.type] || work.type} · ${PROCESS_LABEL[work.process] || work.process}</p>
+        <p class="work-header__eyebrow">${TYPE_LABEL[work.type] || work.type} · ${PROCESS_LABEL[work.process] || work.process}${work.pageNumber ? ` · страница ${work.pageNumber} / 105` : ''}</p>
         <h1>${esc(work.title)}</h1>
         <p>${esc(work.summary)}</p>
       </div>
@@ -469,6 +469,14 @@ function renderWorkDetail(work, byId) {
         <span>0${index + 1}</span>
         <p>${esc(note)}</p>
       </div>`).join('')}</div>
+    </div>`);
+  }
+
+  if (work.pageText) {
+    blocks.push(`
+    <div class="work-detail__block source-transcript">
+      <p class="tag">текстовый слой страницы</p>
+      <p>${esc(work.pageText)}</p>
     </div>`);
   }
 
@@ -576,6 +584,7 @@ async function renderProtocol(laws, dialects, editorialCases, works, tone) {
   const sourcedWorks = works.filter((work) => work.source);
   const documentaryCount = sourcedWorks.filter((work) => work.source.kind === 'документальная фотография').length;
   const apotheosisCount = sourcedWorks.filter((work) => work.source.kind === 'портрет-апофеоз').length;
+  const sourcePageCount = works.filter((work) => work.source?.kind === 'страница визуального корпуса').length;
 
   const trialCase = caseById['case-comendant-face'];
 
@@ -610,6 +619,7 @@ async function renderProtocol(laws, dialects, editorialCases, works, tone) {
       <div><dt>${apotheosisCount}</dt><dd>портрета-апофеоза подключены из стайл-гайда</dd></div>
       <div><dt>${documentaryCount}</dt><dd>предметных документальных кадра опубликованы без узнаваемых лиц</dd></div>
       <div><dt>${works.filter((work) => work.publicationStatus === 'published').length}</dt><dd>материалов доступны в общей витрине</dd></div>
+      <div><dt>${sourcePageCount}</dt><dd>страниц исходного визуального корпуса подключено</dd></div>
       <div><dt>${buildableWorks(works).length}</dt><dd>адресов остаются живыми с учётом архива</dd></div>
     </dl>
   </section>

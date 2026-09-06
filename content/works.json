@@ -15,20 +15,28 @@
       "originalFunction": "чёрная широкополая шляпа против сквозняка из окна",
       "wrongFunction": "инсигния мудреца, удерживающего собственное вожделение"
     },
-    "witnesses": ["сосед по комнате", "камера в чужой руке"],
+    "witnesses": [
+      "сосед по комнате",
+      "камера в чужой руке"
+    ],
     "blessing": "аннулирует чужую величавость уроном от неловкости",
     "internalDefect": "энергия удержания рано или поздно обязательно прорывается сквозь сдерживание",
     "judgment": "уязвим перед искренним обращением, на которое нельзя ответить красивой дистанцией",
     "materialObjection": "треснувшая оправа очков и дешёвая цепочка на шее",
     "visualDialect": "holding",
-    "media": [{
-      "src": "assets/img/mudrets-tselibata.webp",
-      "kind": "image",
-      "width": 752,
-      "height": 1071,
-      "caption": "Удержание становится видимым у горла: молния прорывает позу, а бытовая шляпа не успевает стать вечной короной."
-    }],
-    "thumbnail": { "src": "assets/img/mudrets-tselibata.svg", "kind": "image" },
+    "media": [
+      {
+        "src": "assets/img/mudrets-tselibata.webp",
+        "kind": "image",
+        "width": 752,
+        "height": 1071,
+        "caption": "Удержание становится видимым у горла: молния прорывает позу, а бытовая шляпа не успевает стать вечной короной."
+      }
+    ],
+    "thumbnail": {
+      "src": "assets/img/mudrets-tselibata.svg",
+      "kind": "image"
+    },
     "altText": "Портрет молодого человека в чёрной широкополой шляпе и круглых очках; вокруг шеи вспыхивают фиолетовые молнии, на фоне виден оккультный круг, внизу — титул «Мудрец Целибата».",
     "fieldNotes": [
       "Удержание здесь не равно молчанию. Оно накапливает речь до такой плотности, что первой ломается собственная дистанция героя.",
@@ -43,7 +51,10 @@
     "rights": "cc-by-nc",
     "contentNotice": "Изображение содержит стилизованный солярный знак, который может быть прочитан как политически токсичный символ. Он показан только в контексте материального возражения и суда над присвоенной властью.",
     "relations": [
-      { "workId": "w-archont-nedoslannogo", "type": "cause-of" }
+      {
+        "workId": "w-archont-nedoslannogo",
+        "type": "cause-of"
+      }
     ]
   },
   {
@@ -62,19 +73,24 @@
       "originalFunction": "старая шляпа-федора и панцирная кровать в общаге",
       "wrongFunction": "трон для медитации перед бесконечной лентой"
     },
-    "witnesses": ["двое из соседней комнаты", "телефон, оставленный включённым"],
+    "witnesses": [
+      "двое из соседней комнаты",
+      "телефон, оставленный включённым"
+    ],
     "blessing": "производит видимость контроля над собственным вниманием",
     "internalDefect": "нимб похож на индикатор загрузки: просветление всё время на девяноста девяти процентах",
     "judgment": "чем дольше он управляет вниманием, тем больше внимание управляет им",
     "materialObjection": "обшарпанная кровать и мятая одежда, развешанная прямо в кадре",
     "visualDialect": "fixation",
-    "media": [{
-      "src": "assets/img/vlastelin-dofamina.webp",
-      "kind": "image",
-      "width": 700,
-      "height": 999,
-      "caption": "Центральная ось, койки и зависший нимб собирают контроль, который уже принадлежит не человеку, а интерфейсу."
-    }],
+    "media": [
+      {
+        "src": "assets/img/vlastelin-dofamina.webp",
+        "kind": "image",
+        "width": 700,
+        "height": 999,
+        "caption": "Центральная ось, койки и зависший нимб собирают контроль, который уже принадлежит не человеку, а интерфейсу."
+      }
+    ],
     "altText": "Молодой человек левитирует в позе лотоса между двухъярусными койками; над федорой светится голубой индикатор-нимб, а грудь раскрыта зелёно-розовым цифровым разломом.",
     "fieldNotes": [
       "Композиция держится на неподвижной центральной оси: чем спокойнее поза, тем заметнее, что внимание уже стало периферийным устройством ленты.",
@@ -89,7 +105,10 @@
     "rights": "cc-by-nc",
     "contentNotice": null,
     "relations": [
-      { "workId": "w-osemenitel", "type": "cause-of" }
+      {
+        "workId": "w-osemenitel",
+        "type": "cause-of"
+      }
     ]
   },
   {
@@ -108,19 +127,24 @@
       "originalFunction": "самодельная табличка с расписанием на шее",
       "wrongFunction": "скрижаль творения, из которой рождаются галактики"
     },
-    "witnesses": ["вся комната в сборе", "случайный гость с этажа"],
+    "witnesses": [
+      "вся комната в сборе",
+      "случайный гость с этажа"
+    ],
     "blessing": "производит миры из бытового мусора одним движением рук",
     "internalDefect": "не умеет спросить, нужна ли миру ещё одна галактика",
     "judgment": "плодит миры, пока сами миры не попросят его замолчать",
     "materialObjection": "текст на табличке-скрижали набран кустарным самодельным шрифтом",
     "visualDialect": "generation",
-    "media": [{
-      "src": "assets/img/osemenitel.webp",
-      "kind": "image",
-      "width": 752,
-      "height": 993,
-      "caption": "Порождение перегревается: ДНК, огонь, вода и космос спорят за одно тело, а улыбка оставляет ему человеческий масштаб."
-    }],
+    "media": [
+      {
+        "src": "assets/img/osemenitel.webp",
+        "kind": "image",
+        "width": 752,
+        "height": 993,
+        "caption": "Порождение перегревается: ДНК, огонь, вода и космос спорят за одно тело, а улыбка оставляет ему человеческий масштаб."
+      }
+    ],
     "altText": "Улыбающаяся фигура с раскрытыми ладонями превращена в космическое тело из огня, воды и туманностей; вокруг проходит светящаяся спираль ДНК, во рту — самодельная табличка.",
     "fieldNotes": [
       "Избыток знаков работает только потому, что лицо остаётся узнаваемым. Без улыбки перед нами была бы космическая эмблема, а не человек под действием титула.",
@@ -135,7 +159,10 @@
     "rights": "cc-by-nc",
     "contentNotice": null,
     "relations": [
-      { "workId": "w-vantuz-sudby", "type": "cause-of" }
+      {
+        "workId": "w-vantuz-sudby",
+        "type": "cause-of"
+      }
     ]
   },
   {
@@ -154,13 +181,20 @@
       "originalFunction": "обычный удлинитель для розетки на двоих",
       "wrongFunction": "чётки, перебираемые вместо ответа"
     },
-    "witnesses": ["сосед на соседней койке"],
+    "witnesses": [
+      "сосед на соседней койке"
+    ],
     "blessing": "делает любую чужую исповедь незавершённой одним своим присутствием",
     "internalDefect": "нимб составлен из непрочитанных уведомлений — это бэклог, а не благодать",
     "judgment": "суд наступает, когда сосед не просит объяснений, ставит рядом кружку и говорит «я тут»",
     "materialObjection": "дешёвый зависший пиксель в слове «печатает…»",
     "visualDialect": "fixation",
-    "media": [{ "src": "assets/img/archont-nedoslannogo.svg", "kind": "image" }],
+    "media": [
+      {
+        "src": "assets/img/archont-nedoslannogo.svg",
+        "kind": "image"
+      }
+    ],
     "altText": "Силуэт на нижней койке с удлинителем, обмотанным вокруг руки как чётки; под грудиной пиксельное «печатает…», нимб собран из значков непрочитанных уведомлений.",
     "fieldNotes": [
       "Архонт — не новый постоянный персонаж, а проверка порождающей способности системы: одна задержка ответа должна произвести временную теофанию целиком.",
@@ -175,7 +209,10 @@
     "rights": "cc-by-nc",
     "contentNotice": null,
     "relations": [
-      { "workId": "w-mudrets-tselibata", "type": "fermentation-of" }
+      {
+        "workId": "w-mudrets-tselibata",
+        "type": "fermentation-of"
+      }
     ]
   },
   {
@@ -194,13 +231,21 @@
       "originalFunction": "вантуз на деревянной ручке для засора в раковине",
       "wrongFunction": "скипетр, прочищающий карму этажа"
     },
-    "witnesses": ["вся комната", "Серёга, ближе всех к двери"],
+    "witnesses": [
+      "вся комната",
+      "Серёга, ближе всех к двери"
+    ],
     "blessing": "на секунду наводит порядок одним взмахом бытового предмета",
     "internalDefect": "резиновая часть истончена десятками предыдущих бытовых применений",
     "judgment": "суд смеха, который никто не решился произнести первым",
     "materialObjection": "треснувшая резиновая часть вантуза",
     "visualDialect": "holding",
-    "media": [{ "src": "assets/img/vantuz-sudby.svg", "kind": "image" }],
+    "media": [
+      {
+        "src": "assets/img/vantuz-sudby.svg",
+        "kind": "image"
+      }
+    ],
     "altText": "Вантуз на деревянной ручке, увенчанный тонким фиолетовым контуром короны; резиновая часть треснута, рядом — нашивка студсовета как бытовая улика.",
     "fieldNotes": [
       "Вантуз входит в священное только через неправильное применение и именно поэтому обязан остаться вантузом. Если бытовая функция исчезнет, исчезнет и напряжение между мирами.",
@@ -215,7 +260,10 @@
     "rights": "cc-by-nc",
     "contentNotice": null,
     "relations": [
-      { "workId": "w-izolenta-seryogi", "type": "cause-of" }
+      {
+        "workId": "w-izolenta-seryogi",
+        "type": "cause-of"
+      }
     ]
   },
   {
@@ -234,7 +282,12 @@
     },
     "materialObjection": "отклеенный обрывок изоленты на сером линолеумном полу",
     "visualDialect": "zero-reaction",
-    "media": [{ "src": "assets/img/izolenta-seryogi.svg", "kind": "image" }],
+    "media": [
+      {
+        "src": "assets/img/izolenta-seryogi.svg",
+        "kind": "image"
+      }
+    ],
     "altText": "Рулон синей изоленты и отклеенный обрывок на сером линолеумном полу, без бликов и подписи.",
     "fieldNotes": [
       "Остаток не объясняет кульминацию и не превращает помощь в мораль. Он просто доказывает, что за аватарами сохранились люди.",
@@ -249,8 +302,14 @@
     "rights": "cc-by-nc",
     "contentNotice": null,
     "relations": [
-      { "workId": "w-vantuz-sudby", "type": "residue-of" },
-      { "workId": "w-archont-nedoslannogo", "type": "fermentation-of" }
+      {
+        "workId": "w-vantuz-sudby",
+        "type": "residue-of"
+      },
+      {
+        "workId": "w-archont-nedoslannogo",
+        "type": "fermentation-of"
+      }
     ]
   },
   {
@@ -269,7 +328,12 @@
     },
     "blessing": null,
     "visualDialect": "zero-reaction",
-    "media": [{ "src": "assets/img/travokur-i-bolshaya-shishka.svg", "kind": "image" }],
+    "media": [
+      {
+        "src": "assets/img/travokur-i-bolshaya-shishka.svg",
+        "kind": "image"
+      }
+    ],
     "altText": "Кружка с паром и протеиновый батончик на прикроватной тумбочке, приглушённые серо-бежевые тона, без свечения и нимба.",
     "fieldNotes": [
       "Нулевая реакция — не скрытая сверхсила. Чай и батончик перестают работать, если назначить их магическими артефактами всерьёз.",
@@ -284,7 +348,10 @@
     "rights": "cc-by-nc",
     "contentNotice": null,
     "relations": [
-      { "workId": "w-izolenta-seryogi", "type": "fermentation-of" }
+      {
+        "workId": "w-izolenta-seryogi",
+        "type": "fermentation-of"
+      }
     ]
   },
   {
@@ -296,9 +363,17 @@
     "process": "zero-reaction",
     "narrativePhase": "wrong-assignment",
     "publicationStatus": "published",
-    "witnesses": ["сосед по комнате", "камера, оставленная включённой"],
+    "witnesses": [
+      "сосед по комнате",
+      "камера, оставленная включённой"
+    ],
     "visualDialect": "zero-reaction",
-    "media": [{ "src": "assets/img/obhod-komendanta.svg", "kind": "image" }],
+    "media": [
+      {
+        "src": "assets/img/obhod-komendanta.svg",
+        "kind": "image"
+      }
+    ],
     "altText": "Дверь комнаты с полоской света внизу, тень от двух ног за дверью и связка ключей на уровне ручки.",
     "fieldNotes": [
       "Комендант здесь не злодей и не бог, а ангел внешнего запроса: его приближение заставляет комнату срочно притвориться реальностью.",
@@ -313,7 +388,10 @@
     "rights": "cc-by-nc",
     "contentNotice": null,
     "relations": [
-      { "workId": "w-mudrets-tselibata", "type": "cause-of" }
+      {
+        "workId": "w-mudrets-tselibata",
+        "type": "cause-of"
+      }
     ]
   },
   {
@@ -331,13 +409,15 @@
     },
     "materialObjection": "белый кабель соскальзывает с тумбочки и возвращает космогонию к розетке",
     "visualDialect": "zero-reaction",
-    "media": [{
-      "src": "assets/img/nepribrannoe-koyka.webp",
-      "kind": "image",
-      "width": 606,
-      "height": 1280,
-      "caption": "Кровать ещё не стала алтарём. Она просто хранит слишком много отложенной жизни."
-    }],
+    "media": [
+      {
+        "src": "assets/img/nepribrannoe-koyka.webp",
+        "kind": "image",
+        "width": 606,
+        "height": 1280,
+        "caption": "Кровать ещё не стала алтарём. Она просто хранит слишком много отложенной жизни."
+      }
+    ],
     "altText": "Узкая кровать в комнате общежития завалена одеждой, контейнерами, рюкзаком и картонной коробкой; у тумбочки свисает белый кабель, внизу виден линолеум.",
     "fieldNotes": [
       "В Протоколе 418 хаосу предшествует Неприбранное — вещи, которым не хватило сегодняшнего времени. Этот кадр фиксирует исходное давление без цифрового эффекта.",
@@ -352,7 +432,10 @@
     "rights": "all-rights-reserved",
     "contentNotice": null,
     "relations": [
-      { "workId": "w-vlastelin-dofamina", "type": "cause-of" }
+      {
+        "workId": "w-vlastelin-dofamina",
+        "type": "cause-of"
+      }
     ]
   },
   {
@@ -370,13 +453,15 @@
     },
     "materialObjection": "край серого кроссовка остаётся в нижнем углу и отменяет научную величавость установки",
     "visualDialect": "generation",
-    "media": [{
-      "src": "assets/img/bytovoy-kollayder.webp",
-      "kind": "image",
-      "width": 606,
-      "height": 1280,
-      "caption": "Космология начинается на белой электроплите и пахнет ещё не приготовленным ужином."
-    }],
+    "media": [
+      {
+        "src": "assets/img/bytovoy-kollayder.webp",
+        "kind": "image",
+        "width": 606,
+        "height": 1280,
+        "caption": "Космология начинается на белой электроплите и пахнет ещё не приготовленным ужином."
+      }
+    ],
     "altText": "На чёрной сковороде поверх белой электрической плиты лежит крупный замороженный ком еды; в нижнем углу кадра виден край серого кроссовка.",
     "fieldNotes": [
       "Неправильное назначение не маскирует исходную функцию: сковорода остаётся сковородой, даже когда названа ускорителем частиц.",
@@ -391,7 +476,4315 @@
     "rights": "all-rights-reserved",
     "contentNotice": null,
     "relations": [
-      { "workId": "w-osemenitel", "type": "cause-of" }
+      {
+        "workId": "w-osemenitel",
+        "type": "cause-of"
+      }
     ]
+  },
+  {
+    "id": "w-corpus-page-001",
+    "slug": "corpus-page-001",
+    "type": "artifact",
+    "title": "Материал 001",
+    "summary": "Страница 1 из исходного визуального корпуса «общага — сюрреализм».",
+    "process": "zero-reaction",
+    "narrativePhase": "pressure",
+    "publicationStatus": "published",
+    "visualDialect": "zero-reaction",
+    "media": [
+      {
+        "src": "assets/img/corpus/page-001.webp",
+        "kind": "image",
+        "width": 708,
+        "height": 1000,
+        "caption": "Исходный лист корпуса, страница 001 из 105."
+      }
+    ],
+    "thumbnail": {
+      "src": "assets/img/corpus/page-001.webp",
+      "kind": "image"
+    },
+    "altText": "Страница 001 исходного корпуса «общага — сюрреализм».",
+    "credits": "исходный корпус «общага — сюрреализм», предоставленный для публикации; обработка архивной копии — Протокол 418",
+    "rights": "all-rights-reserved",
+    "source": {
+      "collection": "общага — сюрреализм",
+      "item": "страница 001 из 105",
+      "kind": "страница визуального корпуса"
+    },
+    "pageNumber": 1,
+    "pageText": "",
+    "fieldNotes": [
+      "Текстовый слой не выделен из PDF: материал сохранён как визуальный лист без домысливания содержания."
+    ],
+    "object": {
+      "originalFunction": "лист исходной PDF-хроники",
+      "wrongFunction": "архивный объект внутри Линолеумного архива"
+    }
+  },
+  {
+    "id": "w-corpus-page-002",
+    "slug": "corpus-page-002",
+    "type": "artifact",
+    "title": "Материал 002",
+    "summary": "Страница 2 из исходного визуального корпуса «общага — сюрреализм».",
+    "process": "zero-reaction",
+    "narrativePhase": "pressure",
+    "publicationStatus": "published",
+    "visualDialect": "zero-reaction",
+    "media": [
+      {
+        "src": "assets/img/corpus/page-002.webp",
+        "kind": "image",
+        "width": 708,
+        "height": 1000,
+        "caption": "Исходный лист корпуса, страница 002 из 105."
+      }
+    ],
+    "thumbnail": {
+      "src": "assets/img/corpus/page-002.webp",
+      "kind": "image"
+    },
+    "altText": "Страница 002 исходного корпуса «общага — сюрреализм».",
+    "credits": "исходный корпус «общага — сюрреализм», предоставленный для публикации; обработка архивной копии — Протокол 418",
+    "rights": "all-rights-reserved",
+    "source": {
+      "collection": "общага — сюрреализм",
+      "item": "страница 002 из 105",
+      "kind": "страница визуального корпуса"
+    },
+    "pageNumber": 2,
+    "pageText": "",
+    "fieldNotes": [
+      "Текстовый слой не выделен из PDF: материал сохранён как визуальный лист без домысливания содержания."
+    ],
+    "object": {
+      "originalFunction": "лист исходной PDF-хроники",
+      "wrongFunction": "архивный объект внутри Линолеумного архива"
+    }
+  },
+  {
+    "id": "w-corpus-page-003",
+    "slug": "corpus-page-003",
+    "type": "artifact",
+    "title": "Материал 003",
+    "summary": "Страница 3 из исходного визуального корпуса «общага — сюрреализм».",
+    "process": "zero-reaction",
+    "narrativePhase": "pressure",
+    "publicationStatus": "published",
+    "visualDialect": "zero-reaction",
+    "media": [
+      {
+        "src": "assets/img/corpus/page-003.webp",
+        "kind": "image",
+        "width": 708,
+        "height": 1000,
+        "caption": "Исходный лист корпуса, страница 003 из 105."
+      }
+    ],
+    "thumbnail": {
+      "src": "assets/img/corpus/page-003.webp",
+      "kind": "image"
+    },
+    "altText": "Страница 003 исходного корпуса «общага — сюрреализм».",
+    "credits": "исходный корпус «общага — сюрреализм», предоставленный для публикации; обработка архивной копии — Протокол 418",
+    "rights": "all-rights-reserved",
+    "source": {
+      "collection": "общага — сюрреализм",
+      "item": "страница 003 из 105",
+      "kind": "страница визуального корпуса"
+    },
+    "pageNumber": 3,
+    "pageText": "",
+    "fieldNotes": [
+      "Текстовый слой не выделен из PDF: материал сохранён как визуальный лист без домысливания содержания."
+    ],
+    "object": {
+      "originalFunction": "лист исходной PDF-хроники",
+      "wrongFunction": "архивный объект внутри Линолеумного архива"
+    }
+  },
+  {
+    "id": "w-corpus-page-004",
+    "slug": "corpus-page-004",
+    "type": "artifact",
+    "title": "Материал 004",
+    "summary": "Страница 4 из исходного визуального корпуса «общага — сюрреализм».",
+    "process": "zero-reaction",
+    "narrativePhase": "pressure",
+    "publicationStatus": "published",
+    "visualDialect": "zero-reaction",
+    "media": [
+      {
+        "src": "assets/img/corpus/page-004.webp",
+        "kind": "image",
+        "width": 708,
+        "height": 1000,
+        "caption": "Исходный лист корпуса, страница 004 из 105."
+      }
+    ],
+    "thumbnail": {
+      "src": "assets/img/corpus/page-004.webp",
+      "kind": "image"
+    },
+    "altText": "Страница 004 исходного корпуса «общага — сюрреализм».",
+    "credits": "исходный корпус «общага — сюрреализм», предоставленный для публикации; обработка архивной копии — Протокол 418",
+    "rights": "all-rights-reserved",
+    "source": {
+      "collection": "общага — сюрреализм",
+      "item": "страница 004 из 105",
+      "kind": "страница визуального корпуса"
+    },
+    "pageNumber": 4,
+    "pageText": "",
+    "fieldNotes": [
+      "Текстовый слой не выделен из PDF: материал сохранён как визуальный лист без домысливания содержания."
+    ],
+    "object": {
+      "originalFunction": "лист исходной PDF-хроники",
+      "wrongFunction": "архивный объект внутри Линолеумного архива"
+    }
+  },
+  {
+    "id": "w-corpus-page-005",
+    "slug": "corpus-page-005",
+    "type": "artifact",
+    "title": "Материал 005",
+    "summary": "Страница 5 из исходного визуального корпуса «общага — сюрреализм».",
+    "process": "zero-reaction",
+    "narrativePhase": "pressure",
+    "publicationStatus": "published",
+    "visualDialect": "zero-reaction",
+    "media": [
+      {
+        "src": "assets/img/corpus/page-005.webp",
+        "kind": "image",
+        "width": 708,
+        "height": 1000,
+        "caption": "Исходный лист корпуса, страница 005 из 105."
+      }
+    ],
+    "thumbnail": {
+      "src": "assets/img/corpus/page-005.webp",
+      "kind": "image"
+    },
+    "altText": "Страница 005 исходного корпуса «общага — сюрреализм».",
+    "credits": "исходный корпус «общага — сюрреализм», предоставленный для публикации; обработка архивной копии — Протокол 418",
+    "rights": "all-rights-reserved",
+    "source": {
+      "collection": "общага — сюрреализм",
+      "item": "страница 005 из 105",
+      "kind": "страница визуального корпуса"
+    },
+    "pageNumber": 5,
+    "pageText": "",
+    "fieldNotes": [
+      "Текстовый слой не выделен из PDF: материал сохранён как визуальный лист без домысливания содержания."
+    ],
+    "object": {
+      "originalFunction": "лист исходной PDF-хроники",
+      "wrongFunction": "архивный объект внутри Линолеумного архива"
+    }
+  },
+  {
+    "id": "w-corpus-page-006",
+    "slug": "corpus-page-006",
+    "type": "artifact",
+    "title": "Материал 006",
+    "summary": "Страница 6 из исходного визуального корпуса «общага — сюрреализм».",
+    "process": "zero-reaction",
+    "narrativePhase": "pressure",
+    "publicationStatus": "published",
+    "visualDialect": "zero-reaction",
+    "media": [
+      {
+        "src": "assets/img/corpus/page-006.webp",
+        "kind": "image",
+        "width": 708,
+        "height": 1000,
+        "caption": "Исходный лист корпуса, страница 006 из 105."
+      }
+    ],
+    "thumbnail": {
+      "src": "assets/img/corpus/page-006.webp",
+      "kind": "image"
+    },
+    "altText": "Страница 006 исходного корпуса «общага — сюрреализм».",
+    "credits": "исходный корпус «общага — сюрреализм», предоставленный для публикации; обработка архивной копии — Протокол 418",
+    "rights": "all-rights-reserved",
+    "source": {
+      "collection": "общага — сюрреализм",
+      "item": "страница 006 из 105",
+      "kind": "страница визуального корпуса"
+    },
+    "pageNumber": 6,
+    "pageText": "",
+    "fieldNotes": [
+      "Текстовый слой не выделен из PDF: материал сохранён как визуальный лист без домысливания содержания."
+    ],
+    "object": {
+      "originalFunction": "лист исходной PDF-хроники",
+      "wrongFunction": "архивный объект внутри Линолеумного архива"
+    }
+  },
+  {
+    "id": "w-corpus-page-007",
+    "slug": "corpus-page-007",
+    "type": "artifact",
+    "title": "Материал 007",
+    "summary": "Страница 7 из исходного визуального корпуса «общага — сюрреализм».",
+    "process": "zero-reaction",
+    "narrativePhase": "pressure",
+    "publicationStatus": "published",
+    "visualDialect": "zero-reaction",
+    "media": [
+      {
+        "src": "assets/img/corpus/page-007.webp",
+        "kind": "image",
+        "width": 708,
+        "height": 1000,
+        "caption": "Исходный лист корпуса, страница 007 из 105."
+      }
+    ],
+    "thumbnail": {
+      "src": "assets/img/corpus/page-007.webp",
+      "kind": "image"
+    },
+    "altText": "Страница 007 исходного корпуса «общага — сюрреализм».",
+    "credits": "исходный корпус «общага — сюрреализм», предоставленный для публикации; обработка архивной копии — Протокол 418",
+    "rights": "all-rights-reserved",
+    "source": {
+      "collection": "общага — сюрреализм",
+      "item": "страница 007 из 105",
+      "kind": "страница визуального корпуса"
+    },
+    "pageNumber": 7,
+    "pageText": "",
+    "fieldNotes": [
+      "Текстовый слой не выделен из PDF: материал сохранён как визуальный лист без домысливания содержания."
+    ],
+    "object": {
+      "originalFunction": "лист исходной PDF-хроники",
+      "wrongFunction": "архивный объект внутри Линолеумного архива"
+    }
+  },
+  {
+    "id": "w-corpus-page-008",
+    "slug": "corpus-page-008",
+    "type": "artifact",
+    "title": "Материал 008",
+    "summary": "Страница 8 из исходного визуального корпуса «общага — сюрреализм».",
+    "process": "zero-reaction",
+    "narrativePhase": "pressure",
+    "publicationStatus": "published",
+    "visualDialect": "zero-reaction",
+    "media": [
+      {
+        "src": "assets/img/corpus/page-008.webp",
+        "kind": "image",
+        "width": 708,
+        "height": 1000,
+        "caption": "Исходный лист корпуса, страница 008 из 105."
+      }
+    ],
+    "thumbnail": {
+      "src": "assets/img/corpus/page-008.webp",
+      "kind": "image"
+    },
+    "altText": "Страница 008 исходного корпуса «общага — сюрреализм».",
+    "credits": "исходный корпус «общага — сюрреализм», предоставленный для публикации; обработка архивной копии — Протокол 418",
+    "rights": "all-rights-reserved",
+    "source": {
+      "collection": "общага — сюрреализм",
+      "item": "страница 008 из 105",
+      "kind": "страница визуального корпуса"
+    },
+    "pageNumber": 8,
+    "pageText": "",
+    "fieldNotes": [
+      "Текстовый слой не выделен из PDF: материал сохранён как визуальный лист без домысливания содержания."
+    ],
+    "object": {
+      "originalFunction": "лист исходной PDF-хроники",
+      "wrongFunction": "архивный объект внутри Линолеумного архива"
+    }
+  },
+  {
+    "id": "w-corpus-page-009",
+    "slug": "corpus-page-009",
+    "type": "artifact",
+    "title": "Материал 009",
+    "summary": "Страница 9 из исходного визуального корпуса «общага — сюрреализм».",
+    "process": "zero-reaction",
+    "narrativePhase": "pressure",
+    "publicationStatus": "published",
+    "visualDialect": "zero-reaction",
+    "media": [
+      {
+        "src": "assets/img/corpus/page-009.webp",
+        "kind": "image",
+        "width": 708,
+        "height": 1000,
+        "caption": "Исходный лист корпуса, страница 009 из 105."
+      }
+    ],
+    "thumbnail": {
+      "src": "assets/img/corpus/page-009.webp",
+      "kind": "image"
+    },
+    "altText": "Страница 009 исходного корпуса «общага — сюрреализм».",
+    "credits": "исходный корпус «общага — сюрреализм», предоставленный для публикации; обработка архивной копии — Протокол 418",
+    "rights": "all-rights-reserved",
+    "source": {
+      "collection": "общага — сюрреализм",
+      "item": "страница 009 из 105",
+      "kind": "страница визуального корпуса"
+    },
+    "pageNumber": 9,
+    "pageText": "",
+    "fieldNotes": [
+      "Текстовый слой не выделен из PDF: материал сохранён как визуальный лист без домысливания содержания."
+    ],
+    "object": {
+      "originalFunction": "лист исходной PDF-хроники",
+      "wrongFunction": "архивный объект внутри Линолеумного архива"
+    }
+  },
+  {
+    "id": "w-corpus-page-010",
+    "slug": "corpus-page-010",
+    "type": "artifact",
+    "title": "Материал 010",
+    "summary": "Страница 10 из исходного визуального корпуса «общага — сюрреализм».",
+    "process": "zero-reaction",
+    "narrativePhase": "pressure",
+    "publicationStatus": "published",
+    "visualDialect": "zero-reaction",
+    "media": [
+      {
+        "src": "assets/img/corpus/page-010.webp",
+        "kind": "image",
+        "width": 708,
+        "height": 1000,
+        "caption": "Исходный лист корпуса, страница 010 из 105."
+      }
+    ],
+    "thumbnail": {
+      "src": "assets/img/corpus/page-010.webp",
+      "kind": "image"
+    },
+    "altText": "Страница 010 исходного корпуса «общага — сюрреализм».",
+    "credits": "исходный корпус «общага — сюрреализм», предоставленный для публикации; обработка архивной копии — Протокол 418",
+    "rights": "all-rights-reserved",
+    "source": {
+      "collection": "общага — сюрреализм",
+      "item": "страница 010 из 105",
+      "kind": "страница визуального корпуса"
+    },
+    "pageNumber": 10,
+    "pageText": "",
+    "fieldNotes": [
+      "Текстовый слой не выделен из PDF: материал сохранён как визуальный лист без домысливания содержания."
+    ],
+    "object": {
+      "originalFunction": "лист исходной PDF-хроники",
+      "wrongFunction": "архивный объект внутри Линолеумного архива"
+    }
+  },
+  {
+    "id": "w-corpus-page-011",
+    "slug": "corpus-page-011",
+    "type": "artifact",
+    "title": "Материал 011",
+    "summary": "Страница 11 из исходного визуального корпуса «общага — сюрреализм».",
+    "process": "zero-reaction",
+    "narrativePhase": "pressure",
+    "publicationStatus": "published",
+    "visualDialect": "zero-reaction",
+    "media": [
+      {
+        "src": "assets/img/corpus/page-011.webp",
+        "kind": "image",
+        "width": 708,
+        "height": 1000,
+        "caption": "Исходный лист корпуса, страница 011 из 105."
+      }
+    ],
+    "thumbnail": {
+      "src": "assets/img/corpus/page-011.webp",
+      "kind": "image"
+    },
+    "altText": "Страница 011 исходного корпуса «общага — сюрреализм».",
+    "credits": "исходный корпус «общага — сюрреализм», предоставленный для публикации; обработка архивной копии — Протокол 418",
+    "rights": "all-rights-reserved",
+    "source": {
+      "collection": "общага — сюрреализм",
+      "item": "страница 011 из 105",
+      "kind": "страница визуального корпуса"
+    },
+    "pageNumber": 11,
+    "pageText": "",
+    "fieldNotes": [
+      "Текстовый слой не выделен из PDF: материал сохранён как визуальный лист без домысливания содержания."
+    ],
+    "object": {
+      "originalFunction": "лист исходной PDF-хроники",
+      "wrongFunction": "архивный объект внутри Линолеумного архива"
+    }
+  },
+  {
+    "id": "w-corpus-page-012",
+    "slug": "corpus-page-012",
+    "type": "artifact",
+    "title": "Материал 012",
+    "summary": "Страница 12 из исходного визуального корпуса «общага — сюрреализм».",
+    "process": "zero-reaction",
+    "narrativePhase": "pressure",
+    "publicationStatus": "published",
+    "visualDialect": "zero-reaction",
+    "media": [
+      {
+        "src": "assets/img/corpus/page-012.webp",
+        "kind": "image",
+        "width": 708,
+        "height": 1000,
+        "caption": "Исходный лист корпуса, страница 012 из 105."
+      }
+    ],
+    "thumbnail": {
+      "src": "assets/img/corpus/page-012.webp",
+      "kind": "image"
+    },
+    "altText": "Страница 012 исходного корпуса «общага — сюрреализм».",
+    "credits": "исходный корпус «общага — сюрреализм», предоставленный для публикации; обработка архивной копии — Протокол 418",
+    "rights": "all-rights-reserved",
+    "source": {
+      "collection": "общага — сюрреализм",
+      "item": "страница 012 из 105",
+      "kind": "страница визуального корпуса"
+    },
+    "pageNumber": 12,
+    "pageText": "",
+    "fieldNotes": [
+      "Текстовый слой не выделен из PDF: материал сохранён как визуальный лист без домысливания содержания."
+    ],
+    "object": {
+      "originalFunction": "лист исходной PDF-хроники",
+      "wrongFunction": "архивный объект внутри Линолеумного архива"
+    }
+  },
+  {
+    "id": "w-corpus-page-013",
+    "slug": "corpus-page-013",
+    "type": "artifact",
+    "title": "Материал 013",
+    "summary": "Страница 13 из исходного визуального корпуса «общага — сюрреализм».",
+    "process": "zero-reaction",
+    "narrativePhase": "pressure",
+    "publicationStatus": "published",
+    "visualDialect": "zero-reaction",
+    "media": [
+      {
+        "src": "assets/img/corpus/page-013.webp",
+        "kind": "image",
+        "width": 708,
+        "height": 1000,
+        "caption": "Исходный лист корпуса, страница 013 из 105."
+      }
+    ],
+    "thumbnail": {
+      "src": "assets/img/corpus/page-013.webp",
+      "kind": "image"
+    },
+    "altText": "Страница 013 исходного корпуса «общага — сюрреализм».",
+    "credits": "исходный корпус «общага — сюрреализм», предоставленный для публикации; обработка архивной копии — Протокол 418",
+    "rights": "all-rights-reserved",
+    "source": {
+      "collection": "общага — сюрреализм",
+      "item": "страница 013 из 105",
+      "kind": "страница визуального корпуса"
+    },
+    "pageNumber": 13,
+    "pageText": "",
+    "fieldNotes": [
+      "Текстовый слой не выделен из PDF: материал сохранён как визуальный лист без домысливания содержания."
+    ],
+    "object": {
+      "originalFunction": "лист исходной PDF-хроники",
+      "wrongFunction": "архивный объект внутри Линолеумного архива"
+    }
+  },
+  {
+    "id": "w-corpus-page-014",
+    "slug": "corpus-page-014",
+    "type": "artifact",
+    "title": "Материал 014",
+    "summary": "Страница 14 из исходного визуального корпуса «общага — сюрреализм».",
+    "process": "zero-reaction",
+    "narrativePhase": "pressure",
+    "publicationStatus": "published",
+    "visualDialect": "zero-reaction",
+    "media": [
+      {
+        "src": "assets/img/corpus/page-014.webp",
+        "kind": "image",
+        "width": 708,
+        "height": 1000,
+        "caption": "Исходный лист корпуса, страница 014 из 105."
+      }
+    ],
+    "thumbnail": {
+      "src": "assets/img/corpus/page-014.webp",
+      "kind": "image"
+    },
+    "altText": "Страница 014 исходного корпуса «общага — сюрреализм».",
+    "credits": "исходный корпус «общага — сюрреализм», предоставленный для публикации; обработка архивной копии — Протокол 418",
+    "rights": "all-rights-reserved",
+    "source": {
+      "collection": "общага — сюрреализм",
+      "item": "страница 014 из 105",
+      "kind": "страница визуального корпуса"
+    },
+    "pageNumber": 14,
+    "pageText": "",
+    "fieldNotes": [
+      "Текстовый слой не выделен из PDF: материал сохранён как визуальный лист без домысливания содержания."
+    ],
+    "object": {
+      "originalFunction": "лист исходной PDF-хроники",
+      "wrongFunction": "архивный объект внутри Линолеумного архива"
+    }
+  },
+  {
+    "id": "w-corpus-page-015",
+    "slug": "corpus-page-015",
+    "type": "artifact",
+    "title": "Материал 015",
+    "summary": "Страница 15 из исходного визуального корпуса «общага — сюрреализм».",
+    "process": "zero-reaction",
+    "narrativePhase": "pressure",
+    "publicationStatus": "published",
+    "visualDialect": "zero-reaction",
+    "media": [
+      {
+        "src": "assets/img/corpus/page-015.webp",
+        "kind": "image",
+        "width": 708,
+        "height": 1000,
+        "caption": "Исходный лист корпуса, страница 015 из 105."
+      }
+    ],
+    "thumbnail": {
+      "src": "assets/img/corpus/page-015.webp",
+      "kind": "image"
+    },
+    "altText": "Страница 015 исходного корпуса «общага — сюрреализм».",
+    "credits": "исходный корпус «общага — сюрреализм», предоставленный для публикации; обработка архивной копии — Протокол 418",
+    "rights": "all-rights-reserved",
+    "source": {
+      "collection": "общага — сюрреализм",
+      "item": "страница 015 из 105",
+      "kind": "страница визуального корпуса"
+    },
+    "pageNumber": 15,
+    "pageText": "",
+    "fieldNotes": [
+      "Текстовый слой не выделен из PDF: материал сохранён как визуальный лист без домысливания содержания."
+    ],
+    "object": {
+      "originalFunction": "лист исходной PDF-хроники",
+      "wrongFunction": "архивный объект внутри Линолеумного архива"
+    }
+  },
+  {
+    "id": "w-corpus-page-016",
+    "slug": "corpus-page-016",
+    "type": "artifact",
+    "title": "Материал 016",
+    "summary": "Страница 16 из исходного визуального корпуса «общага — сюрреализм».",
+    "process": "zero-reaction",
+    "narrativePhase": "pressure",
+    "publicationStatus": "published",
+    "visualDialect": "zero-reaction",
+    "media": [
+      {
+        "src": "assets/img/corpus/page-016.webp",
+        "kind": "image",
+        "width": 708,
+        "height": 1000,
+        "caption": "Исходный лист корпуса, страница 016 из 105."
+      }
+    ],
+    "thumbnail": {
+      "src": "assets/img/corpus/page-016.webp",
+      "kind": "image"
+    },
+    "altText": "Страница 016 исходного корпуса «общага — сюрреализм».",
+    "credits": "исходный корпус «общага — сюрреализм», предоставленный для публикации; обработка архивной копии — Протокол 418",
+    "rights": "all-rights-reserved",
+    "source": {
+      "collection": "общага — сюрреализм",
+      "item": "страница 016 из 105",
+      "kind": "страница визуального корпуса"
+    },
+    "pageNumber": 16,
+    "pageText": "",
+    "fieldNotes": [
+      "Текстовый слой не выделен из PDF: материал сохранён как визуальный лист без домысливания содержания."
+    ],
+    "object": {
+      "originalFunction": "лист исходной PDF-хроники",
+      "wrongFunction": "архивный объект внутри Линолеумного архива"
+    }
+  },
+  {
+    "id": "w-corpus-page-017",
+    "slug": "corpus-page-017",
+    "type": "artifact",
+    "title": "Материал 017",
+    "summary": "Страница 17 из исходного визуального корпуса «общага — сюрреализм».",
+    "process": "zero-reaction",
+    "narrativePhase": "pressure",
+    "publicationStatus": "published",
+    "visualDialect": "zero-reaction",
+    "media": [
+      {
+        "src": "assets/img/corpus/page-017.webp",
+        "kind": "image",
+        "width": 708,
+        "height": 1000,
+        "caption": "Исходный лист корпуса, страница 017 из 105."
+      }
+    ],
+    "thumbnail": {
+      "src": "assets/img/corpus/page-017.webp",
+      "kind": "image"
+    },
+    "altText": "Страница 017 исходного корпуса «общага — сюрреализм».",
+    "credits": "исходный корпус «общага — сюрреализм», предоставленный для публикации; обработка архивной копии — Протокол 418",
+    "rights": "all-rights-reserved",
+    "source": {
+      "collection": "общага — сюрреализм",
+      "item": "страница 017 из 105",
+      "kind": "страница визуального корпуса"
+    },
+    "pageNumber": 17,
+    "pageText": "",
+    "fieldNotes": [
+      "Текстовый слой не выделен из PDF: материал сохранён как визуальный лист без домысливания содержания."
+    ],
+    "object": {
+      "originalFunction": "лист исходной PDF-хроники",
+      "wrongFunction": "архивный объект внутри Линолеумного архива"
+    }
+  },
+  {
+    "id": "w-corpus-page-018",
+    "slug": "corpus-page-018",
+    "type": "artifact",
+    "title": "Материал 018",
+    "summary": "Страница 18 из исходного визуального корпуса «общага — сюрреализм».",
+    "process": "zero-reaction",
+    "narrativePhase": "pressure",
+    "publicationStatus": "published",
+    "visualDialect": "zero-reaction",
+    "media": [
+      {
+        "src": "assets/img/corpus/page-018.webp",
+        "kind": "image",
+        "width": 708,
+        "height": 1000,
+        "caption": "Исходный лист корпуса, страница 018 из 105."
+      }
+    ],
+    "thumbnail": {
+      "src": "assets/img/corpus/page-018.webp",
+      "kind": "image"
+    },
+    "altText": "Страница 018 исходного корпуса «общага — сюрреализм».",
+    "credits": "исходный корпус «общага — сюрреализм», предоставленный для публикации; обработка архивной копии — Протокол 418",
+    "rights": "all-rights-reserved",
+    "source": {
+      "collection": "общага — сюрреализм",
+      "item": "страница 018 из 105",
+      "kind": "страница визуального корпуса"
+    },
+    "pageNumber": 18,
+    "pageText": "общага в стиле груз 200 комендант приехал",
+    "fieldNotes": [
+      "Текстовый слой страницы: общага в стиле груз 200 комендант приехал"
+    ],
+    "object": {
+      "originalFunction": "лист исходной PDF-хроники",
+      "wrongFunction": "архивный объект внутри Линолеумного архива"
+    }
+  },
+  {
+    "id": "w-corpus-page-019",
+    "slug": "corpus-page-019",
+    "type": "artifact",
+    "title": "Материал 019",
+    "summary": "Страница 19 из исходного визуального корпуса «общага — сюрреализм».",
+    "process": "zero-reaction",
+    "narrativePhase": "pressure",
+    "publicationStatus": "published",
+    "visualDialect": "zero-reaction",
+    "media": [
+      {
+        "src": "assets/img/corpus/page-019.webp",
+        "kind": "image",
+        "width": 708,
+        "height": 1000,
+        "caption": "Исходный лист корпуса, страница 019 из 105."
+      }
+    ],
+    "thumbnail": {
+      "src": "assets/img/corpus/page-019.webp",
+      "kind": "image"
+    },
+    "altText": "Страница 019 исходного корпуса «общага — сюрреализм».",
+    "credits": "исходный корпус «общага — сюрреализм», предоставленный для публикации; обработка архивной копии — Протокол 418",
+    "rights": "all-rights-reserved",
+    "source": {
+      "collection": "общага — сюрреализм",
+      "item": "страница 019 из 105",
+      "kind": "страница визуального корпуса"
+    },
+    "pageNumber": 19,
+    "pageText": "",
+    "fieldNotes": [
+      "Текстовый слой не выделен из PDF: материал сохранён как визуальный лист без домысливания содержания."
+    ],
+    "object": {
+      "originalFunction": "лист исходной PDF-хроники",
+      "wrongFunction": "архивный объект внутри Линолеумного архива"
+    }
+  },
+  {
+    "id": "w-corpus-page-020",
+    "slug": "corpus-page-020",
+    "type": "artifact",
+    "title": "Материал 020",
+    "summary": "Страница 20 из исходного визуального корпуса «общага — сюрреализм».",
+    "process": "zero-reaction",
+    "narrativePhase": "pressure",
+    "publicationStatus": "published",
+    "visualDialect": "zero-reaction",
+    "media": [
+      {
+        "src": "assets/img/corpus/page-020.webp",
+        "kind": "image",
+        "width": 708,
+        "height": 1000,
+        "caption": "Исходный лист корпуса, страница 020 из 105."
+      }
+    ],
+    "thumbnail": {
+      "src": "assets/img/corpus/page-020.webp",
+      "kind": "image"
+    },
+    "altText": "Страница 020 исходного корпуса «общага — сюрреализм».",
+    "credits": "исходный корпус «общага — сюрреализм», предоставленный для публикации; обработка архивной копии — Протокол 418",
+    "rights": "all-rights-reserved",
+    "source": {
+      "collection": "общага — сюрреализм",
+      "item": "страница 020 из 105",
+      "kind": "страница визуального корпуса"
+    },
+    "pageNumber": 20,
+    "pageText": "",
+    "fieldNotes": [
+      "Текстовый слой не выделен из PDF: материал сохранён как визуальный лист без домысливания содержания."
+    ],
+    "object": {
+      "originalFunction": "лист исходной PDF-хроники",
+      "wrongFunction": "архивный объект внутри Линолеумного архива"
+    }
+  },
+  {
+    "id": "w-corpus-page-021",
+    "slug": "corpus-page-021",
+    "type": "artifact",
+    "title": "Материал 021",
+    "summary": "Страница 21 из исходного визуального корпуса «общага — сюрреализм».",
+    "process": "zero-reaction",
+    "narrativePhase": "pressure",
+    "publicationStatus": "published",
+    "visualDialect": "zero-reaction",
+    "media": [
+      {
+        "src": "assets/img/corpus/page-021.webp",
+        "kind": "image",
+        "width": 708,
+        "height": 1000,
+        "caption": "Исходный лист корпуса, страница 021 из 105."
+      }
+    ],
+    "thumbnail": {
+      "src": "assets/img/corpus/page-021.webp",
+      "kind": "image"
+    },
+    "altText": "Страница 021 исходного корпуса «общага — сюрреализм».",
+    "credits": "исходный корпус «общага — сюрреализм», предоставленный для публикации; обработка архивной копии — Протокол 418",
+    "rights": "all-rights-reserved",
+    "source": {
+      "collection": "общага — сюрреализм",
+      "item": "страница 021 из 105",
+      "kind": "страница визуального корпуса"
+    },
+    "pageNumber": 21,
+    "pageText": "",
+    "fieldNotes": [
+      "Текстовый слой не выделен из PDF: материал сохранён как визуальный лист без домысливания содержания."
+    ],
+    "object": {
+      "originalFunction": "лист исходной PDF-хроники",
+      "wrongFunction": "архивный объект внутри Линолеумного архива"
+    }
+  },
+  {
+    "id": "w-corpus-page-022",
+    "slug": "corpus-page-022",
+    "type": "artifact",
+    "title": "Материал 022",
+    "summary": "Страница 22 из исходного визуального корпуса «общага — сюрреализм».",
+    "process": "zero-reaction",
+    "narrativePhase": "pressure",
+    "publicationStatus": "published",
+    "visualDialect": "zero-reaction",
+    "media": [
+      {
+        "src": "assets/img/corpus/page-022.webp",
+        "kind": "image",
+        "width": 708,
+        "height": 1000,
+        "caption": "Исходный лист корпуса, страница 022 из 105."
+      }
+    ],
+    "thumbnail": {
+      "src": "assets/img/corpus/page-022.webp",
+      "kind": "image"
+    },
+    "altText": "Страница 022 исходного корпуса «общага — сюрреализм».",
+    "credits": "исходный корпус «общага — сюрреализм», предоставленный для публикации; обработка архивной копии — Протокол 418",
+    "rights": "all-rights-reserved",
+    "source": {
+      "collection": "общага — сюрреализм",
+      "item": "страница 022 из 105",
+      "kind": "страница визуального корпуса"
+    },
+    "pageNumber": 22,
+    "pageText": "",
+    "fieldNotes": [
+      "Текстовый слой не выделен из PDF: материал сохранён как визуальный лист без домысливания содержания."
+    ],
+    "object": {
+      "originalFunction": "лист исходной PDF-хроники",
+      "wrongFunction": "архивный объект внутри Линолеумного архива"
+    }
+  },
+  {
+    "id": "w-corpus-page-023",
+    "slug": "corpus-page-023",
+    "type": "artifact",
+    "title": "Материал 023",
+    "summary": "Страница 23 из исходного визуального корпуса «общага — сюрреализм».",
+    "process": "zero-reaction",
+    "narrativePhase": "pressure",
+    "publicationStatus": "published",
+    "visualDialect": "zero-reaction",
+    "media": [
+      {
+        "src": "assets/img/corpus/page-023.webp",
+        "kind": "image",
+        "width": 708,
+        "height": 1000,
+        "caption": "Исходный лист корпуса, страница 023 из 105."
+      }
+    ],
+    "thumbnail": {
+      "src": "assets/img/corpus/page-023.webp",
+      "kind": "image"
+    },
+    "altText": "Страница 023 исходного корпуса «общага — сюрреализм».",
+    "credits": "исходный корпус «общага — сюрреализм», предоставленный для публикации; обработка архивной копии — Протокол 418",
+    "rights": "all-rights-reserved",
+    "source": {
+      "collection": "общага — сюрреализм",
+      "item": "страница 023 из 105",
+      "kind": "страница визуального корпуса"
+    },
+    "pageNumber": 23,
+    "pageText": "",
+    "fieldNotes": [
+      "Текстовый слой не выделен из PDF: материал сохранён как визуальный лист без домысливания содержания."
+    ],
+    "object": {
+      "originalFunction": "лист исходной PDF-хроники",
+      "wrongFunction": "архивный объект внутри Линолеумного архива"
+    }
+  },
+  {
+    "id": "w-corpus-page-024",
+    "slug": "corpus-page-024",
+    "type": "artifact",
+    "title": "Материал 024",
+    "summary": "Страница 24 из исходного визуального корпуса «общага — сюрреализм».",
+    "process": "zero-reaction",
+    "narrativePhase": "pressure",
+    "publicationStatus": "published",
+    "visualDialect": "zero-reaction",
+    "media": [
+      {
+        "src": "assets/img/corpus/page-024.webp",
+        "kind": "image",
+        "width": 708,
+        "height": 1000,
+        "caption": "Исходный лист корпуса, страница 024 из 105."
+      }
+    ],
+    "thumbnail": {
+      "src": "assets/img/corpus/page-024.webp",
+      "kind": "image"
+    },
+    "altText": "Страница 024 исходного корпуса «общага — сюрреализм».",
+    "credits": "исходный корпус «общага — сюрреализм», предоставленный для публикации; обработка архивной копии — Протокол 418",
+    "rights": "all-rights-reserved",
+    "source": {
+      "collection": "общага — сюрреализм",
+      "item": "страница 024 из 105",
+      "kind": "страница визуального корпуса"
+    },
+    "pageNumber": 24,
+    "pageText": "",
+    "fieldNotes": [
+      "Текстовый слой не выделен из PDF: материал сохранён как визуальный лист без домысливания содержания."
+    ],
+    "object": {
+      "originalFunction": "лист исходной PDF-хроники",
+      "wrongFunction": "архивный объект внутри Линолеумного архива"
+    }
+  },
+  {
+    "id": "w-corpus-page-025",
+    "slug": "corpus-page-025",
+    "type": "artifact",
+    "title": "Материал 025",
+    "summary": "Страница 25 из исходного визуального корпуса «общага — сюрреализм».",
+    "process": "zero-reaction",
+    "narrativePhase": "pressure",
+    "publicationStatus": "published",
+    "visualDialect": "zero-reaction",
+    "media": [
+      {
+        "src": "assets/img/corpus/page-025.webp",
+        "kind": "image",
+        "width": 708,
+        "height": 1000,
+        "caption": "Исходный лист корпуса, страница 025 из 105."
+      }
+    ],
+    "thumbnail": {
+      "src": "assets/img/corpus/page-025.webp",
+      "kind": "image"
+    },
+    "altText": "Страница 025 исходного корпуса «общага — сюрреализм».",
+    "credits": "исходный корпус «общага — сюрреализм», предоставленный для публикации; обработка архивной копии — Протокол 418",
+    "rights": "all-rights-reserved",
+    "source": {
+      "collection": "общага — сюрреализм",
+      "item": "страница 025 из 105",
+      "kind": "страница визуального корпуса"
+    },
+    "pageNumber": 25,
+    "pageText": "Никто не воспринимал его всерьез, пока концентрация его нерастраченной жизненной энергии не достигла критической массы. Разорвав кожаный чокер сдерживания, он перестал пытаться казаться вампиром и стал аватаром самой Темной Материи. Его",
+    "fieldNotes": [
+      "Текстовый слой страницы: Никто не воспринимал его всерьез, пока концентрация его нерастраченной жизненной энергии не достигла критической массы. Разорвав кожаный чокер сдерживания, он перестал пытаться казаться вампиром и стал аватаром самой Темной Материи. Его"
+    ],
+    "object": {
+      "originalFunction": "лист исходной PDF-хроники",
+      "wrongFunction": "архивный объект внутри Линолеумного архива"
+    }
+  },
+  {
+    "id": "w-corpus-page-026",
+    "slug": "corpus-page-026",
+    "type": "artifact",
+    "title": "Материал 026",
+    "summary": "Страница 26 из исходного визуального корпуса «общага — сюрреализм».",
+    "process": "zero-reaction",
+    "narrativePhase": "pressure",
+    "publicationStatus": "published",
+    "visualDialect": "zero-reaction",
+    "media": [
+      {
+        "src": "assets/img/corpus/page-026.webp",
+        "kind": "image",
+        "width": 708,
+        "height": 1000,
+        "caption": "Исходный лист корпуса, страница 026 из 105."
+      }
+    ],
+    "thumbnail": {
+      "src": "assets/img/corpus/page-026.webp",
+      "kind": "image"
+    },
+    "altText": "Страница 026 исходного корпуса «общага — сюрреализм».",
+    "credits": "исходный корпус «общага — сюрреализм», предоставленный для публикации; обработка архивной копии — Протокол 418",
+    "rights": "all-rights-reserved",
+    "source": {
+      "collection": "общага — сюрреализм",
+      "item": "страница 026 из 105",
+      "kind": "страница визуального корпуса"
+    },
+    "pageNumber": 26,
+    "pageText": "шляпа-федора теперь скрывает портал в ревущую бездну, а из кончиков пальцев струится фиолетовая мана пустоты. Он — холодный инквизитор астрала, вытягивающий энергию из чужого стыда. Аннулирует любые магические атаки и статусные эффекты противников. Чем больше пафоса использует враг, тем сильнее Мудрец бьет в ответ чистым уроном от неловкости.",
+    "fieldNotes": [
+      "Текстовый слой страницы: шляпа-федора теперь скрывает портал в ревущую бездну, а из кончиков пальцев струится фиолетовая мана пустоты. Он — холодный инквизитор астрала, вытягивающий энергию из чужого стыда. Аннулирует любые магические атаки и статусные эффекты противников. Чем больше пафоса использует враг, тем сильнее Мудрец бьет в ответ чистым уроном от неловкости."
+    ],
+    "object": {
+      "originalFunction": "лист исходной PDF-хроники",
+      "wrongFunction": "архивный объект внутри Линолеумного архива"
+    }
+  },
+  {
+    "id": "w-corpus-page-027",
+    "slug": "corpus-page-027",
+    "type": "artifact",
+    "title": "Материал 027",
+    "summary": "Страница 27 из исходного визуального корпуса «общага — сюрреализм».",
+    "process": "zero-reaction",
+    "narrativePhase": "pressure",
+    "publicationStatus": "published",
+    "visualDialect": "zero-reaction",
+    "media": [
+      {
+        "src": "assets/img/corpus/page-027.webp",
+        "kind": "image",
+        "width": 708,
+        "height": 1000,
+        "caption": "Исходный лист корпуса, страница 027 из 105."
+      }
+    ],
+    "thumbnail": {
+      "src": "assets/img/corpus/page-027.webp",
+      "kind": "image"
+    },
+    "altText": "Страница 027 исходного корпуса «общага — сюрреализм».",
+    "credits": "исходный корпус «общага — сюрреализм», предоставленный для публикации; обработка архивной копии — Протокол 418",
+    "rights": "all-rights-reserved",
+    "source": {
+      "collection": "общага — сюрреализм",
+      "item": "страница 027 из 105",
+      "kind": "страница визуального корпуса"
+    },
+    "pageNumber": 27,
+    "pageText": "Познав абсолютную тщетность бытия через бесконечный скроллинг ленты, он вознесся, загрузив свое сознание в эфир. Расколов фальшивую плоть, он обнажил свою истинную суть — неоновый программный код. ПарЯ над грязными матрасами в позе лотоса, осененный священным голографическим нимбом буферизации, он питается чужими лайками и вниманием. Он — архитектор цифровых иллюзий, способный переписать саму матрицу этого общежития.",
+    "fieldNotes": [
+      "Текстовый слой страницы: Познав абсолютную тщетность бытия через бесконечный скроллинг ленты, он вознесся, загрузив свое сознание в эфир. Расколов фальшивую плоть, он обнажил свою истинную суть — неоновый программный код. ПарЯ над грязными матрасами в позе лотоса, осененный священным голографическим нимбом буферизации, он питается чужими лайками и вниманием. Он — архитектор цифровых иллюзий, способный переписать саму матрицу этого общежития."
+    ],
+    "object": {
+      "originalFunction": "лист исходной PDF-хроники",
+      "wrongFunction": "архивный объект внутри Линолеумного архива"
+    }
+  },
+  {
+    "id": "w-corpus-page-028",
+    "slug": "corpus-page-028",
+    "type": "artifact",
+    "title": "Материал 028",
+    "summary": "Страница 28 из исходного визуального корпуса «общага — сюрреализм».",
+    "process": "zero-reaction",
+    "narrativePhase": "pressure",
+    "publicationStatus": "published",
+    "visualDialect": "zero-reaction",
+    "media": [
+      {
+        "src": "assets/img/corpus/page-028.webp",
+        "kind": "image",
+        "width": 708,
+        "height": 1000,
+        "caption": "Исходный лист корпуса, страница 028 из 105."
+      }
+    ],
+    "thumbnail": {
+      "src": "assets/img/corpus/page-028.webp",
+      "kind": "image"
+    },
+    "altText": "Страница 028 исходного корпуса «общага — сюрреализм».",
+    "credits": "исходный корпус «общага — сюрреализм», предоставленный для публикации; обработка архивной копии — Протокол 418",
+    "rights": "all-rights-reserved",
+    "source": {
+      "collection": "общага — сюрреализм",
+      "item": "страница 028 из 105",
+      "kind": "страница визуального корпуса"
+    },
+    "pageNumber": 28,
+    "pageText": "Снижает инициативу всех существ в комнате до нуля. Враги забывают, зачем хотели нанести удар, и проваливаются в бесконечный думскроллинг. Рожденный в горниле бытовой ярости, он отверг слабую человеческую оболочку. Его плоть теперь — кипящая магма и звездная пыль, а глаза прожигают ткань реальности светом сверхновых. Золотая кипа вплавилась в его космический череп, а покрытый",
+    "fieldNotes": [
+      "Текстовый слой страницы: Снижает инициативу всех существ в комнате до нуля. Враги забывают, зачем хотели нанести удар, и проваливаются в бесконечный думскроллинг. Рожденный в горниле бытовой ярости, он отверг слабую человеческую оболочку. Его плоть теперь — кипящая магма и звездная пыль, а глаза прожигают ткань реальности светом сверхновых. Золотая кипа вплавилась в его космический череп, а покрытый"
+    ],
+    "object": {
+      "originalFunction": "лист исходной PDF-хроники",
+      "wrongFunction": "архивный объект внутри Линолеумного архива"
+    }
+  },
+  {
+    "id": "w-corpus-page-029",
+    "slug": "corpus-page-029",
+    "type": "artifact",
+    "title": "Материал 029",
+    "summary": "Страница 29 из исходного визуального корпуса «общага — сюрреализм».",
+    "process": "zero-reaction",
+    "narrativePhase": "pressure",
+    "publicationStatus": "published",
+    "visualDialect": "zero-reaction",
+    "media": [
+      {
+        "src": "assets/img/corpus/page-029.webp",
+        "kind": "image",
+        "width": 708,
+        "height": 1000,
+        "caption": "Исходный лист корпуса, страница 029 из 105."
+      }
+    ],
+    "thumbnail": {
+      "src": "assets/img/corpus/page-029.webp",
+      "kind": "image"
+    },
+    "altText": "Страница 029 исходного корпуса «общага — сюрреализм».",
+    "credits": "исходный корпус «общага — сюрреализм», предоставленный для публикации; обработка архивной копии — Протокол 418",
+    "rights": "all-rights-reserved",
+    "source": {
+      "collection": "общага — сюрреализм",
+      "item": "страница 029 из 105",
+      "kind": "страница визуального корпуса"
+    },
+    "pageNumber": 29,
+    "pageText": "дочеловеческими рунами ржавый тесак стал Ключом Творения. Он — абсолютная, необузданная сила эволюции, превращающая заплеванный линолеум в новые галактики. С ним нельзя договориться, его можно только пережить. Игнорирует логику пространства. Любой физический урон впитывается в Первородный Океан внутри его грудной клетки, порождая агрессивные формы жизни.",
+    "fieldNotes": [
+      "Текстовый слой страницы: дочеловеческими рунами ржавый тесак стал Ключом Творения. Он — абсолютная, необузданная сила эволюции, превращающая заплеванный линолеум в новые галактики. С ним нельзя договориться, его можно только пережить. Игнорирует логику пространства. Любой физический урон впитывается в Первородный Океан внутри его грудной клетки, порождая агрессивные формы жизни."
+    ],
+    "object": {
+      "originalFunction": "лист исходной PDF-хроники",
+      "wrongFunction": "архивный объект внутри Линолеумного архива"
+    }
+  },
+  {
+    "id": "w-corpus-page-030",
+    "slug": "corpus-page-030",
+    "type": "artifact",
+    "title": "Материал 030",
+    "summary": "Страница 30 из исходного визуального корпуса «общага — сюрреализм».",
+    "process": "zero-reaction",
+    "narrativePhase": "pressure",
+    "publicationStatus": "published",
+    "visualDialect": "zero-reaction",
+    "media": [
+      {
+        "src": "assets/img/corpus/page-030.webp",
+        "kind": "image",
+        "width": 708,
+        "height": 1000,
+        "caption": "Исходный лист корпуса, страница 030 из 105."
+      }
+    ],
+    "thumbnail": {
+      "src": "assets/img/corpus/page-030.webp",
+      "kind": "image"
+    },
+    "altText": "Страница 030 исходного корпуса «общага — сюрреализм».",
+    "credits": "исходный корпус «общага — сюрреализм», предоставленный для публикации; обработка архивной копии — Протокол 418",
+    "rights": "all-rights-reserved",
+    "source": {
+      "collection": "общага — сюрреализм",
+      "item": "страница 030 из 105",
+      "kind": "страница визуального корпуса"
+    },
+    "pageNumber": 30,
+    "pageText": "Общажный Рагнарёк",
+    "fieldNotes": [
+      "Текстовый слой страницы: Общажный Рагнарёк"
+    ],
+    "object": {
+      "originalFunction": "лист исходной PDF-хроники",
+      "wrongFunction": "архивный объект внутри Линолеумного архива"
+    }
+  },
+  {
+    "id": "w-corpus-page-031",
+    "slug": "corpus-page-031",
+    "type": "artifact",
+    "title": "Материал 031",
+    "summary": "Страница 31 из исходного визуального корпуса «общага — сюрреализм».",
+    "process": "zero-reaction",
+    "narrativePhase": "pressure",
+    "publicationStatus": "published",
+    "visualDialect": "zero-reaction",
+    "media": [
+      {
+        "src": "assets/img/corpus/page-031.webp",
+        "kind": "image",
+        "width": 708,
+        "height": 1000,
+        "caption": "Исходный лист корпуса, страница 031 из 105."
+      }
+    ],
+    "thumbnail": {
+      "src": "assets/img/corpus/page-031.webp",
+      "kind": "image"
+    },
+    "altText": "Страница 031 исходного корпуса «общага — сюрреализм».",
+    "credits": "исходный корпус «общага — сюрреализм», предоставленный для публикации; обработка архивной копии — Протокол 418",
+    "rights": "all-rights-reserved",
+    "source": {
+      "collection": "общага — сюрреализм",
+      "item": "страница 031 из 105",
+      "kind": "страница визуального корпуса"
+    },
+    "pageNumber": 31,
+    "pageText": "Ткань мироздания окончательно порвана. В центре комнаты образовалась сверхмассивная черная дыра, засасывающая гравитацию, здравый смысл, коробки из-под пиццы, Доширак и одинокие носки. Это точка абсолютного невозврата. Столкновение Абсолютов: Осеменитель навис над полем боя как космический левиафан. Он пытается переписать геном Вселенной своим раскаленным руническим тесаком, извергая сверхновые прямо в эпицентр сингулярности. Властелин Дофамина развернул вокруг себя непробиваемый купол из программного кода матрицы. Он пытается отформатировать реальность и загнать двух других богов в вечную, сводящую с ума буферизацию. Мудрец Целибата кастует чистую темную материю. Силой накопленной фиолетовой маны он голыми руками швыряет черные дыры, пытаясь поглотить чужой пафос и схлопнуть пространство в точку. Победители: И пока наверху решается судьба мультивселенной, истинная сила покоится на дне. В эпицентре Большого Взрыва, под летящими макаронами и распадающейся материей, Травокур меланхолично сёрбает чаёк, а Большая Шишка невозмутимо доедает свой батончик. Их механизмы защиты оказались сильнее божественной магии. Хаос преходящ. Дзен — вечен.",
+    "fieldNotes": [
+      "Текстовый слой страницы: Ткань мироздания окончательно порвана. В центре комнаты образовалась сверхмассивная черная дыра, засасывающая гравитацию, здравый смысл, коробки из-под пиццы, Доширак и одинокие носки. Это точка абсолютного невозврата. Столкновение Абсолютов: Осеменитель навис над полем боя как космический левиафан. Он пытается переписать геном Вселенной своим раскаленным руническим тесаком, извергая сверхновые прямо в эпицентр сингулярности. Властелин Дофамина развернул вокруг себя непробиваемый купол из программного кода матрицы. Он пытается отформатировать реальность и загнать двух других богов в вечную, сводящую с ума буферизацию. Мудрец Целибата кастует чистую темную материю. Силой накопленной фиолетовой маны он голыми руками швыряет черные дыры, пытаясь поглотить чужой пафос и схлопнуть пространство в точку. Победители: И пока наверху решается судьба мультивселенной, истинная сила покоится на дне. В эпицентре Большого Взрыва, под летящими макаронами и распадающейся материей, Травокур меланхолично сёрбает чаёк, а Большая Шишка невозмутимо доедает свой батончик. Их механизмы защиты оказались сильнее божественной магии. Хаос преходящ. Дзен — вечен."
+    ],
+    "object": {
+      "originalFunction": "лист исходной PDF-хроники",
+      "wrongFunction": "архивный объект внутри Линолеумного архива"
+    }
+  },
+  {
+    "id": "w-corpus-page-032",
+    "slug": "corpus-page-032",
+    "type": "artifact",
+    "title": "Материал 032",
+    "summary": "Страница 32 из исходного визуального корпуса «общага — сюрреализм».",
+    "process": "zero-reaction",
+    "narrativePhase": "pressure",
+    "publicationStatus": "published",
+    "visualDialect": "zero-reaction",
+    "media": [
+      {
+        "src": "assets/img/corpus/page-032.webp",
+        "kind": "image",
+        "width": 708,
+        "height": 1000,
+        "caption": "Исходный лист корпуса, страница 032 из 105."
+      }
+    ],
+    "thumbnail": {
+      "src": "assets/img/corpus/page-032.webp",
+      "kind": "image"
+    },
+    "altText": "Страница 032 исходного корпуса «общага — сюрреализм».",
+    "credits": "исходный корпус «общага — сюрреализм», предоставленный для публикации; обработка архивной копии — Протокол 418",
+    "rights": "all-rights-reserved",
+    "source": {
+      "collection": "общага — сюрреализм",
+      "item": "страница 032 из 105",
+      "kind": "страница визуального корпуса"
+    },
+    "pageNumber": 32,
+    "pageText": "",
+    "fieldNotes": [
+      "Текстовый слой не выделен из PDF: материал сохранён как визуальный лист без домысливания содержания."
+    ],
+    "object": {
+      "originalFunction": "лист исходной PDF-хроники",
+      "wrongFunction": "архивный объект внутри Линолеумного архива"
+    }
+  },
+  {
+    "id": "w-corpus-page-033",
+    "slug": "corpus-page-033",
+    "type": "artifact",
+    "title": "Материал 033",
+    "summary": "Страница 33 из исходного визуального корпуса «общага — сюрреализм».",
+    "process": "zero-reaction",
+    "narrativePhase": "pressure",
+    "publicationStatus": "published",
+    "visualDialect": "zero-reaction",
+    "media": [
+      {
+        "src": "assets/img/corpus/page-033.webp",
+        "kind": "image",
+        "width": 708,
+        "height": 1000,
+        "caption": "Исходный лист корпуса, страница 033 из 105."
+      }
+    ],
+    "thumbnail": {
+      "src": "assets/img/corpus/page-033.webp",
+      "kind": "image"
+    },
+    "altText": "Страница 033 исходного корпуса «общага — сюрреализм».",
+    "credits": "исходный корпус «общага — сюрреализм», предоставленный для публикации; обработка архивной копии — Протокол 418",
+    "rights": "all-rights-reserved",
+    "source": {
+      "collection": "общага — сюрреализм",
+      "item": "страница 033 из 105",
+      "kind": "страница визуального корпуса"
+    },
+    "pageNumber": 33,
+    "pageText": "Начало. Всё началось в ночь со вторника на среду, когда атмосферное давление в комнате №418 вступило в критический резонанс с дедлайном по отчислению. В попытке избежать отчисления, коллективное бессознательное обитателей комнаты инстинктивно запустило древний механизм сворачивания реальности — Бытовой коллайдер. Каждое действие - это не хаос, а строжайший оккультно-физический протокол, без которого открытие портала было бы невозможным: Сакральная Геометрия Алтаря В эпицентре (нулевой точке гравитации) был воздвигнут зиккурат. Три коробки из-под пиццы «Маргарита», символизирующие триединство макроэкономического упадка (Хлеб, Сыр, Томатная паста). Зеленая пачка говяжьего «Доширака». Глутамат натрия в ее составе выступает в роли красной материи, искривляющей пространство. Если присмотреться, рассыпанная по полу лапша образует фрактальную карту кротовых нор. Жертвенный Темный Козел (банка Kozel). Содержание алкоголя в нем идеально синхронизировано с реликтовым излучением Вселенной, а стоящая на фоне стеклянная бутылка «Львівське 1715» работает как антенна, улавливающая вибрации из параллельных миров. Из этого Алтаря ударил столб чистого золотого света (вероятно, прорвавшийся из созвездия Ориона). Прорыв Метафизической Канализации Слева, попирая ногами Вавилонскую башню из учебников, стоит Прото-Осеменитель. Он облачен в ритуальную мантию (банный халат) и корону концентрации (феску). В его руках — Вантуз Судьбы. Он не просто кричит, он исполняет гортанную мантру призыва хтонического сантехника, пытаясь «прочистить» засорившиеся кармические трубы бытия. Его ярость генерирует низкочастотные вибрации, которые не дают книгам под ним коллапсировать в черную дыру от переизбытка скуки. Рождение Кибер-Будды Парящий в центре комнаты Просвещенный — это результат успешного физического глитча.",
+    "fieldNotes": [
+      "Текстовый слой страницы: Начало. Всё началось в ночь со вторника на среду, когда атмосферное давление в комнате №418 вступило в критический резонанс с дедлайном по отчислению. В попытке избежать отчисления, коллективное бессознательное обитателей комнаты инстинктивно запустило древний механизм сворачивания реальности — Бытовой коллайдер. Каждое действие - это не хаос, а строжайший оккультно-физический протокол, без которого открытие портала было бы невозможным: Сакральная Геометрия Алтаря В эпицентре (нулевой точке гравитации) был воздвигнут зиккурат. Три коробки из-под пиццы «Маргарита», символизирующие триединство макроэкономического упадка (Хлеб, Сыр, Томатная паста). Зеленая пачка говяжьего «Доширака». Глутамат натрия в ее составе выступает в роли красной материи, искривляющей пространство. Если присмотреться, рассыпанная по полу лапша образует фрактальную карту кротовых нор. Жертвенный Темный Козел (банка Kozel). Содержание алкоголя в нем идеально синхронизировано с реликтовым излучением Вселенной, а стоящая на фоне стеклянная бутылка «Львівське 1715» работает как антенна, улавливающая вибрации из параллельных миров. Из этого Алтаря ударил столб чистого золотого света (вероятно, прорвавшийся из созвездия Ориона). Прорыв Метафизической Канализации Слева, попирая ногами Вавилонскую башню из учебников, стоит Прото-Осеменитель. Он облачен в ритуальную мантию (банный халат) и корону концентрации (феску). В его руках — Вантуз Судьбы. Он не просто кричит, он исполняет гортанную мантру призыва хтонического сантехника, пытаясь «прочистить» засорившиеся кармические трубы бытия. Его ярость генерирует низкочастотные вибрации, которые не дают книгам под ним коллапсировать в черную дыру от переизбытка скуки. Рождение Кибер-Будды Парящий в центре комнаты Просвещенный — это результат успешного физического глитча."
+    ],
+    "object": {
+      "originalFunction": "лист исходной PDF-хроники",
+      "wrongFunction": "архивный объект внутри Линолеумного архива"
+    }
+  },
+  {
+    "id": "w-corpus-page-034",
+    "slug": "corpus-page-034",
+    "type": "artifact",
+    "title": "Материал 034",
+    "summary": "Страница 34 из исходного визуального корпуса «общага — сюрреализм».",
+    "process": "zero-reaction",
+    "narrativePhase": "pressure",
+    "publicationStatus": "published",
+    "visualDialect": "zero-reaction",
+    "media": [
+      {
+        "src": "assets/img/corpus/page-034.webp",
+        "kind": "image",
+        "width": 708,
+        "height": 1000,
+        "caption": "Исходный лист корпуса, страница 034 из 105."
+      }
+    ],
+    "thumbnail": {
+      "src": "assets/img/corpus/page-034.webp",
+      "kind": "image"
+    },
+    "altText": "Страница 034 исходного корпуса «общага — сюрреализм».",
+    "credits": "исходный корпус «общага — сюрреализм», предоставленный для публикации; обработка архивной копии — Протокол 418",
+    "rights": "all-rights-reserved",
+    "source": {
+      "collection": "общага — сюрреализм",
+      "item": "страница 034 из 105",
+      "kind": "страница визуального корпуса"
+    },
+    "pageNumber": 34,
+    "pageText": "Он не прыгнул. Он отменил гравитацию силой абсолютного пренебрежения к законам Исаака Ньютона. Его смартфон поймал сигнал 6G из измерения, где университета не существует. В этот момент в его мозг загрузился весь кэш мироздания, отчего его глаза вспыхнули ледяным неоново-синим пламенем. Он стал маршрутизатором между миром живых и цифровой пустотой. Его поза Распятия — это не жертва, это попытка поймать палочку интернета в зоне плохого покрытия. Ускоритель Частиц Тем временем на заднем плане «Травокур» (в коробке-шлеме телепатической защиты) и «Большая Шишка» (в медвежьей ушанке призыва духов леса) выступают в роли адронного коллайдера. Их бой на подушках — это процесс расщепления атомов холлофайбера. Сталкивая подушки на субсветовых скоростях, они генерируют статическое электричество и кинетическую энтропию, которая питает золотой луч Алтаря и не дает Парящему Мессии рухнуть на рассыпанные макароны. Конец: Ритуал прошел успешно. Пространство комнаты №418 навсегда оторвалось от остального общежития, превратившись в закрытую капсулу времени, дрейфующую в солипсическом вакууме. Именно этот переизбыток божественной энергии в замкнутом пространстве вскоре сведет их всех с ума, приведет к появлению смирительных рубашек, плакатов WANTED и финальному Рагнарёку. Автор: сыр Рокфор.",
+    "fieldNotes": [
+      "Текстовый слой страницы: Он не прыгнул. Он отменил гравитацию силой абсолютного пренебрежения к законам Исаака Ньютона. Его смартфон поймал сигнал 6G из измерения, где университета не существует. В этот момент в его мозг загрузился весь кэш мироздания, отчего его глаза вспыхнули ледяным неоново-синим пламенем. Он стал маршрутизатором между миром живых и цифровой пустотой. Его поза Распятия — это не жертва, это попытка поймать палочку интернета в зоне плохого покрытия. Ускоритель Частиц Тем временем на заднем плане «Травокур» (в коробке-шлеме телепатической защиты) и «Большая Шишка» (в медвежьей ушанке призыва духов леса) выступают в роли адронного коллайдера. Их бой на подушках — это процесс расщепления атомов холлофайбера. Сталкивая подушки на субсветовых скоростях, они генерируют статическое электричество и кинетическую энтропию, которая питает золотой луч Алтаря и не дает Парящему Мессии рухнуть на рассыпанные макароны. Конец: Ритуал прошел успешно. Пространство комнаты №418 навсегда оторвалось от остального общежития, превратившись в закрытую капсулу времени, дрейфующую в солипсическом вакууме. Именно этот переизбыток божественной энергии в замкнутом пространстве вскоре сведет их всех с ума, приведет к появлению смирительных рубашек, плакатов WANTED и финальному Рагнарёку. Автор: сыр Рокфор."
+    ],
+    "object": {
+      "originalFunction": "лист исходной PDF-хроники",
+      "wrongFunction": "архивный объект внутри Линолеумного архива"
+    }
+  },
+  {
+    "id": "w-corpus-page-035",
+    "slug": "corpus-page-035",
+    "type": "artifact",
+    "title": "Материал 035",
+    "summary": "Страница 35 из исходного визуального корпуса «общага — сюрреализм».",
+    "process": "zero-reaction",
+    "narrativePhase": "pressure",
+    "publicationStatus": "published",
+    "visualDialect": "zero-reaction",
+    "media": [
+      {
+        "src": "assets/img/corpus/page-035.webp",
+        "kind": "image",
+        "width": 708,
+        "height": 1000,
+        "caption": "Исходный лист корпуса, страница 035 из 105."
+      }
+    ],
+    "thumbnail": {
+      "src": "assets/img/corpus/page-035.webp",
+      "kind": "image"
+    },
+    "altText": "Страница 035 исходного корпуса «общага — сюрреализм».",
+    "credits": "исходный корпус «общага — сюрреализм», предоставленный для публикации; обработка архивной копии — Протокол 418",
+    "rights": "all-rights-reserved",
+    "source": {
+      "collection": "общага — сюрреализм",
+      "item": "страница 035 из 105",
+      "kind": "страница визуального корпуса"
+    },
+    "pageNumber": 35,
+    "pageText": "",
+    "fieldNotes": [
+      "Текстовый слой не выделен из PDF: материал сохранён как визуальный лист без домысливания содержания."
+    ],
+    "object": {
+      "originalFunction": "лист исходной PDF-хроники",
+      "wrongFunction": "архивный объект внутри Линолеумного архива"
+    }
+  },
+  {
+    "id": "w-corpus-page-036",
+    "slug": "corpus-page-036",
+    "type": "artifact",
+    "title": "Материал 036",
+    "summary": "Страница 36 из исходного визуального корпуса «общага — сюрреализм».",
+    "process": "zero-reaction",
+    "narrativePhase": "pressure",
+    "publicationStatus": "published",
+    "visualDialect": "zero-reaction",
+    "media": [
+      {
+        "src": "assets/img/corpus/page-036.webp",
+        "kind": "image",
+        "width": 708,
+        "height": 1000,
+        "caption": "Исходный лист корпуса, страница 036 из 105."
+      }
+    ],
+    "thumbnail": {
+      "src": "assets/img/corpus/page-036.webp",
+      "kind": "image"
+    },
+    "altText": "Страница 036 исходного корпуса «общага — сюрреализм».",
+    "credits": "исходный корпус «общага — сюрреализм», предоставленный для публикации; обработка архивной копии — Протокол 418",
+    "rights": "all-rights-reserved",
+    "source": {
+      "collection": "общага — сюрреализм",
+      "item": "страница 036 из 105",
+      "kind": "страница визуального корпуса"
+    },
+    "pageNumber": 36,
+    "pageText": "",
+    "fieldNotes": [
+      "Текстовый слой не выделен из PDF: материал сохранён как визуальный лист без домысливания содержания."
+    ],
+    "object": {
+      "originalFunction": "лист исходной PDF-хроники",
+      "wrongFunction": "архивный объект внутри Линолеумного архива"
+    }
+  },
+  {
+    "id": "w-corpus-page-037",
+    "slug": "corpus-page-037",
+    "type": "artifact",
+    "title": "Материал 037",
+    "summary": "Страница 37 из исходного визуального корпуса «общага — сюрреализм».",
+    "process": "zero-reaction",
+    "narrativePhase": "pressure",
+    "publicationStatus": "published",
+    "visualDialect": "zero-reaction",
+    "media": [
+      {
+        "src": "assets/img/corpus/page-037.webp",
+        "kind": "image",
+        "width": 708,
+        "height": 1000,
+        "caption": "Исходный лист корпуса, страница 037 из 105."
+      }
+    ],
+    "thumbnail": {
+      "src": "assets/img/corpus/page-037.webp",
+      "kind": "image"
+    },
+    "altText": "Страница 037 исходного корпуса «общага — сюрреализм».",
+    "credits": "исходный корпус «общага — сюрреализм», предоставленный для публикации; обработка архивной копии — Протокол 418",
+    "rights": "all-rights-reserved",
+    "source": {
+      "collection": "общага — сюрреализм",
+      "item": "страница 037 из 105",
+      "kind": "страница визуального корпуса"
+    },
+    "pageNumber": 37,
+    "pageText": "",
+    "fieldNotes": [
+      "Текстовый слой не выделен из PDF: материал сохранён как визуальный лист без домысливания содержания."
+    ],
+    "object": {
+      "originalFunction": "лист исходной PDF-хроники",
+      "wrongFunction": "архивный объект внутри Линолеумного архива"
+    }
+  },
+  {
+    "id": "w-corpus-page-038",
+    "slug": "corpus-page-038",
+    "type": "artifact",
+    "title": "Материал 038",
+    "summary": "Страница 38 из исходного визуального корпуса «общага — сюрреализм».",
+    "process": "zero-reaction",
+    "narrativePhase": "pressure",
+    "publicationStatus": "published",
+    "visualDialect": "zero-reaction",
+    "media": [
+      {
+        "src": "assets/img/corpus/page-038.webp",
+        "kind": "image",
+        "width": 708,
+        "height": 1000,
+        "caption": "Исходный лист корпуса, страница 038 из 105."
+      }
+    ],
+    "thumbnail": {
+      "src": "assets/img/corpus/page-038.webp",
+      "kind": "image"
+    },
+    "altText": "Страница 038 исходного корпуса «общага — сюрреализм».",
+    "credits": "исходный корпус «общага — сюрреализм», предоставленный для публикации; обработка архивной копии — Протокол 418",
+    "rights": "all-rights-reserved",
+    "source": {
+      "collection": "общага — сюрреализм",
+      "item": "страница 038 из 105",
+      "kind": "страница визуального корпуса"
+    },
+    "pageNumber": 38,
+    "pageText": "",
+    "fieldNotes": [
+      "Текстовый слой не выделен из PDF: материал сохранён как визуальный лист без домысливания содержания."
+    ],
+    "object": {
+      "originalFunction": "лист исходной PDF-хроники",
+      "wrongFunction": "архивный объект внутри Линолеумного архива"
+    }
+  },
+  {
+    "id": "w-corpus-page-039",
+    "slug": "corpus-page-039",
+    "type": "artifact",
+    "title": "Материал 039",
+    "summary": "Страница 39 из исходного визуального корпуса «общага — сюрреализм».",
+    "process": "zero-reaction",
+    "narrativePhase": "pressure",
+    "publicationStatus": "published",
+    "visualDialect": "zero-reaction",
+    "media": [
+      {
+        "src": "assets/img/corpus/page-039.webp",
+        "kind": "image",
+        "width": 708,
+        "height": 1000,
+        "caption": "Исходный лист корпуса, страница 039 из 105."
+      }
+    ],
+    "thumbnail": {
+      "src": "assets/img/corpus/page-039.webp",
+      "kind": "image"
+    },
+    "altText": "Страница 039 исходного корпуса «общага — сюрреализм».",
+    "credits": "исходный корпус «общага — сюрреализм», предоставленный для публикации; обработка архивной копии — Протокол 418",
+    "rights": "all-rights-reserved",
+    "source": {
+      "collection": "общага — сюрреализм",
+      "item": "страница 039 из 105",
+      "kind": "страница визуального корпуса"
+    },
+    "pageNumber": 39,
+    "pageText": "",
+    "fieldNotes": [
+      "Текстовый слой не выделен из PDF: материал сохранён как визуальный лист без домысливания содержания."
+    ],
+    "object": {
+      "originalFunction": "лист исходной PDF-хроники",
+      "wrongFunction": "архивный объект внутри Линолеумного архива"
+    }
+  },
+  {
+    "id": "w-corpus-page-040",
+    "slug": "corpus-page-040",
+    "type": "artifact",
+    "title": "Материал 040",
+    "summary": "Страница 40 из исходного визуального корпуса «общага — сюрреализм».",
+    "process": "zero-reaction",
+    "narrativePhase": "pressure",
+    "publicationStatus": "published",
+    "visualDialect": "zero-reaction",
+    "media": [
+      {
+        "src": "assets/img/corpus/page-040.webp",
+        "kind": "image",
+        "width": 708,
+        "height": 1000,
+        "caption": "Исходный лист корпуса, страница 040 из 105."
+      }
+    ],
+    "thumbnail": {
+      "src": "assets/img/corpus/page-040.webp",
+      "kind": "image"
+    },
+    "altText": "Страница 040 исходного корпуса «общага — сюрреализм».",
+    "credits": "исходный корпус «общага — сюрреализм», предоставленный для публикации; обработка архивной копии — Протокол 418",
+    "rights": "all-rights-reserved",
+    "source": {
+      "collection": "общага — сюрреализм",
+      "item": "страница 040 из 105",
+      "kind": "страница визуального корпуса"
+    },
+    "pageNumber": 40,
+    "pageText": "",
+    "fieldNotes": [
+      "Текстовый слой не выделен из PDF: материал сохранён как визуальный лист без домысливания содержания."
+    ],
+    "object": {
+      "originalFunction": "лист исходной PDF-хроники",
+      "wrongFunction": "архивный объект внутри Линолеумного архива"
+    }
+  },
+  {
+    "id": "w-corpus-page-041",
+    "slug": "corpus-page-041",
+    "type": "artifact",
+    "title": "Материал 041",
+    "summary": "Страница 41 из исходного визуального корпуса «общага — сюрреализм».",
+    "process": "zero-reaction",
+    "narrativePhase": "pressure",
+    "publicationStatus": "published",
+    "visualDialect": "zero-reaction",
+    "media": [
+      {
+        "src": "assets/img/corpus/page-041.webp",
+        "kind": "image",
+        "width": 708,
+        "height": 1000,
+        "caption": "Исходный лист корпуса, страница 041 из 105."
+      }
+    ],
+    "thumbnail": {
+      "src": "assets/img/corpus/page-041.webp",
+      "kind": "image"
+    },
+    "altText": "Страница 041 исходного корпуса «общага — сюрреализм».",
+    "credits": "исходный корпус «общага — сюрреализм», предоставленный для публикации; обработка архивной копии — Протокол 418",
+    "rights": "all-rights-reserved",
+    "source": {
+      "collection": "общага — сюрреализм",
+      "item": "страница 041 из 105",
+      "kind": "страница визуального корпуса"
+    },
+    "pageNumber": 41,
+    "pageText": "",
+    "fieldNotes": [
+      "Текстовый слой не выделен из PDF: материал сохранён как визуальный лист без домысливания содержания."
+    ],
+    "object": {
+      "originalFunction": "лист исходной PDF-хроники",
+      "wrongFunction": "архивный объект внутри Линолеумного архива"
+    }
+  },
+  {
+    "id": "w-corpus-page-042",
+    "slug": "corpus-page-042",
+    "type": "artifact",
+    "title": "Материал 042",
+    "summary": "Страница 42 из исходного визуального корпуса «общага — сюрреализм».",
+    "process": "zero-reaction",
+    "narrativePhase": "pressure",
+    "publicationStatus": "published",
+    "visualDialect": "zero-reaction",
+    "media": [
+      {
+        "src": "assets/img/corpus/page-042.webp",
+        "kind": "image",
+        "width": 708,
+        "height": 1000,
+        "caption": "Исходный лист корпуса, страница 042 из 105."
+      }
+    ],
+    "thumbnail": {
+      "src": "assets/img/corpus/page-042.webp",
+      "kind": "image"
+    },
+    "altText": "Страница 042 исходного корпуса «общага — сюрреализм».",
+    "credits": "исходный корпус «общага — сюрреализм», предоставленный для публикации; обработка архивной копии — Протокол 418",
+    "rights": "all-rights-reserved",
+    "source": {
+      "collection": "общага — сюрреализм",
+      "item": "страница 042 из 105",
+      "kind": "страница визуального корпуса"
+    },
+    "pageNumber": 42,
+    "pageText": "",
+    "fieldNotes": [
+      "Текстовый слой не выделен из PDF: материал сохранён как визуальный лист без домысливания содержания."
+    ],
+    "object": {
+      "originalFunction": "лист исходной PDF-хроники",
+      "wrongFunction": "архивный объект внутри Линолеумного архива"
+    }
+  },
+  {
+    "id": "w-corpus-page-043",
+    "slug": "corpus-page-043",
+    "type": "artifact",
+    "title": "Материал 043",
+    "summary": "Страница 43 из исходного визуального корпуса «общага — сюрреализм».",
+    "process": "zero-reaction",
+    "narrativePhase": "pressure",
+    "publicationStatus": "published",
+    "visualDialect": "zero-reaction",
+    "media": [
+      {
+        "src": "assets/img/corpus/page-043.webp",
+        "kind": "image",
+        "width": 708,
+        "height": 1000,
+        "caption": "Исходный лист корпуса, страница 043 из 105."
+      }
+    ],
+    "thumbnail": {
+      "src": "assets/img/corpus/page-043.webp",
+      "kind": "image"
+    },
+    "altText": "Страница 043 исходного корпуса «общага — сюрреализм».",
+    "credits": "исходный корпус «общага — сюрреализм», предоставленный для публикации; обработка архивной копии — Протокол 418",
+    "rights": "all-rights-reserved",
+    "source": {
+      "collection": "общага — сюрреализм",
+      "item": "страница 043 из 105",
+      "kind": "страница визуального корпуса"
+    },
+    "pageNumber": 43,
+    "pageText": "",
+    "fieldNotes": [
+      "Текстовый слой не выделен из PDF: материал сохранён как визуальный лист без домысливания содержания."
+    ],
+    "object": {
+      "originalFunction": "лист исходной PDF-хроники",
+      "wrongFunction": "архивный объект внутри Линолеумного архива"
+    }
+  },
+  {
+    "id": "w-corpus-page-044",
+    "slug": "corpus-page-044",
+    "type": "artifact",
+    "title": "Материал 044",
+    "summary": "Страница 44 из исходного визуального корпуса «общага — сюрреализм».",
+    "process": "zero-reaction",
+    "narrativePhase": "pressure",
+    "publicationStatus": "published",
+    "visualDialect": "zero-reaction",
+    "media": [
+      {
+        "src": "assets/img/corpus/page-044.webp",
+        "kind": "image",
+        "width": 708,
+        "height": 1000,
+        "caption": "Исходный лист корпуса, страница 044 из 105."
+      }
+    ],
+    "thumbnail": {
+      "src": "assets/img/corpus/page-044.webp",
+      "kind": "image"
+    },
+    "altText": "Страница 044 исходного корпуса «общага — сюрреализм».",
+    "credits": "исходный корпус «общага — сюрреализм», предоставленный для публикации; обработка архивной копии — Протокол 418",
+    "rights": "all-rights-reserved",
+    "source": {
+      "collection": "общага — сюрреализм",
+      "item": "страница 044 из 105",
+      "kind": "страница визуального корпуса"
+    },
+    "pageNumber": 44,
+    "pageText": "",
+    "fieldNotes": [
+      "Текстовый слой не выделен из PDF: материал сохранён как визуальный лист без домысливания содержания."
+    ],
+    "object": {
+      "originalFunction": "лист исходной PDF-хроники",
+      "wrongFunction": "архивный объект внутри Линолеумного архива"
+    }
+  },
+  {
+    "id": "w-corpus-page-045",
+    "slug": "corpus-page-045",
+    "type": "artifact",
+    "title": "Материал 045",
+    "summary": "Страница 45 из исходного визуального корпуса «общага — сюрреализм».",
+    "process": "zero-reaction",
+    "narrativePhase": "pressure",
+    "publicationStatus": "published",
+    "visualDialect": "zero-reaction",
+    "media": [
+      {
+        "src": "assets/img/corpus/page-045.webp",
+        "kind": "image",
+        "width": 708,
+        "height": 1000,
+        "caption": "Исходный лист корпуса, страница 045 из 105."
+      }
+    ],
+    "thumbnail": {
+      "src": "assets/img/corpus/page-045.webp",
+      "kind": "image"
+    },
+    "altText": "Страница 045 исходного корпуса «общага — сюрреализм».",
+    "credits": "исходный корпус «общага — сюрреализм», предоставленный для публикации; обработка архивной копии — Протокол 418",
+    "rights": "all-rights-reserved",
+    "source": {
+      "collection": "общага — сюрреализм",
+      "item": "страница 045 из 105",
+      "kind": "страница визуального корпуса"
+    },
+    "pageNumber": 45,
+    "pageText": "",
+    "fieldNotes": [
+      "Текстовый слой не выделен из PDF: материал сохранён как визуальный лист без домысливания содержания."
+    ],
+    "object": {
+      "originalFunction": "лист исходной PDF-хроники",
+      "wrongFunction": "архивный объект внутри Линолеумного архива"
+    }
+  },
+  {
+    "id": "w-corpus-page-046",
+    "slug": "corpus-page-046",
+    "type": "artifact",
+    "title": "Материал 046",
+    "summary": "Страница 46 из исходного визуального корпуса «общага — сюрреализм».",
+    "process": "zero-reaction",
+    "narrativePhase": "pressure",
+    "publicationStatus": "published",
+    "visualDialect": "zero-reaction",
+    "media": [
+      {
+        "src": "assets/img/corpus/page-046.webp",
+        "kind": "image",
+        "width": 708,
+        "height": 1000,
+        "caption": "Исходный лист корпуса, страница 046 из 105."
+      }
+    ],
+    "thumbnail": {
+      "src": "assets/img/corpus/page-046.webp",
+      "kind": "image"
+    },
+    "altText": "Страница 046 исходного корпуса «общага — сюрреализм».",
+    "credits": "исходный корпус «общага — сюрреализм», предоставленный для публикации; обработка архивной копии — Протокол 418",
+    "rights": "all-rights-reserved",
+    "source": {
+      "collection": "общага — сюрреализм",
+      "item": "страница 046 из 105",
+      "kind": "страница визуального корпуса"
+    },
+    "pageNumber": 46,
+    "pageText": "",
+    "fieldNotes": [
+      "Текстовый слой не выделен из PDF: материал сохранён как визуальный лист без домысливания содержания."
+    ],
+    "object": {
+      "originalFunction": "лист исходной PDF-хроники",
+      "wrongFunction": "архивный объект внутри Линолеумного архива"
+    }
+  },
+  {
+    "id": "w-corpus-page-047",
+    "slug": "corpus-page-047",
+    "type": "artifact",
+    "title": "Материал 047",
+    "summary": "Страница 47 из исходного визуального корпуса «общага — сюрреализм».",
+    "process": "zero-reaction",
+    "narrativePhase": "pressure",
+    "publicationStatus": "published",
+    "visualDialect": "zero-reaction",
+    "media": [
+      {
+        "src": "assets/img/corpus/page-047.webp",
+        "kind": "image",
+        "width": 708,
+        "height": 1000,
+        "caption": "Исходный лист корпуса, страница 047 из 105."
+      }
+    ],
+    "thumbnail": {
+      "src": "assets/img/corpus/page-047.webp",
+      "kind": "image"
+    },
+    "altText": "Страница 047 исходного корпуса «общага — сюрреализм».",
+    "credits": "исходный корпус «общага — сюрреализм», предоставленный для публикации; обработка архивной копии — Протокол 418",
+    "rights": "all-rights-reserved",
+    "source": {
+      "collection": "общага — сюрреализм",
+      "item": "страница 047 из 105",
+      "kind": "страница визуального корпуса"
+    },
+    "pageNumber": 47,
+    "pageText": "",
+    "fieldNotes": [
+      "Текстовый слой не выделен из PDF: материал сохранён как визуальный лист без домысливания содержания."
+    ],
+    "object": {
+      "originalFunction": "лист исходной PDF-хроники",
+      "wrongFunction": "архивный объект внутри Линолеумного архива"
+    }
+  },
+  {
+    "id": "w-corpus-page-048",
+    "slug": "corpus-page-048",
+    "type": "artifact",
+    "title": "Материал 048",
+    "summary": "Страница 48 из исходного визуального корпуса «общага — сюрреализм».",
+    "process": "zero-reaction",
+    "narrativePhase": "pressure",
+    "publicationStatus": "published",
+    "visualDialect": "zero-reaction",
+    "media": [
+      {
+        "src": "assets/img/corpus/page-048.webp",
+        "kind": "image",
+        "width": 708,
+        "height": 1000,
+        "caption": "Исходный лист корпуса, страница 048 из 105."
+      }
+    ],
+    "thumbnail": {
+      "src": "assets/img/corpus/page-048.webp",
+      "kind": "image"
+    },
+    "altText": "Страница 048 исходного корпуса «общага — сюрреализм».",
+    "credits": "исходный корпус «общага — сюрреализм», предоставленный для публикации; обработка архивной копии — Протокол 418",
+    "rights": "all-rights-reserved",
+    "source": {
+      "collection": "общага — сюрреализм",
+      "item": "страница 048 из 105",
+      "kind": "страница визуального корпуса"
+    },
+    "pageNumber": 48,
+    "pageText": "",
+    "fieldNotes": [
+      "Текстовый слой не выделен из PDF: материал сохранён как визуальный лист без домысливания содержания."
+    ],
+    "object": {
+      "originalFunction": "лист исходной PDF-хроники",
+      "wrongFunction": "архивный объект внутри Линолеумного архива"
+    }
+  },
+  {
+    "id": "w-corpus-page-049",
+    "slug": "corpus-page-049",
+    "type": "artifact",
+    "title": "Материал 049",
+    "summary": "Страница 49 из исходного визуального корпуса «общага — сюрреализм».",
+    "process": "zero-reaction",
+    "narrativePhase": "pressure",
+    "publicationStatus": "published",
+    "visualDialect": "zero-reaction",
+    "media": [
+      {
+        "src": "assets/img/corpus/page-049.webp",
+        "kind": "image",
+        "width": 708,
+        "height": 1000,
+        "caption": "Исходный лист корпуса, страница 049 из 105."
+      }
+    ],
+    "thumbnail": {
+      "src": "assets/img/corpus/page-049.webp",
+      "kind": "image"
+    },
+    "altText": "Страница 049 исходного корпуса «общага — сюрреализм».",
+    "credits": "исходный корпус «общага — сюрреализм», предоставленный для публикации; обработка архивной копии — Протокол 418",
+    "rights": "all-rights-reserved",
+    "source": {
+      "collection": "общага — сюрреализм",
+      "item": "страница 049 из 105",
+      "kind": "страница визуального корпуса"
+    },
+    "pageNumber": 49,
+    "pageText": "",
+    "fieldNotes": [
+      "Текстовый слой не выделен из PDF: материал сохранён как визуальный лист без домысливания содержания."
+    ],
+    "object": {
+      "originalFunction": "лист исходной PDF-хроники",
+      "wrongFunction": "архивный объект внутри Линолеумного архива"
+    }
+  },
+  {
+    "id": "w-corpus-page-050",
+    "slug": "corpus-page-050",
+    "type": "artifact",
+    "title": "Материал 050",
+    "summary": "Страница 50 из исходного визуального корпуса «общага — сюрреализм».",
+    "process": "zero-reaction",
+    "narrativePhase": "pressure",
+    "publicationStatus": "published",
+    "visualDialect": "zero-reaction",
+    "media": [
+      {
+        "src": "assets/img/corpus/page-050.webp",
+        "kind": "image",
+        "width": 708,
+        "height": 1000,
+        "caption": "Исходный лист корпуса, страница 050 из 105."
+      }
+    ],
+    "thumbnail": {
+      "src": "assets/img/corpus/page-050.webp",
+      "kind": "image"
+    },
+    "altText": "Страница 050 исходного корпуса «общага — сюрреализм».",
+    "credits": "исходный корпус «общага — сюрреализм», предоставленный для публикации; обработка архивной копии — Протокол 418",
+    "rights": "all-rights-reserved",
+    "source": {
+      "collection": "общага — сюрреализм",
+      "item": "страница 050 из 105",
+      "kind": "страница визуального корпуса"
+    },
+    "pageNumber": 50,
+    "pageText": "",
+    "fieldNotes": [
+      "Текстовый слой не выделен из PDF: материал сохранён как визуальный лист без домысливания содержания."
+    ],
+    "object": {
+      "originalFunction": "лист исходной PDF-хроники",
+      "wrongFunction": "архивный объект внутри Линолеумного архива"
+    }
+  },
+  {
+    "id": "w-corpus-page-051",
+    "slug": "corpus-page-051",
+    "type": "artifact",
+    "title": "Материал 051",
+    "summary": "Страница 51 из исходного визуального корпуса «общага — сюрреализм».",
+    "process": "zero-reaction",
+    "narrativePhase": "pressure",
+    "publicationStatus": "published",
+    "visualDialect": "zero-reaction",
+    "media": [
+      {
+        "src": "assets/img/corpus/page-051.webp",
+        "kind": "image",
+        "width": 708,
+        "height": 1000,
+        "caption": "Исходный лист корпуса, страница 051 из 105."
+      }
+    ],
+    "thumbnail": {
+      "src": "assets/img/corpus/page-051.webp",
+      "kind": "image"
+    },
+    "altText": "Страница 051 исходного корпуса «общага — сюрреализм».",
+    "credits": "исходный корпус «общага — сюрреализм», предоставленный для публикации; обработка архивной копии — Протокол 418",
+    "rights": "all-rights-reserved",
+    "source": {
+      "collection": "общага — сюрреализм",
+      "item": "страница 051 из 105",
+      "kind": "страница визуального корпуса"
+    },
+    "pageNumber": 51,
+    "pageText": "",
+    "fieldNotes": [
+      "Текстовый слой не выделен из PDF: материал сохранён как визуальный лист без домысливания содержания."
+    ],
+    "object": {
+      "originalFunction": "лист исходной PDF-хроники",
+      "wrongFunction": "архивный объект внутри Линолеумного архива"
+    }
+  },
+  {
+    "id": "w-corpus-page-052",
+    "slug": "corpus-page-052",
+    "type": "artifact",
+    "title": "Материал 052",
+    "summary": "Страница 52 из исходного визуального корпуса «общага — сюрреализм».",
+    "process": "zero-reaction",
+    "narrativePhase": "pressure",
+    "publicationStatus": "published",
+    "visualDialect": "zero-reaction",
+    "media": [
+      {
+        "src": "assets/img/corpus/page-052.webp",
+        "kind": "image",
+        "width": 708,
+        "height": 1000,
+        "caption": "Исходный лист корпуса, страница 052 из 105."
+      }
+    ],
+    "thumbnail": {
+      "src": "assets/img/corpus/page-052.webp",
+      "kind": "image"
+    },
+    "altText": "Страница 052 исходного корпуса «общага — сюрреализм».",
+    "credits": "исходный корпус «общага — сюрреализм», предоставленный для публикации; обработка архивной копии — Протокол 418",
+    "rights": "all-rights-reserved",
+    "source": {
+      "collection": "общага — сюрреализм",
+      "item": "страница 052 из 105",
+      "kind": "страница визуального корпуса"
+    },
+    "pageNumber": 52,
+    "pageText": "",
+    "fieldNotes": [
+      "Текстовый слой не выделен из PDF: материал сохранён как визуальный лист без домысливания содержания."
+    ],
+    "object": {
+      "originalFunction": "лист исходной PDF-хроники",
+      "wrongFunction": "архивный объект внутри Линолеумного архива"
+    }
+  },
+  {
+    "id": "w-corpus-page-053",
+    "slug": "corpus-page-053",
+    "type": "artifact",
+    "title": "Материал 053",
+    "summary": "Страница 53 из исходного визуального корпуса «общага — сюрреализм».",
+    "process": "zero-reaction",
+    "narrativePhase": "pressure",
+    "publicationStatus": "published",
+    "visualDialect": "zero-reaction",
+    "media": [
+      {
+        "src": "assets/img/corpus/page-053.webp",
+        "kind": "image",
+        "width": 708,
+        "height": 1000,
+        "caption": "Исходный лист корпуса, страница 053 из 105."
+      }
+    ],
+    "thumbnail": {
+      "src": "assets/img/corpus/page-053.webp",
+      "kind": "image"
+    },
+    "altText": "Страница 053 исходного корпуса «общага — сюрреализм».",
+    "credits": "исходный корпус «общага — сюрреализм», предоставленный для публикации; обработка архивной копии — Протокол 418",
+    "rights": "all-rights-reserved",
+    "source": {
+      "collection": "общага — сюрреализм",
+      "item": "страница 053 из 105",
+      "kind": "страница визуального корпуса"
+    },
+    "pageNumber": 53,
+    "pageText": "",
+    "fieldNotes": [
+      "Текстовый слой не выделен из PDF: материал сохранён как визуальный лист без домысливания содержания."
+    ],
+    "object": {
+      "originalFunction": "лист исходной PDF-хроники",
+      "wrongFunction": "архивный объект внутри Линолеумного архива"
+    }
+  },
+  {
+    "id": "w-corpus-page-054",
+    "slug": "corpus-page-054",
+    "type": "artifact",
+    "title": "Материал 054",
+    "summary": "Страница 54 из исходного визуального корпуса «общага — сюрреализм».",
+    "process": "zero-reaction",
+    "narrativePhase": "pressure",
+    "publicationStatus": "published",
+    "visualDialect": "zero-reaction",
+    "media": [
+      {
+        "src": "assets/img/corpus/page-054.webp",
+        "kind": "image",
+        "width": 708,
+        "height": 1000,
+        "caption": "Исходный лист корпуса, страница 054 из 105."
+      }
+    ],
+    "thumbnail": {
+      "src": "assets/img/corpus/page-054.webp",
+      "kind": "image"
+    },
+    "altText": "Страница 054 исходного корпуса «общага — сюрреализм».",
+    "credits": "исходный корпус «общага — сюрреализм», предоставленный для публикации; обработка архивной копии — Протокол 418",
+    "rights": "all-rights-reserved",
+    "source": {
+      "collection": "общага — сюрреализм",
+      "item": "страница 054 из 105",
+      "kind": "страница визуального корпуса"
+    },
+    "pageNumber": 54,
+    "pageText": "",
+    "fieldNotes": [
+      "Текстовый слой не выделен из PDF: материал сохранён как визуальный лист без домысливания содержания."
+    ],
+    "object": {
+      "originalFunction": "лист исходной PDF-хроники",
+      "wrongFunction": "архивный объект внутри Линолеумного архива"
+    }
+  },
+  {
+    "id": "w-corpus-page-055",
+    "slug": "corpus-page-055",
+    "type": "artifact",
+    "title": "Материал 055",
+    "summary": "Страница 55 из исходного визуального корпуса «общага — сюрреализм».",
+    "process": "zero-reaction",
+    "narrativePhase": "pressure",
+    "publicationStatus": "published",
+    "visualDialect": "zero-reaction",
+    "media": [
+      {
+        "src": "assets/img/corpus/page-055.webp",
+        "kind": "image",
+        "width": 708,
+        "height": 1000,
+        "caption": "Исходный лист корпуса, страница 055 из 105."
+      }
+    ],
+    "thumbnail": {
+      "src": "assets/img/corpus/page-055.webp",
+      "kind": "image"
+    },
+    "altText": "Страница 055 исходного корпуса «общага — сюрреализм».",
+    "credits": "исходный корпус «общага — сюрреализм», предоставленный для публикации; обработка архивной копии — Протокол 418",
+    "rights": "all-rights-reserved",
+    "source": {
+      "collection": "общага — сюрреализм",
+      "item": "страница 055 из 105",
+      "kind": "страница визуального корпуса"
+    },
+    "pageNumber": 55,
+    "pageText": "",
+    "fieldNotes": [
+      "Текстовый слой не выделен из PDF: материал сохранён как визуальный лист без домысливания содержания."
+    ],
+    "object": {
+      "originalFunction": "лист исходной PDF-хроники",
+      "wrongFunction": "архивный объект внутри Линолеумного архива"
+    }
+  },
+  {
+    "id": "w-corpus-page-056",
+    "slug": "corpus-page-056",
+    "type": "artifact",
+    "title": "Материал 056",
+    "summary": "Страница 56 из исходного визуального корпуса «общага — сюрреализм».",
+    "process": "zero-reaction",
+    "narrativePhase": "pressure",
+    "publicationStatus": "published",
+    "visualDialect": "zero-reaction",
+    "media": [
+      {
+        "src": "assets/img/corpus/page-056.webp",
+        "kind": "image",
+        "width": 708,
+        "height": 1000,
+        "caption": "Исходный лист корпуса, страница 056 из 105."
+      }
+    ],
+    "thumbnail": {
+      "src": "assets/img/corpus/page-056.webp",
+      "kind": "image"
+    },
+    "altText": "Страница 056 исходного корпуса «общага — сюрреализм».",
+    "credits": "исходный корпус «общага — сюрреализм», предоставленный для публикации; обработка архивной копии — Протокол 418",
+    "rights": "all-rights-reserved",
+    "source": {
+      "collection": "общага — сюрреализм",
+      "item": "страница 056 из 105",
+      "kind": "страница визуального корпуса"
+    },
+    "pageNumber": 56,
+    "pageText": "",
+    "fieldNotes": [
+      "Текстовый слой не выделен из PDF: материал сохранён как визуальный лист без домысливания содержания."
+    ],
+    "object": {
+      "originalFunction": "лист исходной PDF-хроники",
+      "wrongFunction": "архивный объект внутри Линолеумного архива"
+    }
+  },
+  {
+    "id": "w-corpus-page-057",
+    "slug": "corpus-page-057",
+    "type": "artifact",
+    "title": "Материал 057",
+    "summary": "Страница 57 из исходного визуального корпуса «общага — сюрреализм».",
+    "process": "zero-reaction",
+    "narrativePhase": "pressure",
+    "publicationStatus": "published",
+    "visualDialect": "zero-reaction",
+    "media": [
+      {
+        "src": "assets/img/corpus/page-057.webp",
+        "kind": "image",
+        "width": 708,
+        "height": 1000,
+        "caption": "Исходный лист корпуса, страница 057 из 105."
+      }
+    ],
+    "thumbnail": {
+      "src": "assets/img/corpus/page-057.webp",
+      "kind": "image"
+    },
+    "altText": "Страница 057 исходного корпуса «общага — сюрреализм».",
+    "credits": "исходный корпус «общага — сюрреализм», предоставленный для публикации; обработка архивной копии — Протокол 418",
+    "rights": "all-rights-reserved",
+    "source": {
+      "collection": "общага — сюрреализм",
+      "item": "страница 057 из 105",
+      "kind": "страница визуального корпуса"
+    },
+    "pageNumber": 57,
+    "pageText": "",
+    "fieldNotes": [
+      "Текстовый слой не выделен из PDF: материал сохранён как визуальный лист без домысливания содержания."
+    ],
+    "object": {
+      "originalFunction": "лист исходной PDF-хроники",
+      "wrongFunction": "архивный объект внутри Линолеумного архива"
+    }
+  },
+  {
+    "id": "w-corpus-page-058",
+    "slug": "corpus-page-058",
+    "type": "artifact",
+    "title": "Материал 058",
+    "summary": "Страница 58 из исходного визуального корпуса «общага — сюрреализм».",
+    "process": "zero-reaction",
+    "narrativePhase": "pressure",
+    "publicationStatus": "published",
+    "visualDialect": "zero-reaction",
+    "media": [
+      {
+        "src": "assets/img/corpus/page-058.webp",
+        "kind": "image",
+        "width": 708,
+        "height": 1000,
+        "caption": "Исходный лист корпуса, страница 058 из 105."
+      }
+    ],
+    "thumbnail": {
+      "src": "assets/img/corpus/page-058.webp",
+      "kind": "image"
+    },
+    "altText": "Страница 058 исходного корпуса «общага — сюрреализм».",
+    "credits": "исходный корпус «общага — сюрреализм», предоставленный для публикации; обработка архивной копии — Протокол 418",
+    "rights": "all-rights-reserved",
+    "source": {
+      "collection": "общага — сюрреализм",
+      "item": "страница 058 из 105",
+      "kind": "страница визуального корпуса"
+    },
+    "pageNumber": 58,
+    "pageText": "",
+    "fieldNotes": [
+      "Текстовый слой не выделен из PDF: материал сохранён как визуальный лист без домысливания содержания."
+    ],
+    "object": {
+      "originalFunction": "лист исходной PDF-хроники",
+      "wrongFunction": "архивный объект внутри Линолеумного архива"
+    }
+  },
+  {
+    "id": "w-corpus-page-059",
+    "slug": "corpus-page-059",
+    "type": "artifact",
+    "title": "Материал 059",
+    "summary": "Страница 59 из исходного визуального корпуса «общага — сюрреализм».",
+    "process": "zero-reaction",
+    "narrativePhase": "pressure",
+    "publicationStatus": "published",
+    "visualDialect": "zero-reaction",
+    "media": [
+      {
+        "src": "assets/img/corpus/page-059.webp",
+        "kind": "image",
+        "width": 708,
+        "height": 1000,
+        "caption": "Исходный лист корпуса, страница 059 из 105."
+      }
+    ],
+    "thumbnail": {
+      "src": "assets/img/corpus/page-059.webp",
+      "kind": "image"
+    },
+    "altText": "Страница 059 исходного корпуса «общага — сюрреализм».",
+    "credits": "исходный корпус «общага — сюрреализм», предоставленный для публикации; обработка архивной копии — Протокол 418",
+    "rights": "all-rights-reserved",
+    "source": {
+      "collection": "общага — сюрреализм",
+      "item": "страница 059 из 105",
+      "kind": "страница визуального корпуса"
+    },
+    "pageNumber": 59,
+    "pageText": "",
+    "fieldNotes": [
+      "Текстовый слой не выделен из PDF: материал сохранён как визуальный лист без домысливания содержания."
+    ],
+    "object": {
+      "originalFunction": "лист исходной PDF-хроники",
+      "wrongFunction": "архивный объект внутри Линолеумного архива"
+    }
+  },
+  {
+    "id": "w-corpus-page-060",
+    "slug": "corpus-page-060",
+    "type": "artifact",
+    "title": "Материал 060",
+    "summary": "Страница 60 из исходного визуального корпуса «общага — сюрреализм».",
+    "process": "zero-reaction",
+    "narrativePhase": "pressure",
+    "publicationStatus": "published",
+    "visualDialect": "zero-reaction",
+    "media": [
+      {
+        "src": "assets/img/corpus/page-060.webp",
+        "kind": "image",
+        "width": 708,
+        "height": 1000,
+        "caption": "Исходный лист корпуса, страница 060 из 105."
+      }
+    ],
+    "thumbnail": {
+      "src": "assets/img/corpus/page-060.webp",
+      "kind": "image"
+    },
+    "altText": "Страница 060 исходного корпуса «общага — сюрреализм».",
+    "credits": "исходный корпус «общага — сюрреализм», предоставленный для публикации; обработка архивной копии — Протокол 418",
+    "rights": "all-rights-reserved",
+    "source": {
+      "collection": "общага — сюрреализм",
+      "item": "страница 060 из 105",
+      "kind": "страница визуального корпуса"
+    },
+    "pageNumber": 60,
+    "pageText": "",
+    "fieldNotes": [
+      "Текстовый слой не выделен из PDF: материал сохранён как визуальный лист без домысливания содержания."
+    ],
+    "object": {
+      "originalFunction": "лист исходной PDF-хроники",
+      "wrongFunction": "архивный объект внутри Линолеумного архива"
+    }
+  },
+  {
+    "id": "w-corpus-page-061",
+    "slug": "corpus-page-061",
+    "type": "artifact",
+    "title": "Материал 061",
+    "summary": "Страница 61 из исходного визуального корпуса «общага — сюрреализм».",
+    "process": "zero-reaction",
+    "narrativePhase": "pressure",
+    "publicationStatus": "published",
+    "visualDialect": "zero-reaction",
+    "media": [
+      {
+        "src": "assets/img/corpus/page-061.webp",
+        "kind": "image",
+        "width": 708,
+        "height": 1000,
+        "caption": "Исходный лист корпуса, страница 061 из 105."
+      }
+    ],
+    "thumbnail": {
+      "src": "assets/img/corpus/page-061.webp",
+      "kind": "image"
+    },
+    "altText": "Страница 061 исходного корпуса «общага — сюрреализм».",
+    "credits": "исходный корпус «общага — сюрреализм», предоставленный для публикации; обработка архивной копии — Протокол 418",
+    "rights": "all-rights-reserved",
+    "source": {
+      "collection": "общага — сюрреализм",
+      "item": "страница 061 из 105",
+      "kind": "страница визуального корпуса"
+    },
+    "pageNumber": 61,
+    "pageText": "",
+    "fieldNotes": [
+      "Текстовый слой не выделен из PDF: материал сохранён как визуальный лист без домысливания содержания."
+    ],
+    "object": {
+      "originalFunction": "лист исходной PDF-хроники",
+      "wrongFunction": "архивный объект внутри Линолеумного архива"
+    }
+  },
+  {
+    "id": "w-corpus-page-062",
+    "slug": "corpus-page-062",
+    "type": "artifact",
+    "title": "Материал 062",
+    "summary": "Страница 62 из исходного визуального корпуса «общага — сюрреализм».",
+    "process": "zero-reaction",
+    "narrativePhase": "pressure",
+    "publicationStatus": "published",
+    "visualDialect": "zero-reaction",
+    "media": [
+      {
+        "src": "assets/img/corpus/page-062.webp",
+        "kind": "image",
+        "width": 708,
+        "height": 1000,
+        "caption": "Исходный лист корпуса, страница 062 из 105."
+      }
+    ],
+    "thumbnail": {
+      "src": "assets/img/corpus/page-062.webp",
+      "kind": "image"
+    },
+    "altText": "Страница 062 исходного корпуса «общага — сюрреализм».",
+    "credits": "исходный корпус «общага — сюрреализм», предоставленный для публикации; обработка архивной копии — Протокол 418",
+    "rights": "all-rights-reserved",
+    "source": {
+      "collection": "общага — сюрреализм",
+      "item": "страница 062 из 105",
+      "kind": "страница визуального корпуса"
+    },
+    "pageNumber": 62,
+    "pageText": "",
+    "fieldNotes": [
+      "Текстовый слой не выделен из PDF: материал сохранён как визуальный лист без домысливания содержания."
+    ],
+    "object": {
+      "originalFunction": "лист исходной PDF-хроники",
+      "wrongFunction": "архивный объект внутри Линолеумного архива"
+    }
+  },
+  {
+    "id": "w-corpus-page-063",
+    "slug": "corpus-page-063",
+    "type": "artifact",
+    "title": "Материал 063",
+    "summary": "Страница 63 из исходного визуального корпуса «общага — сюрреализм».",
+    "process": "zero-reaction",
+    "narrativePhase": "pressure",
+    "publicationStatus": "published",
+    "visualDialect": "zero-reaction",
+    "media": [
+      {
+        "src": "assets/img/corpus/page-063.webp",
+        "kind": "image",
+        "width": 708,
+        "height": 1000,
+        "caption": "Исходный лист корпуса, страница 063 из 105."
+      }
+    ],
+    "thumbnail": {
+      "src": "assets/img/corpus/page-063.webp",
+      "kind": "image"
+    },
+    "altText": "Страница 063 исходного корпуса «общага — сюрреализм».",
+    "credits": "исходный корпус «общага — сюрреализм», предоставленный для публикации; обработка архивной копии — Протокол 418",
+    "rights": "all-rights-reserved",
+    "source": {
+      "collection": "общага — сюрреализм",
+      "item": "страница 063 из 105",
+      "kind": "страница визуального корпуса"
+    },
+    "pageNumber": 63,
+    "pageText": "",
+    "fieldNotes": [
+      "Текстовый слой не выделен из PDF: материал сохранён как визуальный лист без домысливания содержания."
+    ],
+    "object": {
+      "originalFunction": "лист исходной PDF-хроники",
+      "wrongFunction": "архивный объект внутри Линолеумного архива"
+    }
+  },
+  {
+    "id": "w-corpus-page-064",
+    "slug": "corpus-page-064",
+    "type": "artifact",
+    "title": "Материал 064",
+    "summary": "Страница 64 из исходного визуального корпуса «общага — сюрреализм».",
+    "process": "zero-reaction",
+    "narrativePhase": "pressure",
+    "publicationStatus": "published",
+    "visualDialect": "zero-reaction",
+    "media": [
+      {
+        "src": "assets/img/corpus/page-064.webp",
+        "kind": "image",
+        "width": 708,
+        "height": 1000,
+        "caption": "Исходный лист корпуса, страница 064 из 105."
+      }
+    ],
+    "thumbnail": {
+      "src": "assets/img/corpus/page-064.webp",
+      "kind": "image"
+    },
+    "altText": "Страница 064 исходного корпуса «общага — сюрреализм».",
+    "credits": "исходный корпус «общага — сюрреализм», предоставленный для публикации; обработка архивной копии — Протокол 418",
+    "rights": "all-rights-reserved",
+    "source": {
+      "collection": "общага — сюрреализм",
+      "item": "страница 064 из 105",
+      "kind": "страница визуального корпуса"
+    },
+    "pageNumber": 64,
+    "pageText": "",
+    "fieldNotes": [
+      "Текстовый слой не выделен из PDF: материал сохранён как визуальный лист без домысливания содержания."
+    ],
+    "object": {
+      "originalFunction": "лист исходной PDF-хроники",
+      "wrongFunction": "архивный объект внутри Линолеумного архива"
+    }
+  },
+  {
+    "id": "w-corpus-page-065",
+    "slug": "corpus-page-065",
+    "type": "artifact",
+    "title": "Материал 065",
+    "summary": "Страница 65 из исходного визуального корпуса «общага — сюрреализм».",
+    "process": "zero-reaction",
+    "narrativePhase": "pressure",
+    "publicationStatus": "published",
+    "visualDialect": "zero-reaction",
+    "media": [
+      {
+        "src": "assets/img/corpus/page-065.webp",
+        "kind": "image",
+        "width": 708,
+        "height": 1000,
+        "caption": "Исходный лист корпуса, страница 065 из 105."
+      }
+    ],
+    "thumbnail": {
+      "src": "assets/img/corpus/page-065.webp",
+      "kind": "image"
+    },
+    "altText": "Страница 065 исходного корпуса «общага — сюрреализм».",
+    "credits": "исходный корпус «общага — сюрреализм», предоставленный для публикации; обработка архивной копии — Протокол 418",
+    "rights": "all-rights-reserved",
+    "source": {
+      "collection": "общага — сюрреализм",
+      "item": "страница 065 из 105",
+      "kind": "страница визуального корпуса"
+    },
+    "pageNumber": 65,
+    "pageText": "",
+    "fieldNotes": [
+      "Текстовый слой не выделен из PDF: материал сохранён как визуальный лист без домысливания содержания."
+    ],
+    "object": {
+      "originalFunction": "лист исходной PDF-хроники",
+      "wrongFunction": "архивный объект внутри Линолеумного архива"
+    }
+  },
+  {
+    "id": "w-corpus-page-066",
+    "slug": "corpus-page-066",
+    "type": "artifact",
+    "title": "Материал 066",
+    "summary": "Страница 66 из исходного визуального корпуса «общага — сюрреализм».",
+    "process": "zero-reaction",
+    "narrativePhase": "pressure",
+    "publicationStatus": "published",
+    "visualDialect": "zero-reaction",
+    "media": [
+      {
+        "src": "assets/img/corpus/page-066.webp",
+        "kind": "image",
+        "width": 708,
+        "height": 1000,
+        "caption": "Исходный лист корпуса, страница 066 из 105."
+      }
+    ],
+    "thumbnail": {
+      "src": "assets/img/corpus/page-066.webp",
+      "kind": "image"
+    },
+    "altText": "Страница 066 исходного корпуса «общага — сюрреализм».",
+    "credits": "исходный корпус «общага — сюрреализм», предоставленный для публикации; обработка архивной копии — Протокол 418",
+    "rights": "all-rights-reserved",
+    "source": {
+      "collection": "общага — сюрреализм",
+      "item": "страница 066 из 105",
+      "kind": "страница визуального корпуса"
+    },
+    "pageNumber": 66,
+    "pageText": "",
+    "fieldNotes": [
+      "Текстовый слой не выделен из PDF: материал сохранён как визуальный лист без домысливания содержания."
+    ],
+    "object": {
+      "originalFunction": "лист исходной PDF-хроники",
+      "wrongFunction": "архивный объект внутри Линолеумного архива"
+    }
+  },
+  {
+    "id": "w-corpus-page-067",
+    "slug": "corpus-page-067",
+    "type": "artifact",
+    "title": "Материал 067",
+    "summary": "Страница 67 из исходного визуального корпуса «общага — сюрреализм».",
+    "process": "zero-reaction",
+    "narrativePhase": "pressure",
+    "publicationStatus": "published",
+    "visualDialect": "zero-reaction",
+    "media": [
+      {
+        "src": "assets/img/corpus/page-067.webp",
+        "kind": "image",
+        "width": 708,
+        "height": 1000,
+        "caption": "Исходный лист корпуса, страница 067 из 105."
+      }
+    ],
+    "thumbnail": {
+      "src": "assets/img/corpus/page-067.webp",
+      "kind": "image"
+    },
+    "altText": "Страница 067 исходного корпуса «общага — сюрреализм».",
+    "credits": "исходный корпус «общага — сюрреализм», предоставленный для публикации; обработка архивной копии — Протокол 418",
+    "rights": "all-rights-reserved",
+    "source": {
+      "collection": "общага — сюрреализм",
+      "item": "страница 067 из 105",
+      "kind": "страница визуального корпуса"
+    },
+    "pageNumber": 67,
+    "pageText": "",
+    "fieldNotes": [
+      "Текстовый слой не выделен из PDF: материал сохранён как визуальный лист без домысливания содержания."
+    ],
+    "object": {
+      "originalFunction": "лист исходной PDF-хроники",
+      "wrongFunction": "архивный объект внутри Линолеумного архива"
+    }
+  },
+  {
+    "id": "w-corpus-page-068",
+    "slug": "corpus-page-068",
+    "type": "artifact",
+    "title": "Материал 068",
+    "summary": "Страница 68 из исходного визуального корпуса «общага — сюрреализм».",
+    "process": "zero-reaction",
+    "narrativePhase": "pressure",
+    "publicationStatus": "published",
+    "visualDialect": "zero-reaction",
+    "media": [
+      {
+        "src": "assets/img/corpus/page-068.webp",
+        "kind": "image",
+        "width": 708,
+        "height": 1000,
+        "caption": "Исходный лист корпуса, страница 068 из 105."
+      }
+    ],
+    "thumbnail": {
+      "src": "assets/img/corpus/page-068.webp",
+      "kind": "image"
+    },
+    "altText": "Страница 068 исходного корпуса «общага — сюрреализм».",
+    "credits": "исходный корпус «общага — сюрреализм», предоставленный для публикации; обработка архивной копии — Протокол 418",
+    "rights": "all-rights-reserved",
+    "source": {
+      "collection": "общага — сюрреализм",
+      "item": "страница 068 из 105",
+      "kind": "страница визуального корпуса"
+    },
+    "pageNumber": 68,
+    "pageText": "",
+    "fieldNotes": [
+      "Текстовый слой не выделен из PDF: материал сохранён как визуальный лист без домысливания содержания."
+    ],
+    "object": {
+      "originalFunction": "лист исходной PDF-хроники",
+      "wrongFunction": "архивный объект внутри Линолеумного архива"
+    }
+  },
+  {
+    "id": "w-corpus-page-069",
+    "slug": "corpus-page-069",
+    "type": "artifact",
+    "title": "Материал 069",
+    "summary": "Страница 69 из исходного визуального корпуса «общага — сюрреализм».",
+    "process": "zero-reaction",
+    "narrativePhase": "pressure",
+    "publicationStatus": "published",
+    "visualDialect": "zero-reaction",
+    "media": [
+      {
+        "src": "assets/img/corpus/page-069.webp",
+        "kind": "image",
+        "width": 708,
+        "height": 1000,
+        "caption": "Исходный лист корпуса, страница 069 из 105."
+      }
+    ],
+    "thumbnail": {
+      "src": "assets/img/corpus/page-069.webp",
+      "kind": "image"
+    },
+    "altText": "Страница 069 исходного корпуса «общага — сюрреализм».",
+    "credits": "исходный корпус «общага — сюрреализм», предоставленный для публикации; обработка архивной копии — Протокол 418",
+    "rights": "all-rights-reserved",
+    "source": {
+      "collection": "общага — сюрреализм",
+      "item": "страница 069 из 105",
+      "kind": "страница визуального корпуса"
+    },
+    "pageNumber": 69,
+    "pageText": "",
+    "fieldNotes": [
+      "Текстовый слой не выделен из PDF: материал сохранён как визуальный лист без домысливания содержания."
+    ],
+    "object": {
+      "originalFunction": "лист исходной PDF-хроники",
+      "wrongFunction": "архивный объект внутри Линолеумного архива"
+    }
+  },
+  {
+    "id": "w-corpus-page-070",
+    "slug": "corpus-page-070",
+    "type": "artifact",
+    "title": "Материал 070",
+    "summary": "Страница 70 из исходного визуального корпуса «общага — сюрреализм».",
+    "process": "zero-reaction",
+    "narrativePhase": "pressure",
+    "publicationStatus": "published",
+    "visualDialect": "zero-reaction",
+    "media": [
+      {
+        "src": "assets/img/corpus/page-070.webp",
+        "kind": "image",
+        "width": 708,
+        "height": 1000,
+        "caption": "Исходный лист корпуса, страница 070 из 105."
+      }
+    ],
+    "thumbnail": {
+      "src": "assets/img/corpus/page-070.webp",
+      "kind": "image"
+    },
+    "altText": "Страница 070 исходного корпуса «общага — сюрреализм».",
+    "credits": "исходный корпус «общага — сюрреализм», предоставленный для публикации; обработка архивной копии — Протокол 418",
+    "rights": "all-rights-reserved",
+    "source": {
+      "collection": "общага — сюрреализм",
+      "item": "страница 070 из 105",
+      "kind": "страница визуального корпуса"
+    },
+    "pageNumber": 70,
+    "pageText": "",
+    "fieldNotes": [
+      "Текстовый слой не выделен из PDF: материал сохранён как визуальный лист без домысливания содержания."
+    ],
+    "object": {
+      "originalFunction": "лист исходной PDF-хроники",
+      "wrongFunction": "архивный объект внутри Линолеумного архива"
+    }
+  },
+  {
+    "id": "w-corpus-page-071",
+    "slug": "corpus-page-071",
+    "type": "artifact",
+    "title": "Материал 071",
+    "summary": "Страница 71 из исходного визуального корпуса «общага — сюрреализм».",
+    "process": "zero-reaction",
+    "narrativePhase": "pressure",
+    "publicationStatus": "published",
+    "visualDialect": "zero-reaction",
+    "media": [
+      {
+        "src": "assets/img/corpus/page-071.webp",
+        "kind": "image",
+        "width": 708,
+        "height": 1000,
+        "caption": "Исходный лист корпуса, страница 071 из 105."
+      }
+    ],
+    "thumbnail": {
+      "src": "assets/img/corpus/page-071.webp",
+      "kind": "image"
+    },
+    "altText": "Страница 071 исходного корпуса «общага — сюрреализм».",
+    "credits": "исходный корпус «общага — сюрреализм», предоставленный для публикации; обработка архивной копии — Протокол 418",
+    "rights": "all-rights-reserved",
+    "source": {
+      "collection": "общага — сюрреализм",
+      "item": "страница 071 из 105",
+      "kind": "страница визуального корпуса"
+    },
+    "pageNumber": 71,
+    "pageText": "",
+    "fieldNotes": [
+      "Текстовый слой не выделен из PDF: материал сохранён как визуальный лист без домысливания содержания."
+    ],
+    "object": {
+      "originalFunction": "лист исходной PDF-хроники",
+      "wrongFunction": "архивный объект внутри Линолеумного архива"
+    }
+  },
+  {
+    "id": "w-corpus-page-072",
+    "slug": "corpus-page-072",
+    "type": "artifact",
+    "title": "Материал 072",
+    "summary": "Страница 72 из исходного визуального корпуса «общага — сюрреализм».",
+    "process": "zero-reaction",
+    "narrativePhase": "pressure",
+    "publicationStatus": "published",
+    "visualDialect": "zero-reaction",
+    "media": [
+      {
+        "src": "assets/img/corpus/page-072.webp",
+        "kind": "image",
+        "width": 708,
+        "height": 1000,
+        "caption": "Исходный лист корпуса, страница 072 из 105."
+      }
+    ],
+    "thumbnail": {
+      "src": "assets/img/corpus/page-072.webp",
+      "kind": "image"
+    },
+    "altText": "Страница 072 исходного корпуса «общага — сюрреализм».",
+    "credits": "исходный корпус «общага — сюрреализм», предоставленный для публикации; обработка архивной копии — Протокол 418",
+    "rights": "all-rights-reserved",
+    "source": {
+      "collection": "общага — сюрреализм",
+      "item": "страница 072 из 105",
+      "kind": "страница визуального корпуса"
+    },
+    "pageNumber": 72,
+    "pageText": "",
+    "fieldNotes": [
+      "Текстовый слой не выделен из PDF: материал сохранён как визуальный лист без домысливания содержания."
+    ],
+    "object": {
+      "originalFunction": "лист исходной PDF-хроники",
+      "wrongFunction": "архивный объект внутри Линолеумного архива"
+    }
+  },
+  {
+    "id": "w-corpus-page-073",
+    "slug": "corpus-page-073",
+    "type": "artifact",
+    "title": "Материал 073",
+    "summary": "Страница 73 из исходного визуального корпуса «общага — сюрреализм».",
+    "process": "zero-reaction",
+    "narrativePhase": "pressure",
+    "publicationStatus": "published",
+    "visualDialect": "zero-reaction",
+    "media": [
+      {
+        "src": "assets/img/corpus/page-073.webp",
+        "kind": "image",
+        "width": 708,
+        "height": 1000,
+        "caption": "Исходный лист корпуса, страница 073 из 105."
+      }
+    ],
+    "thumbnail": {
+      "src": "assets/img/corpus/page-073.webp",
+      "kind": "image"
+    },
+    "altText": "Страница 073 исходного корпуса «общага — сюрреализм».",
+    "credits": "исходный корпус «общага — сюрреализм», предоставленный для публикации; обработка архивной копии — Протокол 418",
+    "rights": "all-rights-reserved",
+    "source": {
+      "collection": "общага — сюрреализм",
+      "item": "страница 073 из 105",
+      "kind": "страница визуального корпуса"
+    },
+    "pageNumber": 73,
+    "pageText": "",
+    "fieldNotes": [
+      "Текстовый слой не выделен из PDF: материал сохранён как визуальный лист без домысливания содержания."
+    ],
+    "object": {
+      "originalFunction": "лист исходной PDF-хроники",
+      "wrongFunction": "архивный объект внутри Линолеумного архива"
+    }
+  },
+  {
+    "id": "w-corpus-page-074",
+    "slug": "corpus-page-074",
+    "type": "artifact",
+    "title": "Материал 074",
+    "summary": "Страница 74 из исходного визуального корпуса «общага — сюрреализм».",
+    "process": "zero-reaction",
+    "narrativePhase": "pressure",
+    "publicationStatus": "published",
+    "visualDialect": "zero-reaction",
+    "media": [
+      {
+        "src": "assets/img/corpus/page-074.webp",
+        "kind": "image",
+        "width": 708,
+        "height": 1000,
+        "caption": "Исходный лист корпуса, страница 074 из 105."
+      }
+    ],
+    "thumbnail": {
+      "src": "assets/img/corpus/page-074.webp",
+      "kind": "image"
+    },
+    "altText": "Страница 074 исходного корпуса «общага — сюрреализм».",
+    "credits": "исходный корпус «общага — сюрреализм», предоставленный для публикации; обработка архивной копии — Протокол 418",
+    "rights": "all-rights-reserved",
+    "source": {
+      "collection": "общага — сюрреализм",
+      "item": "страница 074 из 105",
+      "kind": "страница визуального корпуса"
+    },
+    "pageNumber": 74,
+    "pageText": "",
+    "fieldNotes": [
+      "Текстовый слой не выделен из PDF: материал сохранён как визуальный лист без домысливания содержания."
+    ],
+    "object": {
+      "originalFunction": "лист исходной PDF-хроники",
+      "wrongFunction": "архивный объект внутри Линолеумного архива"
+    }
+  },
+  {
+    "id": "w-corpus-page-075",
+    "slug": "corpus-page-075",
+    "type": "artifact",
+    "title": "Материал 075",
+    "summary": "Страница 75 из исходного визуального корпуса «общага — сюрреализм».",
+    "process": "zero-reaction",
+    "narrativePhase": "pressure",
+    "publicationStatus": "published",
+    "visualDialect": "zero-reaction",
+    "media": [
+      {
+        "src": "assets/img/corpus/page-075.webp",
+        "kind": "image",
+        "width": 708,
+        "height": 1000,
+        "caption": "Исходный лист корпуса, страница 075 из 105."
+      }
+    ],
+    "thumbnail": {
+      "src": "assets/img/corpus/page-075.webp",
+      "kind": "image"
+    },
+    "altText": "Страница 075 исходного корпуса «общага — сюрреализм».",
+    "credits": "исходный корпус «общага — сюрреализм», предоставленный для публикации; обработка архивной копии — Протокол 418",
+    "rights": "all-rights-reserved",
+    "source": {
+      "collection": "общага — сюрреализм",
+      "item": "страница 075 из 105",
+      "kind": "страница визуального корпуса"
+    },
+    "pageNumber": 75,
+    "pageText": "",
+    "fieldNotes": [
+      "Текстовый слой не выделен из PDF: материал сохранён как визуальный лист без домысливания содержания."
+    ],
+    "object": {
+      "originalFunction": "лист исходной PDF-хроники",
+      "wrongFunction": "архивный объект внутри Линолеумного архива"
+    }
+  },
+  {
+    "id": "w-corpus-page-076",
+    "slug": "corpus-page-076",
+    "type": "artifact",
+    "title": "Материал 076",
+    "summary": "Страница 76 из исходного визуального корпуса «общага — сюрреализм».",
+    "process": "zero-reaction",
+    "narrativePhase": "pressure",
+    "publicationStatus": "published",
+    "visualDialect": "zero-reaction",
+    "media": [
+      {
+        "src": "assets/img/corpus/page-076.webp",
+        "kind": "image",
+        "width": 708,
+        "height": 1000,
+        "caption": "Исходный лист корпуса, страница 076 из 105."
+      }
+    ],
+    "thumbnail": {
+      "src": "assets/img/corpus/page-076.webp",
+      "kind": "image"
+    },
+    "altText": "Страница 076 исходного корпуса «общага — сюрреализм».",
+    "credits": "исходный корпус «общага — сюрреализм», предоставленный для публикации; обработка архивной копии — Протокол 418",
+    "rights": "all-rights-reserved",
+    "source": {
+      "collection": "общага — сюрреализм",
+      "item": "страница 076 из 105",
+      "kind": "страница визуального корпуса"
+    },
+    "pageNumber": 76,
+    "pageText": "",
+    "fieldNotes": [
+      "Текстовый слой не выделен из PDF: материал сохранён как визуальный лист без домысливания содержания."
+    ],
+    "object": {
+      "originalFunction": "лист исходной PDF-хроники",
+      "wrongFunction": "архивный объект внутри Линолеумного архива"
+    }
+  },
+  {
+    "id": "w-corpus-page-077",
+    "slug": "corpus-page-077",
+    "type": "artifact",
+    "title": "Материал 077",
+    "summary": "Страница 77 из исходного визуального корпуса «общага — сюрреализм».",
+    "process": "zero-reaction",
+    "narrativePhase": "pressure",
+    "publicationStatus": "published",
+    "visualDialect": "zero-reaction",
+    "media": [
+      {
+        "src": "assets/img/corpus/page-077.webp",
+        "kind": "image",
+        "width": 708,
+        "height": 1000,
+        "caption": "Исходный лист корпуса, страница 077 из 105."
+      }
+    ],
+    "thumbnail": {
+      "src": "assets/img/corpus/page-077.webp",
+      "kind": "image"
+    },
+    "altText": "Страница 077 исходного корпуса «общага — сюрреализм».",
+    "credits": "исходный корпус «общага — сюрреализм», предоставленный для публикации; обработка архивной копии — Протокол 418",
+    "rights": "all-rights-reserved",
+    "source": {
+      "collection": "общага — сюрреализм",
+      "item": "страница 077 из 105",
+      "kind": "страница визуального корпуса"
+    },
+    "pageNumber": 77,
+    "pageText": "",
+    "fieldNotes": [
+      "Текстовый слой не выделен из PDF: материал сохранён как визуальный лист без домысливания содержания."
+    ],
+    "object": {
+      "originalFunction": "лист исходной PDF-хроники",
+      "wrongFunction": "архивный объект внутри Линолеумного архива"
+    }
+  },
+  {
+    "id": "w-corpus-page-078",
+    "slug": "corpus-page-078",
+    "type": "artifact",
+    "title": "Материал 078",
+    "summary": "Страница 78 из исходного визуального корпуса «общага — сюрреализм».",
+    "process": "zero-reaction",
+    "narrativePhase": "pressure",
+    "publicationStatus": "published",
+    "visualDialect": "zero-reaction",
+    "media": [
+      {
+        "src": "assets/img/corpus/page-078.webp",
+        "kind": "image",
+        "width": 708,
+        "height": 1000,
+        "caption": "Исходный лист корпуса, страница 078 из 105."
+      }
+    ],
+    "thumbnail": {
+      "src": "assets/img/corpus/page-078.webp",
+      "kind": "image"
+    },
+    "altText": "Страница 078 исходного корпуса «общага — сюрреализм».",
+    "credits": "исходный корпус «общага — сюрреализм», предоставленный для публикации; обработка архивной копии — Протокол 418",
+    "rights": "all-rights-reserved",
+    "source": {
+      "collection": "общага — сюрреализм",
+      "item": "страница 078 из 105",
+      "kind": "страница визуального корпуса"
+    },
+    "pageNumber": 78,
+    "pageText": "",
+    "fieldNotes": [
+      "Текстовый слой не выделен из PDF: материал сохранён как визуальный лист без домысливания содержания."
+    ],
+    "object": {
+      "originalFunction": "лист исходной PDF-хроники",
+      "wrongFunction": "архивный объект внутри Линолеумного архива"
+    }
+  },
+  {
+    "id": "w-corpus-page-079",
+    "slug": "corpus-page-079",
+    "type": "artifact",
+    "title": "Материал 079",
+    "summary": "Страница 79 из исходного визуального корпуса «общага — сюрреализм».",
+    "process": "zero-reaction",
+    "narrativePhase": "pressure",
+    "publicationStatus": "published",
+    "visualDialect": "zero-reaction",
+    "media": [
+      {
+        "src": "assets/img/corpus/page-079.webp",
+        "kind": "image",
+        "width": 708,
+        "height": 1000,
+        "caption": "Исходный лист корпуса, страница 079 из 105."
+      }
+    ],
+    "thumbnail": {
+      "src": "assets/img/corpus/page-079.webp",
+      "kind": "image"
+    },
+    "altText": "Страница 079 исходного корпуса «общага — сюрреализм».",
+    "credits": "исходный корпус «общага — сюрреализм», предоставленный для публикации; обработка архивной копии — Протокол 418",
+    "rights": "all-rights-reserved",
+    "source": {
+      "collection": "общага — сюрреализм",
+      "item": "страница 079 из 105",
+      "kind": "страница визуального корпуса"
+    },
+    "pageNumber": 79,
+    "pageText": "",
+    "fieldNotes": [
+      "Текстовый слой не выделен из PDF: материал сохранён как визуальный лист без домысливания содержания."
+    ],
+    "object": {
+      "originalFunction": "лист исходной PDF-хроники",
+      "wrongFunction": "архивный объект внутри Линолеумного архива"
+    }
+  },
+  {
+    "id": "w-corpus-page-080",
+    "slug": "corpus-page-080",
+    "type": "artifact",
+    "title": "Материал 080",
+    "summary": "Страница 80 из исходного визуального корпуса «общага — сюрреализм».",
+    "process": "zero-reaction",
+    "narrativePhase": "pressure",
+    "publicationStatus": "published",
+    "visualDialect": "zero-reaction",
+    "media": [
+      {
+        "src": "assets/img/corpus/page-080.webp",
+        "kind": "image",
+        "width": 708,
+        "height": 1000,
+        "caption": "Исходный лист корпуса, страница 080 из 105."
+      }
+    ],
+    "thumbnail": {
+      "src": "assets/img/corpus/page-080.webp",
+      "kind": "image"
+    },
+    "altText": "Страница 080 исходного корпуса «общага — сюрреализм».",
+    "credits": "исходный корпус «общага — сюрреализм», предоставленный для публикации; обработка архивной копии — Протокол 418",
+    "rights": "all-rights-reserved",
+    "source": {
+      "collection": "общага — сюрреализм",
+      "item": "страница 080 из 105",
+      "kind": "страница визуального корпуса"
+    },
+    "pageNumber": 80,
+    "pageText": "",
+    "fieldNotes": [
+      "Текстовый слой не выделен из PDF: материал сохранён как визуальный лист без домысливания содержания."
+    ],
+    "object": {
+      "originalFunction": "лист исходной PDF-хроники",
+      "wrongFunction": "архивный объект внутри Линолеумного архива"
+    }
+  },
+  {
+    "id": "w-corpus-page-081",
+    "slug": "corpus-page-081",
+    "type": "artifact",
+    "title": "Материал 081",
+    "summary": "Страница 81 из исходного визуального корпуса «общага — сюрреализм».",
+    "process": "zero-reaction",
+    "narrativePhase": "pressure",
+    "publicationStatus": "published",
+    "visualDialect": "zero-reaction",
+    "media": [
+      {
+        "src": "assets/img/corpus/page-081.webp",
+        "kind": "image",
+        "width": 708,
+        "height": 1000,
+        "caption": "Исходный лист корпуса, страница 081 из 105."
+      }
+    ],
+    "thumbnail": {
+      "src": "assets/img/corpus/page-081.webp",
+      "kind": "image"
+    },
+    "altText": "Страница 081 исходного корпуса «общага — сюрреализм».",
+    "credits": "исходный корпус «общага — сюрреализм», предоставленный для публикации; обработка архивной копии — Протокол 418",
+    "rights": "all-rights-reserved",
+    "source": {
+      "collection": "общага — сюрреализм",
+      "item": "страница 081 из 105",
+      "kind": "страница визуального корпуса"
+    },
+    "pageNumber": 81,
+    "pageText": "",
+    "fieldNotes": [
+      "Текстовый слой не выделен из PDF: материал сохранён как визуальный лист без домысливания содержания."
+    ],
+    "object": {
+      "originalFunction": "лист исходной PDF-хроники",
+      "wrongFunction": "архивный объект внутри Линолеумного архива"
+    }
+  },
+  {
+    "id": "w-corpus-page-082",
+    "slug": "corpus-page-082",
+    "type": "artifact",
+    "title": "Материал 082",
+    "summary": "Страница 82 из исходного визуального корпуса «общага — сюрреализм».",
+    "process": "zero-reaction",
+    "narrativePhase": "pressure",
+    "publicationStatus": "published",
+    "visualDialect": "zero-reaction",
+    "media": [
+      {
+        "src": "assets/img/corpus/page-082.webp",
+        "kind": "image",
+        "width": 708,
+        "height": 1000,
+        "caption": "Исходный лист корпуса, страница 082 из 105."
+      }
+    ],
+    "thumbnail": {
+      "src": "assets/img/corpus/page-082.webp",
+      "kind": "image"
+    },
+    "altText": "Страница 082 исходного корпуса «общага — сюрреализм».",
+    "credits": "исходный корпус «общага — сюрреализм», предоставленный для публикации; обработка архивной копии — Протокол 418",
+    "rights": "all-rights-reserved",
+    "source": {
+      "collection": "общага — сюрреализм",
+      "item": "страница 082 из 105",
+      "kind": "страница визуального корпуса"
+    },
+    "pageNumber": 82,
+    "pageText": "",
+    "fieldNotes": [
+      "Текстовый слой не выделен из PDF: материал сохранён как визуальный лист без домысливания содержания."
+    ],
+    "object": {
+      "originalFunction": "лист исходной PDF-хроники",
+      "wrongFunction": "архивный объект внутри Линолеумного архива"
+    }
+  },
+  {
+    "id": "w-corpus-page-083",
+    "slug": "corpus-page-083",
+    "type": "artifact",
+    "title": "Материал 083",
+    "summary": "Страница 83 из исходного визуального корпуса «общага — сюрреализм».",
+    "process": "zero-reaction",
+    "narrativePhase": "pressure",
+    "publicationStatus": "published",
+    "visualDialect": "zero-reaction",
+    "media": [
+      {
+        "src": "assets/img/corpus/page-083.webp",
+        "kind": "image",
+        "width": 708,
+        "height": 1000,
+        "caption": "Исходный лист корпуса, страница 083 из 105."
+      }
+    ],
+    "thumbnail": {
+      "src": "assets/img/corpus/page-083.webp",
+      "kind": "image"
+    },
+    "altText": "Страница 083 исходного корпуса «общага — сюрреализм».",
+    "credits": "исходный корпус «общага — сюрреализм», предоставленный для публикации; обработка архивной копии — Протокол 418",
+    "rights": "all-rights-reserved",
+    "source": {
+      "collection": "общага — сюрреализм",
+      "item": "страница 083 из 105",
+      "kind": "страница визуального корпуса"
+    },
+    "pageNumber": 83,
+    "pageText": "",
+    "fieldNotes": [
+      "Текстовый слой не выделен из PDF: материал сохранён как визуальный лист без домысливания содержания."
+    ],
+    "object": {
+      "originalFunction": "лист исходной PDF-хроники",
+      "wrongFunction": "архивный объект внутри Линолеумного архива"
+    }
+  },
+  {
+    "id": "w-corpus-page-084",
+    "slug": "corpus-page-084",
+    "type": "artifact",
+    "title": "Материал 084",
+    "summary": "Страница 84 из исходного визуального корпуса «общага — сюрреализм».",
+    "process": "zero-reaction",
+    "narrativePhase": "pressure",
+    "publicationStatus": "published",
+    "visualDialect": "zero-reaction",
+    "media": [
+      {
+        "src": "assets/img/corpus/page-084.webp",
+        "kind": "image",
+        "width": 708,
+        "height": 1000,
+        "caption": "Исходный лист корпуса, страница 084 из 105."
+      }
+    ],
+    "thumbnail": {
+      "src": "assets/img/corpus/page-084.webp",
+      "kind": "image"
+    },
+    "altText": "Страница 084 исходного корпуса «общага — сюрреализм».",
+    "credits": "исходный корпус «общага — сюрреализм», предоставленный для публикации; обработка архивной копии — Протокол 418",
+    "rights": "all-rights-reserved",
+    "source": {
+      "collection": "общага — сюрреализм",
+      "item": "страница 084 из 105",
+      "kind": "страница визуального корпуса"
+    },
+    "pageNumber": 84,
+    "pageText": "",
+    "fieldNotes": [
+      "Текстовый слой не выделен из PDF: материал сохранён как визуальный лист без домысливания содержания."
+    ],
+    "object": {
+      "originalFunction": "лист исходной PDF-хроники",
+      "wrongFunction": "архивный объект внутри Линолеумного архива"
+    }
+  },
+  {
+    "id": "w-corpus-page-085",
+    "slug": "corpus-page-085",
+    "type": "artifact",
+    "title": "Материал 085",
+    "summary": "Страница 85 из исходного визуального корпуса «общага — сюрреализм».",
+    "process": "zero-reaction",
+    "narrativePhase": "pressure",
+    "publicationStatus": "published",
+    "visualDialect": "zero-reaction",
+    "media": [
+      {
+        "src": "assets/img/corpus/page-085.webp",
+        "kind": "image",
+        "width": 708,
+        "height": 1000,
+        "caption": "Исходный лист корпуса, страница 085 из 105."
+      }
+    ],
+    "thumbnail": {
+      "src": "assets/img/corpus/page-085.webp",
+      "kind": "image"
+    },
+    "altText": "Страница 085 исходного корпуса «общага — сюрреализм».",
+    "credits": "исходный корпус «общага — сюрреализм», предоставленный для публикации; обработка архивной копии — Протокол 418",
+    "rights": "all-rights-reserved",
+    "source": {
+      "collection": "общага — сюрреализм",
+      "item": "страница 085 из 105",
+      "kind": "страница визуального корпуса"
+    },
+    "pageNumber": 85,
+    "pageText": "",
+    "fieldNotes": [
+      "Текстовый слой не выделен из PDF: материал сохранён как визуальный лист без домысливания содержания."
+    ],
+    "object": {
+      "originalFunction": "лист исходной PDF-хроники",
+      "wrongFunction": "архивный объект внутри Линолеумного архива"
+    }
+  },
+  {
+    "id": "w-corpus-page-086",
+    "slug": "corpus-page-086",
+    "type": "artifact",
+    "title": "Материал 086",
+    "summary": "Страница 86 из исходного визуального корпуса «общага — сюрреализм».",
+    "process": "zero-reaction",
+    "narrativePhase": "pressure",
+    "publicationStatus": "published",
+    "visualDialect": "zero-reaction",
+    "media": [
+      {
+        "src": "assets/img/corpus/page-086.webp",
+        "kind": "image",
+        "width": 708,
+        "height": 1000,
+        "caption": "Исходный лист корпуса, страница 086 из 105."
+      }
+    ],
+    "thumbnail": {
+      "src": "assets/img/corpus/page-086.webp",
+      "kind": "image"
+    },
+    "altText": "Страница 086 исходного корпуса «общага — сюрреализм».",
+    "credits": "исходный корпус «общага — сюрреализм», предоставленный для публикации; обработка архивной копии — Протокол 418",
+    "rights": "all-rights-reserved",
+    "source": {
+      "collection": "общага — сюрреализм",
+      "item": "страница 086 из 105",
+      "kind": "страница визуального корпуса"
+    },
+    "pageNumber": 86,
+    "pageText": "",
+    "fieldNotes": [
+      "Текстовый слой не выделен из PDF: материал сохранён как визуальный лист без домысливания содержания."
+    ],
+    "object": {
+      "originalFunction": "лист исходной PDF-хроники",
+      "wrongFunction": "архивный объект внутри Линолеумного архива"
+    }
+  },
+  {
+    "id": "w-corpus-page-087",
+    "slug": "corpus-page-087",
+    "type": "artifact",
+    "title": "Материал 087",
+    "summary": "Страница 87 из исходного визуального корпуса «общага — сюрреализм».",
+    "process": "zero-reaction",
+    "narrativePhase": "pressure",
+    "publicationStatus": "published",
+    "visualDialect": "zero-reaction",
+    "media": [
+      {
+        "src": "assets/img/corpus/page-087.webp",
+        "kind": "image",
+        "width": 708,
+        "height": 1000,
+        "caption": "Исходный лист корпуса, страница 087 из 105."
+      }
+    ],
+    "thumbnail": {
+      "src": "assets/img/corpus/page-087.webp",
+      "kind": "image"
+    },
+    "altText": "Страница 087 исходного корпуса «общага — сюрреализм».",
+    "credits": "исходный корпус «общага — сюрреализм», предоставленный для публикации; обработка архивной копии — Протокол 418",
+    "rights": "all-rights-reserved",
+    "source": {
+      "collection": "общага — сюрреализм",
+      "item": "страница 087 из 105",
+      "kind": "страница визуального корпуса"
+    },
+    "pageNumber": 87,
+    "pageText": "",
+    "fieldNotes": [
+      "Текстовый слой не выделен из PDF: материал сохранён как визуальный лист без домысливания содержания."
+    ],
+    "object": {
+      "originalFunction": "лист исходной PDF-хроники",
+      "wrongFunction": "архивный объект внутри Линолеумного архива"
+    }
+  },
+  {
+    "id": "w-corpus-page-088",
+    "slug": "corpus-page-088",
+    "type": "artifact",
+    "title": "Материал 088",
+    "summary": "Страница 88 из исходного визуального корпуса «общага — сюрреализм».",
+    "process": "zero-reaction",
+    "narrativePhase": "pressure",
+    "publicationStatus": "published",
+    "visualDialect": "zero-reaction",
+    "media": [
+      {
+        "src": "assets/img/corpus/page-088.webp",
+        "kind": "image",
+        "width": 708,
+        "height": 1000,
+        "caption": "Исходный лист корпуса, страница 088 из 105."
+      }
+    ],
+    "thumbnail": {
+      "src": "assets/img/corpus/page-088.webp",
+      "kind": "image"
+    },
+    "altText": "Страница 088 исходного корпуса «общага — сюрреализм».",
+    "credits": "исходный корпус «общага — сюрреализм», предоставленный для публикации; обработка архивной копии — Протокол 418",
+    "rights": "all-rights-reserved",
+    "source": {
+      "collection": "общага — сюрреализм",
+      "item": "страница 088 из 105",
+      "kind": "страница визуального корпуса"
+    },
+    "pageNumber": 88,
+    "pageText": "",
+    "fieldNotes": [
+      "Текстовый слой не выделен из PDF: материал сохранён как визуальный лист без домысливания содержания."
+    ],
+    "object": {
+      "originalFunction": "лист исходной PDF-хроники",
+      "wrongFunction": "архивный объект внутри Линолеумного архива"
+    }
+  },
+  {
+    "id": "w-corpus-page-089",
+    "slug": "corpus-page-089",
+    "type": "artifact",
+    "title": "Материал 089",
+    "summary": "Страница 89 из исходного визуального корпуса «общага — сюрреализм».",
+    "process": "zero-reaction",
+    "narrativePhase": "pressure",
+    "publicationStatus": "published",
+    "visualDialect": "zero-reaction",
+    "media": [
+      {
+        "src": "assets/img/corpus/page-089.webp",
+        "kind": "image",
+        "width": 708,
+        "height": 1000,
+        "caption": "Исходный лист корпуса, страница 089 из 105."
+      }
+    ],
+    "thumbnail": {
+      "src": "assets/img/corpus/page-089.webp",
+      "kind": "image"
+    },
+    "altText": "Страница 089 исходного корпуса «общага — сюрреализм».",
+    "credits": "исходный корпус «общага — сюрреализм», предоставленный для публикации; обработка архивной копии — Протокол 418",
+    "rights": "all-rights-reserved",
+    "source": {
+      "collection": "общага — сюрреализм",
+      "item": "страница 089 из 105",
+      "kind": "страница визуального корпуса"
+    },
+    "pageNumber": 89,
+    "pageText": "",
+    "fieldNotes": [
+      "Текстовый слой не выделен из PDF: материал сохранён как визуальный лист без домысливания содержания."
+    ],
+    "object": {
+      "originalFunction": "лист исходной PDF-хроники",
+      "wrongFunction": "архивный объект внутри Линолеумного архива"
+    }
+  },
+  {
+    "id": "w-corpus-page-090",
+    "slug": "corpus-page-090",
+    "type": "artifact",
+    "title": "Материал 090",
+    "summary": "Страница 90 из исходного визуального корпуса «общага — сюрреализм».",
+    "process": "zero-reaction",
+    "narrativePhase": "pressure",
+    "publicationStatus": "published",
+    "visualDialect": "zero-reaction",
+    "media": [
+      {
+        "src": "assets/img/corpus/page-090.webp",
+        "kind": "image",
+        "width": 708,
+        "height": 1000,
+        "caption": "Исходный лист корпуса, страница 090 из 105."
+      }
+    ],
+    "thumbnail": {
+      "src": "assets/img/corpus/page-090.webp",
+      "kind": "image"
+    },
+    "altText": "Страница 090 исходного корпуса «общага — сюрреализм».",
+    "credits": "исходный корпус «общага — сюрреализм», предоставленный для публикации; обработка архивной копии — Протокол 418",
+    "rights": "all-rights-reserved",
+    "source": {
+      "collection": "общага — сюрреализм",
+      "item": "страница 090 из 105",
+      "kind": "страница визуального корпуса"
+    },
+    "pageNumber": 90,
+    "pageText": "",
+    "fieldNotes": [
+      "Текстовый слой не выделен из PDF: материал сохранён как визуальный лист без домысливания содержания."
+    ],
+    "object": {
+      "originalFunction": "лист исходной PDF-хроники",
+      "wrongFunction": "архивный объект внутри Линолеумного архива"
+    }
+  },
+  {
+    "id": "w-corpus-page-091",
+    "slug": "corpus-page-091",
+    "type": "artifact",
+    "title": "Материал 091",
+    "summary": "Страница 91 из исходного визуального корпуса «общага — сюрреализм».",
+    "process": "zero-reaction",
+    "narrativePhase": "pressure",
+    "publicationStatus": "published",
+    "visualDialect": "zero-reaction",
+    "media": [
+      {
+        "src": "assets/img/corpus/page-091.webp",
+        "kind": "image",
+        "width": 708,
+        "height": 1000,
+        "caption": "Исходный лист корпуса, страница 091 из 105."
+      }
+    ],
+    "thumbnail": {
+      "src": "assets/img/corpus/page-091.webp",
+      "kind": "image"
+    },
+    "altText": "Страница 091 исходного корпуса «общага — сюрреализм».",
+    "credits": "исходный корпус «общага — сюрреализм», предоставленный для публикации; обработка архивной копии — Протокол 418",
+    "rights": "all-rights-reserved",
+    "source": {
+      "collection": "общага — сюрреализм",
+      "item": "страница 091 из 105",
+      "kind": "страница визуального корпуса"
+    },
+    "pageNumber": 91,
+    "pageText": "",
+    "fieldNotes": [
+      "Текстовый слой не выделен из PDF: материал сохранён как визуальный лист без домысливания содержания."
+    ],
+    "object": {
+      "originalFunction": "лист исходной PDF-хроники",
+      "wrongFunction": "архивный объект внутри Линолеумного архива"
+    }
+  },
+  {
+    "id": "w-corpus-page-092",
+    "slug": "corpus-page-092",
+    "type": "artifact",
+    "title": "Материал 092",
+    "summary": "Страница 92 из исходного визуального корпуса «общага — сюрреализм».",
+    "process": "zero-reaction",
+    "narrativePhase": "pressure",
+    "publicationStatus": "published",
+    "visualDialect": "zero-reaction",
+    "media": [
+      {
+        "src": "assets/img/corpus/page-092.webp",
+        "kind": "image",
+        "width": 708,
+        "height": 1000,
+        "caption": "Исходный лист корпуса, страница 092 из 105."
+      }
+    ],
+    "thumbnail": {
+      "src": "assets/img/corpus/page-092.webp",
+      "kind": "image"
+    },
+    "altText": "Страница 092 исходного корпуса «общага — сюрреализм».",
+    "credits": "исходный корпус «общага — сюрреализм», предоставленный для публикации; обработка архивной копии — Протокол 418",
+    "rights": "all-rights-reserved",
+    "source": {
+      "collection": "общага — сюрреализм",
+      "item": "страница 092 из 105",
+      "kind": "страница визуального корпуса"
+    },
+    "pageNumber": 92,
+    "pageText": "",
+    "fieldNotes": [
+      "Текстовый слой не выделен из PDF: материал сохранён как визуальный лист без домысливания содержания."
+    ],
+    "object": {
+      "originalFunction": "лист исходной PDF-хроники",
+      "wrongFunction": "архивный объект внутри Линолеумного архива"
+    }
+  },
+  {
+    "id": "w-corpus-page-093",
+    "slug": "corpus-page-093",
+    "type": "artifact",
+    "title": "Материал 093",
+    "summary": "Страница 93 из исходного визуального корпуса «общага — сюрреализм».",
+    "process": "zero-reaction",
+    "narrativePhase": "pressure",
+    "publicationStatus": "published",
+    "visualDialect": "zero-reaction",
+    "media": [
+      {
+        "src": "assets/img/corpus/page-093.webp",
+        "kind": "image",
+        "width": 708,
+        "height": 1000,
+        "caption": "Исходный лист корпуса, страница 093 из 105."
+      }
+    ],
+    "thumbnail": {
+      "src": "assets/img/corpus/page-093.webp",
+      "kind": "image"
+    },
+    "altText": "Страница 093 исходного корпуса «общага — сюрреализм».",
+    "credits": "исходный корпус «общага — сюрреализм», предоставленный для публикации; обработка архивной копии — Протокол 418",
+    "rights": "all-rights-reserved",
+    "source": {
+      "collection": "общага — сюрреализм",
+      "item": "страница 093 из 105",
+      "kind": "страница визуального корпуса"
+    },
+    "pageNumber": 93,
+    "pageText": "",
+    "fieldNotes": [
+      "Текстовый слой не выделен из PDF: материал сохранён как визуальный лист без домысливания содержания."
+    ],
+    "object": {
+      "originalFunction": "лист исходной PDF-хроники",
+      "wrongFunction": "архивный объект внутри Линолеумного архива"
+    }
+  },
+  {
+    "id": "w-corpus-page-094",
+    "slug": "corpus-page-094",
+    "type": "artifact",
+    "title": "Материал 094",
+    "summary": "Страница 94 из исходного визуального корпуса «общага — сюрреализм».",
+    "process": "zero-reaction",
+    "narrativePhase": "pressure",
+    "publicationStatus": "published",
+    "visualDialect": "zero-reaction",
+    "media": [
+      {
+        "src": "assets/img/corpus/page-094.webp",
+        "kind": "image",
+        "width": 708,
+        "height": 1000,
+        "caption": "Исходный лист корпуса, страница 094 из 105."
+      }
+    ],
+    "thumbnail": {
+      "src": "assets/img/corpus/page-094.webp",
+      "kind": "image"
+    },
+    "altText": "Страница 094 исходного корпуса «общага — сюрреализм».",
+    "credits": "исходный корпус «общага — сюрреализм», предоставленный для публикации; обработка архивной копии — Протокол 418",
+    "rights": "all-rights-reserved",
+    "source": {
+      "collection": "общага — сюрреализм",
+      "item": "страница 094 из 105",
+      "kind": "страница визуального корпуса"
+    },
+    "pageNumber": 94,
+    "pageText": "",
+    "fieldNotes": [
+      "Текстовый слой не выделен из PDF: материал сохранён как визуальный лист без домысливания содержания."
+    ],
+    "object": {
+      "originalFunction": "лист исходной PDF-хроники",
+      "wrongFunction": "архивный объект внутри Линолеумного архива"
+    }
+  },
+  {
+    "id": "w-corpus-page-095",
+    "slug": "corpus-page-095",
+    "type": "artifact",
+    "title": "Материал 095",
+    "summary": "Страница 95 из исходного визуального корпуса «общага — сюрреализм».",
+    "process": "zero-reaction",
+    "narrativePhase": "pressure",
+    "publicationStatus": "published",
+    "visualDialect": "zero-reaction",
+    "media": [
+      {
+        "src": "assets/img/corpus/page-095.webp",
+        "kind": "image",
+        "width": 708,
+        "height": 1000,
+        "caption": "Исходный лист корпуса, страница 095 из 105."
+      }
+    ],
+    "thumbnail": {
+      "src": "assets/img/corpus/page-095.webp",
+      "kind": "image"
+    },
+    "altText": "Страница 095 исходного корпуса «общага — сюрреализм».",
+    "credits": "исходный корпус «общага — сюрреализм», предоставленный для публикации; обработка архивной копии — Протокол 418",
+    "rights": "all-rights-reserved",
+    "source": {
+      "collection": "общага — сюрреализм",
+      "item": "страница 095 из 105",
+      "kind": "страница визуального корпуса"
+    },
+    "pageNumber": 95,
+    "pageText": "",
+    "fieldNotes": [
+      "Текстовый слой не выделен из PDF: материал сохранён как визуальный лист без домысливания содержания."
+    ],
+    "object": {
+      "originalFunction": "лист исходной PDF-хроники",
+      "wrongFunction": "архивный объект внутри Линолеумного архива"
+    }
+  },
+  {
+    "id": "w-corpus-page-096",
+    "slug": "corpus-page-096",
+    "type": "artifact",
+    "title": "Материал 096",
+    "summary": "Страница 96 из исходного визуального корпуса «общага — сюрреализм».",
+    "process": "zero-reaction",
+    "narrativePhase": "pressure",
+    "publicationStatus": "published",
+    "visualDialect": "zero-reaction",
+    "media": [
+      {
+        "src": "assets/img/corpus/page-096.webp",
+        "kind": "image",
+        "width": 708,
+        "height": 1000,
+        "caption": "Исходный лист корпуса, страница 096 из 105."
+      }
+    ],
+    "thumbnail": {
+      "src": "assets/img/corpus/page-096.webp",
+      "kind": "image"
+    },
+    "altText": "Страница 096 исходного корпуса «общага — сюрреализм».",
+    "credits": "исходный корпус «общага — сюрреализм», предоставленный для публикации; обработка архивной копии — Протокол 418",
+    "rights": "all-rights-reserved",
+    "source": {
+      "collection": "общага — сюрреализм",
+      "item": "страница 096 из 105",
+      "kind": "страница визуального корпуса"
+    },
+    "pageNumber": 96,
+    "pageText": "",
+    "fieldNotes": [
+      "Текстовый слой не выделен из PDF: материал сохранён как визуальный лист без домысливания содержания."
+    ],
+    "object": {
+      "originalFunction": "лист исходной PDF-хроники",
+      "wrongFunction": "архивный объект внутри Линолеумного архива"
+    }
+  },
+  {
+    "id": "w-corpus-page-097",
+    "slug": "corpus-page-097",
+    "type": "artifact",
+    "title": "Материал 097",
+    "summary": "Страница 97 из исходного визуального корпуса «общага — сюрреализм».",
+    "process": "zero-reaction",
+    "narrativePhase": "pressure",
+    "publicationStatus": "published",
+    "visualDialect": "zero-reaction",
+    "media": [
+      {
+        "src": "assets/img/corpus/page-097.webp",
+        "kind": "image",
+        "width": 708,
+        "height": 1000,
+        "caption": "Исходный лист корпуса, страница 097 из 105."
+      }
+    ],
+    "thumbnail": {
+      "src": "assets/img/corpus/page-097.webp",
+      "kind": "image"
+    },
+    "altText": "Страница 097 исходного корпуса «общага — сюрреализм».",
+    "credits": "исходный корпус «общага — сюрреализм», предоставленный для публикации; обработка архивной копии — Протокол 418",
+    "rights": "all-rights-reserved",
+    "source": {
+      "collection": "общага — сюрреализм",
+      "item": "страница 097 из 105",
+      "kind": "страница визуального корпуса"
+    },
+    "pageNumber": 97,
+    "pageText": "",
+    "fieldNotes": [
+      "Текстовый слой не выделен из PDF: материал сохранён как визуальный лист без домысливания содержания."
+    ],
+    "object": {
+      "originalFunction": "лист исходной PDF-хроники",
+      "wrongFunction": "архивный объект внутри Линолеумного архива"
+    }
+  },
+  {
+    "id": "w-corpus-page-098",
+    "slug": "corpus-page-098",
+    "type": "artifact",
+    "title": "Материал 098",
+    "summary": "Страница 98 из исходного визуального корпуса «общага — сюрреализм».",
+    "process": "zero-reaction",
+    "narrativePhase": "pressure",
+    "publicationStatus": "published",
+    "visualDialect": "zero-reaction",
+    "media": [
+      {
+        "src": "assets/img/corpus/page-098.webp",
+        "kind": "image",
+        "width": 708,
+        "height": 1000,
+        "caption": "Исходный лист корпуса, страница 098 из 105."
+      }
+    ],
+    "thumbnail": {
+      "src": "assets/img/corpus/page-098.webp",
+      "kind": "image"
+    },
+    "altText": "Страница 098 исходного корпуса «общага — сюрреализм».",
+    "credits": "исходный корпус «общага — сюрреализм», предоставленный для публикации; обработка архивной копии — Протокол 418",
+    "rights": "all-rights-reserved",
+    "source": {
+      "collection": "общага — сюрреализм",
+      "item": "страница 098 из 105",
+      "kind": "страница визуального корпуса"
+    },
+    "pageNumber": 98,
+    "pageText": "",
+    "fieldNotes": [
+      "Текстовый слой не выделен из PDF: материал сохранён как визуальный лист без домысливания содержания."
+    ],
+    "object": {
+      "originalFunction": "лист исходной PDF-хроники",
+      "wrongFunction": "архивный объект внутри Линолеумного архива"
+    }
+  },
+  {
+    "id": "w-corpus-page-099",
+    "slug": "corpus-page-099",
+    "type": "artifact",
+    "title": "Материал 099",
+    "summary": "Страница 99 из исходного визуального корпуса «общага — сюрреализм».",
+    "process": "zero-reaction",
+    "narrativePhase": "pressure",
+    "publicationStatus": "published",
+    "visualDialect": "zero-reaction",
+    "media": [
+      {
+        "src": "assets/img/corpus/page-099.webp",
+        "kind": "image",
+        "width": 708,
+        "height": 1000,
+        "caption": "Исходный лист корпуса, страница 099 из 105."
+      }
+    ],
+    "thumbnail": {
+      "src": "assets/img/corpus/page-099.webp",
+      "kind": "image"
+    },
+    "altText": "Страница 099 исходного корпуса «общага — сюрреализм».",
+    "credits": "исходный корпус «общага — сюрреализм», предоставленный для публикации; обработка архивной копии — Протокол 418",
+    "rights": "all-rights-reserved",
+    "source": {
+      "collection": "общага — сюрреализм",
+      "item": "страница 099 из 105",
+      "kind": "страница визуального корпуса"
+    },
+    "pageNumber": 99,
+    "pageText": "",
+    "fieldNotes": [
+      "Текстовый слой не выделен из PDF: материал сохранён как визуальный лист без домысливания содержания."
+    ],
+    "object": {
+      "originalFunction": "лист исходной PDF-хроники",
+      "wrongFunction": "архивный объект внутри Линолеумного архива"
+    }
+  },
+  {
+    "id": "w-corpus-page-100",
+    "slug": "corpus-page-100",
+    "type": "artifact",
+    "title": "Материал 100",
+    "summary": "Страница 100 из исходного визуального корпуса «общага — сюрреализм».",
+    "process": "zero-reaction",
+    "narrativePhase": "pressure",
+    "publicationStatus": "published",
+    "visualDialect": "zero-reaction",
+    "media": [
+      {
+        "src": "assets/img/corpus/page-100.webp",
+        "kind": "image",
+        "width": 708,
+        "height": 1000,
+        "caption": "Исходный лист корпуса, страница 100 из 105."
+      }
+    ],
+    "thumbnail": {
+      "src": "assets/img/corpus/page-100.webp",
+      "kind": "image"
+    },
+    "altText": "Страница 100 исходного корпуса «общага — сюрреализм».",
+    "credits": "исходный корпус «общага — сюрреализм», предоставленный для публикации; обработка архивной копии — Протокол 418",
+    "rights": "all-rights-reserved",
+    "source": {
+      "collection": "общага — сюрреализм",
+      "item": "страница 100 из 105",
+      "kind": "страница визуального корпуса"
+    },
+    "pageNumber": 100,
+    "pageText": "",
+    "fieldNotes": [
+      "Текстовый слой не выделен из PDF: материал сохранён как визуальный лист без домысливания содержания."
+    ],
+    "object": {
+      "originalFunction": "лист исходной PDF-хроники",
+      "wrongFunction": "архивный объект внутри Линолеумного архива"
+    }
+  },
+  {
+    "id": "w-corpus-page-101",
+    "slug": "corpus-page-101",
+    "type": "artifact",
+    "title": "Материал 101",
+    "summary": "Страница 101 из исходного визуального корпуса «общага — сюрреализм».",
+    "process": "zero-reaction",
+    "narrativePhase": "pressure",
+    "publicationStatus": "published",
+    "visualDialect": "zero-reaction",
+    "media": [
+      {
+        "src": "assets/img/corpus/page-101.webp",
+        "kind": "image",
+        "width": 708,
+        "height": 1000,
+        "caption": "Исходный лист корпуса, страница 101 из 105."
+      }
+    ],
+    "thumbnail": {
+      "src": "assets/img/corpus/page-101.webp",
+      "kind": "image"
+    },
+    "altText": "Страница 101 исходного корпуса «общага — сюрреализм».",
+    "credits": "исходный корпус «общага — сюрреализм», предоставленный для публикации; обработка архивной копии — Протокол 418",
+    "rights": "all-rights-reserved",
+    "source": {
+      "collection": "общага — сюрреализм",
+      "item": "страница 101 из 105",
+      "kind": "страница визуального корпуса"
+    },
+    "pageNumber": 101,
+    "pageText": "",
+    "fieldNotes": [
+      "Текстовый слой не выделен из PDF: материал сохранён как визуальный лист без домысливания содержания."
+    ],
+    "object": {
+      "originalFunction": "лист исходной PDF-хроники",
+      "wrongFunction": "архивный объект внутри Линолеумного архива"
+    }
+  },
+  {
+    "id": "w-corpus-page-102",
+    "slug": "corpus-page-102",
+    "type": "artifact",
+    "title": "Материал 102",
+    "summary": "Страница 102 из исходного визуального корпуса «общага — сюрреализм».",
+    "process": "zero-reaction",
+    "narrativePhase": "pressure",
+    "publicationStatus": "published",
+    "visualDialect": "zero-reaction",
+    "media": [
+      {
+        "src": "assets/img/corpus/page-102.webp",
+        "kind": "image",
+        "width": 708,
+        "height": 1000,
+        "caption": "Исходный лист корпуса, страница 102 из 105."
+      }
+    ],
+    "thumbnail": {
+      "src": "assets/img/corpus/page-102.webp",
+      "kind": "image"
+    },
+    "altText": "Страница 102 исходного корпуса «общага — сюрреализм».",
+    "credits": "исходный корпус «общага — сюрреализм», предоставленный для публикации; обработка архивной копии — Протокол 418",
+    "rights": "all-rights-reserved",
+    "source": {
+      "collection": "общага — сюрреализм",
+      "item": "страница 102 из 105",
+      "kind": "страница визуального корпуса"
+    },
+    "pageNumber": 102,
+    "pageText": "",
+    "fieldNotes": [
+      "Текстовый слой не выделен из PDF: материал сохранён как визуальный лист без домысливания содержания."
+    ],
+    "object": {
+      "originalFunction": "лист исходной PDF-хроники",
+      "wrongFunction": "архивный объект внутри Линолеумного архива"
+    }
+  },
+  {
+    "id": "w-corpus-page-103",
+    "slug": "corpus-page-103",
+    "type": "artifact",
+    "title": "Материал 103",
+    "summary": "Страница 103 из исходного визуального корпуса «общага — сюрреализм».",
+    "process": "zero-reaction",
+    "narrativePhase": "pressure",
+    "publicationStatus": "published",
+    "visualDialect": "zero-reaction",
+    "media": [
+      {
+        "src": "assets/img/corpus/page-103.webp",
+        "kind": "image",
+        "width": 708,
+        "height": 1000,
+        "caption": "Исходный лист корпуса, страница 103 из 105."
+      }
+    ],
+    "thumbnail": {
+      "src": "assets/img/corpus/page-103.webp",
+      "kind": "image"
+    },
+    "altText": "Страница 103 исходного корпуса «общага — сюрреализм».",
+    "credits": "исходный корпус «общага — сюрреализм», предоставленный для публикации; обработка архивной копии — Протокол 418",
+    "rights": "all-rights-reserved",
+    "source": {
+      "collection": "общага — сюрреализм",
+      "item": "страница 103 из 105",
+      "kind": "страница визуального корпуса"
+    },
+    "pageNumber": 103,
+    "pageText": "",
+    "fieldNotes": [
+      "Текстовый слой не выделен из PDF: материал сохранён как визуальный лист без домысливания содержания."
+    ],
+    "object": {
+      "originalFunction": "лист исходной PDF-хроники",
+      "wrongFunction": "архивный объект внутри Линолеумного архива"
+    }
+  },
+  {
+    "id": "w-corpus-page-104",
+    "slug": "corpus-page-104",
+    "type": "artifact",
+    "title": "Материал 104",
+    "summary": "Страница 104 из исходного визуального корпуса «общага — сюрреализм».",
+    "process": "zero-reaction",
+    "narrativePhase": "pressure",
+    "publicationStatus": "published",
+    "visualDialect": "zero-reaction",
+    "media": [
+      {
+        "src": "assets/img/corpus/page-104.webp",
+        "kind": "image",
+        "width": 708,
+        "height": 1000,
+        "caption": "Исходный лист корпуса, страница 104 из 105."
+      }
+    ],
+    "thumbnail": {
+      "src": "assets/img/corpus/page-104.webp",
+      "kind": "image"
+    },
+    "altText": "Страница 104 исходного корпуса «общага — сюрреализм».",
+    "credits": "исходный корпус «общага — сюрреализм», предоставленный для публикации; обработка архивной копии — Протокол 418",
+    "rights": "all-rights-reserved",
+    "source": {
+      "collection": "общага — сюрреализм",
+      "item": "страница 104 из 105",
+      "kind": "страница визуального корпуса"
+    },
+    "pageNumber": 104,
+    "pageText": "",
+    "fieldNotes": [
+      "Текстовый слой не выделен из PDF: материал сохранён как визуальный лист без домысливания содержания."
+    ],
+    "object": {
+      "originalFunction": "лист исходной PDF-хроники",
+      "wrongFunction": "архивный объект внутри Линолеумного архива"
+    }
+  },
+  {
+    "id": "w-corpus-page-105",
+    "slug": "corpus-page-105",
+    "type": "artifact",
+    "title": "Материал 105",
+    "summary": "Страница 105 из исходного визуального корпуса «общага — сюрреализм».",
+    "process": "zero-reaction",
+    "narrativePhase": "pressure",
+    "publicationStatus": "published",
+    "visualDialect": "zero-reaction",
+    "media": [
+      {
+        "src": "assets/img/corpus/page-105.webp",
+        "kind": "image",
+        "width": 708,
+        "height": 1000,
+        "caption": "Исходный лист корпуса, страница 105 из 105."
+      }
+    ],
+    "thumbnail": {
+      "src": "assets/img/corpus/page-105.webp",
+      "kind": "image"
+    },
+    "altText": "Страница 105 исходного корпуса «общага — сюрреализм».",
+    "credits": "исходный корпус «общага — сюрреализм», предоставленный для публикации; обработка архивной копии — Протокол 418",
+    "rights": "all-rights-reserved",
+    "source": {
+      "collection": "общага — сюрреализм",
+      "item": "страница 105 из 105",
+      "kind": "страница визуального корпуса"
+    },
+    "pageNumber": 105,
+    "pageText": "",
+    "fieldNotes": [
+      "Текстовый слой не выделен из PDF: материал сохранён как визуальный лист без домысливания содержания."
+    ],
+    "object": {
+      "originalFunction": "лист исходной PDF-хроники",
+      "wrongFunction": "архивный объект внутри Линолеумного архива"
+    }
   }
 ]
