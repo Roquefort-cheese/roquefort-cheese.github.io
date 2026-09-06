@@ -52,7 +52,7 @@ function mediaFigure(work, { klass = '', loading = 'lazy' } = {}) {
 }
 
 function mediaLocked(work) {
-  return `<div class="media-locked" role="img" aria-label="Изображение работы «${esc(work.title)}» скрыто до подтверждения предупреждения о содержании">
+  return `<div class="media-locked" role="img" aria-label="Кадр «${esc(work.title)}» скрыто до подтверждения предупреждения о содержании">
     <span class="media-locked__code">MEDIA / 418</span>
     <strong>изображение удержано</strong>
     <span>предупреждение находится ниже по странице</span>
@@ -132,6 +132,7 @@ function layout({ title, description, active, bodyClass = '', extraHead = '', co
 <link rel="stylesheet" href="/assets/css/chaos.css">
 <link rel="stylesheet" href="/assets/css/identity.css">
 <link rel="stylesheet" href="/assets/css/mechanics.css">
+<link rel="stylesheet" href="/assets/css/kinetic.css">
 ${extraHead}
 </head>
 <body class="${bodyClass}">
@@ -156,6 +157,7 @@ ${content}
 <script type="module" src="/assets/js/media-viewer.js"></script>
 <script type="module" src="/assets/js/chaos.js"></script>
 <script type="module" src="/assets/js/mechanics.js"></script>
+<script type="module" src="/assets/js/kinetic.js"></script>
 ${extraScripts}
 </body>
 </html>`;
@@ -190,13 +192,13 @@ function renderHome(works, tone, lore) {
 <section class="page page--wide page--home">
   <p class="tag">/ — Мембрана 418</p>
   <h1 class="home-title">Комната, которая<br>отвечает ошибкой</h1>
-  <p class="page-lede">Внешний мир посылает запрос нормы: будь студентом, специалистом, объяснимым. Комната № 418 пока молчит. Нажмите «Назначить неправильно» — единственное активное действие на этом экране.</p>
+  <p class="page-lede">Сайт делает вид, что всё норм. Не верь ему. Тут можно нажать кнопку, сломать назначение, поймать глюк и случайно открыть то, чего никто не загружал.</p>
 
   <div class="membrane-hero">
     ${groundWork ? mediaFigure(groundWork, { klass: 'documentary-plate', loading: 'eager' }) : `<figure>${mediaTag({ media: [{ src: 'assets/img/membrane-hero.svg' }], altText: 'Потолок комнаты с лампой на проводе, приколотое расписание и календарь с обведённым дедлайном.' }, { loading: 'eager' })}</figure>`}
     <div class="stack">
-      <p class="hero-quote">«Не мир про общежитие, а общежитие как способ, которым мир ошибается насчёт самого себя».</p>
-      <p class="page-lede">Ничего священного здесь ещё не произошло. Ни апофеоза, ни титула, ни золота — только койка, коробка, кабель и жизнь, отложенная до завтра.</p>
+      <p class="hero-quote">КОМНАТА 418 НЕ ОБЯЗАНА ИМЕТЬ СМЫСЛ.</p>
+      <p class="page-lede">Пока тут только койка, коробка и кабель. Но дай предмету неправильную работу — и он начнёт вести себя так, будто у него есть лор.</p>
       <p class="source-stamp">источник: визуальная хроника / кадр 084 / без узнаваемых лиц</p>
     </div>
   </div>
@@ -220,11 +222,11 @@ function renderHome(works, tone, lore) {
     </div>
   </div>
 
-  <section class="section tone-section">
+  <section class="section tone-section" data-kinetic-panel>
     <div class="section-heading">
       <p class="tag">тональный калибратор</p>
-      <h2>Не коллаж, а дыхание</h2>
-      <p>Вдох — реальность, выдох — абсурд, задержка — пафос, сбой — икота. Пропорция удерживает проект между бытописанием, карнавалом и китчем.</p>
+      <h2>Как это вообще работает?</h2>
+      <p>45% реальность. 25% бытовой бред. 20% серьёзное лицо. 10% цифровая паника. При плохом настроении сервера пропорции могут временно врать.</p>
     </div>
     ${renderToneFormula(tone)}
   </section>
@@ -232,10 +234,10 @@ function renderHome(works, tone, lore) {
   <section class="section">
     <div class="section-heading section-heading--split">
       <div>
-        <p class="tag">первые материалы</p>
-        <h2>Три апофеоза, три способа сломаться</h2>
+        <p class="tag">три главных босса</p>
+        <h2>Не трогай. Уже стало мифом.</h2>
       </div>
-      <p>Портреты собраны из одного правила: человеческое лицо читается раньше спецэффекта, а бытовая улика переживает титул.</p>
+      <p>Три режима: держать, залипать, плодить. Ни один не обещает адекватный финал.</p>
     </div>
     <div class="apotheosis-grid">${featuredCards}</div>
   </section>
@@ -337,7 +339,7 @@ function renderMobiusMap(works) {
       </svg>
     </div>
     <details class="mobius-map__text">
-      <summary>Показать связи списком</summary>
+      <summary>Показать эту кашу списком</summary>
       <ul>${relationList}</ul>
     </details>
   </div>`;
@@ -361,52 +363,52 @@ function renderWorksIndex(works) {
 <section class="page page--wide">
   <p class="tag">/works — LINОLEUM ARCHIVE / LOWER HEAVEN</p>
   <h1>Слой пола после катастрофы / 105 свидетельств</h1>
-  <p class="page-lede">Всё, что не поместилось в биографию обитателей комнаты, оседает здесь. Архивные записи делистятся из общей витрины, но их адреса остаются живыми.</p>
-  <p class="corpus-status"><strong>${listed.length}</strong> опубликованных материалов · <strong>${works.filter((work) => work.source?.kind === 'страница визуального корпуса').length}</strong> страниц исходного корпуса · <strong>${buildableWorks(works).length}</strong> узлов с учётом архива</p>
+  <p class="page-lede">Тут не музей. Тут пол. Листай как найдётся. Хочешь порядок — есть фильтр. Хочешь правду — жми «случайную жесть».</p>
+  <p class="corpus-status"><strong>${listed.length}</strong> кадров в ленте · <strong>${works.filter((work) => work.source?.kind === 'страница визуального корпуса').length}</strong> страниц корпуса · <strong>${buildableWorks(works).length}</strong> узлов вообще</p>
 
   <div data-library-root>
     <form class="filter-panel" aria-label="Фильтры архива">
       <div class="filter-field">
-        <label for="f-process">Процесс</label>
+        <label for="f-process">что прёт</label>
         <select id="f-process" data-filter-key="process"><option value="">любой</option>${processes.map((p) => opt(PROCESS_LABEL[p] || p, p)).join('')}</select>
       </div>
       <div class="filter-field">
-        <label for="f-phase">Фаза</label>
+        <label for="f-phase">где сейчас</label>
         <select id="f-phase" data-filter-key="phase"><option value="">любая</option>${phases.map((p) => opt(PHASE_LABEL[p] || p, p)).join('')}</select>
       </div>
       <div class="filter-field">
-        <label for="f-type">Тип</label>
+        <label for="f-type">что это вообще</label>
         <select id="f-type" data-filter-key="type"><option value="">любой</option>${types.map((t) => opt(TYPE_LABEL[t] || t, t)).join('')}</select>
       </div>
       <div class="filter-field">
-        <label for="f-body">Телесный узел</label>
+        <label for="f-body">где болит</label>
         <select id="f-body" data-filter-key="bodyNode"><option value="">любой</option>${bodyNodes.map((b) => opt(b, b)).join('')}</select>
       </div>
       <div class="filter-field">
-        <label for="f-mode">Температура</label>
+        <label for="f-mode">температура</label>
         <select id="f-mode" data-filter-key="editorialMode"><option value="">любая</option>${editorialModes.map((m) => opt(EDITORIAL_MODE_LABEL[m] || m, m)).join('')}</select>
       </div>
       <div class="filter-field">
-        <label for="f-q">Предмет / поиск</label>
-        <input id="f-q" type="search" data-filter-key="q" placeholder="вантуз, удлинитель…">
+        <label for="f-q">вбей что-нибудь</label>
+        <input id="f-q" type="search" data-filter-key="q" placeholder="койка, федора, «бля»…">
       </div>
       <div class="filter-panel__actions">
-        <button type="button" class="btn btn--ghost btn--small" data-filters-reset>Сбросить</button>
+        <button type="button" class="btn btn--ghost btn--small" data-filters-reset>Стереть фильтры</button>
       </div>
     </form>
 
     <div class="cluster" style="justify-content:space-between; margin-bottom:1rem;">
       <div class="sort-control">
-        <span>Сортировка:</span>
+        <span>режим взгляда:</span>
         <div role="radiogroup" aria-label="Сортировка архива">
-          <button type="button" data-sort="chronicle" aria-pressed="true">по хронике</button>
+          <button type="button" data-sort="chronicle" aria-pressed="true">хронология</button>
           <button type="button" data-sort="relations" aria-pressed="false">по связям</button>
         </div>
       </div>
-      <button type="button" class="btn btn--ghost" data-raise>Поднять с линолеума</button>
+      <button type="button" class="btn btn--ghost" data-raise>Случайная жесть</button>
     </div>
 
-    <p class="results-meta" aria-live="polite"></p>
+    <p class="results-meta" aria-live="polite"></p><div class="archive-command-row"><button type="button" class="btn btn--ghost" data-archive-chaos>РАЗМЕШАТЬ АРХИВ</button><button type="button" class="btn btn--ghost" data-archive-collapse>СЖАТЬ РЕАЛЬНОСТЬ</button><span class="archive-whisper" aria-live="polite">архив делает вид, что помнит порядок</span></div>
     <div class="grid-works" data-library-state="loading"></div>
 
     <noscript>
@@ -428,10 +430,10 @@ function renderWorksIndex(works) {
   <section class="section mobius-section">
     <div class="section-heading section-heading--split">
       <div>
-        <p class="tag">карта причинности</p>
-        <h2>Мёбиус не различает начало и остаток</h2>
+        <p class="tag">нелинейный режим</p>
+        <h2>Сюда можно попасть не с начала.</h2>
       </div>
-      <p>Стрелка показывает не сходство, а работу причины: апофеоз оставляет предмет, предмет бродит, а брожение производит новое давление.</p>
+      <p>Кликни на любой узел. Прыжок по связям теперь главнее хронологии. Причина иногда появляется после результата. Это не баг. Это Мёбиус.</p>
     </div>
     ${renderMobiusMap(works)}
   </section>
@@ -530,14 +532,14 @@ function renderWorkDetail(work, byId) {
   if (work.materialObjection) {
     blocks.push(`
     <div class="work-detail__block">
-      <div class="material-objection"><strong>материальное возражение</strong>${esc(work.materialObjection)}</div>
+      <div class="material-objection"><strong>вещь, которая ломает пафос</strong>${esc(work.materialObjection)}</div>
     </div>`);
   }
 
   if (Array.isArray(work.fieldNotes) && work.fieldNotes.length) {
     blocks.push(`
     <div class="work-detail__block field-notes">
-      <p class="tag">полевые заметки</p>
+      <p class="tag">что заметили с первого взгляда</p>
       <div class="field-notes__grid">${work.fieldNotes.map((note, index) => `<div>
         <span>0${index + 1}</span>
         <p>${esc(note)}</p>
@@ -548,7 +550,7 @@ function renderWorkDetail(work, byId) {
   if (work.pageText) {
     blocks.push(`
     <div class="work-detail__block source-transcript">
-      <p class="tag">текстовый слой страницы</p>
+      <p class="tag">текст с исходного листа</p>
       <p>${esc(work.pageText)}</p>
     </div>`);
   }
@@ -558,9 +560,9 @@ function renderWorkDetail(work, byId) {
     ? `<div class="work-detail__block">
         <details class="notice-gate" data-work-id="${esc(work.id)}">
           <summary>
-            <h3>Предупреждение о содержании</h3>
+            <h3>СТОП. СНАЧАЛА ТЕКСТ</h3>
             <p>${esc(work.contentNotice)}</p>
-            <span class="btn">Показать материал</span>
+            <span class="btn">ладно, показывай</span>
           </summary>
           <div class="notice-gate__content">${mediaFigure(work, { klass: 'work-media--gated' })}</div>
         </details>
@@ -571,14 +573,14 @@ function renderWorkDetail(work, byId) {
   // 5. ProvenanceRights
   blocks.push(`
     <div class="work-detail__block">
-      <h2>Происхождение и права</h2>
+      <h2>Кто это снял и почему мы это всё ещё видим</h2>
       <dl class="provenance">
         <div><dt>кредиты</dt><dd>${esc(work.credits)}</dd></div>
         <div><dt>права</dt><dd>${esc(work.rights)}</dd></div>
         <div><dt>статус</dt><dd>${STATUS_LABEL[work.publicationStatus] || work.publicationStatus}</dd></div>
         ${work.source ? `<div><dt>источник</dt><dd>${esc(work.source.collection)}, ${esc(work.source.item)} · ${esc(work.source.kind)}</dd></div>` : ''}
       </dl>
-      ${work.publicationStatus === 'archived' ? '<p class="status-note">Запись архивирована. Адрес остаётся живым по закону временной короны — это не удаление.</p>' : ''}
+      ${work.publicationStatus === 'archived' ? '<p class="status-note">Запись ушла в архив. ссылка жива. так захотел линолеум.</p>' : ''}
     </div>`);
 
   // 6. SilentGap
@@ -611,8 +613,8 @@ function renderWorkDetail(work, byId) {
   }).join('\n');
   blocks.push(`
     <div class="work-detail__block">
-      <h2>Причинность Мёбиуса</h2>
-      ${allRel.length ? `<div class="mobius-relations">${relItems}</div>` : '<p class="status-note">У этой работы пока нет зафиксированных связей.</p>'}
+      <h2>Почему это вообще случилось</h2>
+      ${allRel.length ? `<div class="mobius-relations">${relItems}</div>` : '<p class="status-note">Связей пока нет. Может, и слава богу.</p>'}
     </div>`);
 
   const content = `<section class="page" data-dialect="${esc(work.visualDialect)}">${blocks.join('\n')}</section>`;
@@ -664,14 +666,14 @@ async function renderProtocol(laws, dialects, editorialCases, works, tone, lore)
   const content = `
 <section class="page page--wide">
   <p class="tag">/protocol — BUREAU OF WRONG ASSIGNMENTS / 418</p>
-  <h1>Законы, обязательные даже для богов</h1>
+  <h1>Правила комнаты. Богам тоже прилетает.</h1>
   <p class="page-lede">Псевдоофициальный, но не игровой реестр: десять законов, грамматика полей и суд над самой системой.</p>
 
   <section class="section protocol-calibrator">
     <div class="section-heading section-heading--split">
       <div>
         <p class="tag">формула тона</p>
-        <h2>Общажный гностический реализм</h2>
+        <h2>ОБЩАГА / МИР ПОЕХАЛ</h2>
       </div>
       <p>Документальность удерживает землю, абсурд взламывает назначение, пафос на секунду делает чудо действительным, а цифровой сбой показывает машину внутри события.</p>
     </div>
@@ -707,20 +709,20 @@ async function renderProtocol(laws, dialects, editorialCases, works, tone, lore)
   </section>
 
   <section class="section">
-    <h2>Грамматика полей</h2>
+    <h2>Что за режим тут вообще</h2>
     <h3>Визуальные диалекты (<code>visualDialect</code> / <code>process</code>)</h3>
     <table class="grammar-table">
       <thead><tr><th>диалект</th><th>телесный узел</th><th>геометрия</th><th>описание</th></tr></thead>
       <tbody>${dialectRows}</tbody>
     </table>
-    <h3>Нарративная фаза (<code>narrativePhase</code>)</h3>
+    <h3>Где сейчас этот кадр (<code>narrativePhase</code>)</h3>
     <p class="page-lede" style="max-width:none;">Чисто редакторская разметка — автор выбирает фазу вручную, автомат не крутит её сам во времени: ${phaseRow}.</p>
-    <h3>Редакционный статус (<code>publicationStatus</code>)</h3>
+    <h3>Кто дал добро (<code>publicationStatus</code>)</h3>
     <p class="page-lede" style="max-width:none;">Определяет только видимость в архиве, не содержание: ${statusRow}. Обратный переход «archived → published» не предусмотрен.</p>
   </section>
 
   <section class="section" id="trial">
-    <h2>Суд над автором</h2>
+    <h2>Разнос автора</h2>
     <div class="trial-note">
       <p>Закон «Самопожирающая власть» проверяется не по отдельной работе, а на уровне самой редколлегии: куратор и интерфейс тоже подотчётны.</p>
       ${trialCase ? `
