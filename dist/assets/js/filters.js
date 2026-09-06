@@ -6,7 +6,7 @@
 // "chronicle" и "relations"; значения "popularity" не существует ни в
 // разметке (см. works/index.html), ни здесь.
 
-const FIELDS = ['process', 'phase', 'type', 'bodyNode', 'q'];
+const FIELDS = ['process', 'phase', 'type', 'bodyNode', 'editorialMode', 'q'];
 const SORT_MODES = ['chronicle', 'relations'];
 
 export function readFiltersFromURL() {

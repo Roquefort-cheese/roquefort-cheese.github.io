@@ -132,6 +132,7 @@ function layout({ title, description, active, bodyClass = '', extraHead = '', co
 <link rel="stylesheet" href="/assets/css/layout.css">
 <link rel="stylesheet" href="/assets/css/components.css">
 <link rel="stylesheet" href="/assets/css/states.css">
+<link rel="stylesheet" href="/assets/css/chaos.css">
 ${extraHead}
 </head>
 <body class="${bodyClass}">
@@ -154,6 +155,7 @@ ${content}
   <span>Согласие изображённых людей и данные о правах ведутся в приватном реестре и не публикуются.</span>
 </footer>
 <script type="module" src="/assets/js/media-viewer.js"></script>
+<script type="module" src="/assets/js/chaos.js"></script>
 ${extraScripts}
 </body>
 </html>`;
@@ -419,7 +421,7 @@ function renderWorksIndex(works) {
       glitchLabel: w.glitchLabel || null,
       thumb: w.thumbnail?.src || w.media?.[0]?.src, mediaHeld: Boolean(w.contentNotice),
       wrongFunction: w.object?.wrongFunction, originalFunction: w.object?.originalFunction,
-      chronologyIndex: w._chronologyIndex, relationDegree: w._relationDegree, pageNumber: w.pageNumber || null, pageText: w.pageText || '',
+      chronologyIndex: w._chronologyIndex, relationDegree: w._relationDegree, pageNumber: w.pageNumber || null, pageText: w.pageText || '', visualAnalysis: w.visualAnalysis || '', altText: w.altText || '',
     })))}</script>
   </div>
 
@@ -481,6 +483,15 @@ function renderWorkDetail(work, byId) {
     <div class="work-detail__block editorial-layer editorial-layer--${esc(work.editorialMode || 'ground')}">
       <div class="editorial-layer__signal"><span>${esc(work.glitchLabel || 'ARCHIVE / 418')}</span><em>${esc(work.editorialMode || 'ground')}</em></div>
       ${work.editorialNote ? `<p>${esc(work.editorialNote)}</p>` : ''}
+    </div>`);
+  }
+
+  if (work.visualAnalysis) {
+    blocks.push(`
+    <div class="work-detail__block visual-analysis">
+      <div class="visual-analysis__stamp">ВИДИМЫЕ ДАННЫЕ · НЕ ФИЛЬТРОВАТЬ</div>
+      <h2>Что здесь действительно видно</h2>
+      <p>${esc(work.visualAnalysis)}</p>
     </div>`);
   }
 

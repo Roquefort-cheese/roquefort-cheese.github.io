@@ -33,9 +33,13 @@ function workCard(work) {
   a.className = 'work-card' + (work.publicationStatus === 'archived' ? ' work-card--archived' : '');
   a.dataset.dialect = work.visualDialect;
   a.dataset.type = work.type;
+  a.dataset.mode = work.editorialMode || 'ground';
+  a.dataset.page = work.pageNumber || '';
   const mediaSrc = String(work.thumb || '');
+  const alt = String(work.altText || work.title || 'Архивный материал');
   a.innerHTML = `
-    <div class="work-card__media"><img src="/${escapeHTML(mediaSrc)}" alt="" loading="lazy" decoding="async">
+    <div class="work-card__media"><img src="/${escapeHTML(mediaSrc)}" alt="${escapeHTML(alt)}" loading="lazy" decoding="async">
+      ${work.pageNumber ? `<span class="work-card__index">${escapeHTML(String(work.pageNumber).padStart(3,'0'))}</span>` : ''}
       ${work.mediaHeld ? '<span class="work-card__held">медиа удержано</span>' : ''}
     </div>
     <div class="work-card__body">
@@ -46,10 +50,10 @@ function workCard(work) {
         ${work.publicationStatus === 'archived' ? '<span class="tag">архив</span>' : ''}
       </div>
       <h3 class="work-card__title">${escapeHTML(work.title)}</h3>
-      ${work.pageNumber ? `<p class="tag">страница ${escapeHTML(work.pageNumber)}</p>` : ''}
       <p class="work-card__summary">${escapeHTML(work.summary)}</p>
+      ${work.visualAnalysis ? `<p class="work-card__analysis">${escapeHTML(work.visualAnalysis)}</p>` : ''}
       ${work.glitchLabel ? `<div class="work-card__signal">${escapeHTML(work.glitchLabel)}</div>` : ''}
-      <span class="tag">${escapeHTML(PHASE_LABEL[work.narrativePhase] || work.narrativePhase)}</span>
+      <div class="cluster work-card__footer"><span class="tag">${escapeHTML(PHASE_LABEL[work.narrativePhase] || work.narrativePhase)}</span><span class="work-card__sticker">${escapeHTML(EDITORIAL_MODE_LABEL[work.editorialMode] || 'земля')}</span></div>
     </div>
   `;
   return a;
