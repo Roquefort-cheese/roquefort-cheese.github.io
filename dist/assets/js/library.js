@@ -44,6 +44,7 @@ function workCard(work) {
         ${work.publicationStatus === 'archived' ? '<span class="tag">архив</span>' : ''}
       </div>
       <h3 class="work-card__title">${escapeHTML(work.title)}</h3>
+      ${work.pageNumber ? `<p class="tag">страница ${escapeHTML(work.pageNumber)}</p>` : ''}
       <p class="work-card__summary">${escapeHTML(work.summary)}</p>
       <span class="tag">${escapeHTML(PHASE_LABEL[work.narrativePhase] || work.narrativePhase)}</span>
     </div>
@@ -68,7 +69,7 @@ export function initLibrary(root, allWorks) {
     if (filters.bodyNode && work.bodyNode !== filters.bodyNode) return false;
     if (filters.q) {
       const q = filters.q.toLowerCase();
-      const hay = `${work.title} ${work.summary} ${work.wrongFunction || ''} ${work.originalFunction || ''}`.toLowerCase();
+      const hay = `${work.title} ${work.summary} ${work.wrongFunction || ''} ${work.originalFunction || ''} ${work.pageText || ''}`.toLowerCase();
       if (!hay.includes(q)) return false;
     }
     return true;
