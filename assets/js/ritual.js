@@ -31,7 +31,7 @@ const CASES = [
     why: 'чтобы неловкость наконец получила физический вес и перестала притворяться характером',
     absurdity: 'обычная шляпа объявляется космическим контейнером. Шов всё ещё кривой.',
     title: 'МУДРЕЦ ЦЕЛИБАТА',
-    img: '/assets/img/mudrets-tselibata.webp',
+    img: '/assets/img/mudrets-tselibata.svg',
     caption: 'Тёмная материя прошла через федору. Мудрец делает вид, что так и планировал. Никто ему не верит.',
     fail: 'Сдерживание лопнуло первым. Потом титул начал отвечать за человека.',
     glitch: 'NULL / SHAME MASS = 418 / HAT = TOO IMPORTANT',
@@ -107,15 +107,11 @@ export function initRitual(root) {
     stageLabel.textContent = 'ПРОЕКТ НАЗНАЧЕНИЯ';
     stageTitle.textContent = current.title;
     caption.textContent = 'Вот кандидат. Можно ещё отступить. Через секунду будет поздно.';
-    figure.innerHTML = '';
     glitch.textContent = '';
     aftercare.hidden = true;
   }
 
   function setButton(text, disabled=false) { button.textContent = text; button.disabled = disabled; }
-  function finish() {
-    machine.transition('reset', { auto: true });
-  }
   function commit() {
     if (!current || busy) return;
     busy = true;
@@ -139,6 +135,7 @@ export function initRitual(root) {
     }, 1200);
 
     window.setTimeout(() => {
+      machine.transition('overheat');
       stage.dataset.phase = 'glitch';
       stageLabel.textContent = 'СИСТЕМА ПРОСИТ НЕ ДЕЛАТЬ ВИД, ЧТО ЭТО НОРМАЛЬНО';
       glitch.textContent = current.glitch + ' // ' + pick(GLITCHES);
@@ -160,7 +157,6 @@ export function initRitual(root) {
       renderHistory();
     }, 3000);
 
-    window.setTimeout(() => finish(), 4700);
   }
 
   button.addEventListener('click', () => {

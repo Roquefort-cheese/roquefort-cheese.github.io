@@ -11,7 +11,9 @@ function stampOnce(){
 }
 function initGlitchOnKey(){
   document.addEventListener('keydown',(e)=>{
-    if(e.key.toLowerCase()!=='g' || e.metaKey || e.ctrlKey || e.altKey) return;
+    const typing=e.target instanceof HTMLElement
+      && (e.target.isContentEditable || /^(INPUT|TEXTAREA|SELECT|BUTTON)$/.test(e.target.tagName));
+    if(e.key.toLowerCase()!=='g' || e.metaKey || e.ctrlKey || e.altKey || typing) return;
     document.body.classList.add('chaos-flash');
     setTimeout(()=>document.body.classList.remove('chaos-flash'),260);
     stampOnce();

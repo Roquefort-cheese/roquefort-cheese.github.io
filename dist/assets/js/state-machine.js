@@ -37,7 +37,7 @@ export class PhaseMachineController {
     if (to === 'overheat') {
       this.dispatch('protocol:overheat', { intensity: 1 });
       // перегрев не бесконечен: автоматический сброс по истечении лимита
-      window.setTimeout(() => this.transition('reset', { auto: true }), 1100);
+      window.setTimeout(() => this.transition('reset', { auto: true }), 1900);
     }
     if (to === 'reset') {
       this.resetCount += 1;

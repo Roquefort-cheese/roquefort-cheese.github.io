@@ -9,6 +9,11 @@ function stamp(text){
 }
 function cards(){ return $$('.grid-works .work-card'); }
 
+function isTypingTarget(target){
+  return target instanceof HTMLElement
+    && (target.isContentEditable || /^(INPUT|TEXTAREA|SELECT|BUTTON)$/.test(target.tagName));
+}
+
 function applyComposition(){
   cards().forEach((card,i)=>{
     const tilt=[-1.2,.8,-.6,1.4,-.8,.4][i%6];
@@ -29,16 +34,33 @@ function witnessRandom(){
 }
 function clearWitness(){ document.body.classList.remove('witness-mode'); cards().forEach(c=>c.classList.remove('is-witness')); }
 
-function scatterCards(){
-  const grid=$('.grid-works'); if(!grid) return;
-  grid.classList.add('dada-scatter');
-  const list=cards(); list.forEach((card,i)=>{
+function applyScatterValues(){
+  cards().forEach((card,i)=>{
     const y=Math.round((Math.random()-.5)*20);
     const tilt=((Math.random()-.5)*5).toFixed(2);
     card.style.setProperty('--scatter-y',`${y}px`);
     card.style.setProperty('--scatter-r',`${tilt}deg`);
     card.style.setProperty('--scatter-z',String(20+(i%17)));
   });
+}
+
+function clearScatter({announce=true}={}){
+  const grid=$('.grid-works'); if(!grid) return;
+  grid.classList.remove('dada-scatter');
+  cards().forEach((card)=>{
+    card.style.removeProperty('--scatter-y');
+    card.style.removeProperty('--scatter-r');
+    card.style.removeProperty('--scatter-z');
+  });
+  delete grid.dataset.scatterSeed;
+  if(announce) stamp('СОБРАНО / ПОРЯДОК ВРЕМЕННО ПРИТВОРИЛСЯ ЖИВЫМ');
+}
+
+function scatterCards(){
+  const grid=$('.grid-works'); if(!grid) return;
+  if(grid.classList.contains('dada-scatter')){clearScatter();return;}
+  grid.classList.add('dada-scatter');
+  applyScatterValues();
   grid.dataset.scatterSeed=String(Date.now());
   stamp('РАСКИДАНО / СОБРАТЬ ПОЧТИ НЕЧЕГО');
 }
@@ -66,12 +88,16 @@ function oneCardGhost(card){
 function keyboard(){
   if(document.body.dataset.page!=='works') return;
   document.addEventListener('keydown',e=>{
-    if(e.metaKey||e.ctrlKey||e.altKey) return;
+    if(e.metaKey||e.ctrlKey||e.altKey||isTypingTarget(e.target)) return;
     const k=e.key.toLowerCase();
     if(k==='w') witnessRandom();
     if(k==='r') scatterCards();
-    if(k==='g'){document.body.classList.add('chaos-flash');setTimeout(()=>document.body.classList.remove('chaos-flash'),220);}
-    if(e.key==='Escape'){clearWitness();document.body.classList.remove('archive-collapsed');$('.grid-works')?.classList.remove('dada-compressed');}
+    if(e.key==='Escape'){
+      clearWitness();
+      clearScatter({announce:false});
+      document.body.classList.remove('archive-collapsed');
+      $('.grid-works')?.classList.remove('dada-compressed');
+    }
   });
 }
 
@@ -88,7 +114,12 @@ function bindCardInteractions(){
 function observeLibrary(){
   const root=$('[data-library-root]'); if(!root) return;
   const grid=root.querySelector('.grid-works'); if(!grid) return;
-  const observer=new MutationObserver(()=>{bindCardInteractions();});
+  const observer=new MutationObserver(()=>{
+    bindCardInteractions();
+    applyComposition();
+    if(grid.classList.contains('dada-scatter')) applyScatterValues();
+    if(document.body.classList.contains('witness-mode') && !grid.querySelector('.is-witness')) clearWitness();
+  });
   observer.observe(grid,{childList:true}); bindCardInteractions(); applyComposition();
 }
 

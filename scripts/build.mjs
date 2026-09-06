@@ -2,7 +2,7 @@
 // scripts/build.mjs
 //
 // Генерирует /index.html, /works/index.html, /works/{slug}/index.html,
-// /protocol/index.html из content/*.json. Ручного HTML на каждую работу
+// /protocol/index.html и /overheat/index.html из content/*.json. Ручного HTML на каждую работу
 // нет — см. критерий приёмки в §8 ТЗ.
 //
 // content/private/consent-ledger.json НИКОГДА не читается и не копируется
@@ -34,6 +34,17 @@ function esc(s = '') {
   return String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 }
 
+// JSON внутри <script type="application/json"> не должен иметь возможность
+// преждевременно закрыть script-тег, даже если строка пришла из корпуса.
+function jsonForHTML(value) {
+  return JSON.stringify(value)
+    .replace(/&/g, '\\u0026')
+    .replace(/</g, '\\u003c')
+    .replace(/>/g, '\\u003e')
+    .replace(/\u2028/g, '\\u2028')
+    .replace(/\u2029/g, '\\u2029');
+}
+
 function mediaTag(work, { klass = '', loading = 'lazy' } = {}) {
   const m = work.media?.[0];
   if (!m) return '';
@@ -51,11 +62,23 @@ function mediaFigure(work, { klass = '', loading = 'lazy' } = {}) {
   </figure>`;
 }
 
+function gatedMediaFigure(work, { klass = '' } = {}) {
+  const m = work.media?.[0];
+  if (!m) return '';
+  const dimensions = m.width && m.height ? ` width="${Number(m.width)}" height="${Number(m.height)}"` : '';
+  const caption = m.caption;
+  return `<figure class="work-media ${klass}">
+    <div class="notice-gate__pending" data-notice-pending>медиа не загружено · откройте предупреждение</div>
+    <img data-notice-src="/${esc(m.src)}" alt="${esc(work.altText || '')}" loading="lazy" decoding="async"${dimensions} hidden>
+    ${caption ? `<figcaption>${esc(caption)}</figcaption>` : ''}
+  </figure>`;
+}
+
 function mediaLocked(work) {
-  return `<div class="media-locked" role="img" aria-label="Кадр «${esc(work.title)}» скрыто до подтверждения предупреждения о содержании">
+  return `<div class="media-locked" role="img" aria-label="Кадр «${esc(work.title)}» скрыт до подтверждения предупреждения о содержании">
     <span class="media-locked__code">MEDIA / 418</span>
     <strong>изображение удержано</strong>
-    <span>предупреждение находится ниже по странице</span>
+    <span>предупреждение доступно на странице работы</span>
   </div>`;
 }
 
@@ -87,7 +110,7 @@ function renderEditorialCompensation(works, lore) {
   const percent = (n) => corpus.length ? Math.round((n / corpus.length) * 100) : 0;
   return `<div class="editorial-compensation">
     <div class="editorial-compensation__head">
-      <span class="tag">режим 418.2 · компенсатор документальности</span>
+      <span class="tag">режим 418.10 · диагноз, не самоуспокоение</span>
       <strong>${esc(lore?.compensation?.title || 'Компенсатор документальности')}</strong>
       <p>${esc(lore?.compensation?.note || '')}</p>
     </div>
@@ -97,6 +120,10 @@ function renderEditorialCompensation(works, lore) {
         <b>${labels[key]}</b>
         <i style="--portion:${percent(n)}"></i>
       </div>`).join('')}
+    </div>
+    <div class="editorial-compensation__action">
+      <span>Метка не отменяет документальность кадра. Для реального противовеса включён отдельный контур.</span>
+      <a class="btn" href="/overheat/">Открыть Канонизатор 418</a>
     </div>
   </div>`;
 }
@@ -134,6 +161,7 @@ function layout({ title, description, active, bodyClass = '', extraHead = '', co
 <link rel="stylesheet" href="/assets/css/kinetic.css">
 <link rel="stylesheet" href="/assets/css/ritual-engine.css">
 <link rel="stylesheet" href="/assets/css/dada.css">
+<link rel="stylesheet" href="/assets/css/overheat.css">
 ${extraHead}
 </head>
 <body class="${bodyClass}" data-page="${esc(active)}">
@@ -144,6 +172,7 @@ ${extraHead}
     <ul class="site-nav">
       <li><a href="/" ${active === 'home' ? 'aria-current="page"' : ''}>Мембрана</a></li>
       <li><a href="/works/" ${active === 'works' ? 'aria-current="page"' : ''}>Линолеумный архив</a></li>
+      <li><a href="/overheat/" ${active === 'overheat' ? 'aria-current="page"' : ''}>Перегрев</a></li>
       <li><a href="/protocol/" ${active === 'protocol' ? 'aria-current="page"' : ''}>Бюро</a></li>
     </ul>
   </nav>
@@ -172,7 +201,7 @@ function renderHome(works, tone, lore) {
   const featuredCards = featured.map((work, index) => {
     return `<article class="apotheosis-card" data-dialect="${esc(work.visualDialect)}">
       <a class="apotheosis-card__media" href="/works/${work.slug}/" aria-label="Открыть работу «${esc(work.title)}»">
-        ${mediaTag(work, { loading: 'lazy' })}
+        ${work.contentNotice ? mediaLocked(work) : mediaTag(work, { loading: 'lazy' })}
         <span class="apotheosis-card__index">0${index + 1}</span>
       </a>
       <div class="apotheosis-card__body">
@@ -254,6 +283,15 @@ function renderHome(works, tone, lore) {
       <p>45% реальность. 25% бытовой бред. 20% серьёзное лицо. 10% цифровая паника. При плохом настроении сервера пропорции могут временно врать.</p>
     </div>
     ${renderToneFormula(tone)}
+  </section>
+
+  <section class="section overheat-teaser">
+    <div>
+      <p class="tag">аварийный контур / 418.10</p>
+      <h2>Документ перевесил. Мы открыли подвал.</h2>
+      <p>Сто пять свидетельств проходят через четыре операции: факт остаётся фактом, предмет получает хреновую должность, должность — настоящий титул, а интерфейс — право сломаться.</p>
+    </div>
+    <a class="btn" href="/overheat/">Запустить Канонизатор</a>
   </section>
 
   <section class="section">
@@ -433,7 +471,7 @@ function renderWorksIndex(works) {
     </div>
 
     <p class="results-meta" aria-live="polite"></p><div class="archive-command-row">
-    <span class="archive-live-state" aria-live="polite">режим: стабильная нестабильность</span><button type="button" class="btn btn--ghost" data-archive-chaos>РАСКИДАТЬ</button><button type="button" class="btn btn--ghost" data-archive-collapse>СЖАТЬ</button><span class="archive-whisper" aria-live="polite">не трогай раскладку без причины</span></div>
+    <span class="archive-live-state" aria-live="polite">режим: стабильная нестабильность</span><button type="button" class="btn btn--ghost" data-archive-chaos>РАСКИДАТЬ</button><button type="button" class="btn btn--ghost" data-archive-collapse>СЖАТЬ</button><a class="btn btn--ghost" href="/overheat/">КАНОНИЗИРОВАТЬ УЛИКУ</a><span class="archive-whisper" aria-live="polite">не трогай раскладку без причины</span></div>
     <div class="grid-works" data-library-state="loading"></div>
 
     <noscript>
@@ -441,7 +479,7 @@ function renderWorksIndex(works) {
       <ul>${noscriptList}</ul>
     </noscript>
 
-    <script type="application/json" id="works-data">${JSON.stringify(listed.map((w) => ({
+    <script type="application/json" id="works-data">${jsonForHTML(listed.map((w) => ({
       id: w.id, slug: w.slug, title: w.title, summary: w.summary, type: w.type,
       process: w.process, narrativePhase: w.narrativePhase, bodyNode: w.bodyNode,
       visualDialect: w.visualDialect, publicationStatus: w.publicationStatus, editorialMode: w.editorialMode || null,
@@ -580,6 +618,18 @@ function renderWorkDetail(work, byId) {
     </div>`);
   }
 
+  if (work.pageNumber) {
+    blocks.push(`
+    <aside class="work-detail__block canonize-cta">
+      <div>
+        <p class="tag">КОНТРВЕС / 418.10</p>
+        <h2>Слишком похоже на документ?</h2>
+        <p>Факт останется фактом. Но мы можем выдать ему хреновую должность, возвести её в сан и честно сломать интерфейс.</p>
+      </div>
+      <a class="btn" href="/overheat/?page=${String(work.pageNumber).padStart(3, '0')}">Канонизировать улику ${String(work.pageNumber).padStart(3, '0')}</a>
+    </aside>`);
+  }
+
   // ContentNoticeGate — только если применимо
   const mediaBlock = work.contentNotice
     ? `<div class="work-detail__block">
@@ -589,7 +639,7 @@ function renderWorkDetail(work, byId) {
             <p>${esc(work.contentNotice)}</p>
             <span class="btn">ладно, показывай</span>
           </summary>
-          <div class="notice-gate__content">${mediaFigure(work, { klass: 'work-media--gated' })}</div>
+          <div class="notice-gate__content">${gatedMediaFigure(work, { klass: 'work-media--gated' })}</div>
         </details>
       </div>`
     : '';
@@ -647,6 +697,138 @@ function renderWorkDetail(work, byId) {
     description: work.summary,
     active: 'works',
     content,
+  });
+}
+
+// ------------------------------------------------------------ overheat
+function renderOverheat(works, lore) {
+  const corpus = listedWorks(works).filter((work) =>
+    work.source?.kind === 'страница визуального корпуса' && !work.contentNotice
+  );
+  const first = corpus[0];
+  if (!first) throw new Error('Канонизатору нужен хотя бы один опубликованный лист визуального корпуса.');
+
+  const payload = {
+    works: corpus.map((work) => ({
+      id: work.id,
+      slug: work.slug,
+      title: work.title,
+      summary: work.summary,
+      analysis: work.visualAnalysis || '',
+      pageNumber: work.pageNumber,
+      image: work.thumbnail?.src || work.media?.[0]?.src,
+      alt: work.altText || work.title,
+    })),
+    lore,
+  };
+  const myths = (lore.memes || []).map((meme) => `<article class="apocrypha-card">
+    <span>${esc(meme.code)}</span>
+    <h3>${esc(meme.title)}</h3>
+    <p>${esc(meme.text)}</p>
+  </article>`).join('\n');
+
+  const content = `
+<section class="page page--wide overheat-page">
+  <header class="overheat-hero">
+    <div>
+      <p class="tag">/overheat — НЕСАНКЦИОНИРОВАННЫЙ ПОДВАЛ</p>
+      <h1>Канонизатор <span>418</span></h1>
+    </div>
+    <aside class="overheat-hero__note">
+      <strong>105 документов зашли как улики. Выйдут как культовая хрень.</strong>
+      <p>Ничего в исходном кадре не подменяется. Мы добавляем к нему неправильную функцию, серьёзный титул и машинную аварию — по одному осознанному нажатию.</p>
+    </aside>
+  </header>
+
+  <div class="canon-ratio" aria-label="Целевая формула: 45 процентов документа, 25 процентов абсурда, 20 процентов пафоса, 10 процентов цифрового сбоя">
+    <div class="canon-ratio__part canon-ratio__part--ground"><strong>45%</strong><span>улика остаётся уликой</span></div>
+    <div class="canon-ratio__part canon-ratio__part--absurd"><strong>25%</strong><span>назначение едет к чертям</span></div>
+    <div class="canon-ratio__part canon-ratio__part--pathos"><strong>20%</strong><span>титул звучит всерьёз</span></div>
+    <div class="canon-ratio__part canon-ratio__part--glitch"><strong>10%</strong><span>машина кается ошибкой</span></div>
+  </div>
+
+  <section class="canon-console" data-overheat-root data-phase="ground" data-secret="0" aria-label="Канонизатор архивных улик">
+    <div class="canon-console__bar">
+      <span data-machine-state aria-live="polite">УЛИКА СТАБИЛЬНА / ПОКА</span>
+      <span>ENTROPY <b data-entropy>000 / 418</b></span>
+      <span>КОРПУС ${corpus.length} / ${corpus.length}</span>
+    </div>
+    <div class="canon-secret" data-secret-stamp hidden>СЕКРЕТНЫЙ ПРОТОКОЛ СОЗРЕВАНИЯ АКТИВЕН</div>
+    <div class="canon-console__grid">
+      <figure class="canon-evidence">
+        <div class="canon-evidence__media" data-evidence-media data-media-error="0">
+          <img src="/${esc(first.thumbnail?.src || first.media?.[0]?.src)}" alt="${esc(first.altText || first.title)}" data-evidence-image decoding="async" fetchpriority="high">
+          <span class="canon-halo" aria-hidden="true"></span>
+        </div>
+        <figcaption>
+          <span data-evidence-index>УЛИКА ${String(first.pageNumber || 1).padStart(3, '0')} / 105</span>
+          <strong data-evidence-title>${esc(first.title)}</strong>
+          <a href="/works/${first.slug}/" data-evidence-link>Открыть улику</a>
+        </figcaption>
+      </figure>
+
+      <div class="canon-readout" aria-live="polite">
+        <section class="canon-layer canon-layer--ground">
+          <div class="canon-layer__label"><span>45 / СВИДЕТЕЛЬСТВО</span><span>не переписывать</span></div>
+          <p data-ground-text>${esc(first.summary)}</p>
+        </section>
+        <section class="canon-layer canon-layer--absurd">
+          <div class="canon-layer__label"><span>25 / НЕПРАВИЛЬНАЯ ДОЛЖНОСТЬ</span><span>печать кривая</span></div>
+          <p data-wrong-text>должность ещё можно не выдавать</p>
+          <strong class="canon-verdict" data-verdict-text>брань удерживается редакционной пломбой</strong>
+        </section>
+        <section class="canon-layer canon-layer--pathos">
+          <div class="canon-layer__label"><span>20 / САН</span><span>не ржать</span></div>
+          <h2 data-canon-title>титул ожидает серьёзного лица</h2>
+          <p data-decree-text>декрет запечатан до следующего шага</p>
+        </section>
+        <section class="canon-layer canon-layer--glitch">
+          <div class="canon-layer__label"><span>10 / МАШИННОЕ ПОКАЯНИЕ</span><span>retry запрещён</span></div>
+          <p data-fault-text>E000 / МАШИНА ПРИТВОРЯЕТСЯ НОРМАЛЬНОЙ</p>
+        </section>
+        <section class="canon-layer canon-layer--residue">
+          <div class="canon-layer__label"><span>ПОСЛЕ / МАТЕРИАЛЬНОЕ ВОЗРАЖЕНИЕ</span><span>вернуть человека</span></div>
+          <p data-residue-text>остатка пока нет</p>
+        </section>
+
+        <div class="canon-controls" role="group" aria-label="Управление канонизатором">
+          <button type="button" data-canon-action>НАЗНАЧИТЬ НЕПРАВИЛЬНО</button>
+          <button type="button" data-canon-reroll>СМЕНИТЬ УЛИКУ</button>
+          <button type="button" data-canon-reset>ОХЛАДИТЬ</button>
+        </div>
+        <ol class="canon-progress" aria-label="Этапы обряда">
+          <li data-canon-step data-state="current" aria-current="step">улика</li>
+          <li data-canon-step data-state="waiting">ошибка</li>
+          <li data-canon-step data-state="waiting">титул</li>
+          <li data-canon-step data-state="waiting">сбой</li>
+          <li data-canon-step data-state="waiting">остаток</li>
+        </ol>
+      </div>
+    </div>
+    <div class="canon-log">
+      <div><p class="tag">SESS / НЕЗАБЫТОЕ</p><h2>Журнал последних косяков</h2></div>
+      <ol data-canon-history><li>Журнал чист. Это подозрительно.</li></ol>
+    </div>
+  </section>
+
+  <section class="overheat-myth">
+    <div class="overheat-myth__head">
+      <div><p class="tag">НОВЫЙ АПОКРИФ / 418.10</p><h2>${esc(lore.title)}</h2></div>
+      <p>${esc(lore.preamble)}</p>
+    </div>
+    <div class="apocrypha-grid">${myths}</div>
+  </section>
+
+  <script type="application/json" id="overheat-data">${jsonForHTML(payload)}</script>
+</section>`;
+
+  return layout({
+    title: 'Канонизатор 418',
+    description: 'Интерактивный компенсатор документальности: архивная улика проходит через бытовой абсурд, серьёзный пафос и цифровой сбой.',
+    active: 'overheat',
+    bodyClass: 'page-overheat',
+    content,
+    extraScripts: '<script type="module" src="/assets/js/overheat.js"></script>',
   });
 }
 
@@ -770,10 +952,12 @@ async function exportPublicBuild(buildable) {
   await rm(DIST_DIR, { recursive: true, force: true });
   await mkdir(path.join(DIST_DIR, 'works'), { recursive: true });
   await mkdir(path.join(DIST_DIR, 'protocol'), { recursive: true });
+  await mkdir(path.join(DIST_DIR, 'overheat'), { recursive: true });
   await cp(path.join(SITE_ROOT, 'assets'), path.join(DIST_DIR, 'assets'), { recursive: true });
   await copyFile(path.join(SITE_ROOT, 'index.html'), path.join(DIST_DIR, 'index.html'));
   await copyFile(path.join(SITE_ROOT, 'works/index.html'), path.join(DIST_DIR, 'works/index.html'));
   await copyFile(path.join(SITE_ROOT, 'protocol/index.html'), path.join(DIST_DIR, 'protocol/index.html'));
+  await copyFile(path.join(SITE_ROOT, 'overheat/index.html'), path.join(DIST_DIR, 'overheat/index.html'));
   for (const work of buildable) {
     const target = path.join(DIST_DIR, 'works', work.slug);
     await mkdir(target, { recursive: true });
@@ -811,13 +995,16 @@ async function main() {
   const editorialCases = await loadJSON('content/editorial-cases.json');
   const tone = await loadJSON('content/tone.json');
   const lore = await loadJSON('content/lore.json');
+  const overheat = await loadJSON('content/overheat.json');
 
   await mkdir(path.join(SITE_ROOT, 'works'), { recursive: true });
   await mkdir(path.join(SITE_ROOT, 'protocol'), { recursive: true });
+  await mkdir(path.join(SITE_ROOT, 'overheat'), { recursive: true });
 
   await writeFile(path.join(SITE_ROOT, 'index.html'), renderHome(rawWorks, tone, lore));
   await writeFile(path.join(SITE_ROOT, 'works/index.html'), renderWorksIndex(rawWorks));
   await writeFile(path.join(SITE_ROOT, 'protocol/index.html'), await renderProtocol(laws, dialects, editorialCases, rawWorks, tone, lore));
+  await writeFile(path.join(SITE_ROOT, 'overheat/index.html'), renderOverheat(rawWorks, overheat));
 
   const buildable = buildableWorks(rawWorks);
   for (const work of buildable) {
@@ -828,7 +1015,7 @@ async function main() {
 
   await exportPublicBuild(buildable);
 
-  console.log(`Собрано: 3 статические страницы + ${buildable.length} страниц работ (из ${rawWorks.length} записей).`);
+  console.log(`Собрано: 4 статические страницы + ${buildable.length} страниц работ (из ${rawWorks.length} записей).`);
   console.log(`Публичная сборка: dist/ (без content/private и исходных редакционных данных).`);
   console.log(`Приватный реестр согласий (content/private/consent-ledger.json) в сборку не включён.`);
 }

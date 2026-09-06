@@ -176,7 +176,9 @@ function initGlobal(){
   document.addEventListener('pointermove',e=>{cursor.style.left=`${e.clientX+14}px`;cursor.style.top=`${e.clientY+14}px`});
   let enabled=false;
   document.addEventListener('keydown',e=>{
-    if(e.metaKey||e.ctrlKey||e.altKey) return;
+    const typing=e.target instanceof HTMLElement
+      && (e.target.isContentEditable || /^(INPUT|TEXTAREA|SELECT|BUTTON)$/.test(e.target.tagName));
+    if(e.metaKey||e.ctrlKey||e.altKey||typing) return;
     if(e.key.toLowerCase()==='x'){enabled=!enabled;document.body.dataset.cursor=enabled?'1':'0';cursor.textContent=enabled?'ОБЪЕКТ СЛЕВАЕТСЯ С ФОНОМ':'НЕ НАЗНАЧЕНО';}
     if(e.key==='1'){document.body.classList.toggle('panic-418');}
   });

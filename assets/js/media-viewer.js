@@ -23,6 +23,12 @@ export function initContentNoticeGates(root = document) {
   root.querySelectorAll('details.notice-gate').forEach((gate) => {
     gate.addEventListener('toggle', () => {
       if (!gate.open) return;
+      gate.querySelectorAll('[data-notice-src]').forEach((media) => {
+        if (!media.getAttribute('src')) media.setAttribute('src', media.dataset.noticeSrc);
+        media.hidden = false;
+      });
+      const pending = gate.querySelector('[data-notice-pending]');
+      if (pending) pending.hidden = true;
       const workId = gate.dataset.workId || null;
       document.dispatchEvent(new CustomEvent('media:content-notice-ack', { detail: { workId } }));
     });
