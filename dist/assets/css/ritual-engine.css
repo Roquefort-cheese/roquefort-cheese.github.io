@@ -1,0 +1,50 @@
+/* 418.7 / RITUAL ENGINE: event first, effect second */
+.ritual-zone{position:relative;min-height:62rem;padding:2rem 0 1.5rem;background:
+  radial-gradient(circle at 76% 22%,rgba(217,255,63,.14),transparent 24rem),
+  linear-gradient(135deg,#0a0b09 0 55%,#15121b 55% 78%,#090a08 78%);
+  color:#f6f0e5;overflow:visible}
+.ritual-head{display:flex;justify-content:space-between;gap:2rem;align-items:end;margin-bottom:1rem}
+.ritual-head h2{font-size:clamp(2.8rem,7vw,6.5rem);max-width:9ch;letter-spacing:-.07em;line-height:.88;margin:.2rem 0}
+.ritual-kicker{max-width:34rem;color:#c7c0b4;font-size:1rem}
+.ritual-rule{font:700 .58rem/1.3 var(--font-mono);text-transform:uppercase;color:#d9ff3f;border:1px solid #3c4528;padding:.5rem .7rem;transform:rotate(-2deg)}
+.ritual-cockpit{display:grid;grid-template-columns:minmax(19rem,.7fr) minmax(0,1.3fr);gap:1rem;align-items:stretch}
+.ritual-brief{background:#e9e1d3;color:#13130f;border:3px solid #0b0c09;box-shadow:12px 12px 0 #7f1d24;padding:1rem;position:relative;transform:rotate(-.5deg)}
+.ritual-brief::after{content:"НЕ ДЛЯ НОРМАЛЬНЫХ ЛЮДЕЙ";position:absolute;right:-.5rem;top:1.2rem;background:#d9ff3f;color:#080907;font:900 .5rem var(--font-mono);padding:.4rem .5rem;transform:rotate(5deg)}
+.ritual-brief__stamp{font:800 .55rem var(--font-mono);letter-spacing:.1em;border-bottom:2px solid #13130f;padding-bottom:.55rem;margin-bottom:.5rem}
+.ritual-brief__row{display:grid;grid-template-columns:5.4rem 1fr;gap:.5rem;padding:.55rem 0;border-bottom:1px dashed #8c8475}
+.ritual-brief__row span{font:800 .5rem var(--font-mono);color:#666052}
+.ritual-brief__row strong{font:800 .9rem/.98 var(--font-display);text-transform:none}
+.ritual-brief__footer{margin-top:.65rem;font:700 .55rem var(--font-mono);text-transform:uppercase}
+.ritual-brief__footer b{color:#7f1d24}
+.ritual-brief__actions{display:grid;grid-template-columns:1fr auto;gap:.55rem;margin-top:.9rem}
+.ritual-brief .btn{margin:0;min-height:3.2rem}
+.ritual-reroll{padding-inline:.8rem;white-space:nowrap}
+.ritual-stage{min-height:51rem;position:relative;border:1px solid #44463a;background:#10110e;overflow:hidden;isolation:isolate;box-shadow:inset 0 0 0 1px rgba(255,255,255,.05),18px 18px 0 rgba(52,91,255,.12)}
+.ritual-stage::before{content:"";position:absolute;inset:1rem;border:1px dashed rgba(217,255,63,.12);pointer-events:none}
+.ritual-stage__topline{position:absolute;inset:.8rem .9rem auto;z-index:8;display:flex;justify-content:space-between;font:800 .52rem var(--font-mono);letter-spacing:.1em;color:#d9ff3f}
+.ritual-stage__figure{position:absolute;inset:4rem 2rem 7rem;display:grid;place-items:center;z-index:2}
+.ritual-stage__figure img{max-height:100%;max-width:100%;object-fit:contain;filter:saturate(.9) contrast(1.06);mix-blend-mode:normal}
+.ritual-stage__overlay{position:absolute;left:1rem;bottom:1.2rem;right:1rem;z-index:7;padding:.8rem 1rem;background:rgba(7,8,6,.87);border-left:4px solid #d9ff3f}
+.ritual-stage__title{margin:0 0 .25rem;font:900 clamp(1.35rem,3vw,2.8rem)/.95 var(--font-display);text-transform:uppercase;letter-spacing:-.03em;color:#fff8ec}
+.ritual-stage__caption{margin:0;color:#d0c9bc;font-size:.92rem;max-width:48rem}
+.ritual-stage__glitch{position:absolute;inset:0;z-index:9;display:grid;place-items:center;text-align:center;padding:2rem;color:#d9ff3f;background:rgba(0,0,0,.54);font:900 clamp(1rem,2vw,2rem)/1.1 var(--font-mono);letter-spacing:.03em;opacity:0;pointer-events:none}
+.ritual-stage[data-phase="glitch"] .ritual-stage__glitch{opacity:1;animation:ritualGlitch .22s steps(2,end) 2}
+.ritual-stage[data-phase="consequence"] .ritual-stage__figure{transform:rotate(-2deg) scale(1.045);filter:contrast(1.15) saturate(1.25)}
+.ritual-stage[data-phase="aftercare"] .ritual-stage__figure{transform:scale(.97);filter:grayscale(.18) contrast(1.02)}
+.ritual-stage[data-phase="brief"]::after{content:"ПЕРЕД НАЖАТИЕМ ЕЩЁ МОЖНО ПЕРЕДУМАТЬ";position:absolute;right:1rem;top:5rem;z-index:7;background:#ef3043;color:#fff;padding:.35rem .55rem;font:900 .5rem var(--font-mono);transform:rotate(4deg)}
+.ritual-stage__aftercare{position:absolute;right:1rem;top:1rem;max-width:21rem;padding:.65rem .7rem;background:#e9e1d3;color:#11110e;border:2px solid #111;z-index:10;transform:rotate(1deg);box-shadow:6px 6px 0 #d9ff3f}
+.ritual-stage__aftercare span{display:block;font:800 .45rem var(--font-mono);color:#7f1d24}
+.ritual-stage__aftercare strong{display:block;font:800 .78rem/1.15 var(--font-display)}
+.ritual-stage__aftercare[hidden]{display:none}
+.ritual-foot{display:flex;justify-content:space-between;gap:2rem;margin-top:1rem;align-items:start}
+.ritual-memoryline{display:flex;gap:.7rem;align-items:flex-start;font:700 .53rem var(--font-mono);text-transform:uppercase;color:#aaa294}
+.ritual-memoryline>span{color:#d9ff3f}.ritual-memoryline>div{display:flex;gap:.5rem;flex-wrap:wrap}.ritual-memoryline span{border:1px solid #3d4037;padding:.25rem .35rem}
+.ritual-memoryline i{font-style:normal;color:#777165}
+.ritual-hint{font:700 .53rem var(--font-mono);color:#777165;text-align:right;text-transform:uppercase;max-width:20rem}
+.comendant-banner{position:absolute;left:0;right:0;top:0;z-index:20;background:#eef0ea;color:#1b1a16;border-bottom:3px solid #111;padding:.6rem 1rem;transform:translateY(-100%);transition:transform .2s ease}.comendant-banner[data-active="1"]{transform:translateY(0)}
+body.ritual-glitch .ritual-stage{animation:ritualShake .28s steps(2,end)}
+@keyframes ritualGlitch{0%,100%{clip-path:inset(0)}50%{clip-path:inset(10% 0 52% 0)}}
+@keyframes ritualShake{0%,100%{transform:none}20%{transform:translate(-4px,1px)}50%{transform:translate(4px,-2px)}80%{transform:translate(-2px,1px)}}
+@media (max-width: 58rem){.ritual-head{display:block}.ritual-rule{display:inline-block;margin-top:.8rem}.ritual-cockpit{grid-template-columns:1fr}.ritual-brief{transform:none}.ritual-stage{min-height:46rem}.ritual-foot{display:block}.ritual-hint{text-align:left;margin-top:.7rem}}
+@media (max-width: 40rem){.ritual-zone{margin-inline:-.2rem;padding-inline:.2rem}.ritual-head h2{font-size:clamp(2.8rem,16vw,5.5rem)}.ritual-brief__row{grid-template-columns:1fr;gap:.2rem}.ritual-brief__actions{grid-template-columns:1fr}.ritual-stage{min-height:38rem}.ritual-stage__figure{inset:4rem .5rem 8rem}.ritual-stage__overlay{left:.6rem;right:.6rem}.ritual-stage__aftercare{right:.5rem;top:2.2rem;max-width:15rem}}
+@media (prefers-reduced-motion: reduce){body.ritual-glitch .ritual-stage,.ritual-stage[data-phase="glitch"] .ritual-stage__glitch{animation:none}.ritual-stage[data-phase="consequence"] .ritual-stage__figure,.ritual-stage[data-phase="aftercare"] .ritual-stage__figure{transform:none}}

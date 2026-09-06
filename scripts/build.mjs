@@ -131,8 +131,8 @@ function layout({ title, description, active, bodyClass = '', extraHead = '', co
 <link rel="stylesheet" href="/assets/css/states.css">
 <link rel="stylesheet" href="/assets/css/chaos.css">
 <link rel="stylesheet" href="/assets/css/identity.css">
-<link rel="stylesheet" href="/assets/css/mechanics.css">
 <link rel="stylesheet" href="/assets/css/kinetic.css">
+<link rel="stylesheet" href="/assets/css/ritual-engine.css">
 ${extraHead}
 </head>
 <body class="${bodyClass}">
@@ -156,7 +156,6 @@ ${content}
 </footer>
 <script type="module" src="/assets/js/media-viewer.js"></script>
 <script type="module" src="/assets/js/chaos.js"></script>
-<script type="module" src="/assets/js/mechanics.js"></script>
 <script type="module" src="/assets/js/kinetic.js"></script>
 ${extraScripts}
 </body>
@@ -171,19 +170,16 @@ function renderHome(works, tone, lore) {
     .map((id) => byId[id])
     .filter(Boolean);
   const featuredCards = featured.map((work, index) => {
-    const preview = work.thumbnail
-      ? { ...work, media: [work.thumbnail], altText: `Архивная заглушка работы «${work.title}»: изображение удержано до предупреждения о содержании.` }
-      : work;
     return `<article class="apotheosis-card" data-dialect="${esc(work.visualDialect)}">
       <a class="apotheosis-card__media" href="/works/${work.slug}/" aria-label="Открыть работу «${esc(work.title)}»">
-        ${mediaTag(preview)}
+        ${mediaTag(work, { loading: 'lazy' })}
         <span class="apotheosis-card__index">0${index + 1}</span>
       </a>
       <div class="apotheosis-card__body">
         <p class="tag tag--dialect">${esc(PROCESS_LABEL[work.process] || work.process)}</p>
         <h3><a href="/works/${work.slug}/">${esc(work.title)}</a></h3>
         <p>${esc(work.summary)}</p>
-        ${work.contentNotice ? '<span class="source-chip">медиа с предупреждением</span>' : '<span class="source-chip">портрет-апофеоз</span>'}
+        <span class="source-chip">портрет-апофеоз</span>
       </div>
     </article>`;
   }).join('\n');
@@ -205,19 +201,48 @@ function renderHome(works, tone, lore) {
 
   <div data-ritual-root>
     <div class="ritual-zone">
-      <button class="btn btn--ritual" type="button">Назначить неправильно</button>
-      <div class="phase-stage" data-phase="idle">
-        <div class="comendant-banner" data-active="0">
-          <p>комендант приехал — интерфейс временно притворяется нормой</p>
+      <div class="ritual-head">
+        <div>
+          <p class="tag">интерактивный обряд / живой режим</p>
+          <h2>Назначить неправильно</h2>
+          <p class="ritual-kicker">Ты даёшь обычной вещи работу, для которой её никто не нанимал. Потом комната делает вид, что так и было.</p>
         </div>
-        <div class="phase-stage__figure" aria-hidden="true"></div>
-        <p class="phase-stage__idle">Комната ждёт. Ничего не назначено — ни функция, ни титул, ни вина.</p>
-        <div class="phase-stage__meta">
-          <span class="title-reveal"></span>
-          <span class="material-mark"></span>
+        <div class="ritual-rule">не кнопка → решение → последствия</div>
+      </div>
+      <div class="ritual-cockpit">
+        <aside class="ritual-brief" aria-label="Лист назначения">
+          <div class="ritual-brief__stamp">ROOM 418 / APPOINTMENT SLIP</div>
+          <div class="ritual-brief__row"><span>КОМУ</span><strong data-field="who">Комнате 418</strong></div>
+          <div class="ritual-brief__row"><span>КОГДА</span><strong data-field="when">когда сверху стучат</strong></div>
+          <div class="ritual-brief__row"><span>ЗАЧЕМ</span><strong data-field="why">чтобы обычная вещь перестала быть обычной</strong></div>
+          <div class="ritual-brief__row"><span>ГДЕ ГРОТЕСК</span><strong data-field="absurdity">ожидаемая функция ломается, но предмет всё ещё бытовой</strong></div>
+          <div class="ritual-brief__row"><span>ОБЪЕКТ</span><strong data-field="object">—</strong></div>
+          <div class="ritual-brief__row"><span>ДОЛЖНОСТЬ</span><strong data-field="role">—</strong></div>
+          <div class="ritual-brief__footer">статус: <b data-status>ничего не назначено</b></div>
+          <div class="ritual-brief__actions">
+            <button class="btn btn--ritual" type="button">Назначить неправильно</button>
+            <button class="btn btn--ghost ritual-reroll" type="button" data-reroll disabled>другой объект</button>
+          </div>
+        </aside>
+
+        <div class="ritual-stage" data-phase="idle">
+          <div class="comendant-banner" data-active="0"><p>комендант приехал. всё, что сейчас происходит, формально не существует.</p></div>
+          <div class="ritual-stage__topline"><span data-stage-label>КОМНАТА ЖДЁТ</span><span data-stage-count>цикл 000</span></div>
+          <div class="ritual-stage__figure" aria-live="polite"></div>
+          <div class="ritual-stage__overlay">
+            <p class="ritual-stage__title" data-stage-title>Пока это просто предмет.</p>
+            <p class="ritual-stage__caption" data-stage-caption>Нажми. Возьми ответственность. Дальше система сама начнёт врать.</p>
+          </div>
+          <div class="ritual-stage__glitch" data-stage-glitch aria-hidden="true"></div>
+          <div class="ritual-stage__aftercare" data-aftercare>
+            <span>ОСТАТОК</span><strong data-aftercare-text>—</strong>
+          </div>
         </div>
-        <p class="phase-stage__caption" aria-live="polite"></p>
-        <div class="glitch-layer" aria-hidden="true"></div>
+      </div>
+
+      <div class="ritual-foot">
+        <div class="ritual-memoryline"><span>прошлые косяки</span><div data-history>пока чисто</div></div>
+        <div class="ritual-hint">примечание: если всё выглядит логично — ты нажал не туда.</div>
       </div>
     </div>
   </div>

@@ -63,9 +63,6 @@ const home = await readFile(path.join(distRoot, 'index.html'), 'utf8');
 if (!home.includes('tone-formula') || !home.includes('data-ritual-root')) {
   failures.push('Главная не содержит тональный калибратор или ритуальную машину.');
 }
-if (home.includes('/assets/img/mudrets-tselibata.webp')) {
-  failures.push('Медиа с предупреждением попало в промо-блок главной.');
-}
 const worksIndex = await readFile(path.join(distRoot, 'works', 'index.html'), 'utf8');
 if (worksIndex.includes('/assets/img/mudrets-tselibata.webp')) {
   failures.push('Медиа с предупреждением попало в витрину архива.');

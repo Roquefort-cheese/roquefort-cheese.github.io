@@ -1,186 +1,210 @@
-// assets/js/ritual.js
-//
-// RitualButton + PhaseStage ("Комната 418"). Единственный модуль, которому
-// разрешено запускать GlitchLayer и диалект-трансформацию (см. §3 ТЗ —
-// "ни один компонент библиотеки или страницы работы не имеет права
-// самостоятельно запускать глитч").
-//
-// DescendCTA физически не существует в DOM, пока не случится хотя бы
-// один protocol:reset — это не CSS display:none, а буквальное отсутствие узла.
-
 import { PhaseMachineController } from './state-machine.js';
 
-const RECIPES = [
+const CASES = [
   {
     id: 'vantuz',
-    dialect: 'holding',
-    title: 'Вантуз Судьбы',
-    object: 'вантуз на деревянной ручке',
-    wrongFunction: 'скипетр, прочищающий карму этажа',
-    material: 'материальное возражение: треснувшая резиновая часть',
-    img: 'assets/img/vantuz-sudby.svg',
+    object: 'Вантуз', role: 'судья канализации', who: 'этажу 418', when: 'когда слив опять решил стать судьбой',
+    why: 'чтобы канализация наконец получила власть, которой она давно добивалась',
+    absurdity: 'инструмент для прочистки объявляется судебной инстанцией. Он всё ещё липкий.',
+    title: 'ВАНТУЗ СУДЬБЫ',
+    img: '/assets/img/vantuz-sudby.svg',
+    caption: 'Судебное заседание началось. Первое решение: прочистить всё, включая отношения между соседями.',
+    fail: 'Вантуз отказался давать комментарии и потребовал воды.',
+    glitch: 'ERROR 418 / JURISDICTION = DRAIN / APPEAL = PUDDLE',
+    after: 'Серёга нашёл изоленту. Заседание закрыто. Вантуз снова просто вантуз.',
   },
   {
-    id: 'fedora',
-    dialect: 'fixation',
-    title: 'Властелин Дофамина',
-    object: 'старая шляпа-федора',
-    wrongFunction: 'трон для медитации перед бесконечной лентой',
-    material: 'материальное возражение: обшарпанная кровать в кадре',
-    img: 'assets/img/vlastelin-dofamina.webp',
+    id: 'vlastelin',
+    object: 'Телефон + федора', role: 'начальник отдела бесконечного скролла', who: 'тому, кто уже третий час листает ленту', when: 'когда палец снова делает «обновить»',
+    why: 'чтобы назначение внимания наконец оформилось в должность',
+    absurdity: 'интерфейс получает человека в собственность, но делает вид, что это карьерный рост.',
+    title: 'ВЛАСТЕЛИН ДОФАМИНА',
+    img: '/assets/img/vlastelin-dofamina.webp',
+    caption: 'Пошёл официальный апгрейд: зависание признано формой медитации. Лайки признаны налогом.',
+    fail: 'Контроль завис на 99%. Кнопка «выйти» зарегистрирована как миф.',
+    glitch: 'BUFFERING / CONSCIOUSNESS = 99% / CANCEL = NOT AVAILABLE',
+    after: 'Телефон положили экраном вниз. В комнате на восемь секунд стало тихо.',
   },
   {
-    id: 'tablichka',
-    dialect: 'generation',
-    title: 'Осеменитель',
-    object: 'самодельная табличка с расписанием на шее',
-    wrongFunction: 'скрижаль творения, из которой рождаются галактики',
-    material: 'материальное возражение: кустарный шрифт на табличке',
-    img: 'assets/img/osemenitel.webp',
+    id: 'mudrets',
+    object: 'Федора', role: 'держатель тёмной материи', who: 'Мудрецу Целибата', when: 'когда молчание стало слишком тяжёлым',
+    why: 'чтобы неловкость наконец получила физический вес и перестала притворяться характером',
+    absurdity: 'обычная шляпа объявляется космическим контейнером. Шов всё ещё кривой.',
+    title: 'МУДРЕЦ ЦЕЛИБАТА',
+    img: '/assets/img/mudrets-tselibata.webp',
+    caption: 'Тёмная материя прошла через федору. Мудрец делает вид, что так и планировал. Никто ему не верит.',
+    fail: 'Сдерживание лопнуло первым. Потом титул начал отвечать за человека.',
+    glitch: 'NULL / SHAME MASS = 418 / HAT = TOO IMPORTANT',
+    after: 'Кто-то просто спросил: «Ты норм?» И на секунду вся магия стала не нужна.',
+  },
+  {
+    id: 'osemenitel',
+    object: 'Картонная табличка', role: 'скрижаль производства новых вселенных', who: 'тому, кто опять придумал новый проект', when: 'когда идей уже больше, чем места в чате',
+    why: 'чтобы производство форм наконец признало, что оно не остановится само',
+    absurdity: 'самодельный картон получает полномочия космогенеза. На обороте остаётся ценник.',
+    title: 'ОСЕМЕНИТЕЛЬ',
+    img: '/assets/img/osemenitel.webp',
+    caption: 'Открыт новый отдел по производству галактик. Штат: один человек, три идеи и слишком много энергии.',
+    fail: 'Новая вселенная появилась до того, как согласовали название. Теперь это проблема отдела.',
+    glitch: 'SPAWN FAILED / TOO MANY WORLDS / DELETE BUTTON HAS CHILDREN',
+    after: 'Список дел всё-таки закрыли. Одну идею оставили жить. Остальные пошли в сон.',
   },
 ];
 
-const GLITCH_MESSAGES = [
-  'ОБЪЕКТ ПРИНЯТ В КОСМОС БЕЗ НОРМАТИВНОЙ РЕЗОЛЮЦИИ.',
-  'ERROR 418: ЧАЙ НАЙДЕН. СМЫСЛ НЕ НАЙДЕН.',
-  'НЕ ТРОГАТЬ. УЖЕ МИФ.',
-  'АПОФЕОЗ ПРОСИТ ЕЩЁ 1%.',
-  'КОМЕНДАНТ ОТКАЗАЛСЯ ПРИЗНАВАТЬ ЛАПШУ КОСМОСОМ.',
-  'БЮРО ЗАКРЫТО ДО ТЕХ ПОР, ПОКА НЕ НАЙДЁТСЯ ИЗОЛЕНТА.',
-  'ПОВТОРИТЬ ПОПЫТКУ ПОСЛЕ ЧАЯ.',
-  '418 / ROOM_NOT_FOUND / HUMAN_STILL_ONLINE',
+const GLITCHES = [
+  'ПОДТВЕРЖДЕНО / НО НЕ УПОЛНОМОЧЕНО',
+  'ОБЪЕКТ СТАЛ СЛИШКОМ УВЕРЕН В СЕБЕ',
+  '418 / НАЗНАЧЕНИЕ УШЛО В САМОСТОЯТЕЛЬНОЕ ПЛАВАНИЕ',
+  'СИСТЕМА ПЕРЕДУМАЛА. ПОЗДНО.',
 ];
 
-function pick(arr, excludeId) {
-  const pool = excludeId ? arr.filter((r) => r.id !== excludeId) : arr;
-  return pool[Math.floor(Math.random() * pool.length)];
-}
+const pick = (arr, seed = Date.now()) => arr[Math.floor(Math.abs(Math.sin(seed * 12.9898) * 43758.5453) % arr.length)];
+const readMemory = () => { try { return JSON.parse(sessionStorage.getItem('p418.ritual.v2') || '{}'); } catch { return {}; } };
+const writeMemory = (x) => { try { sessionStorage.setItem('p418.ritual.v2', JSON.stringify(x)); } catch {} };
+const esc = (v='') => String(v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 
 export function initRitual(root) {
-  const stage = root.querySelector('.phase-stage');
-  const figureWrap = stage.querySelector('.phase-stage__figure');
-  const caption = stage.querySelector('.phase-stage__caption');
-  const titleReveal = stage.querySelector('.title-reveal');
-  const materialMark = stage.querySelector('.material-mark');
-  const glitchLayer = stage.querySelector('.glitch-layer');
-  const comendantBanner = root.querySelector('.comendant-banner');
   const button = root.querySelector('.btn--ritual');
-  const ritualZone = root.querySelector('.ritual-zone');
+  const reroll = root.querySelector('[data-reroll]');
+  const stage = root.querySelector('.ritual-stage');
+  const figure = root.querySelector('.ritual-stage__figure');
+  const stageLabel = root.querySelector('[data-stage-label]');
+  const stageCount = root.querySelector('[data-stage-count]');
+  const stageTitle = root.querySelector('[data-stage-title]');
+  const caption = root.querySelector('[data-stage-caption]');
+  const glitch = root.querySelector('[data-stage-glitch]');
+  const aftercare = root.querySelector('[data-aftercare]');
+  const aftercareText = root.querySelector('[data-aftercare-text]');
+  const history = root.querySelector('[data-history]');
+  const fields = Object.fromEntries(['who','when','why','absurdity','object','role','status'].map(k=>[k,root.querySelector(`[data-field="${k}"]`) || root.querySelector(`[data-status]`)]));
+  if (!button || !stage || !figure) return null;
 
   const machine = new PhaseMachineController(root);
-  let lastRecipeId = null;
-  let descendMounted = false;
+  let memory = readMemory();
+  memory.cycles = Number(memory.cycles || 0);
+  memory.history = Array.isArray(memory.history) ? memory.history : [];
+  let current = null;
+  let busy = false;
 
-  function setPhase(p) {
-    stage.dataset.phase = p;
+  function setField(key, text) { const el = fields[key]; if (el) el.textContent = text; }
+  function renderHistory() {
+    if (!history) return;
+    history.innerHTML = memory.history.length
+      ? memory.history.slice(0,3).map(h=>`<span>${esc(h.title)} <i>/${esc(h.mode)}</i></span>`).join('')
+      : 'пока чисто';
+  }
+  function choose(seed = Date.now()) {
+    const pool = CASES.filter(x=>x.id !== current?.id);
+    current = pick(pool, seed);
+    setField('who', current.who); setField('when', current.when); setField('why', current.why);
+    setField('absurdity', current.absurdity); setField('object', current.object); setField('role', current.role);
+    setField('status', 'назначение не подтверждено');
+    reroll.disabled = false;
+    reroll.textContent = 'другой объект';
+    stage.dataset.phase = 'brief';
+    stage.dataset.dialect = current.id === 'mudrets' ? 'holding' : current.id === 'vlastelin' ? 'fixation' : current.id === 'osemenitel' ? 'generation' : 'holding';
+    figure.innerHTML = `<img src="${esc(current.img)}" alt="${esc(current.title)}" decoding="async">`;
+    stageLabel.textContent = 'ПРОЕКТ НАЗНАЧЕНИЯ';
+    stageTitle.textContent = current.title;
+    caption.textContent = 'Вот кандидат. Можно ещё отступить. Через секунду будет поздно.';
+    figure.innerHTML = '';
+    glitch.textContent = '';
+    aftercare.hidden = true;
   }
 
-  function runTransformation() {
-    const recipe = pick(RECIPES, lastRecipeId);
-    lastRecipeId = recipe.id;
+  function setButton(text, disabled=false) { button.textContent = text; button.disabled = disabled; }
+  function finish() {
+    machine.transition('reset', { auto: true });
+  }
+  function commit() {
+    if (!current || busy) return;
+    busy = true;
+    reroll.disabled = true;
+    setField('status','ОТМЕНА ЗАПРЕЩЕНА');
+    setButton('НАЗНАЧЕНИЕ ПРИНЯТО', true);
+    document.dispatchEvent(new CustomEvent('ritual:assignment-committed', { detail: current }));
+    machine.transition('pressure');
 
-    document.dispatchEvent(new CustomEvent('ritual:pressure-start', {
-      detail: { sourceImageId: recipe.id, dialect: recipe.dialect },
-    }));
-
-    stage.dataset.dialect = recipe.dialect;
-    setPhase('pressure');
-    caption.textContent = `давление: ${recipe.object}`;
-    figureWrap.innerHTML = recipe.img.endsWith('.svg')
-      ? `<object type="image/svg+xml" data="${recipe.img}" aria-hidden="true"></object>`
-      : `<img src="${recipe.img}" alt="" aria-hidden="true">`;
+    stage.dataset.phase = 'appointment';
+    stageLabel.textContent = 'НАЗНАЧЕНИЕ ВСТУПИЛО В СИЛУ';
+    figure.innerHTML = `<img src="${esc(current.img)}" alt="${esc(current.title)}" decoding="async">`;
+    stageTitle.textContent = current.title;
+    caption.textContent = current.caption;
 
     window.setTimeout(() => {
-      document.dispatchEvent(new CustomEvent('ritual:wrong-assignment', {
-        detail: { objectId: recipe.id, wrongFunction: recipe.wrongFunction, dialect: recipe.dialect },
-      }));
       machine.transition('transformation');
-      setPhase('wrong-assignment');
-      caption.textContent = `неправильное назначение: ${recipe.wrongFunction}`;
+      stage.dataset.phase = 'consequence';
+      stageLabel.textContent = 'ПОШЛО НЕ ТАК';
+      caption.textContent = current.fail;
+    }, 1200);
 
-      window.setTimeout(() => {
-        setPhase('performance');
-        caption.textContent = 'перформанс: свидетели не отводят взгляд';
-      }, 650);
+    window.setTimeout(() => {
+      stage.dataset.phase = 'glitch';
+      stageLabel.textContent = 'СИСТЕМА ПРОСИТ НЕ ДЕЛАТЬ ВИД, ЧТО ЭТО НОРМАЛЬНО';
+      glitch.textContent = current.glitch + ' // ' + pick(GLITCHES);
+      document.body.classList.add('ritual-glitch');
+      window.setTimeout(() => document.body.classList.remove('ritual-glitch'), 320);
+    }, 2100);
 
-      window.setTimeout(() => {
-        setPhase('title');
-        titleReveal.textContent = recipe.title;
-      }, 1300);
+    window.setTimeout(() => {
+      stage.dataset.phase = 'aftercare';
+      stageLabel.textContent = 'И ЧТО ОСТАЛОСЬ ПОСЛЕ';
+      caption.textContent = 'Гротеск заканчивается там, где кто-то остаётся человеком.';
+      aftercare.hidden = false;
+      aftercareText.textContent = current.after;
+      memory.cycles += 1;
+      memory.history.unshift({ title: current.title, mode: current.role });
+      memory.history = memory.history.slice(0, 3);
+      writeMemory(memory);
+      stageCount.textContent = `цикл ${String(memory.cycles).padStart(3,'0')}`;
+      renderHistory();
+    }, 3000);
 
-      window.setTimeout(() => {
-        setPhase('apotheosis');
-        materialMark.textContent = recipe.material;
-      }, 2000);
-
-      window.setTimeout(() => {
-        setPhase('overheat');
-        stage.dataset.glitch = '1';
-        glitchLayer.textContent = GLITCH_MESSAGES[Math.floor(Math.random() * GLITCH_MESSAGES.length)];
-        machine.transition('overheat');
-      }, 2900);
-    }, 900);
+    window.setTimeout(() => finish(), 4700);
   }
 
   button.addEventListener('click', () => {
-    if (machine.state !== 'idle') return;
-    button.disabled = true;
-    machine.transition('pressure');
-    runTransformation();
-  });
-
-  document.addEventListener('protocol:comendant-arrived', () => {
-    root.dataset.comendant = '1';
-    comendantBanner.dataset.active = '1';
-    button.disabled = true;
-  });
-  document.addEventListener('protocol:comendant-collapse', () => {
-    root.dataset.comendant = '0';
-    comendantBanner.dataset.active = '0';
-    // краткая стерильная фаза перед обычным давлением, без ручного нажатия
-    if (machine.state === 'idle') {
-      machine.transition('pressure', { auto: true });
-      runTransformation();
+    if (busy) return;
+    if (!current || stage.dataset.phase === 'idle') {
+      choose();
+      setButton('Да. Это плохая идея', false);
+      return;
     }
+    if (stage.dataset.phase === 'brief') commit();
   });
-
-  document.addEventListener('protocol:reset', () => {
-    setPhase('reset');
-    stage.dataset.glitch = '0';
-    glitchLayer.textContent = '';
-    titleReveal.textContent = '';
-    materialMark.textContent = '';
-    caption.textContent = 'сброс: интерфейс остывает';
-  });
+  reroll.addEventListener('click', () => { if (!busy) choose(Date.now() + 97); });
 
   document.addEventListener('protocol:phase-change', (e) => {
     if (e.detail.to === 'idle') {
-      button.disabled = false;
-      caption.textContent = '';
-      if (!descendMounted) {
-        mountDescendCTA(ritualZone);
-        descendMounted = true;
-      }
+      busy = false;
+      current = null;
+      setButton('Назначить неправильно', false);
+      reroll.disabled = true;
+      setField('status','можно повторить');
+      stage.dataset.phase = 'idle';
+      stageLabel.textContent = 'КОМНАТА ЖДЁТ';
+      stageTitle.textContent = 'Последствия закончились. Следствие — нет.';
+      caption.textContent = 'Следующий цикл может опровергнуть предыдущий. Это нормально для 418.';
     }
   });
+  document.addEventListener('protocol:comendant-arrived',()=>{
+    root.dataset.comendant='1';
+    root.querySelector('.comendant-banner').dataset.active='1';
+  });
+  document.addEventListener('protocol:comendant-collapse',()=>{
+    root.dataset.comendant='0';
+    root.querySelector('.comendant-banner').dataset.active='0';
+  });
+  document.addEventListener('protocol:reset',()=>{
+    writeMemory(memory);
+  });
 
-  function mountDescendCTA(container) {
-    const wrap = document.createElement('div');
-    wrap.className = 'descend-cta';
-    wrap.innerHTML = `
-      <a class="btn btn--ghost" data-descend href="/works/">Спуститься на линолеум</a>
-      <a class="link-secondary" href="/protocol/">Изучить грамматику</a>
-    `;
-    container.appendChild(wrap);
-    wrap.querySelector('[data-descend]').addEventListener('click', () => {
-      document.dispatchEvent(new CustomEvent('ritual:descend-to-linoleum', {}));
-    });
-  }
-
+  renderHistory();
+  stageCount.textContent = `цикл ${String(memory.cycles).padStart(3,'0')}`;
   return machine;
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  const root = document.querySelector('[data-ritual-root]');
-  if (root) initRitual(root);
+document.addEventListener('DOMContentLoaded',()=>{
+  const root=document.querySelector('[data-ritual-root]');
+  if(root) initRitual(root);
 });
