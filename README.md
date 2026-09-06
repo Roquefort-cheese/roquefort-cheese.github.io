@@ -61,3 +61,7 @@ node scripts/check-build.mjs
 Редизайн намеренно ломает регулярность: карточки имеют переменный размер, малые наклоны, бумажные/афишные слои, стикеры температурного режима и лёгкие пространственные смещения. Добавлен чисто визуальный режим «взорвать раскладку», который не меняет хронику и связи. Глитч-слой остаётся ограничен переходами фазовой машины; глобальный слой хаоса отвечает только за композицию и сигнал интерфейса.
 
 Корпус не был переснят и не был заменён генеративными изображениями: используются исходные 105 визуальных листов.
+
+## 418.8 — Animation safety + archive dynamics
+
+The archive no longer auto-scatters on load. Card copy stays below its image rather than opening over it. Kinetic interactions are event-driven and local: `СВИДЕТЕЛЬ`, explicit archive scatter, one-card ghost, and the manual glitch key. The command bar is archive-only. All current JS modules pass `node --check` and the public build passes `scripts/check-build.mjs`.

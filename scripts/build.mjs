@@ -135,7 +135,7 @@ function layout({ title, description, active, bodyClass = '', extraHead = '', co
 <link rel="stylesheet" href="/assets/css/ritual-engine.css">
 ${extraHead}
 </head>
-<body class="${bodyClass}">
+<body class="${bodyClass}" data-page="${esc(active)}">
 <a class="skip-link" href="#main">К содержанию</a>
 <header class="site-header">
   <a class="site-header__mark" href="/">ПРОТОКОЛ <strong>418</strong></a>
@@ -433,7 +433,8 @@ function renderWorksIndex(works) {
       <button type="button" class="btn btn--ghost" data-raise>Случайная жесть</button>
     </div>
 
-    <p class="results-meta" aria-live="polite"></p><div class="archive-command-row"><button type="button" class="btn btn--ghost" data-archive-chaos>РАЗМЕШАТЬ АРХИВ</button><button type="button" class="btn btn--ghost" data-archive-collapse>СЖАТЬ РЕАЛЬНОСТЬ</button><span class="archive-whisper" aria-live="polite">архив делает вид, что помнит порядок</span></div>
+    <p class="results-meta" aria-live="polite"></p><div class="archive-command-row">
+    <span class="archive-live-state" aria-live="polite">архив не должен дёргаться сам по себе</span><button type="button" class="btn btn--ghost" data-archive-chaos>РАЗМЕШАТЬ АРХИВ</button><button type="button" class="btn btn--ghost" data-archive-collapse>СЖАТЬ РЕАЛЬНОСТЬ</button><span class="archive-whisper" aria-live="polite">архив делает вид, что помнит порядок</span></div>
     <div class="grid-works" data-library-state="loading"></div>
 
     <noscript>
