@@ -27,6 +27,7 @@ const PHASE_LABEL = {
 };
 const STATUS_LABEL = { draft: 'черновик', review: 'на проверке', 'rights-cleared': 'права подтверждены', published: 'опубликовано', archived: 'архив' };
 const RELATION_LABEL = { 'cause-of': 'причина для', 'residue-of': 'остаток от', 'fermentation-of': 'брожение от' };
+const EDITORIAL_MODE_LABEL = { absurd: 'абсурд', pathos: 'пафос', glitch: 'глитч', ground: 'земля' };
 const DIST_DIR = path.join(SITE_ROOT, 'dist');
 
 function esc(s = '') {
@@ -70,6 +71,49 @@ function renderToneFormula(parts) {
       <small>${esc(part.note)}</small>
     </div>`).join('')}</div>
   </div>`;
+}
+
+
+function renderEditorialCompensation(works, lore) {
+  const corpus = works.filter((w) => w.editorialMode);
+  const counts = { absurd: 0, pathos: 0, glitch: 0, ground: 0 };
+  corpus.forEach((w) => { if (counts[w.editorialMode] !== undefined) counts[w.editorialMode] += 1; });
+  const labels = {
+    absurd: 'абсурд',
+    pathos: 'пафос',
+    glitch: 'глитч',
+    ground: 'земля',
+  };
+  const percent = (n) => corpus.length ? Math.round((n / corpus.length) * 100) : 0;
+  return `<div class="editorial-compensation">
+    <div class="editorial-compensation__head">
+      <span class="tag">режим 418.2 · компенсатор документальности</span>
+      <strong>${esc(lore?.compensation?.title || 'Компенсатор документальности')}</strong>
+      <p>${esc(lore?.compensation?.note || '')}</p>
+    </div>
+    <div class="editorial-compensation__grid">
+      ${Object.entries(counts).map(([key, n]) => `<div class="editorial-compensation__item editorial-compensation__item--${key}">
+        <div><strong>${n}</strong><span>${percent(n)}%</span></div>
+        <b>${labels[key]}</b>
+        <i style="--portion:${percent(n)}"></i>
+      </div>`).join('')}
+    </div>
+  </div>`;
+}
+
+function renderInternalMemes(lore) {
+  const memes = lore?.internalMemes || [];
+  return `<section class="section meme-section">
+    <div class="section-heading section-heading--split">
+      <div><p class="tag">служебное · не удалять</p><h2>Внутренние мемы Бюро</h2></div>
+      <p>Эти формулировки не объясняют шутку. Они делают вид, что бюрократия умеет её администрировать.</p>
+    </div>
+    <div class="meme-grid">${memes.map((m, i) => `<article class="meme-card" data-meme-index="${i}">
+      <span class="meme-card__stamp">MEMO / 418.${i+1}</span>
+      <h3>${esc(m.title)}</h3>
+      <p>${esc(m.text)}</p>
+    </article>`).join('')}</div>
+  </section>`;
 }
 
 function layout({ title, description, active, bodyClass = '', extraHead = '', content, extraScripts = '' }) {
@@ -116,7 +160,7 @@ ${extraScripts}
 }
 
 // ---------------------------------------------------------------- index.html
-function renderHome(works, tone) {
+function renderHome(works, tone, lore) {
   const byId = Object.fromEntries(works.map((work) => [work.id, work]));
   const groundWork = byId['w-nepribrannoe-koyka'];
   const featured = ['w-mudrets-tselibata', 'w-vlastelin-dofamina', 'w-osemenitel']
@@ -193,6 +237,10 @@ function renderHome(works, tone) {
     </div>
     <div class="apotheosis-grid">${featuredCards}</div>
   </section>
+
+  ${renderEditorialCompensation(works, lore)}
+
+  ${renderInternalMemes(lore)}
 
   <section class="section formula-section">
     <h2>Формула комнаты</h2>
@@ -301,6 +349,7 @@ function renderWorksIndex(works) {
   const phases = uniq(listed.map((w) => w.narrativePhase));
   const types = uniq(listed.map((w) => w.type));
   const bodyNodes = uniq(listed.map((w) => w.bodyNode)).filter((b) => b && b !== '—');
+  const editorialModes = uniq(listed.map((w) => w.editorialMode));
 
   const opt = (label, val) => `<option value="${esc(val)}">${esc(label)}</option>`;
 
@@ -330,6 +379,10 @@ function renderWorksIndex(works) {
       <div class="filter-field">
         <label for="f-body">Телесный узел</label>
         <select id="f-body" data-filter-key="bodyNode"><option value="">любой</option>${bodyNodes.map((b) => opt(b, b)).join('')}</select>
+      </div>
+      <div class="filter-field">
+        <label for="f-mode">Температура</label>
+        <select id="f-mode" data-filter-key="editorialMode"><option value="">любая</option>${editorialModes.map((m) => opt(EDITORIAL_MODE_LABEL[m] || m, m)).join('')}</select>
       </div>
       <div class="filter-field">
         <label for="f-q">Предмет / поиск</label>
@@ -362,7 +415,8 @@ function renderWorksIndex(works) {
     <script type="application/json" id="works-data">${JSON.stringify(listed.map((w) => ({
       id: w.id, slug: w.slug, title: w.title, summary: w.summary, type: w.type,
       process: w.process, narrativePhase: w.narrativePhase, bodyNode: w.bodyNode,
-      visualDialect: w.visualDialect, publicationStatus: w.publicationStatus,
+      visualDialect: w.visualDialect, publicationStatus: w.publicationStatus, editorialMode: w.editorialMode || null,
+      glitchLabel: w.glitchLabel || null,
       thumb: w.thumbnail?.src || w.media?.[0]?.src, mediaHeld: Boolean(w.contentNotice),
       wrongFunction: w.object?.wrongFunction, originalFunction: w.object?.originalFunction,
       chronologyIndex: w._chronologyIndex, relationDegree: w._relationDegree, pageNumber: w.pageNumber || null, pageText: w.pageText || '',
@@ -419,6 +473,14 @@ function renderWorkDetail(work, byId) {
         <h1>${esc(work.title)}</h1>
         <p>${esc(work.summary)}</p>
       </div>
+    </div>`);
+  }
+
+  if (work.editorialMode || work.glitchLabel || work.editorialNote) {
+    blocks.push(`
+    <div class="work-detail__block editorial-layer editorial-layer--${esc(work.editorialMode || 'ground')}">
+      <div class="editorial-layer__signal"><span>${esc(work.glitchLabel || 'ARCHIVE / 418')}</span><em>${esc(work.editorialMode || 'ground')}</em></div>
+      ${work.editorialNote ? `<p>${esc(work.editorialNote)}</p>` : ''}
     </div>`);
   }
 
@@ -552,7 +614,7 @@ function renderWorkDetail(work, byId) {
 }
 
 // ----------------------------------------------------------------- protocol
-async function renderProtocol(laws, dialects, editorialCases, works, tone) {
+async function renderProtocol(laws, dialects, editorialCases, works, tone, lore) {
   const caseById = Object.fromEntries(editorialCases.map((c) => [c.id, c]));
   const workById = indexById(works);
 
@@ -609,6 +671,10 @@ async function renderProtocol(laws, dialects, editorialCases, works, tone) {
       <span>слишком серьёзно — вернуть бытовую деталь</span>
     </div>
   </section>
+
+  ${renderEditorialCompensation(works, lore)}
+
+  ${renderInternalMemes(lore)}
 
   <section class="section corpus-ledger">
     <div>
@@ -707,13 +773,14 @@ async function main() {
   const dialects = await loadJSON('content/dialects.json');
   const editorialCases = await loadJSON('content/editorial-cases.json');
   const tone = await loadJSON('content/tone.json');
+  const lore = await loadJSON('content/lore.json');
 
   await mkdir(path.join(SITE_ROOT, 'works'), { recursive: true });
   await mkdir(path.join(SITE_ROOT, 'protocol'), { recursive: true });
 
-  await writeFile(path.join(SITE_ROOT, 'index.html'), renderHome(rawWorks, tone));
+  await writeFile(path.join(SITE_ROOT, 'index.html'), renderHome(rawWorks, tone, lore));
   await writeFile(path.join(SITE_ROOT, 'works/index.html'), renderWorksIndex(rawWorks));
-  await writeFile(path.join(SITE_ROOT, 'protocol/index.html'), await renderProtocol(laws, dialects, editorialCases, rawWorks, tone));
+  await writeFile(path.join(SITE_ROOT, 'protocol/index.html'), await renderProtocol(laws, dialects, editorialCases, rawWorks, tone, lore));
 
   const buildable = buildableWorks(rawWorks);
   for (const work of buildable) {

@@ -40,6 +40,17 @@ const RECIPES = [
   },
 ];
 
+const GLITCH_MESSAGES = [
+  'ОБЪЕКТ ПРИНЯТ В КОСМОС БЕЗ НОРМАТИВНОЙ РЕЗОЛЮЦИИ.',
+  'ERROR 418: ЧАЙ НАЙДЕН. СМЫСЛ НЕ НАЙДЕН.',
+  'НЕ ТРОГАТЬ. УЖЕ МИФ.',
+  'АПОФЕОЗ ПРОСИТ ЕЩЁ 1%.',
+  'КОМЕНДАНТ ОТКАЗАЛСЯ ПРИЗНАВАТЬ ЛАПШУ КОСМОСОМ.',
+  'БЮРО ЗАКРЫТО ДО ТЕХ ПОР, ПОКА НЕ НАЙДЁТСЯ ИЗОЛЕНТА.',
+  'ПОВТОРИТЬ ПОПЫТКУ ПОСЛЕ ЧАЯ.',
+  '418 / ROOM_NOT_FOUND / HUMAN_STILL_ONLINE',
+];
+
 function pick(arr, excludeId) {
   const pool = excludeId ? arr.filter((r) => r.id !== excludeId) : arr;
   return pool[Math.floor(Math.random() * pool.length)];
@@ -105,6 +116,7 @@ export function initRitual(root) {
       window.setTimeout(() => {
         setPhase('overheat');
         stage.dataset.glitch = '1';
+        glitchLayer.textContent = GLITCH_MESSAGES[Math.floor(Math.random() * GLITCH_MESSAGES.length)];
         machine.transition('overheat');
       }, 2900);
     }, 900);
@@ -135,6 +147,7 @@ export function initRitual(root) {
   document.addEventListener('protocol:reset', () => {
     setPhase('reset');
     stage.dataset.glitch = '0';
+    glitchLayer.textContent = '';
     titleReveal.textContent = '';
     materialMark.textContent = '';
     caption.textContent = 'сброс: интерфейс остывает';

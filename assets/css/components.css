@@ -197,6 +197,17 @@
   opacity: 1;
   animation: glitch-jump 220ms steps(2, end) 4;
 }
+.glitch-layer{
+  display:flex;
+  align-items:flex-end;
+  justify-content:flex-start;
+  padding:1rem;
+  font:600 var(--step--1) var(--font-mono);
+  letter-spacing:.03em;
+  text-transform:uppercase;
+  color:var(--room-ink);
+  text-shadow:2px 0 var(--glitch-a), -2px 0 var(--glitch-b);
+}
 @keyframes glitch-jump{
   0%{ transform: translate(0,0); }
   25%{ transform: translate(-3px, 1px); }
@@ -766,4 +777,52 @@
   .tone-formula__legend,
   .corpus-ledger dl{ grid-template-columns: 1fr; }
   .tone-formula__bar{ height: 1.15rem; }
+}
+
+
+/* 418.2: editorial temperature and compensating myth-layer */
+.editorial-compensation{
+  border:1px solid var(--room-line);
+  background:var(--room-bg-raised);
+  color:var(--room-ink);
+  padding:var(--space-4);
+  margin-top:var(--space-4);
+}
+.editorial-compensation__head{ display:grid; gap:.55rem; max-width:52rem; }
+.editorial-compensation__head strong{ font-family:var(--font-display); font-size:var(--step-2); }
+.editorial-compensation__head p{ color:var(--room-ink-soft); max-width:60rem; }
+.editorial-compensation__grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--room-line); margin-top:var(--space-3); }
+.editorial-compensation__item{ background:var(--room-bg); padding:var(--space-3); min-height:7rem; position:relative; }
+.editorial-compensation__item > div{ display:flex; justify-content:space-between; align-items:baseline; }
+.editorial-compensation__item strong{ font-family:var(--font-display); font-size:var(--step-2); }
+.editorial-compensation__item span{ font-family:var(--font-mono); color:var(--room-ink-soft); }
+.editorial-compensation__item b{ display:block; margin-top:.4rem; text-transform:uppercase; font-family:var(--font-mono); font-size:var(--step--1); letter-spacing:.04em; }
+.editorial-compensation__item i{ display:block; height:5px; margin-top:1rem; background:var(--dlg-accent); transform-origin:left; transform:scaleX(calc(var(--portion) / 100)); }
+.editorial-compensation__item--absurd{ --dlg-accent:var(--signal-orange); }
+.editorial-compensation__item--pathos{ --dlg-accent:var(--signal-violet); }
+.editorial-compensation__item--glitch{ --dlg-accent:var(--glitch-a); }
+.editorial-compensation__item--ground{ --dlg-accent:var(--doc-line); }
+.meme-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--room-line); }
+.meme-card{ background:var(--room-bg); color:var(--room-ink); min-height:12rem; padding:var(--space-3); display:flex; flex-direction:column; }
+.meme-card__stamp{ font: var(--step--1) var(--font-mono); color:var(--room-ink-soft); }
+.meme-card h3{ margin-top:auto; margin-bottom:.6rem; font-family:var(--font-display); font-size:var(--step-1); }
+.meme-card p{ color:var(--room-ink-soft); }
+.editorial-layer{ background:var(--room-bg); color:var(--room-ink); border-left:4px solid var(--signal-orange); }
+.editorial-layer--pathos{ border-left-color:var(--signal-violet); }
+.editorial-layer--glitch{ border-left-color:var(--glitch-a); }
+.editorial-layer--ground{ border-left-color:var(--doc-line); background:var(--doc-paper); color:var(--doc-ink); }
+.editorial-layer__signal{ display:flex; gap:1rem; align-items:center; justify-content:space-between; margin-bottom:.8rem; font-family:var(--font-mono); font-size:var(--step--1); }
+.editorial-layer__signal span{ letter-spacing:.05em; }
+.editorial-layer__signal em{ font-style:normal; opacity:.65; }
+.work-card__signal{ margin:.8rem 0 .5rem; font: var(--step--1) var(--font-mono); letter-spacing:.04em; opacity:.8; }
+.tag--temperature{ border-left:2px solid currentColor; padding-left:.35rem; }
+.tag--temperature-absurd{ color:var(--signal-orange); }
+.tag--temperature-pathos{ color:var(--signal-violet); }
+.tag--temperature-glitch{ color:var(--glitch-a); }
+.tag--temperature-ground{ color:var(--doc-ink-soft); }
+@media (max-width: 60rem){
+  .editorial-compensation__grid,.meme-grid{ grid-template-columns:repeat(2,1fr); }
+}
+@media (max-width: 38rem){
+  .editorial-compensation__grid,.meme-grid{ grid-template-columns:1fr; }
 }

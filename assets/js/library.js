@@ -14,6 +14,7 @@ const TYPE_LABEL = {
   theophany: 'теофания', chronicle: 'хроника', artifact: 'артефакт',
   'negative-icon': 'отрицательная икона', residue: 'остаток', protocol: 'протокол',
 };
+const EDITORIAL_MODE_LABEL = { absurd: 'абсурд', pathos: 'пафос', glitch: 'глитч', ground: 'земля' };
 const PHASE_LABEL = {
   pressure: 'давление', 'wrong-assignment': 'неправильное назначение', performance: 'перформанс',
   title: 'титул', apotheosis: 'апофеоз', overheat: 'перегрев', trial: 'суд', linoleum: 'линолеум',
@@ -41,11 +42,13 @@ function workCard(work) {
       <div class="work-card__tags">
         <span class="tag tag--dialect">${escapeHTML(DIALECT_LABEL[work.visualDialect] || work.visualDialect)}</span>
         <span class="tag">${escapeHTML(TYPE_LABEL[work.type] || work.type)}</span>
+        ${work.editorialMode ? `<span class="tag tag--temperature tag--temperature-${escapeHTML(work.editorialMode)}">${escapeHTML(EDITORIAL_MODE_LABEL[work.editorialMode] || work.editorialMode)}</span>` : ''}
         ${work.publicationStatus === 'archived' ? '<span class="tag">архив</span>' : ''}
       </div>
       <h3 class="work-card__title">${escapeHTML(work.title)}</h3>
       ${work.pageNumber ? `<p class="tag">страница ${escapeHTML(work.pageNumber)}</p>` : ''}
       <p class="work-card__summary">${escapeHTML(work.summary)}</p>
+      ${work.glitchLabel ? `<div class="work-card__signal">${escapeHTML(work.glitchLabel)}</div>` : ''}
       <span class="tag">${escapeHTML(PHASE_LABEL[work.narrativePhase] || work.narrativePhase)}</span>
     </div>
   `;
@@ -67,6 +70,7 @@ export function initLibrary(root, allWorks) {
     if (filters.phase && work.narrativePhase !== filters.phase) return false;
     if (filters.type && work.type !== filters.type) return false;
     if (filters.bodyNode && work.bodyNode !== filters.bodyNode) return false;
+    if (filters.editorialMode && work.editorialMode !== filters.editorialMode) return false;
     if (filters.q) {
       const q = filters.q.toLowerCase();
       const hay = `${work.title} ${work.summary} ${work.wrongFunction || ''} ${work.originalFunction || ''} ${work.pageText || ''}`.toLowerCase();
