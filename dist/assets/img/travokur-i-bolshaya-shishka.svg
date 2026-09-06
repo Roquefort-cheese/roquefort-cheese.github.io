@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" role="img" aria-labelledby="tk-title tk-desc">
+<title id="tk-title">Травокур и Большая Шишка</title>
+<desc id="tk-desc">Кружка с паром и протеиновый батончик на прикроватной тумбочке, приглушённые серо-бежевые тона, без свечения и нимба.</desc>
+<rect width="600" height="400" fill="#d9d4c6"/>
+<rect x="0" y="300" width="600" height="100" fill="#c7c1af"/>
+<rect x="180" y="230" width="240" height="90" rx="6" fill="#a89e86"/>
+<rect x="188" y="238" width="224" height="10" fill="#8a8172"/>
+<g stroke="#4a473e" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.6">
+<path d="M250 210 C246 195, 258 190, 254 175"/>
+<path d="M275 210 C271 195, 283 190, 279 172"/>
+</g>
+<path d="M245 215 h50 v45 a25 25 0 0 1 -50 0 z" fill="#efe9db" stroke="#8a8172" stroke-width="2"/>
+<rect x="292" y="222" width="14" height="18" rx="4" fill="none" stroke="#8a8172" stroke-width="2"/>
+<rect x="330" y="205" width="100" height="46" rx="6" fill="#b7a06e" stroke="#8a7a4f" stroke-width="2"/>
+<rect x="336" y="211" width="88" height="10" fill="#efe9db" opacity="0.6"/>
+<path d="M355 226 l8 8 l16 -16" stroke="#4a473e" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.5"/>
+<text x="300" y="380" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#5f5b4e">без апофеоза — и в этом всё дело</text>
+</svg>

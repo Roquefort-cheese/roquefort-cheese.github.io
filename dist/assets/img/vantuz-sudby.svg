@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" role="img" aria-labelledby="vs-title vs-desc">
+<title id="vs-title">Вантуз Судьбы</title>
+<desc id="vs-desc">Вантуз на деревянной ручке, увенчанный тонким фиолетовым контуром короны, резиновая часть треснута, рядом — нашивка студсовета как бытовая улика.</desc>
+<rect width="600" height="400" fill="#1b1030"/>
+<g stroke="#a67bff" stroke-width="1" opacity="0.35">
+<circle cx="300" cy="190" r="120" fill="none"/>
+<circle cx="300" cy="190" r="150" fill="none"/>
+</g>
+<rect x="292" y="150" width="16" height="140" fill="#5a4326"/>
+<path d="M230 140 C 230 100, 370 100, 370 140 C 370 175, 340 195, 300 195 C 260 195, 230 175, 230 140 Z" fill="#3a3a3a"/>
+<path d="M245 140 C 245 118, 355 118, 355 140" fill="none" stroke="#151515" stroke-width="3"/>
+<path d="M258 178 l6 14 M300 190 l0 16 M342 178 l-6 14" stroke="#151515" stroke-width="3" stroke-linecap="round"/>
+<g fill="none" stroke="#c9a6ff" stroke-width="3">
+<path d="M255 95 l10 -22 l10 14 l15 -20 l15 20 l10 -14 l10 22" stroke-linejoin="round"/>
+</g>
+<rect x="380" y="255" width="70" height="34" rx="3" fill="#2e2a20" stroke="#7a6a4a" stroke-width="1.5"/>
+<circle cx="396" cy="272" r="7" fill="#7a6a4a"/>
+<rect x="410" y="266" width="30" height="4" fill="#7a6a4a"/>
+<rect x="410" y="274" width="24" height="4" fill="#7a6a4a" opacity="0.7"/>
+<text x="300" y="360" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#e9defe">скипетр, который остаётся вантузом</text>
+</svg>

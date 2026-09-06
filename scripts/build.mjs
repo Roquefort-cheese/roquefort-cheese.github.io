@@ -8,7 +8,7 @@
 // content/private/consent-ledger.json НИКОГДА не читается и не копируется
 // этим скриптом (§6.1).
 
-import { writeFile, mkdir, readFile } from 'node:fs/promises';
+import { writeFile, mkdir, readFile, copyFile, cp, rm } from 'node:fs/promises';
 import path from 'node:path';
 import {
   SITE_ROOT, loadWorks, loadJSON, validateWorks, indexById, buildableWorks, listedWorks,
@@ -27,19 +27,49 @@ const PHASE_LABEL = {
 };
 const STATUS_LABEL = { draft: 'черновик', review: 'на проверке', 'rights-cleared': 'права подтверждены', published: 'опубликовано', archived: 'архив' };
 const RELATION_LABEL = { 'cause-of': 'причина для', 'residue-of': 'остаток от', 'fermentation-of': 'брожение от' };
+const DIST_DIR = path.join(SITE_ROOT, 'dist');
 
 function esc(s = '') {
   return String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 }
 
-function mediaTag(work, { klass = '' } = {}) {
+function mediaTag(work, { klass = '', loading = 'lazy' } = {}) {
   const m = work.media?.[0];
   if (!m) return '';
   const alt = esc(work.altText || '');
-  if (m.src.endsWith('.svg')) {
-    return `<object class="${klass}" type="image/svg+xml" data="/${m.src}" aria-label="${alt}">${alt}</object>`;
-  }
-  return `<img class="${klass}" src="/${m.src}" alt="${alt}">`;
+  const dimensions = m.width && m.height ? ` width="${Number(m.width)}" height="${Number(m.height)}"` : '';
+  const priority = loading === 'eager' ? ' fetchpriority="high"' : '';
+  return `<img class="${klass}" src="/${m.src}" alt="${alt}" loading="${loading}" decoding="async"${dimensions}${priority}>`;
+}
+
+function mediaFigure(work, { klass = '', loading = 'lazy' } = {}) {
+  const caption = work.media?.[0]?.caption;
+  return `<figure class="work-media ${klass}">
+    ${mediaTag(work, { loading })}
+    ${caption ? `<figcaption>${esc(caption)}</figcaption>` : ''}
+  </figure>`;
+}
+
+function mediaLocked(work) {
+  return `<div class="media-locked" role="img" aria-label="Изображение работы «${esc(work.title)}» скрыто до подтверждения предупреждения о содержании">
+    <span class="media-locked__code">MEDIA / 418</span>
+    <strong>изображение удержано</strong>
+    <span>предупреждение находится ниже по странице</span>
+  </div>`;
+}
+
+function renderToneFormula(parts) {
+  const total = parts.reduce((sum, part) => sum + Number(part.percent || 0), 0);
+  if (total !== 100) throw new Error(`Тональная формула должна давать 100%, сейчас ${total}%.`);
+  const aria = parts.map((part) => `${Number(part.percent)} процентов — ${part.title}`).join(', ');
+  return `<div class="tone-formula" aria-label="Тональная формула проекта: ${esc(aria)}">
+    <div class="tone-formula__bar" aria-hidden="true">${parts.map((part) => `<span class="tone-formula__segment tone-formula__segment--${esc(part.id)}" style="--portion:${Number(part.percent)}"></span>`).join('')}</div>
+    <div class="tone-formula__legend">${parts.map((part) => `<div class="tone-formula__item tone-formula__item--${esc(part.id)}">
+      <strong>${Number(part.percent)}%</strong>
+      <span>${esc(part.title)}</span>
+      <small>${esc(part.note)}</small>
+    </div>`).join('')}</div>
+  </div>`;
 }
 
 function layout({ title, description, active, bodyClass = '', extraHead = '', content, extraScripts = '' }) {
@@ -86,21 +116,42 @@ ${extraScripts}
 }
 
 // ---------------------------------------------------------------- index.html
-function renderHome() {
+function renderHome(works, tone) {
+  const byId = Object.fromEntries(works.map((work) => [work.id, work]));
+  const groundWork = byId['w-nepribrannoe-koyka'];
+  const featured = ['w-mudrets-tselibata', 'w-vlastelin-dofamina', 'w-osemenitel']
+    .map((id) => byId[id])
+    .filter(Boolean);
+  const featuredCards = featured.map((work, index) => {
+    const preview = work.thumbnail
+      ? { ...work, media: [work.thumbnail], altText: `Архивная заглушка работы «${work.title}»: изображение удержано до предупреждения о содержании.` }
+      : work;
+    return `<article class="apotheosis-card" data-dialect="${esc(work.visualDialect)}">
+      <a class="apotheosis-card__media" href="/works/${work.slug}/" aria-label="Открыть работу «${esc(work.title)}»">
+        ${mediaTag(preview)}
+        <span class="apotheosis-card__index">0${index + 1}</span>
+      </a>
+      <div class="apotheosis-card__body">
+        <p class="tag tag--dialect">${esc(PROCESS_LABEL[work.process] || work.process)}</p>
+        <h3><a href="/works/${work.slug}/">${esc(work.title)}</a></h3>
+        <p>${esc(work.summary)}</p>
+        ${work.contentNotice ? '<span class="source-chip">медиа с предупреждением</span>' : '<span class="source-chip">портрет-апофеоз</span>'}
+      </div>
+    </article>`;
+  }).join('\n');
+
   const content = `
-<section class="page">
+<section class="page page--wide page--home">
   <p class="tag">/ — Мембрана 418</p>
-  <h1>Комната, которая отвечает ошибкой</h1>
+  <h1 class="home-title">Комната, которая<br>отвечает ошибкой</h1>
   <p class="page-lede">Внешний мир посылает запрос нормы: будь студентом, специалистом, объяснимым. Комната № 418 пока молчит. Нажмите «Назначить неправильно» — единственное активное действие на этом экране.</p>
 
   <div class="membrane-hero">
-    <figure>
-      ${mediaTag({ media: [{ src: 'assets/img/membrane-hero.svg' }], altText: 'Потолок комнаты с лампой на проводе, приколотое расписание и календарь с обведённым дедлайном.' })}
-      <figcaption>внешний запрос нормы: расписание, лампа, дедлайн</figcaption>
-    </figure>
+    ${groundWork ? mediaFigure(groundWork, { klass: 'documentary-plate', loading: 'eager' }) : `<figure>${mediaTag({ media: [{ src: 'assets/img/membrane-hero.svg' }], altText: 'Потолок комнаты с лампой на проводе, приколотое расписание и календарь с обведённым дедлайном.' }, { loading: 'eager' })}</figure>`}
     <div class="stack">
-      <p>«Не мир про общежитие, а общежитие как способ, которым мир ошибается насчёт самого себя».</p>
-      <p class="page-lede">Ничего священного здесь ещё не произошло. Ни апофеоза, ни титула, ни золота — только нормативный слой: потолок, лампа, расписание.</p>
+      <p class="hero-quote">«Не мир про общежитие, а общежитие как способ, которым мир ошибается насчёт самого себя».</p>
+      <p class="page-lede">Ничего священного здесь ещё не произошло. Ни апофеоза, ни титула, ни золота — только койка, коробка, кабель и жизнь, отложенная до завтра.</p>
+      <p class="source-stamp">источник: визуальная хроника / кадр 084 / без узнаваемых лиц</p>
     </div>
   </div>
 
@@ -123,7 +174,27 @@ function renderHome() {
     </div>
   </div>
 
+  <section class="section tone-section">
+    <div class="section-heading">
+      <p class="tag">тональный калибратор</p>
+      <h2>Не коллаж, а дыхание</h2>
+      <p>Вдох — реальность, выдох — абсурд, задержка — пафос, сбой — икота. Пропорция удерживает проект между бытописанием, карнавалом и китчем.</p>
+    </div>
+    ${renderToneFormula(tone)}
+  </section>
+
   <section class="section">
+    <div class="section-heading section-heading--split">
+      <div>
+        <p class="tag">первые материалы</p>
+        <h2>Три апофеоза, три способа сломаться</h2>
+      </div>
+      <p>Портреты собраны из одного правила: человеческое лицо читается раньше спецэффекта, а бытовая улика переживает титул.</p>
+    </div>
+    <div class="apotheosis-grid">${featuredCards}</div>
+  </section>
+
+  <section class="section formula-section">
     <h2>Формула комнаты</h2>
     <p class="formula-strip">
       <span>давление сверху</span><span>неправильное назначение</span><span>перформанс</span>
@@ -139,6 +210,87 @@ function renderHome() {
     content,
     extraScripts: '<script type="module" src="/assets/js/ritual.js"></script>',
   });
+}
+
+function splitMapLabel(title) {
+  if (title.length <= 18) return [title];
+  const words = title.split(/\s+/);
+  let first = '';
+  let second = '';
+  for (const word of words) {
+    if (!second && `${first} ${word}`.trim().length <= 16) {
+      first = `${first} ${word}`.trim();
+    } else {
+      second = `${second} ${word}`.trim();
+    }
+  }
+  if (!second) return [first];
+  return [first, second.length > 20 ? `${second.slice(0, 19)}…` : second];
+}
+
+function renderMobiusMap(works) {
+  const nodes = buildableWorks(works);
+  const nodeIds = new Set(nodes.map((work) => work.id));
+  const positions = new Map(nodes.map((work, index) => {
+    const angle = (-Math.PI / 2) + ((Math.PI * 2 * index) / nodes.length);
+    return [work.id, {
+      x: Math.round(460 + (350 * Math.cos(angle))),
+      y: Math.round(310 + (220 * Math.sin(angle))),
+    }];
+  }));
+  const edges = [];
+  for (const work of nodes) {
+    for (const relation of work.relations || []) {
+      if (!nodeIds.has(relation.workId)) continue;
+      edges.push({ from: work, to: relation.workId, type: relation.type });
+    }
+  }
+
+  const edgeMarkup = edges.map((edge) => {
+    const from = positions.get(edge.from.id);
+    const to = positions.get(edge.to);
+    return `<line class="mobius-edge mobius-edge--${esc(edge.type)}" x1="${from.x}" y1="${from.y}" x2="${to.x}" y2="${to.y}" marker-end="url(#mobius-arrow)"><title>${esc(edge.from.title)} — ${esc(RELATION_LABEL[edge.type])} — ${esc(nodes.find((node) => node.id === edge.to)?.title || edge.to)}</title></line>`;
+  }).join('');
+
+  const nodeMarkup = nodes.map((work) => {
+    const pos = positions.get(work.id);
+    const lines = splitMapLabel(work.title);
+    const text = lines.map((line, index) => `<tspan x="${pos.x}" dy="${index === 0 ? (lines.length === 1 ? 5 : -2) : 17}">${esc(line)}</tspan>`).join('');
+    return `<a class="mobius-node-link" href="/works/${work.slug}/" aria-label="${esc(work.title)}">
+      <g class="mobius-node mobius-node--${esc(work.visualDialect)}${work.publicationStatus === 'archived' ? ' mobius-node--archived' : ''}">
+        <rect x="${pos.x - 70}" y="${pos.y - 31}" width="140" height="62" rx="3"></rect>
+        <text x="${pos.x}" y="${pos.y}" text-anchor="middle">${text}</text>
+      </g>
+    </a>`;
+  }).join('');
+
+  const relationList = edges.map((edge) => {
+    const target = nodes.find((node) => node.id === edge.to);
+    return `<li><a href="/works/${edge.from.slug}/">${esc(edge.from.title)}</a> — ${esc(RELATION_LABEL[edge.type])} — <a href="/works/${target.slug}/">${esc(target.title)}</a></li>`;
+  }).join('');
+
+  return `<div class="mobius-map">
+    <div class="mobius-map__legend" aria-hidden="true">
+      <span class="legend-edge legend-edge--cause">причина</span>
+      <span class="legend-edge legend-edge--residue">остаток</span>
+      <span class="legend-edge legend-edge--fermentation">брожение</span>
+      <span class="legend-node legend-node--archived">архивный узел</span>
+    </div>
+    <div class="mobius-map__scroll" tabindex="0" aria-label="Прокручиваемая карта связей">
+      <svg viewBox="0 0 920 620" role="img" aria-labelledby="mobius-title mobius-desc">
+        <title id="mobius-title">Карта причинности Мёбиуса</title>
+        <desc id="mobius-desc">Работы связаны как причины, остатки и брожение. Архивный узел «Вантуз Судьбы» остаётся частью графа.</desc>
+        <defs><marker id="mobius-arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z"></path></marker></defs>
+        <path class="mobius-orbit" d="M460 90 C700 90 810 210 810 310 C810 430 670 530 460 530 C250 530 110 430 110 310 C110 190 250 90 460 90 Z"></path>
+        <g class="mobius-edges">${edgeMarkup}</g>
+        <g class="mobius-nodes">${nodeMarkup}</g>
+      </svg>
+    </div>
+    <details class="mobius-map__text">
+      <summary>Показать связи списком</summary>
+      <ul>${relationList}</ul>
+    </details>
+  </div>`;
 }
 
 // -------------------------------------------------------------- works index
@@ -159,6 +311,7 @@ function renderWorksIndex(works) {
   <p class="tag">/works — Линолеумный архив</p>
   <h1>Слой пола после катастрофы</h1>
   <p class="page-lede">Всё, что не поместилось в биографию обитателей комнаты, оседает здесь. Архивные записи делистятся из общей витрины, но их адреса остаются живыми.</p>
+  <p class="corpus-status"><strong>${listed.length}</strong> опубликованных материалов · <strong>${buildableWorks(works).length}</strong> узлов в графе с учётом архива · <strong>${listed.filter((work) => work.source?.kind === 'документальная фотография').length}</strong> документальных кадра</p>
 
   <div data-library-root>
     <form class="filter-panel" aria-label="Фильтры архива">
@@ -210,10 +363,22 @@ function renderWorksIndex(works) {
       id: w.id, slug: w.slug, title: w.title, summary: w.summary, type: w.type,
       process: w.process, narrativePhase: w.narrativePhase, bodyNode: w.bodyNode,
       visualDialect: w.visualDialect, publicationStatus: w.publicationStatus,
-      thumb: w.media?.[0]?.src, wrongFunction: w.object?.wrongFunction, originalFunction: w.object?.originalFunction,
+      thumb: w.thumbnail?.src || w.media?.[0]?.src, mediaHeld: Boolean(w.thumbnail || w.contentNotice),
+      wrongFunction: w.object?.wrongFunction, originalFunction: w.object?.originalFunction,
       chronologyIndex: w._chronologyIndex, relationDegree: w._relationDegree,
     })))}</script>
   </div>
+
+  <section class="section mobius-section">
+    <div class="section-heading section-heading--split">
+      <div>
+        <p class="tag">карта причинности</p>
+        <h2>Мёбиус не различает начало и остаток</h2>
+      </div>
+      <p>Стрелка показывает не сходство, а работу причины: апофеоз оставляет предмет, предмет бродит, а брожение производит новое давление.</p>
+    </div>
+    ${renderMobiusMap(works)}
+  </section>
 </section>`;
   return layout({
     title: 'Линолеумный архив',
@@ -227,12 +392,15 @@ function renderWorksIndex(works) {
 // -------------------------------------------------------------- work detail
 function renderWorkDetail(work, byId) {
   const blocks = [];
+  const headerMedia = work.contentNotice
+    ? mediaLocked(work)
+    : mediaFigure(work, { klass: 'work-media--primary', loading: 'eager' });
 
   // 1. WorkHeader — человек и усталость раньше эффекта
   if (work.humanAnchor || work.deficit) {
     blocks.push(`
     <div class="work-detail__block work-header">
-      <div class="work-header__media">${mediaTag(work)}</div>
+      <div class="work-header__media">${headerMedia}</div>
       <div>
         <p class="work-header__eyebrow">${TYPE_LABEL[work.type] || work.type} · ${PROCESS_LABEL[work.process] || work.process}</p>
         <h1>${esc(work.title)}</h1>
@@ -245,7 +413,7 @@ function renderWorkDetail(work, byId) {
     // если человеческого якоря нет (напр. residue) — всё равно человек/эффект блок в сокращённом виде, порядок не меняется
     blocks.push(`
     <div class="work-detail__block work-header">
-      <div class="work-header__media">${mediaTag(work)}</div>
+      <div class="work-header__media">${headerMedia}</div>
       <div>
         <p class="work-header__eyebrow">${TYPE_LABEL[work.type] || work.type} · ${PROCESS_LABEL[work.process] || work.process}</p>
         <h1>${esc(work.title)}</h1>
@@ -293,6 +461,17 @@ function renderWorkDetail(work, byId) {
     </div>`);
   }
 
+  if (Array.isArray(work.fieldNotes) && work.fieldNotes.length) {
+    blocks.push(`
+    <div class="work-detail__block field-notes">
+      <p class="tag">полевые заметки</p>
+      <div class="field-notes__grid">${work.fieldNotes.map((note, index) => `<div>
+        <span>0${index + 1}</span>
+        <p>${esc(note)}</p>
+      </div>`).join('')}</div>
+    </div>`);
+  }
+
   // ContentNoticeGate — только если применимо
   const mediaBlock = work.contentNotice
     ? `<div class="work-detail__block">
@@ -302,7 +481,7 @@ function renderWorkDetail(work, byId) {
             <p>${esc(work.contentNotice)}</p>
             <span class="btn">Показать материал</span>
           </summary>
-          <div class="notice-gate__content">${mediaTag(work)}</div>
+          <div class="notice-gate__content">${mediaFigure(work, { klass: 'work-media--gated' })}</div>
         </details>
       </div>`
     : '';
@@ -316,6 +495,7 @@ function renderWorkDetail(work, byId) {
         <div><dt>кредиты</dt><dd>${esc(work.credits)}</dd></div>
         <div><dt>права</dt><dd>${esc(work.rights)}</dd></div>
         <div><dt>статус</dt><dd>${STATUS_LABEL[work.publicationStatus] || work.publicationStatus}</dd></div>
+        ${work.source ? `<div><dt>источник</dt><dd>${esc(work.source.collection)}, ${esc(work.source.item)} · ${esc(work.source.kind)}</dd></div>` : ''}
       </dl>
       ${work.publicationStatus === 'archived' ? '<p class="status-note">Запись архивирована. Адрес остаётся живым по закону временной короны — это не удаление.</p>' : ''}
     </div>`);
@@ -354,7 +534,7 @@ function renderWorkDetail(work, byId) {
       ${allRel.length ? `<div class="mobius-relations">${relItems}</div>` : '<p class="status-note">У этой работы пока нет зафиксированных связей.</p>'}
     </div>`);
 
-  const content = `<section class="page">${blocks.join('\n')}</section>`;
+  const content = `<section class="page" data-dialect="${esc(work.visualDialect)}">${blocks.join('\n')}</section>`;
   return layout({
     title: work.title,
     description: work.summary,
@@ -364,7 +544,7 @@ function renderWorkDetail(work, byId) {
 }
 
 // ----------------------------------------------------------------- protocol
-async function renderProtocol(laws, dialects, editorialCases, works) {
+async function renderProtocol(laws, dialects, editorialCases, works, tone) {
   const caseById = Object.fromEntries(editorialCases.map((c) => [c.id, c]));
   const workById = indexById(works);
 
@@ -393,6 +573,9 @@ async function renderProtocol(laws, dialects, editorialCases, works) {
 
   const phaseRow = PHASE_ENUM.map((p) => esc(PHASE_LABEL[p] || p)).join(' → ');
   const statusRow = STATUS_ENUM.map((s) => esc(STATUS_LABEL[s] || s)).join(' → ');
+  const sourcedWorks = works.filter((work) => work.source);
+  const documentaryCount = sourcedWorks.filter((work) => work.source.kind === 'документальная фотография').length;
+  const apotheosisCount = sourcedWorks.filter((work) => work.source.kind === 'портрет-апофеоз').length;
 
   const trialCase = caseById['case-comendant-face'];
 
@@ -401,6 +584,35 @@ async function renderProtocol(laws, dialects, editorialCases, works) {
   <p class="tag">/protocol — Бюро неправильных назначений</p>
   <h1>Законы, обязательные и для богов</h1>
   <p class="page-lede">Псевдоофициальный, но не игровой реестр: десять законов, грамматика полей и суд над самой системой.</p>
+
+  <section class="section protocol-calibrator">
+    <div class="section-heading section-heading--split">
+      <div>
+        <p class="tag">формула тона</p>
+        <h2>Общажный гностический реализм</h2>
+      </div>
+      <p>Документальность удерживает землю, абсурд взламывает назначение, пафос на секунду делает чудо действительным, а цифровой сбой показывает машину внутри события.</p>
+    </div>
+    ${renderToneFormula(tone)}
+    <div class="calibration-rule">
+      <strong>Правило коррекции</strong>
+      <span>слишком весело — добавить пафоса</span>
+      <span>слишком серьёзно — вернуть бытовую деталь</span>
+    </div>
+  </section>
+
+  <section class="section corpus-ledger">
+    <div>
+      <p class="tag">корпус / первая загрузка</p>
+      <h2>Материал уже вошёл в систему</h2>
+    </div>
+    <dl>
+      <div><dt>${apotheosisCount}</dt><dd>портрета-апофеоза подключены из стайл-гайда</dd></div>
+      <div><dt>${documentaryCount}</dt><dd>предметных документальных кадра опубликованы без узнаваемых лиц</dd></div>
+      <div><dt>${works.filter((work) => work.publicationStatus === 'published').length}</dt><dd>материалов доступны в общей витрине</dd></div>
+      <div><dt>${buildableWorks(works).length}</dt><dd>адресов остаются живыми с учётом архива</dd></div>
+    </dl>
+  </section>
 
   <section class="section">
     <h2>Десять законов</h2>
@@ -441,6 +653,21 @@ async function renderProtocol(laws, dialects, editorialCases, works) {
   });
 }
 
+async function exportPublicBuild(buildable) {
+  await rm(DIST_DIR, { recursive: true, force: true });
+  await mkdir(path.join(DIST_DIR, 'works'), { recursive: true });
+  await mkdir(path.join(DIST_DIR, 'protocol'), { recursive: true });
+  await cp(path.join(SITE_ROOT, 'assets'), path.join(DIST_DIR, 'assets'), { recursive: true });
+  await copyFile(path.join(SITE_ROOT, 'index.html'), path.join(DIST_DIR, 'index.html'));
+  await copyFile(path.join(SITE_ROOT, 'works/index.html'), path.join(DIST_DIR, 'works/index.html'));
+  await copyFile(path.join(SITE_ROOT, 'protocol/index.html'), path.join(DIST_DIR, 'protocol/index.html'));
+  for (const work of buildable) {
+    const target = path.join(DIST_DIR, 'works', work.slug);
+    await mkdir(target, { recursive: true });
+    await copyFile(path.join(SITE_ROOT, 'works', work.slug, 'index.html'), path.join(target, 'index.html'));
+  }
+}
+
 // --------------------------------------------------------------------- main
 async function main() {
   const rawWorks = await loadWorks();
@@ -469,13 +696,14 @@ async function main() {
   const laws = await loadJSON('content/laws.json');
   const dialects = await loadJSON('content/dialects.json');
   const editorialCases = await loadJSON('content/editorial-cases.json');
+  const tone = await loadJSON('content/tone.json');
 
   await mkdir(path.join(SITE_ROOT, 'works'), { recursive: true });
   await mkdir(path.join(SITE_ROOT, 'protocol'), { recursive: true });
 
-  await writeFile(path.join(SITE_ROOT, 'index.html'), renderHome());
+  await writeFile(path.join(SITE_ROOT, 'index.html'), renderHome(rawWorks, tone));
   await writeFile(path.join(SITE_ROOT, 'works/index.html'), renderWorksIndex(rawWorks));
-  await writeFile(path.join(SITE_ROOT, 'protocol/index.html'), await renderProtocol(laws, dialects, editorialCases, rawWorks));
+  await writeFile(path.join(SITE_ROOT, 'protocol/index.html'), await renderProtocol(laws, dialects, editorialCases, rawWorks, tone));
 
   const buildable = buildableWorks(rawWorks);
   for (const work of buildable) {
@@ -484,7 +712,10 @@ async function main() {
     await writeFile(path.join(dir, 'index.html'), renderWorkDetail(work, byId));
   }
 
+  await exportPublicBuild(buildable);
+
   console.log(`Собрано: 3 статические страницы + ${buildable.length} страниц работ (из ${rawWorks.length} записей).`);
+  console.log(`Публичная сборка: dist/ (без content/private и исходных редакционных данных).`);
   console.log(`Приватный реестр согласий (content/private/consent-ledger.json) в сборку не включён.`);
 }
 

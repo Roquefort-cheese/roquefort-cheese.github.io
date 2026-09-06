@@ -33,6 +33,14 @@
     "judgment": { "type": "string" },
     "materialObjection": { "type": "string" },
     "visualDialect": { "enum": ["holding", "fixation", "generation", "zero-reaction"] },
+    "thumbnail": {
+      "type": "object",
+      "required": ["src", "kind"],
+      "properties": {
+        "src": { "type": "string" },
+        "kind": { "enum": ["image"] }
+      }
+    },
     "media": {
       "type": "array",
       "minItems": 1,
@@ -41,11 +49,27 @@
         "required": ["src", "kind"],
         "properties": {
           "src": { "type": "string" },
-          "kind": { "enum": ["image", "video", "audio"] }
+          "kind": { "enum": ["image", "video", "audio"] },
+          "width": { "type": "integer", "minimum": 1 },
+          "height": { "type": "integer", "minimum": 1 },
+          "caption": { "type": "string" }
         }
       }
     },
     "altText": { "type": "string", "minLength": 1 },
+    "fieldNotes": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "source": {
+      "type": "object",
+      "required": ["collection", "item", "kind"],
+      "properties": {
+        "collection": { "type": "string" },
+        "item": { "type": "string" },
+        "kind": { "type": "string" }
+      }
+    },
     "credits": { "type": "string" },
     "rights": { "enum": ["all-rights-reserved", "cc-by-nc", "cc-by-nc-sa", "internal-only"] },
     "contentNotice": { "type": ["string", "null"] },
