@@ -1,28 +1,20 @@
 const MEMES = [
-  'НОРМА НЕ НАЙДЕНА', 'СЫР РОКФОР API: 418', 'ЛИНОЛЕУМ ПРИНЯЛ РЕШЕНИЕ',
-  'НЕ РЖАТЬ ДО ТИТУЛА', 'ПАФОС НЕ ПОДТВЕРЖДЁН', 'ОШИБКА: СЛИШКОМ ЧЕЛОВЕЧЕСКИЙ',
-  'ДОШИРАК КАК КРОТОВАЯ НОРА', 'КОМЕНДАНТ ВИДЕЛ И НЕ ПОНЯЛ',
-  'ЁБАНЫЙ ПАТЧ 418.7', 'НЕ ТРОГАТЬ. УЖЕ МИФ.', 'КАРМА ПРОЧИЩЕНА. РЕЗИНКА НЕТ.'
+  'НОРМА НЕ НАЙДЕНА','СЫР РОКФОР ONLINE','ЛИНОЛЕУМ УЖЕ РЕШИЛ','НЕ РЖАТЬ ДО ТИТУЛА',
+  'ПАФОС НЕ ПОДТВЕРЖДЁН','ОШИБКА: СЛИШКОМ ЧЕЛОВЕЧЕСКИЙ','ДОШИРАК.EXE','КОМЕНДАНТ ОНЛАЙН',
+  'ПАТЧ НЕ НУЖЕН','НЕ ТРОГАТЬ. УЖЕ МИФ.','РЕЗИНКА ОТВАЛИЛАСЬ'
 ];
-function injectStamp(){
+function stampOnce(){
   if(document.querySelector('.site-chaos-stamp')) return;
-  const el=document.createElement('div');el.className='site-chaos-stamp';
-  el.innerHTML='<b>418.8</b><span>'+MEMES[Math.floor(Math.random()*MEMES.length)]+'</span>';
+  const el=document.createElement('div'); el.className='site-chaos-stamp';
+  el.innerHTML='<b>418.9</b><span>'+MEMES[Math.floor(Math.random()*MEMES.length)]+'</span>';
   document.body.appendChild(el);
-}
-function injectTicker(){
-  const main=document.querySelector('main'); if(!main || document.querySelector('.chaos-ticker')) return;
-  const phrases=[...MEMES,...MEMES];
-  const wrap=document.createElement('div'); wrap.className='chaos-ticker';
-  const track=document.createElement('div'); track.className='chaos-ticker__track';
-  track.innerHTML=phrases.map(p=>`<span>${p}</span>`).join('');
-  wrap.appendChild(track); main.prepend(wrap);
 }
 function initGlitchOnKey(){
   document.addEventListener('keydown',(e)=>{
     if(e.key.toLowerCase()!=='g' || e.metaKey || e.ctrlKey || e.altKey) return;
     document.body.classList.add('chaos-flash');
     setTimeout(()=>document.body.classList.remove('chaos-flash'),260);
+    stampOnce();
   });
 }
-window.addEventListener('DOMContentLoaded',()=>{injectStamp();injectTicker();initGlitchOnKey();});
+window.addEventListener('DOMContentLoaded',()=>{initGlitchOnKey();});

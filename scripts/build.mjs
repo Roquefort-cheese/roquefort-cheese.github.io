@@ -105,11 +105,11 @@ function renderInternalMemes(lore) {
   const memes = lore?.internalMemes || [];
   return `<section class="section meme-section">
     <div class="section-heading section-heading--split">
-      <div><p class="tag">служебное · не удалять</p><h2>Внутренние мемы Бюро</h2></div>
-      <p>Эти формулировки не объясняют шутку. Они делают вид, что бюрократия умеет её администрировать.</p>
+      <div><p class="tag">БЮРО / МЕМЫ</p><h2>НЕ ЧИТАЙ КАК ДОКУМЕНТ</h2></div>
+      <p>Короткие правила для местных. Если понял сразу — значит, уже свой.</p>
     </div>
     <div class="meme-grid">${memes.map((m, i) => `<article class="meme-card" data-meme-index="${i}">
-      <span class="meme-card__stamp">MEMO / 418.${i+1}</span>
+      <span class="meme-card__stamp">418.${i+1}</span>
       <h3>${esc(m.title)}</h3>
       <p>${esc(m.text)}</p>
     </article>`).join('')}</div>
@@ -133,6 +133,7 @@ function layout({ title, description, active, bodyClass = '', extraHead = '', co
 <link rel="stylesheet" href="/assets/css/identity.css">
 <link rel="stylesheet" href="/assets/css/kinetic.css">
 <link rel="stylesheet" href="/assets/css/ritual-engine.css">
+<link rel="stylesheet" href="/assets/css/dada.css">
 ${extraHead}
 </head>
 <body class="${bodyClass}" data-page="${esc(active)}">
@@ -152,7 +153,6 @@ ${content}
 </main>
 <footer class="site-footer">
   <span>ПРОТОКОЛ 418 · LOWER HEAVEN · иррациональная мифопоэтическая система.</span>
-  <span>Согласие изображённых людей и данные о правах ведутся в приватном реестре и не публикуются.</span>
 </footer>
 <script type="module" src="/assets/js/media-viewer.js"></script>
 <script type="module" src="/assets/js/chaos.js"></script>
@@ -188,13 +188,13 @@ function renderHome(works, tone, lore) {
 <section class="page page--wide page--home">
   <p class="tag">/ — Мембрана 418</p>
   <h1 class="home-title">Комната, которая<br>отвечает ошибкой</h1>
-  <p class="page-lede">Сайт делает вид, что всё норм. Не верь ему. Тут можно нажать кнопку, сломать назначение, поймать глюк и случайно открыть то, чего никто не загружал.</p>
+  <p class="page-lede">Тут всё выглядит нормально ровно до первого клика.</p>
 
   <div class="membrane-hero">
     ${groundWork ? mediaFigure(groundWork, { klass: 'documentary-plate', loading: 'eager' }) : `<figure>${mediaTag({ media: [{ src: 'assets/img/membrane-hero.svg' }], altText: 'Потолок комнаты с лампой на проводе, приколотое расписание и календарь с обведённым дедлайном.' }, { loading: 'eager' })}</figure>`}
     <div class="stack">
-      <p class="hero-quote">КОМНАТА 418 НЕ ОБЯЗАНА ИМЕТЬ СМЫСЛ.</p>
-      <p class="page-lede">Пока тут только койка, коробка и кабель. Но дай предмету неправильную работу — и он начнёт вести себя так, будто у него есть лор.</p>
+      <p class="hero-quote">КОМНАТА 418. НЕ ТРОГАТЬ. УЖЕ ЖИВАЯ.</p>
+      <p class="page-lede">Койка. Телефон. Шапка. Один плохой приказ — и пошло-поехало.</p>
       <p class="source-stamp">источник: визуальная хроника / кадр 084 / без узнаваемых лиц</p>
     </div>
   </div>
@@ -272,12 +272,11 @@ function renderHome(works, tone, lore) {
   ${renderInternalMemes(lore)}
 
   <section class="section formula-section">
-    <h2>Формула комнаты</h2>
-    <p class="formula-strip">
-      <span>давление сверху</span><span>неправильное назначение</span><span>перформанс</span>
-      <span>титул</span><span>апофеоз</span><span>перегрев знаков</span><span>суд собственной системы</span>
-      <span>линолеум</span><span>незаснятый остаток</span>
-    </p>
+    <div class="formula-heading"><p class="tag">КОМНАТНЫЙ ДВИЖОК</p><h2>НЕ ЛИНИЯ. ЦИКЛ.</h2></div>
+    <div class="formula-wall" aria-label="Формула комнаты">
+      <span>давление</span><span>неправильное</span><span>назначение</span><span>перформанс</span>
+      <span>титул</span><span>апофеоз</span><span>перегрев</span><span>суд</span><span>линолеум</span><span>остаток</span>
+    </div>
   </section>
 </section>`;
   return layout({
@@ -387,8 +386,8 @@ function renderWorksIndex(works) {
   const content = `
 <section class="page page--wide">
   <p class="tag">/works — LINОLEUM ARCHIVE / LOWER HEAVEN</p>
-  <h1>Слой пола после катастрофы / 105 свидетельств</h1>
-  <p class="page-lede">Тут не музей. Тут пол. Листай как найдётся. Хочешь порядок — есть фильтр. Хочешь правду — жми «случайную жесть».</p>
+  <h1>105 кадров. И ни одного нормального.</h1>
+  <p class="page-lede">Это не каталог. Это стена находок. Листай, прыгай, раскидывай.</p>
   <p class="corpus-status"><strong>${listed.length}</strong> кадров в ленте · <strong>${works.filter((work) => work.source?.kind === 'страница визуального корпуса').length}</strong> страниц корпуса · <strong>${buildableWorks(works).length}</strong> узлов вообще</p>
 
   <div data-library-root>
@@ -430,11 +429,11 @@ function renderWorksIndex(works) {
           <button type="button" data-sort="relations" aria-pressed="false">по связям</button>
         </div>
       </div>
-      <button type="button" class="btn btn--ghost" data-raise>Случайная жесть</button>
+      <button type="button" class="btn btn--ghost" data-raise>СЛУЧАЙНАЯ ЖЕСТЬ</button>
     </div>
 
     <p class="results-meta" aria-live="polite"></p><div class="archive-command-row">
-    <span class="archive-live-state" aria-live="polite">архив не должен дёргаться сам по себе</span><button type="button" class="btn btn--ghost" data-archive-chaos>РАЗМЕШАТЬ АРХИВ</button><button type="button" class="btn btn--ghost" data-archive-collapse>СЖАТЬ РЕАЛЬНОСТЬ</button><span class="archive-whisper" aria-live="polite">архив делает вид, что помнит порядок</span></div>
+    <span class="archive-live-state" aria-live="polite">режим: стабильная нестабильность</span><button type="button" class="btn btn--ghost" data-archive-chaos>РАСКИДАТЬ</button><button type="button" class="btn btn--ghost" data-archive-collapse>СЖАТЬ</button><span class="archive-whisper" aria-live="polite">не трогай раскладку без причины</span></div>
     <div class="grid-works" data-library-state="loading"></div>
 
     <noscript>
@@ -518,25 +517,25 @@ function renderWorkDetail(work, byId) {
     blocks.push(`
     <div class="work-detail__block visual-analysis">
       <div class="visual-analysis__stamp">ВИДИМЫЕ ДАННЫЕ · НЕ ФИЛЬТРОВАТЬ</div>
-      <h2>Что здесь действительно видно</h2>
+      <h2>Что реально видно</h2>
       <p>${esc(work.visualAnalysis)}</p>
     </div>`);
   }
 
   // 2. ObjectDossier — бытовой источник и неправильная функция
-  if (work.object && (work.object.originalFunction || work.object.wrongFunction)) {
+  if (work.object && work.object.originalFunction && work.object.originalFunction !== 'бытовая вещь/поза/носитель изображения') {
     blocks.push(`
     <div class="work-detail__block">
-      <h2>Досье предмета</h2>
+      <h2>Предмет / жест</h2>
       <table class="dossier-table">
-        ${work.object.originalFunction ? `<tr><th>исходная функция</th><td>${esc(work.object.originalFunction)}</td></tr>` : ''}
-        ${work.object.wrongFunction ? `<tr><th>неправильное назначение</th><td>${esc(work.object.wrongFunction)}</td></tr>` : ''}
+        ${work.object.originalFunction ? `<tr><th>на фото</th><td>${esc(work.object.originalFunction)}</td></tr>` : ''}
+        ${work.object.wrongFunction ? `<tr><th>роль в кадре</th><td>${esc(work.object.wrongFunction)}</td></tr>` : ''}
         ${work.bodyNode && work.bodyNode !== '—' ? `<tr><th>телесный источник</th><td>${esc(work.bodyNode)}</td></tr>` : ''}
       </table>
     </div>`);
   }
 
-  // 3. TitleBadge + JudgmentPanel — способность, внутренний дефект, суд
+  // 3. Reading block — только если редактор действительно зафиксировал его
   if (work.blessing || work.internalDefect || work.judgment) {
     blocks.push(`
     <div class="work-detail__block">
@@ -599,10 +598,9 @@ function renderWorkDetail(work, byId) {
   // 5. ProvenanceRights
   blocks.push(`
     <div class="work-detail__block">
-      <h2>Кто это снял и почему мы это всё ещё видим</h2>
+      <h2>Источник</h2>
       <dl class="provenance">
         <div><dt>кредиты</dt><dd>${esc(work.credits)}</dd></div>
-        <div><dt>права</dt><dd>${esc(work.rights)}</dd></div>
         <div><dt>статус</dt><dd>${STATUS_LABEL[work.publicationStatus] || work.publicationStatus}</dd></div>
         ${work.source ? `<div><dt>источник</dt><dd>${esc(work.source.collection)}, ${esc(work.source.item)} · ${esc(work.source.kind)}</dd></div>` : ''}
       </dl>
@@ -639,7 +637,7 @@ function renderWorkDetail(work, byId) {
   }).join('\n');
   blocks.push(`
     <div class="work-detail__block">
-      <h2>Почему это вообще случилось</h2>
+      <h2>Сюда ещё можно свернуть</h2>
       ${allRel.length ? `<div class="mobius-relations">${relItems}</div>` : '<p class="status-note">Связей пока нет. Может, и слава богу.</p>'}
     </div>`);
 
@@ -693,7 +691,7 @@ async function renderProtocol(laws, dialects, editorialCases, works, tone, lore)
 <section class="page page--wide">
   <p class="tag">/protocol — BUREAU OF WRONG ASSIGNMENTS / 418</p>
   <h1>Правила комнаты. Богам тоже прилетает.</h1>
-  <p class="page-lede">Псевдоофициальный, но не игровой реестр: десять законов, грамматика полей и суд над самой системой.</p>
+  <p class="page-lede">Это не инструкция. Это местные правила, пока комната их не передумала.</p>
 
   <section class="section protocol-calibrator">
     <div class="section-heading section-heading--split">
@@ -701,7 +699,7 @@ async function renderProtocol(laws, dialects, editorialCases, works, tone, lore)
         <p class="tag">формула тона</p>
         <h2>ОБЩАГА / МИР ПОЕХАЛ</h2>
       </div>
-      <p>Документальность удерживает землю, абсурд взламывает назначение, пафос на секунду делает чудо действительным, а цифровой сбой показывает машину внутри события.</p>
+      <p>Сначала всё обычно. Потом предмету дают не ту работу. Потом становится поздно.</p>
     </div>
     ${renderToneFormula(tone)}
     <div class="calibration-rule">
@@ -735,16 +733,16 @@ async function renderProtocol(laws, dialects, editorialCases, works, tone, lore)
   </section>
 
   <section class="section">
-    <h2>Что за режим тут вообще</h2>
+    <h2>Как это устроено</h2>
     <h3>Визуальные диалекты (<code>visualDialect</code> / <code>process</code>)</h3>
     <table class="grammar-table">
       <thead><tr><th>диалект</th><th>телесный узел</th><th>геометрия</th><th>описание</th></tr></thead>
       <tbody>${dialectRows}</tbody>
     </table>
     <h3>Где сейчас этот кадр (<code>narrativePhase</code>)</h3>
-    <p class="page-lede" style="max-width:none;">Чисто редакторская разметка — автор выбирает фазу вручную, автомат не крутит её сам во времени: ${phaseRow}.</p>
+    <p class="page-lede" style="max-width:none;">Фазы — не квест. Это ярлыки: ${phaseRow}.</p>
     <h3>Кто дал добро (<code>publicationStatus</code>)</h3>
-    <p class="page-lede" style="max-width:none;">Определяет только видимость в архиве, не содержание: ${statusRow}. Обратный переход «archived → published» не предусмотрен.</p>
+    <p class="page-lede" style="max-width:none;">Статус решает, виден кадр или нет: ${statusRow}.</p>
   </section>
 
   <section class="section" id="trial">
