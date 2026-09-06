@@ -32,6 +32,24 @@ function resolvePublicRef(ref) {
 
 const files = await walk(distRoot);
 const htmlFiles = files.filter((file) => file.endsWith('.html'));
+const vectorFiles = files.filter((file) => file.endsWith('.svg'));
+
+if (vectorFiles.length) {
+  failures.push(`В публичной сборке остались векторные прототипы: ${vectorFiles.map((file) => path.relative(distRoot, file)).join(', ')}`);
+}
+
+const removedPrototypeSlugs = [
+  'archont-nedoslannogo',
+  'vantuz-sudby',
+  'izolenta-seryogi',
+  'travokur-i-bolshaya-shishka',
+  'obhod-komendanta',
+];
+for (const slug of removedPrototypeSlugs) {
+  if (files.some((file) => path.relative(distRoot, file).split(path.sep).includes(slug))) {
+    failures.push(`Удалённый прототип всё ещё публикуется: ${slug}.`);
+  }
+}
 
 // dist — публикуемый артефакт. Если он отличается от одноимённого файла в
 // исходной публичной структуре, архив содержит старую сборку.
@@ -53,6 +71,10 @@ if (files.some((file) => file.includes(`${path.sep}private${path.sep}`))) {
 for (const file of htmlFiles) {
   const html = await readFile(file, 'utf8');
   const label = path.relative(projectRoot, file);
+  if (!html.includes('/assets/css/abyss.css')) failures.push(`${label} → не подключён визуальный слой 418.11.`);
+  for (const slug of removedPrototypeSlugs) {
+    if (html.includes(slug)) failures.push(`${label} → содержит ссылку на удалённый прототип ${slug}.`);
+  }
   const ids = [...html.matchAll(/\sid="([^"]+)"/g)].map((match) => match[1]);
   const duplicates = ids.filter((id, index) => ids.indexOf(id) !== index);
   if (duplicates.length) failures.push(`${label} → повторяющиеся id: ${[...new Set(duplicates)].join(', ')}`);
@@ -79,9 +101,27 @@ if (!home.includes('tone-formula') || !home.includes('data-ritual-root')) {
 if (home.includes('/assets/img/mudrets-tselibata.webp')) {
   failures.push('Медиа с предупреждением попало на главную без ContentNoticeGate.');
 }
+if ((home.match(/>Перегрев<\/a>/g) || []).length !== 1) {
+  failures.push('В основной навигации должен быть ровно один пункт «Перегрев».');
+}
 const worksIndex = await readFile(path.join(distRoot, 'works', 'index.html'), 'utf8');
 if (worksIndex.includes('/assets/img/mudrets-tselibata.webp')) {
   failures.push('Медиа с предупреждением попало в витрину архива.');
+}
+const worksPayloadMatch = worksIndex.match(/<script type="application\/json" id="works-data">([\s\S]*?)<\/script>/);
+if (!worksPayloadMatch) {
+  failures.push('Архив не содержит безопасно встроенные данные работ.');
+} else {
+  try {
+    const worksPayload = JSON.parse(worksPayloadMatch[1]);
+    if (!Array.isArray(worksPayload) || worksPayload.length !== 110) {
+      failures.push(`Архив получил ${worksPayload?.length ?? 0} работ вместо 110.`);
+    }
+    const nonPhoto = (worksPayload || []).filter((work) => !work.mediaHeld && !/\.(?:webp|png|jpe?g|avif)$/i.test(work.thumb || ''));
+    if (nonPhoto.length) failures.push(`В архиве есть нерастровые материалы: ${nonPhoto.map((work) => work.slug).join(', ')}.`);
+  } catch {
+    failures.push('Встроенные данные архива не являются валидным JSON.');
+  }
 }
 const ritualJS = await readFile(path.join(distRoot, 'assets', 'js', 'ritual.js'), 'utf8');
 if (ritualJS.includes('/assets/img/mudrets-tselibata.webp')) {

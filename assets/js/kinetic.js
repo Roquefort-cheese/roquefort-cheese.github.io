@@ -1,4 +1,4 @@
-/* 418.9 — archive mechanics: explicit actions only, no autonomous movement. */
+/* 418.11 — archive mechanics: explicit actions only, no autonomous movement. */
 const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const $ = (s,r=document)=>r.querySelector(s);
 const $$ = (s,r=document)=>[...r.querySelectorAll(s)];
@@ -16,11 +16,17 @@ function isTypingTarget(target){
 
 function applyComposition(){
   cards().forEach((card,i)=>{
-    const tilt=[-1.2,.8,-.6,1.4,-.8,.4][i%6];
-    const y=[0,4,-2,6,-1,3][i%6];
+    const spans=[3,4,3,5,4,3,4,5,3,4,3,5];
+    const ratios=['4 / 5','3 / 4','1 / 1','5 / 7','16 / 11','3 / 5','4 / 3','2 / 3'];
+    const page=Number(card.dataset.page || 0);
+    const seed=Number.isFinite(page) && page > 0 ? page - 1 : i;
+    const tilt=[-.35,.2,-.15,.45,-.2,.1][seed%6];
+    const y=[0,3,-2,5,-1,2][seed%6];
     card.style.setProperty('--card-tilt',`${tilt}deg`);
     card.style.setProperty('--card-y',`${y}px`);
-    card.style.setProperty('--card-depth',String(10+(i%7)));
+    card.style.setProperty('--card-depth',String(10+(seed%7)));
+    card.style.setProperty('--card-span',String(spans[seed%spans.length]));
+    card.style.setProperty('--card-ratio',ratios[seed%ratios.length]);
   });
 }
 

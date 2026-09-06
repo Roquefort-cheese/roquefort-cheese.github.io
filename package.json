@@ -1,6 +1,6 @@
 {
   "name": "protocol-418",
-  "version": "418.10.0",
+  "version": "418.11.0",
   "private": true,
   "type": "module",
   "scripts": {

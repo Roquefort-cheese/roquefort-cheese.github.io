@@ -37,10 +37,12 @@ function workCard(work) {
   a.dataset.page = work.pageNumber || '';
   const mediaSrc = String(work.thumb || '');
   const alt = String(work.altText || work.title || 'Архивный материал');
+  const mediaMarkup = work.mediaHeld
+    ? `<div class="work-card__locked" role="img" aria-label="Изображение работы «${escapeHTML(work.title)}» удержано до предупреждения"><span>MEDIA / 418</span><strong>Сначала предупреждение</strong></div>`
+    : `<img src="/${escapeHTML(mediaSrc)}" alt="${escapeHTML(alt)}" loading="lazy" decoding="async">`;
   a.innerHTML = `
-    <div class="work-card__media"><img src="/${escapeHTML(mediaSrc)}" alt="${escapeHTML(alt)}" loading="lazy" decoding="async">
+    <div class="work-card__media">${mediaMarkup}
       ${work.pageNumber ? `<span class="work-card__index">${escapeHTML(String(work.pageNumber).padStart(3,'0'))}</span>` : ''}
-      ${work.mediaHeld ? '<span class="work-card__held">медиа удержано</span>' : ''}
     </div>
     <div class="work-card__body">
       <div class="work-card__tags">

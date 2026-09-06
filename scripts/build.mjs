@@ -110,7 +110,7 @@ function renderEditorialCompensation(works, lore) {
   const percent = (n) => corpus.length ? Math.round((n / corpus.length) * 100) : 0;
   return `<div class="editorial-compensation">
     <div class="editorial-compensation__head">
-      <span class="tag">режим 418.10 · диагноз, не самоуспокоение</span>
+      <span class="tag">режим 418.11 · диагноз, не самоуспокоение</span>
       <strong>${esc(lore?.compensation?.title || 'Компенсатор документальности')}</strong>
       <p>${esc(lore?.compensation?.note || '')}</p>
     </div>
@@ -118,7 +118,7 @@ function renderEditorialCompensation(works, lore) {
       ${Object.entries(counts).map(([key, n]) => `<div class="editorial-compensation__item editorial-compensation__item--${key}">
         <div><strong>${n}</strong><span>${percent(n)}%</span></div>
         <b>${labels[key]}</b>
-        <i style="--portion:${percent(n)}"></i>
+        <i style="--portion:${percent(n)};--portion-pct:${percent(n)}%"></i>
       </div>`).join('')}
     </div>
     <div class="editorial-compensation__action">
@@ -156,12 +156,7 @@ function layout({ title, description, active, bodyClass = '', extraHead = '', co
 <link rel="stylesheet" href="/assets/css/layout.css">
 <link rel="stylesheet" href="/assets/css/components.css">
 <link rel="stylesheet" href="/assets/css/states.css">
-<link rel="stylesheet" href="/assets/css/chaos.css">
-<link rel="stylesheet" href="/assets/css/identity.css">
-<link rel="stylesheet" href="/assets/css/kinetic.css">
-<link rel="stylesheet" href="/assets/css/ritual-engine.css">
-<link rel="stylesheet" href="/assets/css/dada.css">
-<link rel="stylesheet" href="/assets/css/overheat.css">
+<link rel="stylesheet" href="/assets/css/abyss.css">
 ${extraHead}
 </head>
 <body class="${bodyClass}" data-page="${esc(active)}">
@@ -194,8 +189,8 @@ ${extraScripts}
 // ---------------------------------------------------------------- index.html
 function renderHome(works, tone, lore) {
   const byId = Object.fromEntries(works.map((work) => [work.id, work]));
-  const groundWork = byId['w-nepribrannoe-koyka'];
-  const featured = ['w-mudrets-tselibata', 'w-vlastelin-dofamina', 'w-osemenitel']
+  const groundWork = byId['w-corpus-page-018'];
+  const featured = ['w-vlastelin-dofamina', 'w-osemenitel', 'w-corpus-page-031']
     .map((id) => byId[id])
     .filter(Boolean);
   const featuredCards = featured.map((work, index) => {
@@ -208,23 +203,26 @@ function renderHome(works, tone, lore) {
         <p class="tag tag--dialect">${esc(PROCESS_LABEL[work.process] || work.process)}</p>
         <h3><a href="/works/${work.slug}/">${esc(work.title)}</a></h3>
         <p>${esc(work.summary)}</p>
-        <span class="source-chip">портрет-апофеоз</span>
+        <span class="source-chip">${esc(work.source?.kind || 'архивная фотография')}</span>
       </div>
     </article>`;
   }).join('\n');
 
   const content = `
 <section class="page page--wide page--home">
-  <p class="tag">/ — Мембрана 418</p>
-  <h1 class="home-title">Комната, которая<br>отвечает ошибкой</h1>
-  <p class="page-lede">Тут всё выглядит нормально ровно до первого клика.</p>
-
-  <div class="membrane-hero">
-    ${groundWork ? mediaFigure(groundWork, { klass: 'documentary-plate', loading: 'eager' }) : `<figure>${mediaTag({ media: [{ src: 'assets/img/membrane-hero.svg' }], altText: 'Потолок комнаты с лампой на проводе, приколотое расписание и календарь с обведённым дедлайном.' }, { loading: 'eager' })}</figure>`}
-    <div class="stack">
-      <p class="hero-quote">КОМНАТА 418. НЕ ТРОГАТЬ. УЖЕ ЖИВАЯ.</p>
-      <p class="page-lede">Койка. Телефон. Шапка. Один плохой приказ — и пошло-поехало.</p>
-      <p class="source-stamp">источник: визуальная хроника / кадр 084 / без узнаваемых лиц</p>
+  <div class="home-opening">
+    <div class="home-opening__media">
+      ${groundWork ? mediaFigure(groundWork, { klass: 'documentary-plate', loading: 'eager' }) : ''}
+    </div>
+    <div class="home-opening__copy">
+      <p class="tag">/ — Мембрана 418</p>
+      <h1 class="home-title">Комната,<br>которая<br><em>ответила</em></h1>
+      <p class="page-lede">Сначала это была фотография. Потом она потребовала титул, свидетеля и аварийный выход из реальности.</p>
+    </div>
+    <div class="home-opening__signal">
+      <p class="hero-quote">НЕ ТРОГАТЬ.<br>УЖЕ ЖИВАЯ.</p>
+      <p>Койка. Тело. Лампочка. Один невозможный приказ — и комната начинает производить богов из того, что не успели убрать.</p>
+      <p class="source-stamp">свидетельство 018 / реальная комната / режим захвата нарушен</p>
     </div>
   </div>
 
@@ -287,7 +285,7 @@ function renderHome(works, tone, lore) {
 
   <section class="section overheat-teaser">
     <div>
-      <p class="tag">аварийный контур / 418.10</p>
+      <p class="tag">аварийный контур / 418.11</p>
       <h2>Документ перевесил. Мы открыли подвал.</h2>
       <p>Сто пять свидетельств проходят через четыре операции: факт остаётся фактом, предмет получает хреновую должность, должность — настоящий титул, а интерфейс — право сломаться.</p>
     </div>
@@ -343,7 +341,13 @@ function splitMapLabel(title) {
 }
 
 function renderMobiusMap(works) {
-  const nodes = buildableWorks(works);
+  const allNodes = buildableWorks(works);
+  const connectedIds = new Set();
+  allNodes.forEach((work) => (work.relations || []).forEach((relation) => {
+    connectedIds.add(work.id);
+    connectedIds.add(relation.workId);
+  }));
+  const nodes = allNodes.filter((work) => connectedIds.has(work.id));
   const nodeIds = new Set(nodes.map((work) => work.id));
   const positions = new Map(nodes.map((work, index) => {
     const angle = (-Math.PI / 2) + ((Math.PI * 2 * index) / nodes.length);
@@ -393,7 +397,7 @@ function renderMobiusMap(works) {
     <div class="mobius-map__scroll" tabindex="0" aria-label="Прокручиваемая карта связей">
       <svg viewBox="0 0 920 620" role="img" aria-labelledby="mobius-title mobius-desc">
         <title id="mobius-title">Карта причинности Мёбиуса</title>
-        <desc id="mobius-desc">Работы связаны как причины, остатки и брожение. Архивный узел «Вантуз Судьбы» остаётся частью графа.</desc>
+        <desc id="mobius-desc">Связанные фотографии образуют контур причин, остатков и брожения. Несвязанные улики остаются в архивной стене.</desc>
         <defs><marker id="mobius-arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z"></path></marker></defs>
         <path class="mobius-orbit" d="M460 90 C700 90 810 210 810 310 C810 430 670 530 460 530 C250 530 110 430 110 310 C110 190 250 90 460 90 Z"></path>
         <g class="mobius-edges">${edgeMarkup}</g>
@@ -424,8 +428,8 @@ function renderWorksIndex(works) {
   const content = `
 <section class="page page--wide">
   <p class="tag">/works — LINОLEUM ARCHIVE / LOWER HEAVEN</p>
-  <h1>105 кадров. И ни одного нормального.</h1>
-  <p class="page-lede">Это не каталог. Это стена находок. Листай, прыгай, раскидывай.</p>
+  <h1>105 страниц. Ещё 5 приступов.</h1>
+  <p class="page-lede">Только настоящие фотографии: документальный корпус и пять канонических вторжений. Это не каталог. Это стена находок. Листай, прыгай, раскидывай.</p>
   <p class="corpus-status"><strong>${listed.length}</strong> кадров в ленте · <strong>${works.filter((work) => work.source?.kind === 'страница визуального корпуса').length}</strong> страниц корпуса · <strong>${buildableWorks(works).length}</strong> узлов вообще</p>
 
   <div data-library-root>
@@ -484,7 +488,7 @@ function renderWorksIndex(works) {
       process: w.process, narrativePhase: w.narrativePhase, bodyNode: w.bodyNode,
       visualDialect: w.visualDialect, publicationStatus: w.publicationStatus, editorialMode: w.editorialMode || null,
       glitchLabel: w.glitchLabel || null,
-      thumb: w.thumbnail?.src || w.media?.[0]?.src, mediaHeld: Boolean(w.contentNotice),
+      thumb: w.contentNotice ? null : (w.thumbnail?.src || w.media?.[0]?.src), mediaHeld: Boolean(w.contentNotice),
       wrongFunction: w.object?.wrongFunction, originalFunction: w.object?.originalFunction,
       chronologyIndex: w._chronologyIndex, relationDegree: w._relationDegree, pageNumber: w.pageNumber || null, pageText: w.pageText || '', visualAnalysis: w.visualAnalysis || '', altText: w.altText || '',
     })))}</script>
@@ -622,7 +626,7 @@ function renderWorkDetail(work, byId) {
     blocks.push(`
     <aside class="work-detail__block canonize-cta">
       <div>
-        <p class="tag">КОНТРВЕС / 418.10</p>
+        <p class="tag">КОНТРВЕС / 418.11</p>
         <h2>Слишком похоже на документ?</h2>
         <p>Факт останется фактом. Но мы можем выдать ему хреновую должность, возвести её в сан и честно сломать интерфейс.</p>
       </div>
@@ -813,7 +817,7 @@ function renderOverheat(works, lore) {
 
   <section class="overheat-myth">
     <div class="overheat-myth__head">
-      <div><p class="tag">НОВЫЙ АПОКРИФ / 418.10</p><h2>${esc(lore.title)}</h2></div>
+      <div><p class="tag">НОВЫЙ АПОКРИФ / 418.11</p><h2>${esc(lore.title)}</h2></div>
       <p>${esc(lore.preamble)}</p>
     </div>
     <div class="apocrypha-grid">${myths}</div>

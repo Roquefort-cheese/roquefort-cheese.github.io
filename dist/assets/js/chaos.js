@@ -6,7 +6,7 @@ const MEMES = [
 function stampOnce(){
   if(document.querySelector('.site-chaos-stamp')) return;
   const el=document.createElement('div'); el.className='site-chaos-stamp';
-  el.innerHTML='<b>418.9</b><span>'+MEMES[Math.floor(Math.random()*MEMES.length)]+'</span>';
+  el.innerHTML='<b>418.11</b><span>'+MEMES[Math.floor(Math.random()*MEMES.length)]+'</span>';
   document.body.appendChild(el);
 }
 function initGlitchOnKey(){
